@@ -184,7 +184,7 @@ function ResourceRow({ resource }) {
 }
 
 // ── Default practicals used when no JSON file exists ─────────────────────────
-const defaultPracticals = [
+/* const defaultPracticals = [
   {
     num: 1,
     title: "Practical 1: Introduction and Setup",
@@ -215,10 +215,10 @@ const defaultPracticals = [
     desc: "Term-end practical assessment project",
     resources: [],
   },
-];
+]; */
 
 // ── Main component ────────────────────────────────────────────────────────────
-export default function PracticalAccordion({ practicals = defaultPracticals }) {
+export default function PracticalAccordion({ practicals }) {
   const [open, setOpen] = useState(null);
 
   return (

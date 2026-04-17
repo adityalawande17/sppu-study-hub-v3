@@ -93,7 +93,7 @@ const BookmarkEmpty = () => (
 );
 
 // defaultPracticals now live inside PracticalAccordion itself
-const defaultPYQ = [
+/*const defaultPYQ = [
   { year: "2024", exam: "Nov / Dec 2024", url: "#" },
   { year: "2024", exam: "April / May 2024", url: "#" },
   { year: "2023", exam: "Nov / Dec 2023", url: "#" },
@@ -102,7 +102,7 @@ const defaultPYQ = [
   { year: "2022", exam: "April / May 2022", url: "#" },
   { year: "2021", exam: "Nov / Dec 2021", url: "#" },
   { year: "2020", exam: "Nov / Dec 2020", url: "#" },
-];
+]; */
 
 export default function Subject() {
   const { code } = useParams();
@@ -143,10 +143,21 @@ export default function Subject() {
   //   "CCC-151": cc2,
   // };
   const content = subjectFiles[code] || null;
-  const practicals = content?.practicals || undefined; // undefined → PracticalAccordion uses its own defaults
-  const pyq = content?.pyq || defaultPYQ;
+  //const practicals = content?.practicals || undefined; // undefined → PracticalAccordion uses its own defaults
+  //const pyq = content?.pyq || defaultPYQ;
   const books = content?.books || [];
-  const units = content?.units || undefined;
+  //const units = content?.units || undefined;
+
+  const hasUnits = content?.units && content.units.length > 0;
+  const hasPracticals = content?.practicals && content.practicals.length > 0;
+  const hasPYQ = content?.pyq && content.pyq.length > 0;
+  const hasBooks = content?.books && content.books.length > 0;
+
+  const units = hasUnits ? content.units : null;
+  const practicals = hasPracticals ? content.practicals : null;
+  const pyq = hasPYQ ? content.pyq : null;
+
+  const hasAnyContent = hasUnits || hasPracticals || hasPYQ;
 
   useSEO({
     title: `${subject.name} Notes & Papers — SPPU ${subject.branch} ${subject.sem} | sppuwalestudent`,
@@ -286,322 +297,336 @@ export default function Subject() {
       </div>
 
       <div className="material-grid">
+        {/* ✅ EMPTY STATE */}
+        {!hasAnyContent && (
+          <div className="empty-msg">Content will be added soon 🚧</div>
+        )}
         {/* Notes */}
-        <div className="mat-section">
-          <div className="mat-section-head">
-            <div className="mat-section-title">
-              Unit Notes <span className="badge badge-notes">Notes</span>
+        {hasUnits && (
+          <div className="mat-section">
+            <div className="mat-section-head">
+              <div className="mat-section-title">
+                Unit Notes <span className="badge badge-notes">Notes</span>
+              </div>
+              <span style={{ fontSize: 12, color: "var(--text-3)" }}>
+                Unit 1 to 6
+              </span>
             </div>
-            <span style={{ fontSize: 12, color: "var(--text-3)" }}>
-              Unit 1 to 6
-            </span>
+            <div className="mat-section-body">
+              <UnitAccordion units={units} />
+            </div>
           </div>
-          <div className="mat-section-body">
-            <UnitAccordion units={units} />
-          </div>
-        </div>
+        )}
 
         {/* PYQ */}
-        <div className="mat-section">
-          <div className="mat-section-head">
-            <div className="mat-section-title">
-              Previous Year Question Papers{" "}
-              <span className="badge badge-pyq">PYQ</span>
+        {hasPYQ && (
+          <div className="mat-section">
+            <div className="mat-section-head">
+              <div className="mat-section-title">
+                Previous Year Question Papers{" "}
+                <span className="badge badge-pyq">PYQ</span>
+              </div>
+              <span style={{ fontSize: 12, color: "var(--text-3)" }}>
+                University exam papers
+              </span>
             </div>
-            <span style={{ fontSize: 12, color: "var(--text-3)" }}>
-              University exam papers
-            </span>
-          </div>
-          <div className="mat-section-body">
-            <div className="info-strip">
-              Official SPPU end-semester papers. Practicing these helps
-              understand the exam pattern and important topics.
-            </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(175px, 1fr))",
-                gap: 10,
-              }}
-            >
-              {pyq.map((p, i) => (
-                <div
-                  key={i}
-                  style={{
-                    border: "1px solid var(--border)",
-                    borderRadius: 10,
-                    padding: 14,
-                    background: "var(--surface2)",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 5,
-                    transition: "all .15s",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "var(--gold-dim)";
-                    e.currentTarget.style.background = "var(--gold-pale)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "var(--border)";
-                    e.currentTarget.style.background = "var(--surface2)";
-                  }}
-                >
+            <div className="mat-section-body">
+              <div className="info-strip">
+                Official SPPU end-semester papers. Practicing these helps
+                understand the exam pattern and important topics.
+              </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(175px, 1fr))",
+                  gap: 10,
+                }}
+              >
+                {pyq.map((p, i) => (
                   <div
+                    key={i}
                     style={{
-                      fontFamily: "'DM Serif Display', serif",
-                      fontSize: 22,
-                      color: "var(--heading)",
-                    }}
-                  >
-                    {p.year}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: 12,
-                      color: "var(--text-3)",
-                      lineHeight: 1.5,
-                    }}
-                  >
-                    End Semester
-                    <br />
-                    {p.exam}
-                  </div>
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      marginTop: "auto",
-                      padding: "7px 0",
-                      background: "var(--navy)",
-                      color: "#fff",
-                      borderRadius: 8,
-                      fontSize: 12,
-                      fontWeight: 500,
-                      fontFamily: "Inter, sans-serif",
-                      textDecoration: "none",
+                      border: "1px solid var(--border)",
+                      borderRadius: 10,
+                      padding: 14,
+                      background: "var(--surface2)",
                       display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
+                      flexDirection: "column",
                       gap: 5,
-                      transition: "opacity .15s",
+                      transition: "all .15s",
                     }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.opacity = ".82")
-                    }
-                    onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
-                  >
-                    <DlIcon /> Download
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Practicals */}
-        <div className="mat-section">
-          <div className="mat-section-head">
-            <div className="mat-section-title">
-              Practical Material{" "}
-              <span className="badge badge-practical">Lab</span>
-            </div>
-            <span style={{ fontSize: 12, color: "var(--text-3)" }}>
-              {practicals
-                ? `${practicals.length} practicals`
-                : "Step-by-step guides"}
-            </span>
-          </div>
-          <div className="mat-section-body">
-            <PracticalAccordion practicals={practicals} />
-          </div>
-        </div>
-
-        {/* Books */}
-        <div className="mat-section">
-          <div className="mat-section-head">
-            <div className="mat-section-title">
-              Recommended Textbooks{" "}
-              <span className="badge badge-books">Books</span>
-            </div>
-            <span style={{ fontSize: 12, color: "var(--text-3)" }}>
-              Affiliate links
-            </span>
-          </div>
-          <div className="mat-section-body">
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-                gap: 12,
-              }}
-            >
-              {(books.length > 0
-                ? books
-                : [
-                    {
-                      title: "Standard Reference Textbook",
-                      author: "Standard Author",
-                      edition: "SPPU Edition",
-                      price: "Rs. 450",
-                      amazonUrl: "#",
-                      flipkartUrl: "#",
-                    },
-                    {
-                      title: "Exam Guide and Solved Papers",
-                      author: "SPPU 2019 Pattern",
-                      edition: "Latest Edition",
-                      price: "Rs. 280",
-                      amazonUrl: "#",
-                      flipkartUrl: "#",
-                    },
-                  ]
-              ).map((b, i) => (
-                <div
-                  key={i}
-                  style={{
-                    background: "var(--surface)",
-                    border: "1px solid var(--border)",
-                    borderRadius: 12,
-                    padding: 15,
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 10,
-                    transition: "all .18s",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "var(--gold-dim)";
-                    e.currentTarget.style.boxShadow = "var(--shadow-md)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "var(--border)";
-                    e.currentTarget.style.boxShadow = "";
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: 10,
-                      alignItems: "flex-start",
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = "var(--gold-dim)";
+                      e.currentTarget.style.background = "var(--gold-pale)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = "var(--border)";
+                      e.currentTarget.style.background = "var(--surface2)";
                     }}
                   >
                     <div
                       style={{
-                        width: 40,
-                        height: 52,
-                        background: "var(--navy)",
-                        borderRadius: 4,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: 8,
-                        fontWeight: 700,
-                        color: "var(--gold)",
-                        letterSpacing: 0.3,
-                        textAlign: "center",
-                        flexShrink: 0,
-                        lineHeight: 1.4,
+                        fontFamily: "'DM Serif Display', serif",
+                        fontSize: 22,
+                        color: "var(--heading)",
                       }}
                     >
-                      REF
-                      <br />
-                      BOOK
+                      {p.year}
                     </div>
-                    <div>
-                      <div
-                        style={{
-                          fontSize: 13,
-                          fontWeight: 600,
-                          color: "var(--heading)",
-                          lineHeight: 1.4,
-                        }}
-                      >
-                        {b.title}
-                      </div>
-                      <div
-                        style={{
-                          fontSize: 12,
-                          color: "var(--text-3)",
-                          marginTop: 3,
-                        }}
-                      >
-                        {b.author}
-                      </div>
-                      <div
-                        style={{
-                          fontSize: 13,
-                          fontWeight: 600,
-                          color: "var(--gold-dim)",
-                          marginTop: 4,
-                        }}
-                      >
-                        {b.price}
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns: "1fr 1fr",
-                      gap: 6,
-                      marginTop: "auto",
-                    }}
-                  >
-                    <a
-                      href={b.amazonUrl}
-                      target="_blank"
-                      rel="noopener sponsored"
+                    <div
                       style={{
-                        display: "block",
-                        textAlign: "center",
+                        fontSize: 12,
+                        color: "var(--text-3)",
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      End Semester
+                      <br />
+                      {p.exam}
+                    </div>
+                    <a
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        marginTop: "auto",
                         padding: "7px 0",
                         background: "var(--navy)",
                         color: "#fff",
-                        borderRadius: 7,
-                        fontSize: 11,
+                        borderRadius: 8,
+                        fontSize: 12,
                         fontWeight: 500,
-                        textDecoration: "none",
                         fontFamily: "Inter, sans-serif",
-                      }}
-                    >
-                      Amazon
-                    </a>
-                    <a
-                      href={b.flipkartUrl}
-                      target="_blank"
-                      rel="noopener sponsored"
-                      style={{
-                        display: "block",
-                        textAlign: "center",
-                        padding: "7px 0",
-                        background: "var(--surface2)",
-                        color: "var(--heading)",
-                        borderRadius: 7,
-                        fontSize: 11,
-                        fontWeight: 500,
                         textDecoration: "none",
-                        border: "1px solid var(--border)",
-                        fontFamily: "Inter, sans-serif",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: 5,
+                        transition: "opacity .15s",
                       }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.opacity = ".82")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.opacity = "1")
+                      }
                     >
-                      Flipkart
+                      <DlIcon /> Download
                     </a>
                   </div>
-                  <p
-                    style={{
-                      fontSize: 10,
-                      color: "var(--text-4)",
-                      textAlign: "center",
-                      margin: 0,
-                    }}
-                  >
-                    Affiliate link — supports this site
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        )}
+
+        {/* Practicals */}
+        {hasPracticals && (
+          <div className="mat-section">
+            <div className="mat-section-head">
+              <div className="mat-section-title">
+                Practical Material{" "}
+                <span className="badge badge-practical">Lab</span>
+              </div>
+              <span style={{ fontSize: 12, color: "var(--text-3)" }}>
+                {practicals
+                  ? `${practicals.length} practicals`
+                  : "Step-by-step guides"}
+              </span>
+            </div>
+            <div className="mat-section-body">
+              {hasPracticals && <PracticalAccordion practicals={practicals} />}
+            </div>
+          </div>
+        )}
+
+        {/* Books */}
+        {hasBooks && (
+          <div className="mat-section">
+            <div className="mat-section-head">
+              <div className="mat-section-title">
+                Recommended Textbooks{" "}
+                <span className="badge badge-books">Books</span>
+              </div>
+              <span style={{ fontSize: 12, color: "var(--text-3)" }}>
+                Affiliate links
+              </span>
+            </div>
+            <div className="mat-section-body">
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+                  gap: 12,
+                }}
+              >
+                {(books.length > 0
+                  ? books
+                  : [
+                      {
+                        title: "Standard Reference Textbook",
+                        author: "Standard Author",
+                        edition: "SPPU Edition",
+                        price: "Rs. 450",
+                        amazonUrl: "#",
+                        flipkartUrl: "#",
+                      },
+                      {
+                        title: "Exam Guide and Solved Papers",
+                        author: "SPPU 2019 Pattern",
+                        edition: "Latest Edition",
+                        price: "Rs. 280",
+                        amazonUrl: "#",
+                        flipkartUrl: "#",
+                      },
+                    ]
+                ).map((b, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      background: "var(--surface)",
+                      border: "1px solid var(--border)",
+                      borderRadius: 12,
+                      padding: 15,
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 10,
+                      transition: "all .18s",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = "var(--gold-dim)";
+                      e.currentTarget.style.boxShadow = "var(--shadow-md)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = "var(--border)";
+                      e.currentTarget.style.boxShadow = "";
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                        alignItems: "flex-start",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: 40,
+                          height: 52,
+                          background: "var(--navy)",
+                          borderRadius: 4,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontSize: 8,
+                          fontWeight: 700,
+                          color: "var(--gold)",
+                          letterSpacing: 0.3,
+                          textAlign: "center",
+                          flexShrink: 0,
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        REF
+                        <br />
+                        BOOK
+                      </div>
+                      <div>
+                        <div
+                          style={{
+                            fontSize: 13,
+                            fontWeight: 600,
+                            color: "var(--heading)",
+                            lineHeight: 1.4,
+                          }}
+                        >
+                          {b.title}
+                        </div>
+                        <div
+                          style={{
+                            fontSize: 12,
+                            color: "var(--text-3)",
+                            marginTop: 3,
+                          }}
+                        >
+                          {b.author}
+                        </div>
+                        <div
+                          style={{
+                            fontSize: 13,
+                            fontWeight: 600,
+                            color: "var(--gold-dim)",
+                            marginTop: 4,
+                          }}
+                        >
+                          {b.price}
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "1fr 1fr",
+                        gap: 6,
+                        marginTop: "auto",
+                      }}
+                    >
+                      <a
+                        href={b.amazonUrl}
+                        target="_blank"
+                        rel="noopener sponsored"
+                        style={{
+                          display: "block",
+                          textAlign: "center",
+                          padding: "7px 0",
+                          background: "var(--navy)",
+                          color: "#fff",
+                          borderRadius: 7,
+                          fontSize: 11,
+                          fontWeight: 500,
+                          textDecoration: "none",
+                          fontFamily: "Inter, sans-serif",
+                        }}
+                      >
+                        Amazon
+                      </a>
+                      <a
+                        href={b.flipkartUrl}
+                        target="_blank"
+                        rel="noopener sponsored"
+                        style={{
+                          display: "block",
+                          textAlign: "center",
+                          padding: "7px 0",
+                          background: "var(--surface2)",
+                          color: "var(--heading)",
+                          borderRadius: 7,
+                          fontSize: 11,
+                          fontWeight: 500,
+                          textDecoration: "none",
+                          border: "1px solid var(--border)",
+                          fontFamily: "Inter, sans-serif",
+                        }}
+                      >
+                        Flipkart
+                      </a>
+                    </div>
+                    <p
+                      style={{
+                        fontSize: 10,
+                        color: "var(--text-4)",
+                        textAlign: "center",
+                        margin: 0,
+                      }}
+                    >
+                      Affiliate link — supports this site
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="ad-slot" style={{ marginBottom: 40 }}>
