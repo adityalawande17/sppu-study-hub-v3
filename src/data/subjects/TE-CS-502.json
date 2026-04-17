@@ -6,8 +6,18 @@
     {
       "title": "Unit 1 - Introduction to Computer Networks",
       "files": [
-        { "name": "Unit 1 Complete Notes", "size": "3.2 MB", "type": "PDF", "url": "#" },
-        { "name": "Unit 1 Lecture Slides", "size": "5.1 MB", "type": "PPT", "url": "#" }
+        {
+          "name": "Unit 1 Complete Notes",
+          "size": "3.2 MB",
+          "type": "PDF",
+          "url": "#"
+        },
+        {
+          "name": "Unit 1 Lecture Slides",
+          "size": "5.1 MB",
+          "type": "PPT",
+          "url": "#"
+        }
       ]
     },
     {
@@ -19,28 +29,58 @@
     {
       "title": "Unit 3 - Network Layer",
       "files": [
-        { "name": "Unit 3 Notes - Routing Algorithms", "size": "2.1 MB", "type": "PDF", "url": "#" },
-        { "name": "Unit 3 Notes - IP Addressing", "size": "1.4 MB", "type": "PDF", "url": "#" }
+        {
+          "name": "Unit 3 Notes - Routing Algorithms",
+          "size": "2.1 MB",
+          "type": "PDF",
+          "url": "#"
+        },
+        {
+          "name": "Unit 3 Notes - IP Addressing",
+          "size": "1.4 MB",
+          "type": "PDF",
+          "url": "#"
+        }
       ]
     },
     {
       "title": "Unit 4 - Transport Layer",
       "files": [
-        { "name": "Unit 4 Notes - TCP and UDP", "size": "3.0 MB", "type": "PDF", "url": "#" }
+        {
+          "name": "Unit 4 Notes - TCP and UDP",
+          "size": "3.0 MB",
+          "type": "PDF",
+          "url": "#"
+        }
       ]
     },
     {
       "title": "Unit 5 - Application Layer",
       "files": [
-        { "name": "Unit 5 Notes - DNS, HTTP, SMTP", "size": "2.5 MB", "type": "PDF", "url": "#" },
+        {
+          "name": "Unit 5 Notes - DNS, HTTP, SMTP",
+          "size": "2.5 MB",
+          "type": "PDF",
+          "url": "#"
+        },
         { "name": "Unit 5 Slides", "size": "3.8 MB", "type": "PPT", "url": "#" }
       ]
     },
     {
       "title": "Unit 6 - Network Security",
       "files": [
-        { "name": "Unit 6 Notes - Cryptography Basics", "size": "1.9 MB", "type": "PDF", "url": "#" },
-        { "name": "Important Questions - All Units", "size": "0.7 MB", "type": "DOC", "url": "#" }
+        {
+          "name": "Unit 6 Notes - Cryptography Basics",
+          "size": "1.9 MB",
+          "type": "PDF",
+          "url": "#"
+        },
+        {
+          "name": "Important Questions - All Units",
+          "size": "0.7 MB",
+          "type": "DOC",
+          "url": "#"
+        }
       ]
     }
   ],
@@ -50,9 +90,24 @@
       "title": "Practical 1: Study of Network Devices and Topologies",
       "desc": "Configure switches and routers, understand LAN and WAN topologies",
       "resources": [
-        { "type": "PDF",     "name": "Practical 1 Manual",                   "meta": "0.6 MB",          "url": "#" },
-        { "type": "YOUTUBE", "name": "Network Topologies Explained",         "meta": "YouTube · 12 min", "url": "https://www.youtube.com/watch?v=zbqrNg4C98U" },
-        { "type": "LINK",    "name": "Cisco Packet Tracer Download",         "meta": "cisco.com",        "url": "https://www.netacad.com/courses/packet-tracer" }
+        {
+          "type": "PDF",
+          "name": "Practical 1 Manual",
+          "meta": "0.6 MB",
+          "url": "#"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Network Topologies Explained",
+          "meta": "YouTube · 12 min",
+          "url": "https://www.youtube.com/watch?v=zbqrNg4C98U"
+        },
+        {
+          "type": "LINK",
+          "name": "Cisco Packet Tracer Download",
+          "meta": "cisco.com",
+          "url": "https://www.netacad.com/courses/packet-tracer"
+        }
       ]
     },
     {
@@ -60,9 +115,24 @@
       "title": "Practical 2: Packet Tracer — Basic Network Simulation",
       "desc": "Create and simulate a simple network using Cisco Packet Tracer",
       "resources": [
-        { "type": "PDF",     "name": "Practical 2 Manual",                   "meta": "0.8 MB",          "url": "#" },
-        { "type": "YOUTUBE", "name": "Packet Tracer Tutorial for Beginners", "meta": "YouTube · 18 min", "url": "https://www.youtube.com/watch?v=uYdgR1jSJPg" },
-        { "type": "ZIP",     "name": "Packet Tracer Starter Files",          "meta": "1.2 MB",          "url": "#" }
+        {
+          "type": "PDF",
+          "name": "Practical 2 Manual",
+          "meta": "0.8 MB",
+          "url": "#"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Packet Tracer Tutorial for Beginners",
+          "meta": "YouTube · 18 min",
+          "url": "https://www.youtube.com/watch?v=uYdgR1jSJPg"
+        },
+        {
+          "type": "ZIP",
+          "name": "Packet Tracer Starter Files",
+          "meta": "1.2 MB",
+          "url": "#"
+        }
       ]
     },
     {
@@ -70,9 +140,24 @@
       "title": "Practical 3: Subnetting and IP Address Configuration",
       "desc": "Practice VLSM subnetting and configure static IP addresses",
       "resources": [
-        { "type": "PDF",     "name": "Practical 3 Manual",                   "meta": "0.7 MB",          "url": "#" },
-        { "type": "YOUTUBE", "name": "Subnetting Made Easy",                 "meta": "YouTube · 22 min", "url": "https://www.youtube.com/watch?v=ecCuyq-Wprc" },
-        { "type": "DOC",     "name": "Subnetting Practice Worksheet",        "meta": "0.2 MB",          "url": "#" }
+        {
+          "type": "PDF",
+          "name": "Practical 3 Manual",
+          "meta": "0.7 MB",
+          "url": "#"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Subnetting Made Easy",
+          "meta": "YouTube · 22 min",
+          "url": "https://www.youtube.com/watch?v=ecCuyq-Wprc"
+        },
+        {
+          "type": "DOC",
+          "name": "Subnetting Practice Worksheet",
+          "meta": "0.2 MB",
+          "url": "#"
+        }
       ]
     },
     {
@@ -80,8 +165,18 @@
       "title": "Practical 4: Routing Protocols — RIP and OSPF",
       "desc": "Configure dynamic routing using RIP and OSPF in Packet Tracer",
       "resources": [
-        { "type": "PDF",     "name": "Practical 4 Manual",                   "meta": "0.9 MB",          "url": "#" },
-        { "type": "YOUTUBE", "name": "RIP vs OSPF Configuration Guide",      "meta": "YouTube · 25 min", "url": "https://www.youtube.com/watch?v=OqwHtfAiAGw" }
+        {
+          "type": "PDF",
+          "name": "Practical 4 Manual",
+          "meta": "0.9 MB",
+          "url": "#"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "RIP vs OSPF Configuration Guide",
+          "meta": "YouTube · 25 min",
+          "url": "https://www.youtube.com/watch?v=OqwHtfAiAGw"
+        }
       ]
     },
     {
@@ -89,9 +184,24 @@
       "title": "Practical 5: Socket Programming in C",
       "desc": "Implement TCP client-server communication using sockets in C",
       "resources": [
-        { "type": "PDF",     "name": "Practical 5 Manual",                   "meta": "1.1 MB",          "url": "#" },
-        { "type": "YOUTUBE", "name": "Socket Programming in C Tutorial",     "meta": "YouTube · 30 min", "url": "https://www.youtube.com/watch?v=LtXEMwSG5-8" },
-        { "type": "DOC",     "name": "Sample Code — TCP Client Server",      "meta": "0.1 MB",          "url": "#" }
+        {
+          "type": "PDF",
+          "name": "Practical 5 Manual",
+          "meta": "1.1 MB",
+          "url": "#"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Socket Programming in C Tutorial",
+          "meta": "YouTube · 30 min",
+          "url": "https://www.youtube.com/watch?v=LtXEMwSG5-8"
+        },
+        {
+          "type": "DOC",
+          "name": "Sample Code — TCP Client Server",
+          "meta": "0.1 MB",
+          "url": "#"
+        }
       ]
     },
     {
@@ -99,9 +209,24 @@
       "title": "Practical 6: Network Monitoring with Wireshark",
       "desc": "Use Wireshark and netstat to analyse network traffic and packets",
       "resources": [
-        { "type": "PDF",     "name": "Practical 6 Manual",                   "meta": "0.8 MB",          "url": "#" },
-        { "type": "YOUTUBE", "name": "Wireshark for Beginners",              "meta": "YouTube · 20 min", "url": "https://www.youtube.com/watch?v=TkCSr30UojM" },
-        { "type": "LINK",    "name": "Wireshark Official Download",          "meta": "wireshark.org",   "url": "https://www.wireshark.org/download.html" }
+        {
+          "type": "PDF",
+          "name": "Practical 6 Manual",
+          "meta": "0.8 MB",
+          "url": "#"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Wireshark for Beginners",
+          "meta": "YouTube · 20 min",
+          "url": "https://www.youtube.com/watch?v=TkCSr30UojM"
+        },
+        {
+          "type": "LINK",
+          "name": "Wireshark Official Download",
+          "meta": "wireshark.org",
+          "url": "https://www.wireshark.org/download.html"
+        }
       ]
     }
   ],
@@ -116,7 +241,21 @@
     { "year": "2020", "exam": "Nov / Dec 2020", "url": "#" }
   ],
   "books": [
-    { "title": "Computer Networks", "author": "Andrew S. Tanenbaum", "edition": "5th Edition", "price": "Rs. 620", "amazonUrl": "#", "flipkartUrl": "#" },
-    { "title": "Data Communications and Networking", "author": "Behrouz A. Forouzan", "edition": "5th Edition", "price": "Rs. 580", "amazonUrl": "#", "flipkartUrl": "#" }
+    {
+      "title": "Computer Networks",
+      "author": "Andrew S. Tanenbaum",
+      "edition": "5th Edition",
+      "price": "Rs. 620",
+      "amazonUrl": "#",
+      "flipkartUrl": "#"
+    },
+    {
+      "title": "Data Communications and Networking",
+      "author": "Behrouz A. Forouzan",
+      "edition": "5th Edition",
+      "price": "Rs. 580",
+      "amazonUrl": "#",
+      "flipkartUrl": "#"
+    }
   ]
 }

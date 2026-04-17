@@ -1,0 +1,83 @@
+{
+  "code": "BSC-101-BES",
+  "name": "Engineering Mathematics I",
+  "pattern": "2024",
+  "units": [
+    {
+      "title": "Unit 1 - Single Variable Calculus",
+      "files": [
+        {
+          "name": "Unit 1 Notes (Handwritten)",
+          "size": "6 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+        }
+      ]
+    },
+    {
+      "title": "Unit 2 - Multivariable Calculus - Partial Differentiation",
+      "files": []
+    },
+    {
+      "title": "Unit 3 - Applications of Partial Differentiation",
+      "files": []
+    },
+    {
+      "title": "Unit 4 - Linear Algebra - Matrices and System of Linear Equations",
+      "files": []
+    },
+    {
+      "title": "Unit 5 - Linear Algebra - Eigen Values, Eigen Vectors and Diagonalization",
+      "files": []
+    },
+    { "title": "Extra Materials", "files": [] }
+  ],
+  "practicals": [
+    {
+      "num": 1,
+      "title": "Practical 1: Title of Practical",
+      "desc": "Brief description of what students will do in this practical",
+      "resources": [
+        {
+          "type": "PDF",
+          "name": "Practical 1 Manual",
+          "meta": "X MB",
+          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Tutorial Video Title",
+          "meta": "YouTube · X min",
+          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+        },
+        {
+          "type": "LINK",
+          "name": "Reference Website",
+          "meta": "domain.com",
+          "url": "https://example.com"
+        },
+        {
+          "type": "DOC",
+          "name": "Sample Code or Worksheet",
+          "meta": "X MB",
+          "url": "#"
+        },
+        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+      ]
+    }
+  ],
+  "pyq": [
+    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
+    { "year": "2025", "exam": "April / May 2025", "url": "#" }
+  ],
+  "books": [
+    {
+      "title": "Book Title",
+      "author": "Author Name",
+      "edition": "Edition",
+      "price": "Rs. 000",
+      "amazonUrl": "#",
+      "flipkartUrl": "#"
+    }
+  ]
+}
