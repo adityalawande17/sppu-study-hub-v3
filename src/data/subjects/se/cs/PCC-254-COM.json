@@ -1,71 +1,76 @@
 {
   "code": "PCC-254-COM",
-  "name": "Subject Name Here",
+  "name": "Database Management Laboratory",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
-  ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
+      "title": "Practical 1: Case Study and ER Diagram",
+      "desc": "Develop a case study and design its Entity Relationship diagram. Convert the ER model into a relational model.",
+      "resources": []
+    },
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "num": 2,
+      "title": "Practical 2: SQL DDL Commands",
+      "desc": "Write and execute SQL Data Definition Language commands such as CREATE, ALTER, DROP, RENAME, and TRUNCATE. Insert data into tables and apply constraints like NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, and CHECK.",
+      "resources": []
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: SQL Queries (DML, DCL, TCL)",
+      "desc": "Design and execute SQL queries for data manipulation using INSERT, UPDATE, DELETE, access control using GRANT and REVOKE, and transaction control using COMMIT, ROLLBACK, SAVEPOINT, and START TRANSACTION.",
+      "resources": []
+    },
+    {
+      "num": 4,
+      "title": "Practical 4: Aggregate Functions and Grouping",
+      "desc": "Use aggregate functions with GROUP BY and HAVING clauses to retrieve summarized data from the database.",
+      "resources": []
+    },
+    {
+      "num": 5,
+      "title": "Practical 5: JOIN Operations and Views",
+      "desc": "Perform different types of JOIN operations to extract relationships between tables and create and manage database views.",
+      "resources": []
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: Subqueries",
+      "desc": "Write and execute subqueries to retrieve data from one table based on another.",
+      "resources": []
+    },
+    {
+      "num": 7,
+      "title": "Practical 7: Stored Procedures and Cursors",
+      "desc": "Create and execute stored procedures or functions using cursors.",
+      "resources": []
+    },
+    {
+      "num": 8,
+      "title": "Practical 8: Database Triggers",
+      "desc": "Implement and test triggers to maintain data integrity in the database.",
+      "resources": []
+    },
+    {
+      "num": 9,
+      "title": "Practical 9: CRUD Operations using MongoDB",
+      "desc": "Design and implement Create, Read, Update, and Delete operations using MongoDB. Use save methods and logical operators where necessary.",
+      "resources": []
+    },
+    {
+      "num": 10,
+      "title": "Practical 10: Aggregation and Indexing in MongoDB",
+      "desc": "Design and execute MongoDB queries using aggregation and indexing techniques with suitable examples.",
+      "resources": []
+    },
+    {
+      "num": 11,
+      "title": "Practical 11: Database Application Development",
+      "desc": "Develop an application using database concepts. Follow Software Development Life Cycle, use frontend and backend technologies, perform testing, and submit a complete project report including design, implementation, and documentation.",
+      "resources": []
     }
-  ]
+  ],
+  "pyq": [],
+  "books": []
 }

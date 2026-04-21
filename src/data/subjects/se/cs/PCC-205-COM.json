@@ -1,71 +1,100 @@
 {
   "code": "PCC-205-COM",
-  "name": "Subject Name Here",
+  "name": "Object Oriented Programming and Computer Graphics",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
-  ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
+      "title": "Practical 1: Implement a robust Java calculator program",
+      "desc": "Implement a robust Java calculator program that captures user input dynamically, processes mathematical operations using conditional logic and looping constructs, and ensures efficient error handling.",
+      "resources": []
+    },
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "num": 2,
+      "title": "Practical 2: E-commerce order processing system",
+      "desc": "Develop a Java program for an E-commerce order processing system where some products are initialized through multiple constructors and overloaded constructors. Users can input product details manually, the system computes total order cost dynamically, applies discount policies based on conditions, and presents a detailed invoice summarizing the purchase.",
+      "resources": []
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: Hotel room booking system",
+      "desc": "Develop a Java program that implements a simple hotel room booking system using two dimensional arrays. The system allows users to view available and booked rooms, book a room by selecting a floor and room number, and exit the system when finished.",
+      "resources": []
+    },
+    {
+      "num": 4,
+      "title": "Practical 4: Single inheritance demonstration",
+      "desc": "Create a Java program demonstrating single inheritance where a subclass extends a superclass and calls its methods.",
+      "resources": []
+    },
+    {
+      "num": 5,
+      "title": "Practical 5: Multiple inheritance using interface",
+      "desc": "Implement multiple inheritance using interface in Java to demonstrate polymorphism.",
+      "resources": []
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: ATM simulation with exception handling",
+      "desc": "Develop a Java program for simulation of a real-time application such as an ATM machine with functionalities like checking account balance, withdrawing, and depositing money. Use try, catch, and finally blocks to handle exceptions such as insufficient funds and invalid input, ensuring smooth execution.",
+      "resources": []
+    },
+    {
+      "num": 7,
+      "title": "Practical 7: Multithreaded chat system",
+      "desc": "Create a multi-threaded Java application simulating a real-time chat system in which each user (thread) sends and receives messages. Use isAlive() to check thread status and join() for synchronization. Implement thread priorities and demonstrate thread suspension, resumption, and stopping.",
+      "resources": []
+    },
+    {
+      "num": 8,
+      "title": "Practical 8: Line drawing algorithms",
+      "desc": "Write a C, C++ or Java program to draw patterns using DDA line drawing algorithm for rectangles with dotted and thick line styles, and Bresenham's line drawing algorithm for diamond shapes with dashed and solid line styles.",
+      "resources": []
+    },
+    {
+      "num": 9,
+      "title": "Practical 9: Circle drawing algorithms",
+      "desc": "Write a menu driven program to draw circles using DDA, Bresenham’s and Midpoint circle drawing algorithms with styles such as solid, dotted and dashed.",
+      "resources": []
+    },
+    {
+      "num": 10,
+      "title": "Practical 10: Polygon filling algorithms",
+      "desc": "Write a menu driven program to draw a concave polygon and fill it using scan fill, flood fill and seed fill algorithms.",
+      "resources": []
+    },
+    {
+      "num": 11,
+      "title": "Practical 11: Sutherland-Hodgeman polygon clipping",
+      "desc": "Write a program to implement the Sutherland-Hodgeman algorithm for clipping a polygon by providing vertices and clipping pattern interactively.",
+      "resources": []
+    },
+    {
+      "num": 12,
+      "title": "Practical 12: Cohen-Sutherland line clipping",
+      "desc": "Write a program to implement the Cohen-Sutherland line clipping algorithm.",
+      "resources": []
+    },
+    {
+      "num": 13,
+      "title": "Practical 13: 2D transformations",
+      "desc": "Write a program to implement translation, rotation, shear and scaling transformations on a 2D object about X-axis and Y-axis.",
+      "resources": []
+    },
+    {
+      "num": 14,
+      "title": "Practical 14: Transformations on shapes",
+      "desc": "Write a program to implement translation, shear, rotation and scaling transformations on an equilateral triangle and a rhombus.",
+      "resources": []
+    },
+    {
+      "num": 15,
+      "title": "Practical 15: Rotation about arbitrary point",
+      "desc": "Write a program to implement rotation of a 2D object about X-axis and an arbitrary point.",
+      "resources": []
     }
-  ]
+  ],
+  "pyq": [],
+  "books": []
 }

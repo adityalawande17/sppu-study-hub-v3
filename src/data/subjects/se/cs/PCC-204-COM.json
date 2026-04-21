@@ -1,30 +1,301 @@
 {
   "code": "PCC-204-COM",
-  "name": "Subject Name Here",
+  "name": "Data Structures Laboratory",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
+      "title": "Practical 1: Write a Python program to manage the borrowing records of books in a library, Implement the following functionalities...",
+      "desc": "",
+      "resources": [
+        {
+          "type": "PDF",
+          "name": "Practical 1 Manual",
+          "meta": "X MB",
+          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Tutorial Video Title",
+          "meta": "YouTube · X min",
+          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+        },
+        {
+          "type": "LINK",
+          "name": "Reference Website",
+          "meta": "domain.com",
+          "url": "https://example.com"
+        },
+        {
+          "type": "DOC",
+          "name": "Sample Code or Worksheet",
+          "meta": "X MB",
+          "url": "#"
+        },
+        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+      ]
+    },
+    {
+      "num": 2,
+      "title": "Practical 2: In an e-commerce system, customer account IDs are stored in a list, and you are tasked with writing a program that implements the following:\n• Linear Search: Check if a particular customer account ID exists in the list.\n• Binary Search: Implement binary search to find if a customer account ID exists, improving the search efficiency over the basic linear search.",
+      "desc": "",
+      "resources": [
+        {
+          "type": "PDF",
+          "name": "Practical 1 Manual",
+          "meta": "X MB",
+          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Tutorial Video Title",
+          "meta": "YouTube · X min",
+          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+        },
+        {
+          "type": "LINK",
+          "name": "Reference Website",
+          "meta": "domain.com",
+          "url": "https://example.com"
+        },
+        {
+          "type": "DOC",
+          "name": "Sample Code or Worksheet",
+          "meta": "X MB",
+          "url": "#"
+        },
+        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+      ]
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: In a company, employee salaries are stored in a list as floating-point numbers. Write a....",
+      "desc": "",
+      "resources": [
+        {
+          "type": "PDF",
+          "name": "Practical 1 Manual",
+          "meta": "X MB",
+          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Tutorial Video Title",
+          "meta": "YouTube · X min",
+          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+        },
+        {
+          "type": "LINK",
+          "name": "Reference Website",
+          "meta": "domain.com",
+          "url": "https://example.com"
+        },
+        {
+          "type": "DOC",
+          "name": "Sample Code or Worksheet",
+          "meta": "X MB",
+          "url": "#"
+        },
+        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Practical 4:  Implementing a real-time undo/redo system for a text editing application....",
+      "desc": "",
+      "resources": [
+        {
+          "type": "PDF",
+          "name": "Practical 1 Manual",
+          "meta": "X MB",
+          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Tutorial Video Title",
+          "meta": "YouTube · X min",
+          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+        },
+        {
+          "type": "LINK",
+          "name": "Reference Website",
+          "meta": "domain.com",
+          "url": "https://example.com"
+        },
+        {
+          "type": "DOC",
+          "name": "Sample Code or Worksheet",
+          "meta": "X MB",
+          "url": "#"
+        },
+        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+      ]
+    },
+    {
+      "num": 5,
+      "title": "Practical 5: Implement a real-time event processing system using a Queue data structure.....",
+      "desc": "",
+      "resources": [
+        {
+          "type": "PDF",
+          "name": "Practical 1 Manual",
+          "meta": "X MB",
+          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Tutorial Video Title",
+          "meta": "YouTube · X min",
+          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+        },
+        {
+          "type": "LINK",
+          "name": "Reference Website",
+          "meta": "domain.com",
+          "url": "https://example.com"
+        },
+        {
+          "type": "DOC",
+          "name": "Sample Code or Worksheet",
+          "meta": "X MB",
+          "url": "#"
+        },
+        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: A call center receives incoming calls, and each call is assigned a unique customer ID....",
+      "desc": "",
+      "resources": [
+        {
+          "type": "PDF",
+          "name": "Practical 1 Manual",
+          "meta": "X MB",
+          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Tutorial Video Title",
+          "meta": "YouTube · X min",
+          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+        },
+        {
+          "type": "LINK",
+          "name": "Reference Website",
+          "meta": "domain.com",
+          "url": "https://example.com"
+        },
+        {
+          "type": "DOC",
+          "name": "Sample Code or Worksheet",
+          "meta": "X MB",
+          "url": "#"
+        },
+        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+      ]
+    },
+    {
+      "num": 7,
+      "title": "Practical 7:  Create a Student Record Management System using linked list....",
+      "desc": "",
+      "resources": [
+        {
+          "type": "PDF",
+          "name": "Practical 1 Manual",
+          "meta": "X MB",
+          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Tutorial Video Title",
+          "meta": "YouTube · X min",
+          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+        },
+        {
+          "type": "LINK",
+          "name": "Reference Website",
+          "meta": "domain.com",
+          "url": "https://example.com"
+        },
+        {
+          "type": "DOC",
+          "name": "Sample Code or Worksheet",
+          "meta": "X MB",
+          "url": "#"
+        },
+        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+      ]
+    },
+    {
+      "num": 8,
+      "title": "Practical 8:  Implement a hash table of size 10 and use the division method....",
+      "desc": "",
+      "resources": [
+        {
+          "type": "PDF",
+          "name": "Practical 1 Manual",
+          "meta": "X MB",
+          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Tutorial Video Title",
+          "meta": "YouTube · X min",
+          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+        },
+        {
+          "type": "LINK",
+          "name": "Reference Website",
+          "meta": "domain.com",
+          "url": "https://example.com"
+        },
+        {
+          "type": "DOC",
+          "name": "Sample Code or Worksheet",
+          "meta": "X MB",
+          "url": "#"
+        },
+        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+      ]
+    },
+    {
+      "num": 9,
+      "title": "Practical 9: Design and implement a hash table of fixed size....",
+      "desc": "",
+      "resources": [
+        {
+          "type": "PDF",
+          "name": "Practical 1 Manual",
+          "meta": "X MB",
+          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
+        },
+        {
+          "type": "YOUTUBE",
+          "name": "Tutorial Video Title",
+          "meta": "YouTube · X min",
+          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
+        },
+        {
+          "type": "LINK",
+          "name": "Reference Website",
+          "meta": "domain.com",
+          "url": "https://example.com"
+        },
+        {
+          "type": "DOC",
+          "name": "Sample Code or Worksheet",
+          "meta": "X MB",
+          "url": "#"
+        },
+        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+      ]
+    },
+    {
+      "num": 10,
+      "title": "Practical 10: Implement a hash table with extendible hashing. The hash....",
+      "desc": "",
       "resources": [
         {
           "type": "PDF",
@@ -54,18 +325,7 @@
       ]
     }
   ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
-    {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
-    }
-  ]
+
+  "pyq": [],
+  "books": []
 }

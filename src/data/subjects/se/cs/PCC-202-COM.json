@@ -1,10 +1,10 @@
 {
   "code": "PCC-202-COM",
-  "name": "Subject Name Here",
+  "name": "Object Oriented Programming and Computer Graphics",
   "pattern": "2024",
   "units": [
     {
-      "title": "Unit 1 - Title",
+      "title": "Unit 1 - Introduction to OOP Concepts and Control Structure",
       "files": [
         {
           "name": "Unit 1 Notes",
@@ -14,46 +14,22 @@
         }
       ]
     },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
-  "practicals": [
     {
-      "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
+      "title": "Unit 2 - Introduction to Classes and Objects and Arrays",
+      "files": []
+    },
+    {
+      "title": "Unit 3 - Inheritance and Polymorphism Exception Handling and Multithreading",
+      "files": []
+    },
+    {
+      "title": "Unit 4 - Graphics Primitives, Scan Conversion, Windowing and Clipping",
+      "files": []
+    },
+    { "title": "Unit 5 - 2D, 3D Transformations and Projections", "files": [] },
+    { "title": "Extra Material", "files": [] }
   ],
+  "practicals": [],
   "pyq": [
     { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
     { "year": "2024", "exam": "April / May 2024", "url": "#" }

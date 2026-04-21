@@ -1,10 +1,10 @@
 {
   "code": "PCC-201-COM",
-  "name": "Subject Name Here",
+  "name": "Data Structures",
   "pattern": "2024",
   "units": [
     {
-      "title": "Unit 1 - Title",
+      "title": "Unit 1 - Introduction to Data Structures and Algorithms",
       "files": [
         {
           "name": "Unit 1 Notes",
@@ -14,58 +14,36 @@
         }
       ]
     },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
-  "practicals": [
     {
-      "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
+      "title": "Unit 2 - Linear Data Structures, searching and sorting",
+      "files": []
+    },
+    { "title": "Unit 3 - Stacks, Queues and Linked Lists", "files": [] },
+    { "title": "Unit 4 - Hashing", "files": [] },
+    { "title": "Unit 5 - Graphs and Trees", "files": [] },
+    { "title": "Extra Material", "files": [] }
   ],
+  "practicals": [],
   "pyq": [
     { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
     { "year": "2024", "exam": "April / May 2024", "url": "#" }
   ],
   "books": [
     {
-      "title": "Book Title",
-      "author": "Author Name",
+      "title": "Cracking The Coding Interview",
+      "author": "Gayle Laakmann McDowell",
       "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "price": "Rs. 405",
+      "amazonUrl": "https://amzn.in/d/07GlRKWL",
+      "flipkartUrl": "https://amzn.in/d/07GlRKWL"
+    },
+    {
+      "title": "Data Structures and Algorithms Made Easy",
+      "author": "Narashimha Karumanchi",
+      "edition": "Edition",
+      "price": "Rs. 405",
+      "amazonUrl": "https://amzn.in/d/0hvCiCpC",
+      "flipkartUrl": "https://amzn.in/d/0hvCiCpC"
     }
   ]
 }

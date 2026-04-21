@@ -1,71 +1,76 @@
 {
   "code": "PCC-255-COM",
-  "name": "Subject Name Here",
+  "name": "Microprocessor Lab",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
-  ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
+      "title": "Practical 1: Accept and display hexadecimal numbers",
+      "desc": "Write an X86/64 ALP to accept five 64-bit hexadecimal numbers from the user, store them in an array, and display the accepted numbers.",
+      "resources": []
+    },
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "num": 2,
+      "title": "Practical 2: String length calculation",
+      "desc": "Write an X86/64 ALP to accept a string and display its length.",
+      "resources": []
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: Count positive and negative numbers",
+      "desc": "Write an X86/64 ALP to count the number of positive and negative numbers from an array.",
+      "resources": []
+    },
+    {
+      "num": 4,
+      "title": "Practical 4: Non-overlapped block transfer",
+      "desc": "Write an X86/64 ALP to perform non-overlapped block transfer without using string specific instructions. The data block can be defined in the data segment.",
+      "resources": []
+    },
+    {
+      "num": 5,
+      "title": "Practical 5: Overlapped block transfer",
+      "desc": "Write an X86/64 ALP to perform overlapped block transfer using string specific instructions. The data block can be defined in the data segment.",
+      "resources": []
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: Multiplication using successive addition",
+      "desc": "Write an X86/64 ALP to perform multiplication of two 8-bit hexadecimal numbers using the successive addition method.",
+      "resources": []
+    },
+    {
+      "num": 7,
+      "title": "Practical 7: Find largest number",
+      "desc": "Write an X86/64 ALP to find the largest among given Byte, Word, Double Word, or 64-bit numbers.",
+      "resources": []
+    },
+    {
+      "num": 8,
+      "title": "Practical 8: Arithmetic operations using switch case",
+      "desc": "Write a switch case driven X86/64 ALP to perform 64-bit hexadecimal arithmetic operations such as addition, subtraction, multiplication, and division using suitable macros. Define a procedure for each operation.",
+      "resources": []
+    },
+    {
+      "num": 9,
+      "title": "Practical 9: Hex to BCD conversion",
+      "desc": "Write an X86/64 ALP to convert a 4-digit hexadecimal number into its equivalent BCD number.",
+      "resources": []
+    },
+    {
+      "num": 10,
+      "title": "Practical 10: BCD to Hex conversion",
+      "desc": "Write an X86/64 ALP to convert a 5-digit BCD number into its equivalent hexadecimal number.",
+      "resources": []
+    },
+    {
+      "num": 11,
+      "title": "Practical 11: Study of motherboard",
+      "desc": "Study the motherboard by understanding its components such as block diagram, processor socket, expansion slots, SATA, RAM, form factor, BIOS, internal connectors, external ports, peripherals, data transfer, display, audio, networking, overclocking, and cooling.",
+      "resources": []
     }
-  ]
+  ],
+  "pyq": [],
+  "books": []
 }
