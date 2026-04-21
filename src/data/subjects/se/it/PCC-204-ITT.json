@@ -1,71 +1,70 @@
 {
   "code": "PCC-204-ITT",
-  "name": "Subject Name Here",
+  "name": "Data Structures and Algorithms Laboratory",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
-  ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
+      "title": "Practical 1: Searching and Sorting - Student Database",
+      "desc": "Design a program to maintain a student database that stores student details using dynamic memory allocation. Expand the list using realloc as new entries are added. Implement Linear Search and Binary Search to find student records by ID. Implement sorting algorithms like Bubble Sort, Selection Sort, or Insertion Sort to sort by Name and CGPA. Analyze performance before and after sorting.",
+      "resources": []
+    },
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "num": 2,
+      "title": "Practical 2: Stack ADT using Linked List",
+      "desc": "Implement stack as an abstract data type using singly linked list and use it for conversion of infix expression to postfix and prefix.",
+      "resources": []
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: Circular Queue Implementation",
+      "desc": "Implement Circular Queue using array. Perform insertion (enqueue), deletion (dequeue), and display operations. Handle queue full condition using fixed size array.",
+      "resources": []
+    },
+    {
+      "num": 4,
+      "title": "Practical 4: Binary Search Tree Operations",
+      "desc": "Implement Binary Search Tree and perform operations such as insertion (handling duplicates), deletion, search, traversal, depth calculation, mirror image, copying tree, displaying parent-child nodes, leaf nodes, and level-wise traversal.",
+      "resources": []
+    },
+    {
+      "num": 5,
+      "title": "Practical 5: Graph - Minimum Spanning Tree",
+      "desc": "Represent a college campus as a graph using adjacency list or matrix. Nodes represent departments and edges represent distances. Find Minimum Spanning Tree using Kruskal’s and Prim’s algorithm.",
+      "resources": []
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: Heap Sort Algorithm",
+      "desc": "Design and implement Heap Sort algorithm to sort an array in ascending order using heap data structure (min-heap or max-heap). Analyze time and space complexity.",
+      "resources": []
+    },
+    {
+      "num": 7,
+      "title": "Practical 7: Merge Sort (Divide and Conquer)",
+      "desc": "Sort online orders based on delivery time using Merge Sort algorithm to prioritize faster deliveries.",
+      "resources": []
+    },
+    {
+      "num": 8,
+      "title": "Practical 8: Fractional Knapsack (Greedy Algorithm)",
+      "desc": "Maximize profit by selecting parcels (including fractional parts) within a weight limit using the Fractional Knapsack greedy strategy.",
+      "resources": []
+    },
+    {
+      "num": 9,
+      "title": "Practical 9: Naive String Matching Algorithm",
+      "desc": "Implement Naive String Matching Algorithm to find all occurrences of a pattern in a given text string.",
+      "resources": []
+    },
+    {
+      "num": 10,
+      "title": "Practical 10: AI Search Algorithm - Maze Navigation",
+      "desc": "Design and implement a maze navigation system using AI search algorithms to find an optimal path from start to goal in static and dynamic mazes with visualization.",
+      "resources": []
     }
-  ]
+  ],
+  "pyq": [],
+  "books": []
 }

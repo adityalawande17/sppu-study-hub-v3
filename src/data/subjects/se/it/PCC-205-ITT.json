@@ -1,71 +1,58 @@
 {
   "code": "PCC-205-ITT",
-  "name": "Subject Name Here",
+  "name": "Object Oriented Programming ",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
-  ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
+      "title": "Practical 1: Classes and Objects - Complex Number Operations",
+      "desc": "Design a class Complex with data members for real and imaginary parts. Provide default and parameterized constructors. Write a program to perform arithmetic operations on two complex numbers.",
+      "resources": []
+    },
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "num": 2,
+      "title": "Practical 2: Polymorphism using Publication System",
+      "desc": "Identify commonalities and differences between Publication, Book, and Magazine classes. Use title, price, and copies as common attributes and saleCopy() as a common method. Include author and orderCopies() in Book, and orderQty, currentIssue, receiveIssue() in Magazine. Write a program to order book copies and display total publication sales.",
+      "resources": []
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: Inheritance - Employee Payroll System",
+      "desc": "Design an inheritance hierarchy for an employee payroll system. Create an Employee class with Emp_name, Emp_id, Address, Mail_id, and Mobile_no. Derive Programmer, Team Lead, Assistant Project Manager, and Project Manager classes. Calculate salary components like DA (97%), HRA (10%), PF (12%), and Staff Club Fund (0.1%).",
+      "resources": []
+    },
+    {
+      "num": 4,
+      "title": "Practical 4: Dynamic Binding - Shape Area Calculation",
+      "desc": "Design a base class Shape with a method compute_area(). Derive Triangle and Rectangle classes. Override compute_area() in derived classes. Use dynamic binding to calculate and display area based on user input.",
+      "resources": []
+    },
+    {
+      "num": 5,
+      "title": "Practical 5: Interface - Vehicle System",
+      "desc": "Implement an interface for vehicles with methods gearChange(), speedUp(), and applyBrakes(). Create classes Bicycle, Car, and Bike implementing these methods in their own way.",
+      "resources": []
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: Exception Handling in Java",
+      "desc": "Create a program to handle ArithmeticException, ArrayIndexOutOfBoundsException, and NumberFormatException. The user enters two numbers, performs division, and handles invalid input and division by zero.",
+      "resources": []
+    },
+    {
+      "num": 7,
+      "title": "Practical 7: Generics (Templates) in Collections",
+      "desc": "Write a generic program using collection classes to count elements with specific properties such as even, odd, prime numbers, or palindromes.",
+      "resources": []
+    },
+    {
+      "num": 8,
+      "title": "Practical 8: File Handling - Student Database System",
+      "desc": "Implement a student record database using file handling with operations like create, display, delete, update, and search. Each student record contains Student_id, Name, Roll_no, Class, Marks, and Address.",
+      "resources": []
     }
-  ]
+  ],
+  "pyq": [],
+  "books": []
 }

@@ -1,71 +1,58 @@
 {
   "code": "PCC-254-ITT",
-  "name": "Subject Name Here",
+  "name": "Database Management System Lab",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
-  ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
+      "title": "Practical 1: Study of MySQL Open Source Software",
+      "desc": "Study MySQL open source software and discuss its characteristics such as efficiency, scalability, performance, and transactional properties.",
+      "resources": []
+    },
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "num": 2,
+      "title": "Practical 2: Study of SQLite",
+      "desc": "Study SQLite, its uses, and comparison with SQL database systems.",
+      "resources": []
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: Database Design and ER Diagram",
+      "desc": "Design a database with at least two entities and relationships. Draw suitable ER/EER diagram for the system.",
+      "resources": []
+    },
+    {
+      "num": 4,
+      "title": "Practical 4: Database Implementation using DDL and DML",
+      "desc": "Implement database using DDL and DML statements. Create tables with primary key, foreign key, and constraints.",
+      "resources": []
+    },
+    {
+      "num": 5,
+      "title": "Practical 5: SQL Operations",
+      "desc": "Perform operations such as ALTER, DROP, INDEX, relational operators, pattern matching, aggregate functions with GROUP BY and HAVING clauses.",
+      "resources": []
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: Advanced SQL Queries",
+      "desc": "Perform nested queries, set operators, views, and sorting operations in SQL.",
+      "resources": []
+    },
+    {
+      "num": 7,
+      "title": "Practical 7: PL/SQL Procedures and Functions",
+      "desc": "Write and execute PL/SQL stored procedures and functions to perform database operations and demonstrate their usage.",
+      "resources": []
+    },
+    {
+      "num": 8,
+      "title": "Practical 8: Database Triggers",
+      "desc": "Write and execute database triggers to maintain data integrity and automate database actions.",
+      "resources": []
     }
-  ]
+  ],
+  "pyq": [],
+  "books": []
 }

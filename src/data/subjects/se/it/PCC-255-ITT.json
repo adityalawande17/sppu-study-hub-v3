@@ -1,71 +1,58 @@
 {
   "code": "PCC-255-ITT",
-  "name": "Subject Name Here",
+  "name": "Computer Graphics and Lab",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
-  ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
+      "title": "Practical 1: Line Drawing Algorithms",
+      "desc": "Write a program to draw a line using DDA and Bresenham’s line drawing algorithms.",
+      "resources": []
+    },
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "num": 2,
+      "title": "Practical 2: Circle Drawing Algorithm",
+      "desc": "Write a program to draw a circle using the Midpoint circle drawing algorithm.",
+      "resources": []
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: Polygon Filling using Scanline Algorithm",
+      "desc": "Write a program to draw a concave polygon and fill it using the scanline fill algorithm with a desired color.",
+      "resources": []
+    },
+    {
+      "num": 4,
+      "title": "Practical 4: Cohen-Sutherland Line Clipping",
+      "desc": "Write a program to implement the Cohen-Sutherland line clipping algorithm.",
+      "resources": []
+    },
+    {
+      "num": 5,
+      "title": "Practical 5: 2D Transformations with Operator Overloading",
+      "desc": "Draw a 2D object such as a triangle or rectangle and perform translation, rotation, and scaling using operator overloading.",
+      "resources": []
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: Fractal Pattern Generation",
+      "desc": "Write a program to generate fractal patterns such as snowflake, Hilbert curve, or Koch curve.",
+      "resources": []
+    },
+    {
+      "num": 7,
+      "title": "Practical 7: Interactive Graphics Application",
+      "desc": "Create an interactive graphical application such as bouncing ball, moving car, or simple game using object-oriented concepts like inheritance and polymorphism.",
+      "resources": []
+    },
+    {
+      "num": 8,
+      "title": "Practical 8: Mini Project - Animation Clip Creation",
+      "desc": "Create an animation clip such as animated scenes, character movement, or game cutscene using open-source tools like Blender, OpenToonz, or Pencil2D.",
+      "resources": []
     }
-  ]
+  ],
+  "pyq": [],
+  "books": []
 }

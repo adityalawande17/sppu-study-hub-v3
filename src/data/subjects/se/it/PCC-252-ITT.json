@@ -1,10 +1,10 @@
 {
   "code": "PCC-252-ITT",
-  "name": "Subject Name Here",
+  "name": "Computer Graphics",
   "pattern": "2024",
   "units": [
     {
-      "title": "Unit 1 - Title",
+      "title": "Unit 1 - Graphics Primitives and OpenGL Basics",
       "files": [
         {
           "name": "Unit 1 Notes",
@@ -14,46 +14,19 @@
         }
       ]
     },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
-  "practicals": [
     {
-      "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
+      "title": "Unit 2 - Rasterization, Filling, and Clipping Algorithms",
+      "files": []
+    },
+    { "title": "Unit 3 - 2D, 3D Transformations and Projections", "files": [] },
+    { "title": "Unit 4 - Color, Shading, and Hidden Surfaces", "files": [] },
+    {
+      "title": "Unit 5 - Curves, Fractals, and Introduction to Animation",
+      "files": []
+    },
+    { "title": "Extra Material", "files": [] }
   ],
+  "practicals": [],
   "pyq": [
     { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
     { "year": "2024", "exam": "April / May 2024", "url": "#" }
