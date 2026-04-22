@@ -1,71 +1,138 @@
 {
   "code": "PCC-255-AID",
-  "name": "Subject Name Here",
+  "name": "Data Science Laboratory",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
+      "title": "Practical 1: Linear Algebra using Python",
+      "desc": "Create a 3x3 matrix, compute determinant and inverse, and solve linear equations using NumPy.",
+      "resources": []
+    },
+    {
+      "num": 2,
+      "title": "Practical 2: Probability and Statistics using Python",
+      "desc": "Generate normal distribution, compute statistical measures, and simulate probability experiments using NumPy, SciPy, and Matplotlib.",
+      "resources": []
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: Data Analysis using Public Dataset",
+      "desc": "Analyze a dataset from Kaggle or UCI repository, perform filtering, grouping, and aggregation operations.",
       "resources": [
         {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
+          "type": "LINK",
+          "name": "Kaggle",
+          "meta": "kaggle.com",
+          "url": "https://www.kaggle.com"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "title": "Practical 4: Titanic Dataset Analysis",
+      "desc": "Perform data preprocessing, visualization, and analysis on Titanic dataset using Pandas and Matplotlib/Seaborn.",
+      "resources": [
         {
           "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+          "name": "Titanic Dataset",
+          "meta": "kaggle.com",
+          "url": "https://www.kaggle.com/datasets/yasserh/titanic-dataset"
+        }
       ]
-    }
-  ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
+    },
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "num": 5,
+      "title": "Practical 5: Linear Regression Model",
+      "desc": "Implement linear regression to predict house prices using Boston Housing dataset.",
+      "resources": [
+        {
+          "type": "LINK",
+          "name": "Boston Housing Dataset",
+          "meta": "kaggle.com",
+          "url": "https://www.kaggle.com/datasets/altavish/boston-housing-dataset"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: Logistic Regression Model",
+      "desc": "Implement logistic regression to classify spam emails using SpamBase dataset.",
+      "resources": [
+        {
+          "type": "LINK",
+          "name": "SpamBase Dataset",
+          "meta": "kaggle.com",
+          "url": "https://www.kaggle.com/datasets/colormap/spambase"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "title": "Practical 7: Recommendation System",
+      "desc": "Build a movie recommendation system using MovieLens dataset.",
+      "resources": []
+    },
+    {
+      "num": 8,
+      "title": "Practical 8: Uber Fare Prediction",
+      "desc": "Perform preprocessing, outlier detection, correlation analysis, and regression modeling on Uber dataset.",
+      "resources": [
+        {
+          "type": "LINK",
+          "name": "Uber Dataset",
+          "meta": "kaggle.com",
+          "url": "https://www.kaggle.com/datasets/yasserh/uber-fares-dataset"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "title": "Practical 9: Sales Dashboard using Power BI",
+      "desc": "Create an interactive dashboard for sales analysis using Power BI.",
+      "resources": [
+        {
+          "type": "LINK",
+          "name": "Retail Sales Dataset",
+          "meta": "kaggle.com",
+          "url": "https://www.kaggle.com/datasets/mohammadtalib786/retail-sales-dataset"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "title": "Practical 10: HR Analytics Dashboard",
+      "desc": "Design HR analytics dashboard to analyze employee metrics and attrition.",
+      "resources": [
+        {
+          "type": "LINK",
+          "name": "HR Analytics Dataset",
+          "meta": "kaggle.com",
+          "url": "https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "title": "Practical 11: COVID-19 Data Visualization",
+      "desc": "Analyze global COVID-19 trends using Tableau.",
+      "resources": [
+        {
+          "type": "LINK",
+          "name": "COVID-19 Dataset",
+          "meta": "kaggle.com",
+          "url": "https://www.kaggle.com/datasets/josephassaker/covid19-global-dataset"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "title": "Practical 12: Student Performance Analysis",
+      "desc": "Analyze factors affecting student performance using data science techniques and provide recommendations.",
+      "resources": []
     }
-  ]
+  ],
+  "pyq": [],
+  "books": []
 }

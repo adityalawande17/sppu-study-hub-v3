@@ -1,71 +1,112 @@
 {
   "code": "VSE-281-AID",
-  "name": "Subject Name Here",
+  "name": "Object Oriented Programming",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
-  ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
+      "title": "Practical 1: Java Calculator with Error Handling",
+      "desc": "Implement a robust Java calculator program that captures user input dynamically, processes mathematical expressions using conditional logic and loops, and handles errors efficiently.",
+      "resources": []
+    },
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "num": 2,
+      "title": "Practical 2: E-commerce Order Processing System",
+      "desc": "Develop a Java program for e-commerce order processing using constructors, user input, dynamic cost calculation, discount policies, and invoice generation.",
+      "resources": []
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: Method Overloading and Math Operations",
+      "desc": "Write a Java program to demonstrate method overloading for computing power and absolute values using different data types and Math class methods.",
+      "resources": []
+    },
+    {
+      "num": 4,
+      "title": "Practical 4: Library Management System",
+      "desc": "Implement a library management system to add, issue, and return books while tracking total books using static members and methods.",
+      "resources": []
+    },
+    {
+      "num": 5,
+      "title": "Practical 5: Array Operations",
+      "desc": "Develop a Java program to perform operations on arrays such as display, max/min, sum, average, and searching elements.",
+      "resources": []
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: Hotel Room Booking System",
+      "desc": "Implement a hotel room booking system using two-dimensional arrays to manage room availability and booking operations.",
+      "resources": []
+    },
+    {
+      "num": 7,
+      "title": "Practical 7: Single Inheritance",
+      "desc": "Create a Java program demonstrating single inheritance where a subclass extends a superclass and calls its methods.",
+      "resources": []
+    },
+    {
+      "num": 8,
+      "title": "Practical 8: Interface and Polymorphism",
+      "desc": "Implement interfaces in Java with multiple classes to demonstrate polymorphism.",
+      "resources": []
+    },
+    {
+      "num": 9,
+      "title": "Practical 9: Abstract Class Implementation",
+      "desc": "Create an abstract class with abstract methods and extend it in a subclass providing implementation.",
+      "resources": []
+    },
+    {
+      "num": 10,
+      "title": "Practical 10: ATM Simulation with Exception Handling",
+      "desc": "Develop a Java ATM simulation with functionalities like balance check, withdrawal, and deposit using try-catch-finally blocks.",
+      "resources": []
+    },
+    {
+      "num": 11,
+      "title": "Practical 11: Online Shopping System",
+      "desc": "Create a Java application simulating an online shopping system with cart operations and exception handling.",
+      "resources": []
+    },
+    {
+      "num": 12,
+      "title": "Practical 12: Multi-threaded Stock Price Monitor",
+      "desc": "Develop a Java application using threads to fetch and display stock prices with synchronization and thread control methods.",
+      "resources": []
+    },
+    {
+      "num": 13,
+      "title": "Practical 13: Multi-threaded Chat System",
+      "desc": "Create a multi-threaded chat system where each user is a thread, demonstrating thread lifecycle, priorities, and synchronization.",
+      "resources": []
+    },
+    {
+      "num": 14,
+      "title": "Practical 14: Employee Database using JDBC",
+      "desc": "Develop a Java application to manage employee records using JDBC with CRUD operations and prepared statements.",
+      "resources": []
+    },
+    {
+      "num": 15,
+      "title": "Practical 15: Student Database using JDBC",
+      "desc": "Create a Java application to manage student records with database connectivity and transaction handling.",
+      "resources": []
+    },
+    {
+      "num": 16,
+      "title": "Practical 16: Weather Data Analysis with JavaFX",
+      "desc": "Develop a Java application to read weather data from CSV, perform statistical analysis, and visualize using JavaFX charts.",
+      "resources": []
+    },
+    {
+      "num": 17,
+      "title": "Practical 17: Patient Data Analysis",
+      "desc": "Create a Java application to analyze patient data from CSV and compute statistics using Apache Commons Math with visualization.",
+      "resources": []
     }
-  ]
+  ],
+  "pyq": [],
+  "books": []
 }

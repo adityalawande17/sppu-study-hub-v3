@@ -1,71 +1,64 @@
 {
   "code": "PCC-254-AID",
-  "name": "Subject Name Here",
+  "name": "Database Management Systems Laboratory",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
-  ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
+      "title": "Practical 1: Introduction to Database Creation",
+      "desc": "Setup and create a database using MySQL or PostgreSQL. Design entities such as Student, Course, Instructor, and Enrollment with relationships like student-course enrollment and instructor-course mapping.",
+      "resources": []
+    },
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "num": 2,
+      "title": "Practical 2: Views and Indexing",
+      "desc": "Create views for reporting student and course data. Perform update and delete operations using views and apply indexing to improve query performance.",
+      "resources": []
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: SQL Queries with Filters and Sorting",
+      "desc": "Use SQL queries with WHERE, ORDER BY, GROUP BY, and nested subqueries to filter, sort, and analyze student course data.",
+      "resources": []
+    },
+    {
+      "num": 4,
+      "title": "Practical 4: Multi-Table Joins",
+      "desc": "Develop a customer order management system and use INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN to retrieve related data.",
+      "resources": []
+    },
+    {
+      "num": 5,
+      "title": "Practical 5: PL/SQL Procedures and Functions",
+      "desc": "Design a sales management system using stored procedures and functions to insert data and calculate total sales.",
+      "resources": []
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: Triggers and Cursors",
+      "desc": "Develop an employee management system using triggers for audit logging and cursors to process salary updates based on conditions.",
+      "resources": []
+    },
+    {
+      "num": 7,
+      "title": "Practical 7: MongoDB Aggregation and Indexing",
+      "desc": "Perform CRUD operations in MongoDB, use aggregation queries for analysis, and apply indexing to improve performance.",
+      "resources": []
+    },
+    {
+      "num": 8,
+      "title": "Practical 8: Social Media Data Processing using NoSQL",
+      "desc": "Import and analyze social media data using MongoDB. Perform queries to extract insights such as trending hashtags.",
+      "resources": []
+    },
+    {
+      "num": 9,
+      "title": "Practical 9: MySQL Database Backup and Recovery",
+      "desc": "Learn and implement database backup and recovery techniques in MySQL to ensure data security and disaster recovery.",
+      "resources": []
     }
-  ]
+  ],
+  "pyq": [],
+  "books": []
 }

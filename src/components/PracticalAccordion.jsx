@@ -251,7 +251,7 @@ export default function PracticalAccordion({ practicals }) {
                 fontFamily: "Inter, sans-serif",
                 fontSize: 13,
                 fontWeight: 500,
-                color: isOpen ? "#fff" : "var(--navy)",
+                color: isOpen ? "#fff" : "var(--heading)",
                 textAlign: "left",
                 gap: 10,
                 transition: "background .15s",

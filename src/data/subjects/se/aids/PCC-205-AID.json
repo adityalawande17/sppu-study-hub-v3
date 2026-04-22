@@ -1,71 +1,70 @@
 {
   "code": "PCC-205-AID",
-  "name": "Subject Name Here",
+  "name": "Artificial Intelligence Laboratory",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
-  ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
+      "title": "Practical 1: Expert System using Rule-Based Systems",
+      "desc": "Develop an expert system that provides simple decision making using rule-based systems.",
+      "resources": []
+    },
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "num": 2,
+      "title": "Practical 2: BFS and DFS Maze Solver",
+      "desc": "Implement AI search algorithms such as Breadth First Search and Depth First Search to solve maze problems.",
+      "resources": []
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: A* Search Algorithm",
+      "desc": "Implement A* algorithm to solve AI search problems using graph search techniques.",
+      "resources": []
+    },
+    {
+      "num": 4,
+      "title": "Practical 4: Constraint Satisfaction Problem",
+      "desc": "Implement a solution for constraint satisfaction problems such as map coloring, Sudoku, or timetable scheduling using backtracking and constraint propagation.",
+      "resources": []
+    },
+    {
+      "num": 5,
+      "title": "Practical 5: Minimax Algorithm",
+      "desc": "Understand and implement the Minimax algorithm for two-player deterministic games.",
+      "resources": []
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: Minimax with Alpha-Beta Pruning",
+      "desc": "Enhance Minimax algorithm using Alpha-Beta pruning to reduce computation time.",
+      "resources": []
+    },
+    {
+      "num": 7,
+      "title": "Practical 7: ChatGPT Usage",
+      "desc": "Assignment and practice of ChatGPT and its applications.",
+      "resources": []
+    },
+    {
+      "num": 8,
+      "title": "Practical 8: SORA Usage",
+      "desc": "Assignment and practice of SORA for AI-based content generation.",
+      "resources": []
+    },
+    {
+      "num": 9,
+      "title": "Practical 9: AI Image Generator",
+      "desc": "Assignment and practice of AI image generation tools.",
+      "resources": []
+    },
+    {
+      "num": 10,
+      "title": "Practical 10: Prompt Engineering",
+      "desc": "Assignment and practice of prompt engineering to craft effective prompts for AI systems.",
+      "resources": []
     }
-  ]
+  ],
+  "pyq": [],
+  "books": []
 }

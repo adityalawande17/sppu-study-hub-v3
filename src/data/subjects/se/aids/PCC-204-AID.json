@@ -1,71 +1,76 @@
 {
   "code": "PCC-204-AID",
-  "name": "Subject Name Here",
+  "name": "Data Structures Laboratory",
   "pattern": "2024",
-  "units": [
-    {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
-    },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
+  "units": [],
   "practicals": [
     {
       "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
-  ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
+      "title": "Practical 1: Linear and Binary Search",
+      "desc": "Write a menu based program to store roll numbers of students who attended a training program. Implement Linear Search for unsorted data and Binary Search for sorted data to check whether a particular student attended the training program.",
+      "resources": []
+    },
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "num": 2,
+      "title": "Practical 2: Sorting Techniques",
+      "desc": "Write a program to store first year percentages of students and sort them using Selection Sort and Bubble Sort. Display the top five scores.",
+      "resources": []
+    },
+    {
+      "num": 3,
+      "title": "Practical 3: Hash Table Implementation",
+      "desc": "Implement a telephone book database using hash table. Use collision handling techniques such as linear probing, quadratic probing, and double hashing.",
+      "resources": []
+    },
+    {
+      "num": 4,
+      "title": "Practical 4: Linked List Applications",
+      "desc": "Implement singly linked list to manage club member information or perform set operations like union, intersection, and difference using linked lists.",
+      "resources": []
+    },
+    {
+      "num": 5,
+      "title": "Practical 5: Doubly Linked List",
+      "desc": "Implement a doubly linked list for applications such as seat booking system or appointment scheduling with operations like insert, delete, display, and sorting.",
+      "resources": []
+    },
+    {
+      "num": 6,
+      "title": "Practical 6: Stack Applications",
+      "desc": "Write a program using stack to check balanced parentheses or perform infix to postfix conversion and its evaluation.",
+      "resources": []
+    },
+    {
+      "num": 7,
+      "title": "Practical 7: Queue Applications",
+      "desc": "Implement a queue to simulate job scheduling or order processing using enqueue and dequeue operations.",
+      "resources": []
+    },
+    {
+      "num": 8,
+      "title": "Practical 8: Binary Search Tree",
+      "desc": "Construct a Binary Search Tree and perform operations like insertion, searching, finding minimum value, longest path, and mirror transformation.",
+      "resources": []
+    },
+    {
+      "num": 9,
+      "title": "Practical 9: Graph Representation",
+      "desc": "Represent graph using adjacency list or adjacency matrix and check whether the graph is connected.",
+      "resources": []
+    },
+    {
+      "num": 10,
+      "title": "Practical 10: Minimum Cost Graph Problem",
+      "desc": "Solve a real-world problem such as connecting offices with minimum cost using appropriate data structures and graph algorithms.",
+      "resources": []
+    },
+    {
+      "num": 11,
+      "title": "Practical 11: Mini Project",
+      "desc": "Design a mini project demonstrating the use of different data structures and analyzing performance and efficiency.",
+      "resources": []
     }
-  ]
+  ],
+  "pyq": [],
+  "books": []
 }
