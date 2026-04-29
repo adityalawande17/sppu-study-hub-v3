@@ -34,8 +34,16 @@
   ],
   "practicals": [],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2025", "exam": "April / May 2025", "url": "#" }
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1VxDHDY07XWdXQOkPmBcVGwc7P1N1rCtO/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "April / May 2025",
+      "url": "https://drive.google.com/file/d/1m40Fcm03n3cQ3aZPizFTupHkX95dbxki/view?usp=sharing"
+    }
   ],
   "books": [
     {

@@ -7,35 +7,160 @@
       "title": "Unit 1 - Data Structures & Algorithms: Searching and Sorting",
       "files": [
         {
-          "name": "Unit 1 Notes",
-          "size": "69 MB",
+          "name": "Unit 1 Notes(Handwritten)",
+          "size": "30 MB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/1p6u8K16UtQs1b4dGmb9n6SSJLBXC3D0M/view?usp=sharing"
+        },
+        {
+          "name": "Unit 1 Digital Notes - Part 1",
+          "size": "627 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/165rp5S0VbOxTCYTiAEp88cNFXmVO87h4/view?usp=sharing"
+        },
+        {
+          "name": "Unit 1 Digital Notes - Part 2",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1EHk_nS6EIqesz34osT5VapXiD6I-sNDO/view?usp=sharing"
+        },
+        {
+          "name": "Unit 1 Question Bank",
+          "size": "219 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1e7RN6vZAkZqAvBrLgjz23LsALLj4vtLt/view?usp=sharing"
         }
       ]
     },
     {
       "title": "Unit 2 - Memory Allocation & Linked List Operations",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 2 Digital Notes",
+          "size": "784 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1gFo6VwZciDOIkMgcrNuQflUmf4WhOUVl/view?usp=sharing"
+        },
+        {
+          "name": "Unit 2 Notes(Handwritten)",
+          "size": "6.4 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/13K3MdMzXiBpkgz-EM7_BCDjjh0dty8tU/view?usp=sharing"
+        },
+        {
+          "name": "Unit 2 Question Bank",
+          "size": "219 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1e7RN6vZAkZqAvBrLgjz23LsALLj4vtLt/view?usp=sharing"
+        }
+      ]
     },
-    { "title": "Unit 3 - Linear Data Structure :Stacks, Queues", "files": [] },
-    { "title": "Unit 4 - Non-linear Data Structure: Tree", "files": [] },
-    { "title": "Unit 5 - Non-linear Data Structure: Graph", "files": [] },
+    {
+      "title": "Unit 3 - Linear Data Structure :Stacks, Queues",
+      "files": [
+        {
+          "name": "Unit 3 Notes(Handwritten)",
+          "size": "17.6 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1Mi3otttLEs0Q2gxuvS2yY7y7Z86eaa2g/view?usp=sharing"
+        },
+        {
+          "name": "Unit 3 Digital Notes - Part 1",
+          "size": "1.7 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1LCyz33dwUnZYegRIUkDICphQgKPjPNq2/view?usp=sharing"
+        },
+        {
+          "name": "Unit 3 Digital Notes - Part 2",
+          "size": "749 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1fFrpcOmkBlOulAJGcGto3EWuDZu5Fvoh/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 4 - Non-linear Data Structure: Tree",
+      "files": [
+        {
+          "name": "Unit 4 Notes(Handwritten)",
+          "size": "6.3 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1YBtYnlQHux8foEKPyHxJYlIeoXdDUUHK/view?usp=sharing"
+        },
+        {
+          "name": "Unit 4 Digital Notes",
+          "size": "1.7 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1iHFVojZIjFaXfhQTfDxqSkw_23FiOHWw/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - Non-linear Data Structure: Graph",
+      "files": [
+        {
+          "name": "Unit 5 Notes(Handwritten)",
+          "size": "20 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1FK5Fqz-C8nzfINcDnf6lvdjF5n4qiHGH/view?usp=sharing"
+        },
+        {
+          "name": "Unit 5 Digital Notes",
+          "size": "1.2 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/17kFLGZRiPyvlMfKkAysB_5TTIHeQuQw7/view?usp=sharing"
+        }
+      ]
+    },
     { "title": "Extra Material", "files": [] }
   ],
   "practicals": [],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1DUo2ytDvY85u6ac2DyJcSo-wFyawUwFb/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1nxcTnVLk5pUHMt_74wH6VvMAe1AcVtGO/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1qtr2Lv4zFrqoAB0e1ta_PR0CZVCQK5_d/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1SnODaBMARGN8_KNzDJT4B_A2KCpmsG_V/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1cqjfLVVcT7y3Fp5a1bnA0VESqJUaab4-/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1GyYO31PQmKCtMOjLnHR0sVP1Wu1v5_cb/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1NCjoEEftpZfCMiVjYrwaGPDiWnKq4F_z/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1_nDQyoHJq-1Gr-ZrJm47soUN-mnD2JwB/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1E0ANnqSS6kwfQWe19UgHY6-ALj9U-LW6/view?usp=sharing"
     }
-  ]
+  ],
+  "books": []
 }

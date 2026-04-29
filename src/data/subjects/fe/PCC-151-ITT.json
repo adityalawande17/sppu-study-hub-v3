@@ -4,7 +4,7 @@
   "pattern": "2019",
   "units": [
     {
-      "title": "Unit 1 - Title",
+      "title": "Unit 1 -  Problem Solving, Programming and Python Programming",
       "files": [
         {
           "name": "Unit 1 Notes",
@@ -14,58 +14,22 @@
         }
       ]
     },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
-  "practicals": [
     {
-      "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
+      "title": "Unit 2 - Advance Data Types and Decision Control Statements",
+      "files": []
+    },
+    { "title": "Unit 3 - Functions and Strings", "files": [] },
+    { "title": "Unit 4 - File Handling and Dictionaries", "files": [] },
+    { "title": "Unit 5 - Object Oriented Programming", "files": [] },
+    { "title": "Extra Material", "files": [] }
   ],
+  "practicals": [],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "year": "2025",
+      "exam": "April / May 2025",
+      "url": "https://drive.google.com/file/d/1t7ZU_jLDyEGrdCA2gBcbr8WZLB454OgR/view?usp=sharing"
     }
-  ]
+  ],
+  "books": []
 }

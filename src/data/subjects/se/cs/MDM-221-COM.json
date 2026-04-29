@@ -25,17 +25,61 @@
   ],
   "practicals": [],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1QqhhnTWfjfGUwLkBhPTrKyBmN5xaVe_T/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "Oct 2025",
+      "url": "https://drive.google.com/file/d/1QynGI17eHJeBPpTCjS2RGyBBLNv2soIr/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1C1YKcaUyBeXDgbfnLNVaJclNv1eMbwp8/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1mHhhuKb8-EwBVMIN4sLaNuUoeJ6OhM2i/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Sept 2024",
+      "url": "https://drive.google.com/file/d/1YMWsTALOyJ3inem7yOdISA8buBhGlQtb/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1hKJhTLtI_uf0hKZe-Ox4XYlagj2PLcKm/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1xvFdLmi12tcaeFGomN9yRTdeI_QxwJPp/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Oct 2023",
+      "url": "https://drive.google.com/file/d/1DOzj3kx9n7Hud-OZMieWfXi47qm6PE5t/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1JpRIsAwwnPEwoJkx7r1jRgd1mMXJGQ1Q/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "Nov / Dec 2022",
+      "url": "https://drive.google.com/file/d/1RYcCR_eLrcnPXe6g25rE6EtU83hRl9xp/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "Oct 2022",
+      "url": "https://drive.google.com/file/d/1kq2pfgwJvXIX-s2kYUyyZ9rH1rJWq7QD/view?usp=sharing"
     }
-  ]
+  ],
+  "books": []
 }

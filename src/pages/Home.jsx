@@ -21,7 +21,8 @@ export default function Home() {
   const [syllabusYear, setSyllabusYear] = useState(null);
 
   useSEO({
-    title: "sppuwalestudent - Free SPPU Engineering Study Materials",
+    title:
+      "SPPUStudyHUB - SPPU Previous Year Question Papers, Notes, everything one stop",
     description:
       "Free SPPU engineering notes, previous year question papers and practical tutorials for all branches. 2019 and 2024 pattern. Savitribai Phule Pune University.",
     schema: {

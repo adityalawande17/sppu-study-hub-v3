@@ -332,8 +332,8 @@ export default function Subject() {
             </div>
             <div className="mat-section-body">
               <div className="info-strip">
-                Official SPPU end-semester papers. Practicing these helps
-                understand the exam pattern and important topics.
+                Note : Section might also contain question papers from 2019
+                pattern, as the syllabus is same can refer them as well.
               </div>
               <div
                 style={{

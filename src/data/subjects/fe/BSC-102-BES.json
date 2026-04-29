@@ -1,10 +1,10 @@
 {
   "code": "BSC-102-BES",
-  "name": "Subject Name Here",
+  "name": "Engineering Physics",
   "pattern": "2024",
   "units": [
     {
-      "title": "Unit 1 - Title",
+      "title": "Unit 1 - Fundamentals of Photonics",
       "files": [
         {
           "name": "Unit 1 Notes",
@@ -14,25 +14,27 @@
         }
       ]
     },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
+    { "title": "Unit 2 - Quantum Physics", "files": [] },
+    { "title": "Unit 3 - Wave Optics", "files": [] },
+    { "title": "Unit 4 - Semiconductor Physics and Ultrasonics", "files": [] },
+    {
+      "title": "Unit 5 - Physics of Nanoparticles and Superconductivity",
+      "files": []
+    },
+    { "title": "Extra Material", "files": [] }
   ],
   "practicals": [],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1r41wZOCJSLTSLHrdhhhofsTSXZE3ZnyQ/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "April / May 2025",
+      "url": "https://drive.google.com/file/d/1LdrJz134XBibSGqchbidFphr1gnvbGi_/view?usp=sharing"
     }
-  ]
+  ],
+  "books": []
 }

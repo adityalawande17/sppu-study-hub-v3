@@ -1,10 +1,10 @@
 {
   "code": "ESC-103-MEC",
-  "name": "Subject Name Here",
+  "name": "Engineering Graphics",
   "pattern": "2019",
   "units": [
     {
-      "title": "Unit 1 - Title",
+      "title": "Unit 1 - Fundamentals of Engineering Drawing and Projection of Point and Line",
       "files": [
         {
           "name": "Unit 1 Notes",
@@ -14,58 +14,27 @@
         }
       ]
     },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
-  "practicals": [
+    { "title": "Unit 2 - Projection of Plane", "files": [] },
     {
-      "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
-        {
-          "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
-        {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
-        {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
-        {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
-      ]
-    }
+      "title": "Unit 3 - Engineering Curves and Development of Lateral Surfaces",
+      "files": []
+    },
+    { "title": "Unit 4 - Orthographic Projection", "files": [] },
+    { "title": "Unit 5 - Isometric Projection", "files": [] },
+    { "title": "Extra Material", "files": [] }
   ],
+  "practicals": [],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1Hd8SOWIVWa_zcIguYAj3VjShZvdk-1fa/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "April / May 2024",
+      "url": "https://drive.google.com/file/d/1n11cGESDJwctPeT_cJQw4P_CAcV_IwFF/view?usp=sharing"
     }
-  ]
+  ],
+  "books": []
 }
