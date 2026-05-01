@@ -8,20 +8,60 @@
       "files": [
         {
           "name": "Unit 1 Notes",
-          "size": "X MB",
+          "size": "30 MB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/1CA5olle0BdrKUqVhl5upO1FlIuD4-mWs/view?usp=sharing"
         }
       ]
     },
     {
       "title": "Unit 2 - Advance Data Types and Decision Control Statements",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 2 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/14iZwEbHEtpEPN5GRDGpJ5Zu2VdzCtvsQ/view?usp=sharing"
+        }
+      ]
     },
-    { "title": "Unit 3 - Functions and Strings", "files": [] },
-    { "title": "Unit 4 - File Handling and Dictionaries", "files": [] },
-    { "title": "Unit 5 - Object Oriented Programming", "files": [] },
-    { "title": "Extra Material", "files": [] }
+    {
+      "title": "Unit 3 - Functions and Strings",
+      "files": [
+        {
+          "name": "Unit 3 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1Q5SIridM-mogZC07V3SfO2zkoNfZTbMS/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 4 - File Handling and Dictionaries",
+      "files": [
+        {
+          "name": "Unit 4 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1OTnhZqBD8mdbwUtKDEdwUb9a-ctsig_I/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - Object Oriented Programming",
+      "files": [
+        {
+          "name": "Unit 5 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1eSVUdMhNkfqAuA_vzPRRpReyEIqw0mCZ/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Solved Question Paper",
+      "files": []
+    }
   ],
   "practicals": [],
   "pyq": [

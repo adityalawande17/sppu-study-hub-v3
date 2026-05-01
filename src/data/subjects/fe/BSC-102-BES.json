@@ -8,20 +8,69 @@
       "files": [
         {
           "name": "Unit 1 Notes",
-          "size": "X MB",
+          "size": "15 MB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/10xgCaydyqdtbhL24vDLMc72axQjrFi0b/view?usp=sharing"
         }
       ]
     },
-    { "title": "Unit 2 - Quantum Physics", "files": [] },
-    { "title": "Unit 3 - Wave Optics", "files": [] },
-    { "title": "Unit 4 - Semiconductor Physics and Ultrasonics", "files": [] },
+    {
+      "title": "Unit 2 - Quantum Physics",
+      "files": [
+        {
+          "name": "Unit 2 Notes",
+          "size": "19 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1ncfOXS3v6NBVDGiCIIw2Ye16ELusPDY1/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 3 - Wave Optics",
+      "files": [
+        {
+          "name": "Unit 3 Notes",
+          "size": "17 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1FvwyinGFFnyPT2NDa66ZDOQ4KkD2ilwU/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 4 - Semiconductor Physics and Ultrasonics",
+      "files": [
+        {
+          "name": "Unit 4 Notes Part 1",
+          "size": "16 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1m1n5GKRVYvn4BcloeNaqGiRy0xXd2Rd6/view?usp=sharing"
+        },
+        {
+          "name": "Unit 4 Notes Part 2",
+          "size": "5 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1Bk-cFf94xvm-yMHflYDHF5TphGa4uYFg/view?usp=sharing"
+        }
+      ]
+    },
     {
       "title": "Unit 5 - Physics of Nanoparticles and Superconductivity",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 5 Notes Part 1",
+          "size": "7 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1hWksqeZIMl27Xm4vVit16_7dtYN2V-o_/view?usp=sharing"
+        },
+        {
+          "name": "Unit 4 Notes Part 2",
+          "size": "10 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1wfuNxGBuOllOsg1tI7hBTpi6Isyf6NGx/view?usp=sharing"
+        }
+      ]
     },
-    { "title": "Extra Material", "files": [] }
+    { "title": "Solved Question Papers", "files": [] }
   ],
   "practicals": [],
   "pyq": [

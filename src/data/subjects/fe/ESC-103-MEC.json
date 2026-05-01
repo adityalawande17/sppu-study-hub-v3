@@ -7,21 +7,97 @@
       "title": "Unit 1 - Fundamentals of Engineering Drawing and Projection of Point and Line",
       "files": [
         {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
+          "name": "Unit 1 Question Bank",
+          "size": "1 MB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/17FTfUko0PUdlJ-l-mGMMs4i0lyFKIKEQ/view?usp=sharing"
         }
       ]
     },
-    { "title": "Unit 2 - Projection of Plane", "files": [] },
+    {
+      "title": "Unit 2 - Projection of Plane",
+      "files": [
+        {
+          "name": "Unit 2 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1KS_f0lQy0xH-JRuSPXfXmtlMo_xc6Pt_/view?usp=sharing"
+        }
+      ]
+    },
     {
       "title": "Unit 3 - Engineering Curves and Development of Lateral Surfaces",
       "files": []
     },
-    { "title": "Unit 4 - Orthographic Projection", "files": [] },
-    { "title": "Unit 5 - Isometric Projection", "files": [] },
-    { "title": "Extra Material", "files": [] }
+    {
+      "title": "Unit 4 - Orthographic Projection",
+      "files": [
+        {
+          "name": "Unit 4 Question Bank",
+          "size": "3 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1MkOfqWTTCCKaXwdVRmV-_SG20nEmERLF/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - Isometric Projection",
+      "files": [
+        {
+          "name": "Unit 5 Question Bank",
+          "size": "3 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1NSilTsSByRHP_ywI1WfBavbmkdwDKqN7/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Solved Question Papers",
+      "files": [
+        {
+          "name": "Question Paper Endsem 24-25",
+          "size": "2 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1J_bwuawV_i31fCbJ1KrvJx290wsQlCi1/view?usp=sharing"
+        },
+        {
+          "name": "Question Paper Jan 26",
+          "size": "4 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1Tfm2BkwkzhM33h1rRsB_DE1rQ1qrTz3k/view?usp=sharing"
+        },
+        {
+          "name": "Question Paper Mock",
+          "size": "5 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1wOB1cFQzU1QyHq3-dWizVIi_Rk3WJudB/view?usp=sharing"
+        },
+        {
+          "name": "Question Paper Unit test 1",
+          "size": "1.9 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1ppJJBFZ3Zl_nV8gZwYPzjBY-fL0jkkvP/view?usp=sharing"
+        },
+        {
+          "name": "Question Paper Unit test 2",
+          "size": "1.3 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1Q1cebbuI5-Wtks5-9lEY7dPAaM8kZadg/view?usp=sharing"
+        },
+        {
+          "name": "Question Paper Mock",
+          "size": "2 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/17A_6BY2su2sxiJLrVlB1DIcWMPB2bmJx/view?usp=sharing"
+        },
+        {
+          "name": "Question Paper",
+          "size": "4 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1PpFFzQeYN-PNGVY9LJ6sbd1wWFuvqPZi/view?usp=sharing"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [

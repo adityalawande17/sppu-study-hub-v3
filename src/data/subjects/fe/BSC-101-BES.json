@@ -7,20 +7,34 @@
       "title": "Unit 1 - Single Variable Calculus",
       "files": [
         {
-          "name": "Unit 1 Notes (Handwritten)",
-          "size": "6 MB",
+          "name": "Unit 1 Question Bank",
+          "size": "916 KB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/1kqDbLooQlqAEJ0RMtu4pgl0QcD-U2bUU/view?usp=sharing"
         }
       ]
     },
     {
       "title": "Unit 2 - Multivariable Calculus - Partial Differentiation",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 2 Question Bank",
+          "size": "916 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1mYLnICPHJnTEtmaaudSvzihl4RMYWZa4/view?usp=sharing"
+        }
+      ]
     },
     {
       "title": "Unit 3 - Applications of Partial Differentiation",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 3 Question Bank",
+          "size": "916 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1G-1_NehYAOMLMcZ9t2y0FqmsZMdX-QUv/view?usp=sharing"
+        }
+      ]
     },
     {
       "title": "Unit 4 - Linear Algebra - Matrices and System of Linear Equations",
@@ -28,9 +42,74 @@
     },
     {
       "title": "Unit 5 - Linear Algebra - Eigen Values, Eigen Vectors and Diagonalization",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 5 Question Bank",
+          "size": "916 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1nzdppMi1EzzAZMOqTbKxYtLlnemqXmI7/view?usp=sharing"
+        }
+      ]
     },
-    { "title": "Extra Materials", "files": [] }
+    {
+      "title": "Solved Question Papers",
+      "files": [
+        {
+          "name": "Solved Paper 1",
+          "size": "18 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1-vCh94RscUeHnpyJgBSbBrcjvRNbZ8Pr/view?usp=sharing"
+        },
+        {
+          "name": "Solved Paper 2",
+          "size": "10 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1ooZoJJOdh1bE29MYLK_HJSM9L5MZrnBh/view?usp=sharing"
+        },
+        {
+          "name": "Solver Paper 3",
+          "size": "9 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1faNiWQ9qawi9CxNveKkDnDS_x71yEWBZ/view?usp=sharing"
+        },
+        {
+          "name": "Solved Paper 4",
+          "size": "3 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1rOvrH2m58AkpuA5jDKSnKOG2vUxu4_hH/view?usp=sharing"
+        },
+        {
+          "name": "Solved Paper 5",
+          "size": "816 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1DJaDX52Q1cauo_b4wKrScF2DYHTCLKBd/view?usp=sharing"
+        },
+        {
+          "name": "Solved Paper 6",
+          "size": "5 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1gYh69wxWkxnlEMfIOCOCfX00xz_NDkrm/view?usp=sharing"
+        },
+        {
+          "name": "Solved Paper 7 (Thala for a reason)",
+          "size": "6 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1MNovaKMM1YM9QHp2SLoUwHmQQjkDmJAa/view?usp=sharing"
+        },
+        {
+          "name": "Solved Paper 8",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1CYqvgt1maOYu07AbdVwOhJxWIi_0LLeX/view?usp=sharing"
+        },
+        {
+          "name": "Mock Solved Paper 9",
+          "size": "15 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1cfrm6ZbUvvuchjbxBF3cv-wnKgjpNNTv/view?usp=sharing"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [
@@ -45,14 +124,5 @@
       "url": "https://drive.google.com/file/d/1m40Fcm03n3cQ3aZPizFTupHkX95dbxki/view?usp=sharing"
     }
   ],
-  "books": [
-    {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
-    }
-  ]
+  "books": []
 }

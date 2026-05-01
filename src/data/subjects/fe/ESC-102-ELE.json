@@ -7,18 +7,98 @@
       "title": "Unit 1 - Elementary Concepts and DC Circuits",
       "files": [
         {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
+          "name": "Unit 1 Question Bank",
+          "size": "180 KB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/1KPrQnnETAQSC2UCBodbLgjZsz2vqpw7e/view?usp=sharing"
+        },
+        {
+          "name": "MCQ Bank",
+          "size": "181 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1SpvcI-Wz2zohDZ0DFO882g9whANAheFp/view?usp=sharing"
+        },
+        {
+          "name": "MCQ Bank New",
+          "size": "131 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1gCSCd4tLxI-iJfh2jvT_80Uy0OGd8PnJ/view?usp=sharing"
         }
       ]
     },
-    { "title": "Unit 2 - Electromagnetism", "files": [] },
-    { "title": "Unit 3 - AC Fundamentals", "files": [] },
-    { "title": "Unit 4 - AC Circuits", "files": [] },
-    { "title": "Unit 5 - Introduction to Electric Machines", "files": [] },
-    { "title": "Extra Material", "files": [] }
+    {
+      "title": "Unit 2 - Electromagnetism",
+      "files": [
+        {
+          "name": "Unit 2 Question Bank",
+          "size": "180 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1qe52fZy-Unk8uNEpWDOmsUdgl3jebi2y/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 3 - AC Fundamentals",
+      "files": [
+        {
+          "name": "Unit 3 Question Bank",
+          "size": "180 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1C2nvkiFoT9kyNaaLNnTmDS5noox15LqD/view?usp=sharing"
+        },
+        {
+          "name": "Unit 3 Question Bank New",
+          "size": "180 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1b5IScwuDUqh5N8DhybVWAx0W4KIHwzkM/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 4 - AC Circuits",
+      "files": [
+        {
+          "name": "Unit 4 Question Bank",
+          "size": "180 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1IbNg5MZZjPhnw5fWG4NW4-kmXNIzsyC2/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - Introduction to Electric Machines",
+      "files": [
+        {
+          "name": "Unit 5 Question Bank",
+          "size": "180 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/19-OjcifK5yJo_BIJqzZkRdSl3SfH33is/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Solved Question Papers",
+      "files": [
+        {
+          "name": "Endsem Solved Question Paper",
+          "size": "10 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1P-kJ5PSuIO6mBds-xShA3DEReocCaQAr/view?usp=drive_link"
+        },
+        {
+          "name": "Insem Solved Question Paper",
+          "size": "3.8 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1Sq1H8n2Mzaj9v6TNIfu_6kKL0qkDNiwa/view?usp=drive_link"
+        },
+        {
+          "name": "Endsem Solved Question Paper New",
+          "size": "35 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1g633lJs4TlmTcnNysTOmUXWo0ryr7EEu/view?usp=sharing"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [

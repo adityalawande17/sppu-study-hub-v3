@@ -7,10 +7,10 @@
       "title": "Unit 1 - Force Systems and its resultants",
       "files": [
         {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
+          "name": "Unit 1-5 Question Bank Theory",
+          "size": "1 MB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/1yWsUAh40fCwCtoVeKBPmrQKFfKA_x2m4/view?usp=sharing"
         }
       ]
     },
@@ -18,7 +18,29 @@
     { "title": "Unit 3 - Friction and trusses", "files": [] },
     { "title": "Unit 4 - Kinematics of particle", "files": [] },
     { "title": "Unit 5 - Kinetics of Particle", "files": [] },
-    { "title": "Extra Material", "files": [] }
+    {
+      "title": "Solved Question Papers",
+      "files": [
+        {
+          "name": "EM Short Solution",
+          "size": "5 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/15ZOKhMNPSxaBamaxSuQTnQNA6ndl_crL/view?usp=sharing"
+        },
+        {
+          "name": "Solution",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/17ihTJyFgxeDcjcNaRVY8nckIEF0336q1/view?usp=sharing"
+        },
+        {
+          "name": "Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1yWsUAh40fCwCtoVeKBPmrQKFfKA_x2m4/view?usp=sharing"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [

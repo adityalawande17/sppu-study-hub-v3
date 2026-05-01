@@ -7,21 +7,103 @@
       "title": "Unit 1 - Diodes and Applications",
       "files": [
         {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
+          "name": "Unit 1 Question Bank",
+          "size": "1 MB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://docs.google.com/document/d/1chbkeUkXHCskvh5BaUVXcxerfKaGk8kK/edit?usp=sharing&ouid=102365635652061337866&rtpof=true&sd=true"
         }
       ]
     },
-    { "title": "Unit 2 - Transistors and Technology", "files": [] },
-    { "title": "Unit 3 - Logic Gates and Digital Circuits", "files": [] },
     {
-      "title": "Unit 4 - Operational Amplifier and Electronic Instruments",
+      "title": "Unit 2 - Transistors and Technology",
+      "files": [
+        {
+          "name": "Unit 2 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://docs.google.com/document/d/1clbGZXPL2lCyTsBBB3bJKjlnzFFlgus2/edit?usp=sharing&ouid=102365635652061337866&rtpof=true&sd=true"
+        }
+      ]
+    },
+    {
+      "title": "Unit 3 - Logic Gates and Digital Circuits",
       "files": []
     },
-    { "title": "Unit 5 - Sensors and Communication Systems", "files": [] },
-    { "title": "Extra Material", "files": [] }
+    {
+      "title": "Unit 4 - Operational Amplifier and Electronic Instruments",
+      "files": [
+        {
+          "name": "Unit 4 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://docs.google.com/document/d/1SykSrMSeBiE2qp0Pb34mj5IfcRtj5xL4/edit?usp=sharing&ouid=102365635652061337866&rtpof=true&sd=true"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - Sensors and Communication Systems",
+      "files": [
+        {
+          "name": "Unit 5 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://docs.google.com/document/d/1J2DowDqulsUjPgt07Cp-qIlA8epBXKs0/edit?usp=sharing&ouid=102365635652061337866&rtpof=true&sd=true"
+        }
+      ]
+    },
+    {
+      "title": "Solved Question Papers",
+      "files": [
+        {
+          "name": "Solved Question Paper Solved",
+          "size": "20 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1PMqJ51vmiraicTCjJWWX8-ftLtmWibgV/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper OCT 2022",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1Xmf2zJy2WOsyrhQI_CfIR5a28iYvGGCC/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper Mock",
+          "size": "21 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1TPQ0YYHI2fRx0bUvYmXwDQc0AB3Aqdpe/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper May 2017-2018",
+          "size": "14.8 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/110yfbBHoO6MopX3RRYlVv6eKrdr_WGcF/view?usp=drive_link"
+        },
+        {
+          "name": "Solved Question Paper ",
+          "size": "2 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1O8h_ETuAM29Kzr99YGtKfGX9Dz2v9jDW/view?usp=drive_link"
+        },
+        {
+          "name": "Marking Scheme",
+          "size": "514 KB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/13ZTndEbbaAy09NLdE56xQ0JrT3jgo_rO/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper May 2014",
+          "size": "1.8 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/18T6ogGa_DNETF-w5tPbkiukW2OxF-q_W/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper NOV 2017",
+          "size": "14 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1wxEFpqorh_HQCLP1ysZq-cFPCSBDyi0T/view?usp=sharing"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [

@@ -7,21 +7,98 @@
       "title": "Unit 1 - Integral Calculus",
       "files": [
         {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
+          "name": "Unit 1 Question Bank",
+          "size": "1 MB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/14RWbn9RWOQmmrwW97NzSI5tDyLey6Wiw/view?usp=sharing"
         }
       ]
     },
-    { "title": "Unit 2 - Curve Tracing and Solid Geometry", "files": [] },
-    { "title": "Unit 3 - Multiple Integrals and Applications", "files": [] },
+    {
+      "title": "Unit 2 - Curve Tracing and Solid Geometry",
+      "files": [
+        {
+          "name": "Unit 2 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": ""
+        },
+        {
+          "name": "Unit 2 Question Bank New",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/14RWbn9RWOQmmrwW97NzSI5tDyLey6Wiw/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 3 - Multiple Integrals and Applications",
+      "files": [
+        {
+          "name": "Unit 3 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://docs.google.com/document/d/1ccANyZDXYYQ0gq-RkBQKRIz7ljFnG2aS/edit?usp=sharing&ouid=102365635652061337866&rtpof=true&sd=true"
+        }
+      ]
+    },
     {
       "title": "Unit 4 - First Order Ordinary differential Equation",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 4 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://docs.google.com/document/d/1maCwuoALGUoAalEQp2rm0mlLu1JDYBS5/edit?usp=sharing&ouid=102365635652061337866&rtpof=true&sd=true"
+        }
+      ]
     },
-    { "title": "Unit 5 - Applications of Differential Equations", "files": [] },
-    { "title": "Extra Material", "files": [] }
+    {
+      "title": "Unit 5 - Applications of Differential Equations",
+      "files": [
+        {
+          "name": "Unit 5 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://docs.google.com/document/d/1Nt48MgHk9M35d2FyrrBlcpysxCEYSKER/edit?usp=sharing&ouid=102365635652061337866&rtpof=true&sd=true"
+        }
+      ]
+    },
+    {
+      "title": "Solved Question Paper",
+      "files": [
+        {
+          "name": "Solved Question Paper 1",
+          "size": "9 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1-M19XlmYe_VC7a7n4NnsS7RSyIgGlV2e/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 2",
+          "size": "6 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/19-1M16pCJGkA-2SI1GEK8r4S8sv2U-ZX/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 3",
+          "size": "7 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1pPLWW_XbroP29PiZ0KPpQqfAlq3C-Q_i/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 4",
+          "size": "1.5 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1XG_HB6OiIjUMrcW9uZZkK30b8CAR0Lnb/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 5",
+          "size": "7.9 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1f_2ZoY32Rv8sn7u1Wh7tiRvWdsYoB9vi/view?usp=sharing"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [

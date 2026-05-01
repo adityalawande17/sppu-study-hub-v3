@@ -8,17 +8,87 @@
       "files": [
         {
           "name": "Unit 1 Notes",
-          "size": "X MB",
+          "size": "2 MB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/1F4-rcyZwrVkZmb8q5TXzR9dijEoNNIW3/view?usp=sharing"
+        },
+        {
+          "name": "Unit 1 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1qNEInfHUcSSKdh5qFXp4mtXNuRRonp0F/view?usp=sharing"
         }
       ]
     },
-    { "title": "Unit 2 - Operators and Expressions", "files": [] },
-    { "title": "Unit 3 - Control Flow", "files": [] },
-    { "title": "Unit 4 - Arrays", "files": [] },
-    { "title": "Unit 5 - User Defined Functions", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
+    {
+      "title": "Unit 2 - Operators and Expressions",
+      "files": [
+        {
+          "name": "Unit 2 Notes",
+          "size": "2 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/10rHjVrwsLMTOAtQomhTXGYVlzz6DIeZG/view?usp=sharing"
+        },
+        {
+          "name": "Unit 2 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1jjIFf1KsjNT4843j0ngy6FDQBuBgRwNj/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 3 - Control Flow",
+      "files": [
+        {
+          "name": "Unit 3 Question Bank",
+          "size": "3 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1P728mtmpR97ge7Z77KutHSIaPhvvmTpZ/view?usp=sharing"
+        },
+        {
+          "name": "Unit 3 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1hhOaJ4NQHCw6XE0hrOoWmb-JdaTDglEf/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 4 - Arrays",
+      "files": [
+        {
+          "name": "Unit 4 Notes",
+          "size": "3 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1gO1MFSeI3gflAIdr5WSJEH9a5gwJDkXi/view?usp=sharing"
+        },
+        {
+          "name": "Unit 4 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1cEGxOj2qLcnT1T88HhEgXhZ2C4da-oNS/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - User Defined Functions",
+      "files": [
+        {
+          "name": "Unit 5 Notes",
+          "size": "3 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1grIy0fU7yMClQ8tyTBriE8QNBBWd4aEF/view?usp=sharing"
+        },
+        {
+          "name": "Unit 5 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1XUXVzAn5x321MBaJMZ-r30Uwf8yCn7Fb/view?usp=sharing"
+        }
+      ]
+    },
+    { "title": "Solved Question Paper", "files": [] }
   ],
   "practicals": [],
   "pyq": [
