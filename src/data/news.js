@@ -3,18 +3,18 @@
 export const newsItems = [
   {
     id: 1,
-    title:
-      "Updated IT Engineering Branch with solved previous year question papers",
-    date: "2025-03-15",
-    category: "new",
-    link: null,
+    title: "B.E 2019 Pattern Time Table Released",
+    date: "2026-05-04",
+    category: "exam",
+    link: "http://collegecirculars.unipune.ac.in/sites/examdocs/Time%20Tables%20APRMAY%202026/B.E.%20(2019%20PATTERN)%20ENDSEM%20EXAM%20TIMETABLE%20FOR%20SUMMER%20SESSION-2026%20(APRIL-MAY-2026).pdf",
     description:
-      "Section might also contain question papers from 2019 pattern, as the syllabus is same you can refer them as well",
+      "Hope you all had great farewell parties. Now its time to study...",
   },
   {
     id: 2,
-    title: "Updated First year Section with previous year question papers",
-    date: "2025-03-15",
+    title:
+      "Updated IT Engineering Branch with solved previous year question papers",
+    date: "2026-05-1",
     category: "new",
     link: null,
     description:
@@ -22,48 +22,12 @@ export const newsItems = [
   },
   {
     id: 3,
-    title: "BE and TE End Semester Results Declared",
-    date: "2026-01-29",
-    category: "result",
-    link: "https://results.unipune.ac.in",
+    title: "Updated First year Section with previous year question papers",
+    date: "2026-03-15",
+    category: "new",
+    link: null,
     description:
-      "Results for BE and TE end semester examinations (November 2025) have been declared on the official SPPU portal.",
-  },
-  {
-    id: 4,
-    title: "SE End Semester Exam Timetable Released",
-    date: "2025-04-05",
-    category: "exam",
-    link: "https://unipune.ac.in",
-    description:
-      "The timetable for SE end semester examinations for April-May 2025 has been published. Check the official SPPU website for your schedule.",
-  },
-  {
-    id: 5,
-    title: "2024 Pattern Syllabus Updated for TE",
-    date: "2025-03-28",
-    category: "syllabus",
-    link: "https://unipune.ac.in",
-    description:
-      "SPPU has released the revised syllabus for TE (Third Year) under the 2024 pattern. Download the updated PDF from the Syllabus section.",
-  },
-  {
-    id: 6,
-    title: "Hall Tickets Available for April 2025 Exams",
-    date: "2025-03-20",
-    category: "notice",
-    link: "https://unipune.ac.in",
-    description:
-      "Hall tickets for April-May 2025 end semester examinations are now available for download on the student portal.",
-  },
-  {
-    id: 6,
-    title: "FE Admissions 2025-26 Schedule Announced",
-    date: "2025-03-10",
-    category: "notice",
-    link: "https://unipune.ac.in",
-    description:
-      "SPPU has announced the schedule for First Year Engineering admissions for the academic year 2025-26 through CAP rounds.",
+      "Section might also contain question papers from 2019 pattern, as the syllabus is same you can refer them as well",
   },
 ];
 
