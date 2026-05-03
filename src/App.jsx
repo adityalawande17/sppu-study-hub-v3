@@ -18,6 +18,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import "./styles/global.css";
 import ScrollToTop from "./components/ScrollToTop";
+import Contributions from "./pages/Contributions";
 
 function NotFound() {
   return (
@@ -89,6 +90,7 @@ export default function App() {
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="*" element={<NotFound />} />
+              <Route path="/contributions" element={<Contributions />} />
             </Routes>
           </main>
           <Footer />

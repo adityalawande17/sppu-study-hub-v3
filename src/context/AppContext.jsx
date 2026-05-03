@@ -12,9 +12,11 @@ export function AppProvider({ children }) {
   });
   const [isDark, setIsDark] = useState(() => {
     try {
-      return localStorage.getItem("sppu_theme") === "dark";
+      const saved = localStorage.getItem("sppu_theme");
+      if (saved === null) return true; // no preference saved yet → default dark
+      return saved === "dark"; // respect saved preference after first visit
     } catch {
-      return false;
+      return true;
     }
   });
   const [saved, setSaved] = useState(() => {

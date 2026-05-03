@@ -1,27 +1,21 @@
-import { useState } from "react";
 import { useSEO } from "../hooks/useSEO";
 
 export default function Contact() {
-  const [done, setDone] = useState(false);
   useSEO({
     title: "Contact Us | SPPUStudyHUB",
     description:
       "Contact SPPUStudyHUB — report broken links, request materials, or send feedback.",
   });
 
-  function handle(e) {
-    e.preventDefault();
-    setDone(true);
-  }
-
   return (
     <div className="page-wrap">
       <div className="subject-header" style={{ paddingTop: 28 }}>
         <h1>Contact Us</h1>
         <p style={{ color: "var(--text-3)", fontSize: 14, marginTop: 6 }}>
-          Get in touch with the sppuwalestudent team
+          Get in touch with the SPPUStudyHUB team
         </p>
       </div>
+
       <div
         style={{
           display: "grid",
@@ -31,109 +25,39 @@ export default function Contact() {
         }}
         className="contact-grid"
       >
+        {/* LEFT SIDE (Replaced form with email) */}
         <div
           style={{
             background: "var(--surface)",
             border: "1px solid var(--border)",
             borderRadius: 14,
             padding: 28,
+            textAlign: "center",
           }}
         >
           <h2
             style={{
               fontFamily: "'DM Serif Display', serif",
-              fontSize: 20,
+              fontSize: 40,
               color: "var(--heading)",
-              marginBottom: 18,
+              marginBottom: 20,
             }}
           >
-            Send a Message
+            Contact us on
           </h2>
-          {done ? (
-            <div style={{ textAlign: "center", padding: "32px 0" }}>
-              <div
-                style={{
-                  width: 52,
-                  height: 52,
-                  borderRadius: "50%",
-                  background: "#dcfce7",
-                  border: "2px solid #16a34a",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 14px",
-                  fontSize: 22,
-                }}
-              >
-                ✓
-              </div>
-              <p
-                style={{
-                  fontSize: 15,
-                  color: "var(--text-3)",
-                  lineHeight: 1.6,
-                }}
-              >
-                Message sent. We will reply within 2 to 3 working days.
-              </p>
-              <button
-                className="btn btn-outline"
-                style={{ marginTop: 16, fontSize: 13 }}
-                onClick={() => setDone(false)}
-              >
-                Send Another
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handle}>
-              {[
-                ["Your Name", "text", "Enter your name"],
-                ["Email Address", "email", "your@email.com"],
-              ].map(([l, t, p]) => (
-                <div className="form-group" key={l}>
-                  <label className="form-label">{l}</label>
-                  <input
-                    className="form-input"
-                    type={t}
-                    placeholder={p}
-                    required
-                  />
-                </div>
-              ))}
-              <div className="form-group">
-                <label className="form-label">Topic</label>
-                <select className="form-select" required>
-                  <option value="">Select a topic</option>
-                  <option>Report incorrect information</option>
-                  <option>Request notes for a subject</option>
-                  <option>Want to contribute materials</option>
-                  <option>Broken download link</option>
-                  <option>General inquiry</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <label className="form-label">Message</label>
-                <textarea
-                  className="form-textarea"
-                  placeholder="Describe your query..."
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn btn-primary"
-                style={{
-                  width: "100%",
-                  justifyContent: "center",
-                  padding: "11px",
-                  fontSize: 15,
-                }}
-              >
-                Send Message
-              </button>
-            </form>
-          )}
+
+          <p
+            style={{
+              fontSize: 15,
+              color: "var(--text-3)",
+              lineHeight: 1.6,
+            }}
+          >
+            contact.sppustudyhub@gmail.com
+          </p>
         </div>
+
+        {/* RIGHT SIDE */}
         <div style={{ display: "grid", gap: 14, alignContent: "start" }}>
           {[
             {
@@ -181,6 +105,7 @@ export default function Contact() {
           ))}
         </div>
       </div>
+
       <style>{`@media(max-width:640px){.contact-grid{grid-template-columns:1fr!important}}`}</style>
     </div>
   );

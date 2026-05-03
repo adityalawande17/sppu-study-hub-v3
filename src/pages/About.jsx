@@ -13,7 +13,7 @@ export default function About() {
   return (
     <div className="page-wrap">
       <div className="subject-header" style={{ paddingTop: 28 }}>
-        <h1>About sppustudyhub</h1>
+        <h1>About SPPUStudyHUB</h1>
         <p style={{ color: "var(--text-3)", fontSize: 14, marginTop: 6 }}>
           Your free resource hub for SPPU engineering students
         </p>
@@ -39,7 +39,7 @@ export default function About() {
           },
           {
             title: "Disclaimer",
-            text: "All materials are for educational purposes only. We do not claim ownership of any university materials. Students should verify information against official SPPU resources. This site contains affiliate links to Amazon and Flipkart.",
+            text: "All materials are for educational purposes only. We do not claim ownership of any university materials. Students should verify information against official SPPU resources. ",
           },
           {
             title: "Contribute",
