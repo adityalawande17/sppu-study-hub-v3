@@ -7,10 +7,40 @@
       "title": "Unit 1 - Foundations of Object Oriented Programming",
       "files": [
         {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
+          "name": "Unit 1 Question Bank",
+          "size": "1 MB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/1jnJdfRdUWgN7CjABCiipGRO-0wjIg_Em/view?usp=sharing"
+        },
+        {
+          "name": "Unit 2 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1_v0qJ0kSGjcKi_1d51bQfqNfNxbD2w7c/view?usp=sharing"
+        },
+        {
+          "name": "Unit 3 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1M2-sceTyRB09k0jWEv_0wFERq1B19_8I/view?usp=sharing"
+        },
+        {
+          "name": "Unit 4 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1oj5s5CDY6hZBS1gEU7RwT7xE1VQ1PSzo/view?usp=sharing"
+        },
+        {
+          "name": "Unit 5 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1u79TP_I-h0EHnDy_xF6urn53AzXAI-QV/view?usp=sharing"
+        },
+        {
+          "name": "Unit 6 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1C7W5FN6Xf_CctTXN6DdcdULTPVY0w97y/view?usp=sharing"
         }
       ]
     },
@@ -21,21 +51,103 @@
       "files": []
     },
     { "title": "Unit 5 - File Handling and Design Paterns", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
+    {
+      "title": "Solved Question Papers",
+      "files": [
+        {
+          "name": "Solved Question Paper 1",
+          "size": "11 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1YMIt1rUYD2G6m5xgh-xAdl0o0XA7y0Zi/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 2",
+          "size": "17 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1h9XOfIxpiHJag4-vbLk7eBCRj6UBbZ_B/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 3",
+          "size": "19 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1ry88oZNJ4Ggq30LVViloyVCbR5NzB-ld/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 4",
+          "size": "35 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1Cl4GqHHn-VrXC6sJ6m8kYGM1EV1Fx3SN/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 5",
+          "size": "38.9 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1KSZFcR9a3Kun91grIiF6ozgptrsCxSZu/view?usp=sharing"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1xL0ryCVTYeH8dMGK4dBxR7OOmhilDsHs/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "Oct 2025",
+      "url": "https://drive.google.com/file/d/1V7tPt4brc6YVQmpH-_SospWFPPEx3vH6/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1RJYqugy8iUtPYEs7wQcZAmVr_pOUVURX/view?usp=sharing"
+    },
+
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1_XQb2dRBWxqw2E26MX0Qx6v-AGVqRUPg/view?usp=sharing"
+    },
+
+    {
+      "year": "2024",
+      "exam": "Sept 2024",
+      "url": "https://drive.google.com/file/d/1xgvvGEAl8bVkVdHUiNaT3AJhwyplnTHr/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1ELoMj15bCIBmPq68mwnMmXYnsocMprEF/view?usp=sharing"
+    },
+
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1Z5CTIuFPfbvPl-fMJE6nJDn-ODrUnX68/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Oct 2023",
+      "url": "https://drive.google.com/file/d/1gI5bWE8bzlKZTRnwMcuXp27te8Xx8Xmi/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/106YNRlKlUSGXz0VyKdaAJ8noD4JATeik/view?usp=sharing"
+    },
+
+    {
+      "year": "2022",
+      "exam": "Nov / Dec 2022",
+      "url": "https://drive.google.com/file/d/1aYw7gn7Wh1USNGr0YmxfS7vKJ-7uDsX3/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "Oct 2022",
+      "url": "https://drive.google.com/file/d/1HtXuvVNF5VAQsj9uvdGBnxZaYByK-XI1/view?usp=sharing"
     }
-  ]
+  ],
+  "books": []
 }

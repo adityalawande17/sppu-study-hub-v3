@@ -509,24 +509,6 @@ const it2024 = {
             credits: 2,
             updated: "2024",
           },
-          {
-            code: "EEM-231-ITT",
-            name: "Principles of Management & Entrepreneurship",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "VEC-232-ITT",
-            name: "Universal Human Values and Professional Ethics",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "CEP-241-ITT",
-            name: "Community Engagement Project",
-            credits: 2,
-            updated: "2024",
-          },
         ],
       },
       {
@@ -574,30 +556,6 @@ const it2024 = {
           {
             code: "MDM-271-ITT",
             name: "Processor Architecture",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "VSE-281-ITT",
-            name: "Digital Marketing & Social Media",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "AEC-282-ITT",
-            name: "Modern Indian Language",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "EEM-283-ITT",
-            name: "E-Commerce",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "VEC-284-ITT",
-            name: "Environmental Studies",
             credits: 2,
             updated: "2024",
           },

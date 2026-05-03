@@ -268,8 +268,7 @@ export default function UnitAccordion({ units = defaultUnits }) {
                       padding: "8px 0",
                     }}
                   >
-                    No files uploaded yet for this unit. Check back soon or
-                    contribute your notes.
+                    No files uploaded yet for this unit. Come back soon!
                   </p>
                 )}
               </div>

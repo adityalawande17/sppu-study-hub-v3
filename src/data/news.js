@@ -3,7 +3,8 @@
 export const newsItems = [
   {
     id: 1,
-    title: "Updated First year Section with previous year question papers",
+    title:
+      "Updated IT Engineering Branch with solved previous year question papers",
     date: "2025-03-15",
     category: "new",
     link: null,
@@ -12,6 +13,15 @@ export const newsItems = [
   },
   {
     id: 2,
+    title: "Updated First year Section with previous year question papers",
+    date: "2025-03-15",
+    category: "new",
+    link: null,
+    description:
+      "Section might also contain question papers from 2019 pattern, as the syllabus is same you can refer them as well",
+  },
+  {
+    id: 3,
     title: "BE and TE End Semester Results Declared",
     date: "2026-01-29",
     category: "result",
@@ -20,7 +30,7 @@ export const newsItems = [
       "Results for BE and TE end semester examinations (November 2025) have been declared on the official SPPU portal.",
   },
   {
-    id: 3,
+    id: 4,
     title: "SE End Semester Exam Timetable Released",
     date: "2025-04-05",
     category: "exam",
@@ -29,7 +39,7 @@ export const newsItems = [
       "The timetable for SE end semester examinations for April-May 2025 has been published. Check the official SPPU website for your schedule.",
   },
   {
-    id: 4,
+    id: 5,
     title: "2024 Pattern Syllabus Updated for TE",
     date: "2025-03-28",
     category: "syllabus",
@@ -38,7 +48,7 @@ export const newsItems = [
       "SPPU has released the revised syllabus for TE (Third Year) under the 2024 pattern. Download the updated PDF from the Syllabus section.",
   },
   {
-    id: 5,
+    id: 6,
     title: "Hall Tickets Available for April 2025 Exams",
     date: "2025-03-20",
     category: "notice",

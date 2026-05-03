@@ -129,7 +129,7 @@ export default function Footer() {
             }}
           >
             All content is for educational purposes only. Not affiliated with
-            Savitribai Phule Pune University. Contains affiliate links.
+            Savitribai Phule Pune University.
           </p>
           <p
             style={{
@@ -138,7 +138,7 @@ export default function Footer() {
               whiteSpace: "nowrap",
             }}
           >
-            2025 sppuwalestudent
+            2026 SPPUStudyHUB
           </p>
         </div>
       </div>

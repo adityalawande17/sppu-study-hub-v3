@@ -5,9 +5,9 @@ import ContributeModal from "../components/ContributeModal";
 export default function About() {
   const [open, setOpen] = useState(false);
   useSEO({
-    title: "About sppustudyhub — Free SPPU Study Hub",
+    title: "About SPPUStudyHUB — Free Solved Question Papers, Notes",
     description:
-      "About sppustudyhub — free SPPU engineering study hub providing notes, question papers and practical tutorials for Pune University students.",
+      "About SPPUStudyHub — free SPPU engineering study hub providing notes, question papers and practical tutorials for Pune University students.",
   });
 
   return (

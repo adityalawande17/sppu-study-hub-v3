@@ -425,8 +425,8 @@ export default function PracticalAccordion({ practicals }) {
                         lineHeight: 1.5,
                       }}
                     >
-                      No resources uploaded yet for this practical. Add links,
-                      PDFs or YouTube videos in the subject JSON file.
+                      No resources uploaded yet for this practical. Come back
+                      soon!
                     </p>
                   </div>
                 )}

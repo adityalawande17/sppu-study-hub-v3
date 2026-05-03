@@ -7,35 +7,183 @@
       "title": "Unit 1 - Introduction to Data Structures & Algorithms",
       "files": [
         {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
+          "name": "Question Bank",
+          "size": "1 MB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/1TSlfmNt8c5TNmsfvGX7WZm5D54aqjTMd/view?usp=sharing"
         }
       ]
     },
-    { "title": "Unit 2 - Linear Data Structures", "files": [] },
-    { "title": "Unit 3 - Non Linear Data Structures", "files": [] },
+    {
+      "title": "Unit 2 - Linear Data Structures",
+      "files": [
+        {
+          "name": "Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/16O1VL6C6A5Gs7OEm69pnXwCG5U0j83cc/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Unit 3 - Non Linear Data Structures",
+      "files": [
+        {
+          "name": "Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1FYbWpirYaG9dKo6IxFvY_Zj7T-tcvrYF/view?usp=sharing"
+        }
+      ]
+    },
     {
       "title": "Unit 4 - Hashing, String processing Applications",
-      "files": []
+      "files": [
+        {
+          "name": "Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1UCr1Oxee2bHcMmSavsBZG_a9dohSIJK7/view?usp=sharing"
+        }
+      ]
     },
-    { "title": "Unit 5 - Advanced Algorithms", "files": [] },
-    { "title": "Extra Material", "files": [] }
+    {
+      "title": "Unit 5 - Advanced Algorithms",
+      "files": [
+        {
+          "name": "Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1W4-ezqs_Sle-vfMmU7K-ffej6jwwsjK-/view?usp=sharing"
+        },
+        {
+          "name": "Question Bank Other",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1w74ljDfuJUyOz-GeLoLlODON3SQoMuBM/view?usp=sharing"
+        }
+      ]
+    },
+    {
+      "title": "Solved Question Papers",
+      "files": [
+        {
+          "name": "Solved Question Paper 1",
+          "size": "17 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1C-7L2Ki5bZ2OwECxKz0VWz3wW-2jfDLD/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 2",
+          "size": "29 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1zb3UVBKnfwZknFtPgTgdRq4t_8pJ8nh9/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 3",
+          "size": "22 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1ZRHgWGDZ-CkN-rKPRaI9YTRuZQEe7txr/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 4",
+          "size": "6 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1I5txzioKjBJlodCuToajyRiMD1nZ_kyk/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 5",
+          "size": "5 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/190_6F_iCoVwBKVgMT7gwjljJbHHz1I6k/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 6",
+          "size": "13 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/11RCPZMgZKJ_8WU5EvXgzQgOVhPhAyn_Q/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 7",
+          "size": "11 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1__JZVfoBJI0pNKHE03PZAlOLhksTpOvl/view?usp=sharing"
+        },
+        {
+          "name": "Solved Question Paper 8",
+          "size": "20 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1_FcEzbgs1JD7EeUak5Cf9dLHQlJBxaXo/view?usp=sharing"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1S1Qj2Ut8y3FssuwxIQo485Tx7cJ4QJVZ/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "Oct 2025",
+      "url": "https://drive.google.com/file/d/1vtK-b8l3xM0m9ngTb-j1cw2BYu7iSLF4/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1uXl8oLrWLtWkaU4__q0xFG9PNsfsBXWT/view?usp=sharing"
+    },
+
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1v1n3s6F4aiGhfrGRASPGGQE6zc2tKR0w/view?usp=sharing"
+    },
+
+    {
+      "year": "2024",
+      "exam": "Sept 2024",
+      "url": "https://drive.google.com/file/d/17iiqDnk9XPAVWViWkH-uDOKqT0mUXlkJ/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1mW63smLIy6kCddjtd_oivOOkQPKwUajY/view?usp=sharing"
+    },
+
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1LJZVSYFCK5Pjy5rqKGM1rUrgoX68qpSk/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Oct 2023",
+      "url": "https://drive.google.com/file/d/1Yp_KWQk9VbmVmqoImAsIFwmdG8U8ZdM5/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1H1br_BSin1Z3cYM2rusnuop_uQhTp22o/view?usp=sharing"
+    },
+
+    {
+      "year": "2022",
+      "exam": "Nov / Dec 2022",
+      "url": "https://drive.google.com/file/d/1PzTVrBseLRQtw8JVnUO_GBOYESxeyb2a/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "Oct 2022",
+      "url": "https://drive.google.com/file/d/1v1a-6DB8oe6cvz-gxXrMmdx7coRPkDWR/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": "https://drive.google.com/file/d/1-CM5vuotxjDOcdJFh6N_Swh-PvXKUiho/view?usp=sharing"
     }
-  ]
+  ],
+  "books": []
 }

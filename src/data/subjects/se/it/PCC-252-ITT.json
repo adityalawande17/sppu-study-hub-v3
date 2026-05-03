@@ -7,10 +7,40 @@
       "title": "Unit 1 - Graphics Primitives and OpenGL Basics",
       "files": [
         {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
+          "name": "Unit 1 Question Bank",
+          "size": "1 MB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/1aXffVmzwbMC3ifLiC4DQETAYiQ4ZC4dE/view?usp=sharing"
+        },
+        {
+          "name": "Unit 2 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1RhloWuC-gzcy0T5Wdoa5CrzscEOO9rb5/view?usp=sharing"
+        },
+        {
+          "name": "Unit 3 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1eM6F0Yj3Z9taELVeZUA89spiu0oOaRqc/view?usp=sharing"
+        },
+        {
+          "name": "Unit 4 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1xCVy_TCTn3rhqNqS3Ds8ClLFHq6ZOFVk/view?usp=sharing"
+        },
+        {
+          "name": "Unit 5 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1TYAjS-D7_k7J1enK2Sz1HpMyevchWejt/view?usp=sharing"
+        },
+        {
+          "name": "Unit 6 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1WCo0m7m28GpE369Gg4fz3KARezWVonY9/view?usp=sharing"
         }
       ]
     },
@@ -24,21 +54,84 @@
       "title": "Unit 5 - Curves, Fractals, and Introduction to Animation",
       "files": []
     },
-    { "title": "Extra Material", "files": [] }
+    {
+      "title": "Solved Question Papers",
+      "files": [
+        {
+          "name": "Solved 1",
+          "size": "4 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/18Qr27izHRzJW63bk4E5Rd-ES3_Mwa6Vb/view?usp=sharing"
+        },
+        {
+          "name": "Solved 2",
+          "size": "1.7 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1kgFyl37vxV37akkmA6XNcoeo-f8WaXZX/view?usp=sharing"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1q0ZGFVb0UF6Jk4vUvWL81VDs0b9pmAzy/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1uLOtVgzgdIpQfRl65H1EKMglIP5TghWK/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1E373BYdD3uC1bFPg9JcWV3A09DUJPXMd/view?usp=sharing"
+    },
+
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1VrrF7dCAbwKZVeCjRHcE7UirpKby1QA_/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/19GrDPn1mF7JSKuLg-_nTn8yFiONNx8OG/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/18-xAAGxDLR5AUhD-ypB3fLu9vmcYT3j_/view?usp=sharing"
+    },
+
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1E26Z3oIsTOr2dDGIp9Sxv4ud5nL89YHh/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1ONd0SYqVQkuDuMYZo_FZ2YswjOR6PbnM/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/11uBid7mjaGDcAIKdgGkvmAm8poK-_k1V/view?usp=sharing"
+    },
+
+    {
+      "year": "2022",
+      "exam": "Nov / Dec 2022",
+      "url": "https://drive.google.com/file/d/1O6YxAES9yvWHn0PwFGU3Tso4KdQCpIG5/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": "https://drive.google.com/file/d/1ksI3AAvfAL2SeGT0iFH0o-P6mvZPmfmx/view?usp=sharing"
     }
-  ]
+  ],
+  "books": []
 }

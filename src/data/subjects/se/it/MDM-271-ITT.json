@@ -7,10 +7,40 @@
       "title": "Unit 1 - Fundamentals of PIC Microcontroller",
       "files": [
         {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
+          "name": "Unit 1 Question Bank",
+          "size": "1 MB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://drive.google.com/file/d/1zsr6dymk0n2WQLPqLKd3Y7Ufd3ffeB-D/view?usp=sharing"
+        },
+        {
+          "name": "Unit 2 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1Mk7Vk-___872xIIFnSPi2A9JWDkZhSDK/view?usp=sharing"
+        },
+        {
+          "name": "Unit 3 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/13vhDrhOKhPcCLxOahtzPkpdM61b1G1uz/view?usp=sharing"
+        },
+        {
+          "name": "Unit 4 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1ZWZYbHixDYJgK5QYWSAxHXl4ft6qLiaa/view?usp=sharing"
+        },
+        {
+          "name": "Unit 5 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1nOK4Nhs726P-rtJiFJAaW_l2AGboM6ST/view?usp=sharing"
+        },
+        {
+          "name": "Unit 6 Question Bank",
+          "size": "1 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1W9591Ri6Fq8mAIHGFbbBf-SuEwGZOqxU/view?usp=sharing"
         }
       ]
     },
@@ -21,21 +51,108 @@
       "title": "Unit 5 - Current Trends in Processor Architecture",
       "files": []
     },
-    { "title": "Extra Material", "files": [] }
+    {
+      "title": "Solved Question Papers",
+      "files": [
+        {
+          "name": "Solved 2023",
+          "size": "25 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1elU-7USS4fY8HozvblInax-r_x7G_cnN/view?usp=sharing"
+        },
+        {
+          "name": "Solved March 24",
+          "size": "23 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1IHB4rH4OHzZt-eR20uK4mw3FhyVpAwX7/view?usp=sharing"
+        },
+        {
+          "name": "Endsem Solution",
+          "size": "18 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1JneQfLh3KPrjG1l4DmkYUAVrI0r4KqlL/view?usp=sharing"
+        },
+        {
+          "name": "Endsem Solution 2",
+          "size": "11 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1qiXeTmSr0FuIa1jQYy8YIEQ6TjGZZBw5/view?usp=sharing"
+        },
+        {
+          "name": "Endsem Solution 3",
+          "size": "15 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1efxVvoeIwMAhBZMZr9qcEF9ZJSJMFJp6/view?usp=sharing"
+        },
+        {
+          "name": "Endsem Solution 4",
+          "size": "15 MB",
+          "type": "PDF",
+          "url": "https://drive.google.com/file/d/1RPoIva9tM8N_u9AVJ492Qv36ja9cCpl_/view?usp=sharing"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
     {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1okv7aHRW8C6MVPF-6JBKUdD5gWmfmqFL/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1wfJLuISm3LiDLhIzB0zrV4s3kUaGabYZ/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1ume0sEjPJryDft0xZC529DrUU8TBNGwz/view?usp=sharing"
+    },
+
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1BvWDiGdSfDu4ixzkcgy9tdTtQMZT8PmW/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1lPysIqMKgzLcT2_JPjlT3LYeUqKY8d1K/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1yGUBtRPZU6oRkyEAJ2MUdGOoiUvMqAr7/view?usp=sharing"
+    },
+
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1IrNsPMIGyjMyn9p0nyvhngJT4E44-XEO/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1BTejdUjsvOqeRhx8SguyD5xV1m9SDScb/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1Q-aDsdvAlqgRP-zRNT8_VjIrrqPLbVVK/view?usp=sharing"
+    },
+
+    {
+      "year": "2022",
+      "exam": "Nov / Dec 2022",
+      "url": "https://drive.google.com/file/d/1MPIedIoKjDsM5MaFhKBoW9xrqqQMgtMp/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": "https://drive.google.com/file/d/1Pn6TOCSuE63C0TIETLND-JretyspdY_b/view?usp=sharing"
     }
-  ]
+  ],
+  "books": []
 }

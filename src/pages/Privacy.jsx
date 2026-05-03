@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 export default function Privacy() {
   useSEO({
-    title: "Privacy Policy | sppustudyhub",
+    title: "Privacy Policy | SPPUStudyHUB",
     description:
-      "Privacy Policy for sppustudyhub — cookies, advertising, affiliate links and data handling.",
+      "Privacy Policy for SPPUStudyHUB — cookies, advertising, affiliate links and data handling.",
   });
   return (
     <div className="page-wrap">

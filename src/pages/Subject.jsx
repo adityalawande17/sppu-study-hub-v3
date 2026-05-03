@@ -160,7 +160,7 @@ export default function Subject() {
   const hasAnyContent = hasUnits || hasPracticals || hasPYQ;
 
   useSEO({
-    title: `${subject.name} Notes & Papers — SPPU ${subject.branch} ${subject.sem} | sppuwalestudent`,
+    title: `${subject.name} Notes & Papers — SPPU ${subject.branch} ${subject.sem} | SPPUStudyHUB`,
     description: `Free notes, question papers and practicals for ${subject.name} (${subject.code}). SPPU ${subject.branch} ${subject.sem}. Download unit-wise PDFs.`,
     schema: {
       "@context": "https://schema.org",
