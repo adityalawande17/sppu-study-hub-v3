@@ -71,79 +71,9 @@ export const branchMeta = {
 const cs2019 = {
   SE: {
     label: "Second Year (SE)",
-    semesters: [
-      {
-        label: "Semester 3",
-        subjects: [
-          {
-            code: "SE-CS-301",
-            name: "Discrete Mathematics",
-            credits: 3,
-            updated: "Jan 2025",
-          },
-          {
-            code: "SE-CS-302",
-            name: "Data Structures",
-            credits: 4,
-            updated: "Feb 2025",
-          },
-          {
-            code: "SE-CS-303",
-            name: "Digital Electronics and Computer Organization",
-            credits: 3,
-            updated: "Jan 2025",
-          },
-          {
-            code: "SE-CS-304",
-            name: "Computer Graphics",
-            credits: 3,
-            updated: "Dec 2024",
-          },
-          {
-            code: "SE-CS-305",
-            name: "Object Oriented Programming",
-            credits: 3,
-            updated: "Feb 2025",
-          },
-        ],
-      },
-      {
-        label: "Semester 4",
-        subjects: [
-          {
-            code: "SE-CS-401",
-            name: "Analysis of Algorithms",
-            credits: 3,
-            updated: "Jan 2025",
-          },
-          {
-            code: "SE-CS-402",
-            name: "Database Management Systems",
-            credits: 4,
-            updated: "Feb 2025",
-          },
-          {
-            code: "SE-CS-403",
-            name: "Operating Systems",
-            credits: 3,
-            updated: "Jan 2025",
-          },
-          {
-            code: "SE-CS-404",
-            name: "Software Engineering",
-            credits: 3,
-            updated: "Dec 2024",
-          },
-          {
-            code: "SE-CS-405",
-            name: "Microprocessor",
-            credits: 3,
-            updated: "Nov 2024",
-          },
-        ],
-      },
-    ],
+    semesters: [],
   },
+
   TE: {
     label: "Third Year (TE)",
     semesters: [
@@ -151,74 +81,61 @@ const cs2019 = {
         label: "Semester 5",
         subjects: [
           {
-            code: "TE-CS-501",
+            code: "310241",
+            name: "Database Management Systems",
+            credits: 3,
+          },
+          {
+            code: "310242",
             name: "Theory of Computation",
             credits: 3,
-            updated: "Jan 2025",
           },
           {
-            code: "TE-CS-502",
-            name: "Computer Networks",
-            credits: 4,
-            updated: "Mar 2025",
-          },
-          {
-            code: "TE-CS-503",
-            name: "System Programming and OS",
+            code: "310243",
+            name: "Systems Programming and Operating System",
             credits: 3,
-            updated: "Feb 2025",
           },
           {
-            code: "TE-CS-504",
-            name: "Data Warehouse and Mining",
+            code: "310244",
+            name: "Computer Networks and Security",
             credits: 3,
-            updated: "Jan 2025",
           },
           {
-            code: "TE-CS-505",
-            name: "Web Technologies",
+            code: "310245",
+            name: "Elective I",
             credits: 3,
-            updated: "Feb 2025",
           },
         ],
       },
+
       {
         label: "Semester 6",
         subjects: [
           {
-            code: "TE-CS-601",
-            name: "Compiler Design",
+            code: "310251",
+            name: "Data Science and Big Data Analytics",
             credits: 3,
-            updated: "Jan 2025",
           },
           {
-            code: "TE-CS-602",
-            name: "Distributed Systems",
+            code: "310252",
+            name: "Web Technology",
             credits: 3,
-            updated: "Dec 2024",
           },
           {
-            code: "TE-CS-603",
+            code: "310253",
             name: "Artificial Intelligence",
             credits: 3,
-            updated: "Jan 2025",
           },
           {
-            code: "TE-CS-604",
-            name: "Information Security",
+            code: "310254",
+            name: "Elective II",
             credits: 3,
-            updated: "Dec 2024",
-          },
-          {
-            code: "TE-CS-605",
-            name: "Machine Learning",
-            credits: 3,
-            updated: "Feb 2025",
           },
         ],
       },
     ],
   },
+
   BE: {
     label: "Final Year (BE)",
     semesters: [
@@ -226,51 +143,55 @@ const cs2019 = {
         label: "Semester 7",
         subjects: [
           {
-            code: "BE-CS-701",
-            name: "Big Data Analytics",
+            code: "410241",
+            name: "Design and Analysis of Algorithms",
             credits: 3,
-            updated: "Jan 2025",
           },
           {
-            code: "BE-CS-702",
-            name: "High Performance Computing",
+            code: "410242",
+            name: "Machine Learning",
             credits: 3,
-            updated: "Dec 2024",
           },
           {
-            code: "BE-CS-703",
-            name: "Natural Language Processing",
-            credits: 3,
-            updated: "Jan 2025",
-          },
-          {
-            code: "BE-CS-704",
+            code: "410243",
             name: "Blockchain Technology",
             credits: 3,
-            updated: "Nov 2024",
+          },
+          {
+            code: "410244",
+            name: "Elective III",
+            credits: 3,
+          },
+          {
+            code: "410245",
+            name: "Elective IV",
+            credits: 3,
           },
         ],
       },
+
       {
         label: "Semester 8",
         subjects: [
           {
-            code: "BE-CS-801",
+            code: "410250",
+            name: "High Performance Computing",
+            credits: 3,
+          },
+          {
+            code: "410251",
             name: "Deep Learning",
             credits: 3,
-            updated: "Feb 2025",
           },
           {
-            code: "BE-CS-802",
-            name: "Cloud Computing",
+            code: "410252",
+            name: "Elective V",
             credits: 3,
-            updated: "Jan 2025",
           },
           {
-            code: "BE-CS-803",
-            name: "Internet of Things",
+            code: "410253",
+            name: "Elective VI",
             credits: 3,
-            updated: "Dec 2024",
           },
         ],
       },
@@ -565,30 +486,127 @@ const it2024 = {
   },
 };
 
-const it2019 = makeSimpleBranch(
-  "SE-IT-",
-  [
-    "Discrete Mathematics",
-    "Data Structures and Algorithms",
-    "Computer Organization",
-    "Object Oriented Programming",
-  ],
-  [
-    "Database Management Systems",
-    "Operating Systems",
-    "Software Engineering",
-    "Computer Networks",
-  ],
-  [
-    "Web Technologies",
-    "Information and Cyber Security",
-    "Enterprise Java",
-    "Data Science and Big Data Analytics",
-  ],
-  ["Machine Learning", "Cloud Computing", "Wireless Networks"],
-  ["Blockchain Technology", "Artificial Intelligence", "DevOps"],
-  ["Deep Learning", "Internet of Things"],
-);
+const it2019 = {
+  TE: {
+    label: "Third Year (TE)",
+    semesters: [
+      {
+        label: "Semester 5",
+        subjects: [
+          {
+            code: "314441",
+            name: "Theory of Computation",
+            credits: 3,
+          },
+          {
+            code: "314442",
+            name: "Operating Systems",
+            credits: 3,
+          },
+          {
+            code: "314443",
+            name: "Machine Learning",
+            credits: 3,
+          },
+          {
+            code: "314444",
+            name: "Human Computer Interaction",
+            credits: 3,
+          },
+          {
+            code: "314445",
+            name: "Elective I",
+            credits: 3,
+          },
+        ],
+      },
+
+      {
+        label: "Semester 6",
+        subjects: [
+          {
+            code: "314451",
+            name: "Computer Networks and Security",
+            credits: 3,
+          },
+          {
+            code: "314452",
+            name: "Data Science and Big Data Analytics",
+            credits: 3,
+          },
+          {
+            code: "314453",
+            name: "Web Application Development",
+            credits: 3,
+          },
+          {
+            code: "314454",
+            name: "Elective II",
+            credits: 3,
+          },
+        ],
+      },
+    ],
+  },
+
+  BE: {
+    label: "Final Year (BE)",
+    semesters: [
+      {
+        label: "Semester 7",
+        subjects: [
+          {
+            code: "414441",
+            name: "Information and Storage Retrieval",
+            credits: 3,
+          },
+          {
+            code: "414442",
+            name: "Software Project Management",
+            credits: 3,
+          },
+          {
+            code: "414443",
+            name: "Deep Learning",
+            credits: 3,
+          },
+          {
+            code: "414444",
+            name: "Elective III",
+            credits: 3,
+          },
+          {
+            code: "414445",
+            name: "Elective IV",
+            credits: 3,
+          },
+        ],
+      },
+
+      {
+        label: "Semester 8",
+        subjects: [
+          {
+            code: "414450",
+            name: "Distributed Systems",
+            credits: 3,
+          },
+          {
+            code: "414451",
+            name: "Elective V",
+            credits: 3,
+          },
+          {
+            code: "414452",
+            name: "Elective VI",
+            credits: 3,
+          },
+        ],
+      },
+    ],
+  },
+};
+
 const me2019 = makeSimpleBranch(
   "SE-ME-",
   [

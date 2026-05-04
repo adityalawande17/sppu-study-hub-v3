@@ -26,7 +26,7 @@ function gradePoint(marks) {
 const tools = [
   {
     id: "sgpa",
-    icon: "📊",
+    icon: "",
     title: "SGPA to Percentage",
     color: "#3b82f6",
     paleBg: "#eff6ff",
@@ -74,7 +74,7 @@ const tools = [
   },
   {
     id: "cgpa",
-    icon: "🎓",
+    icon: "",
     title: "CGPA to Percentage",
     color: "#0d9488",
     paleBg: "#f0fdfa",
@@ -122,7 +122,7 @@ const tools = [
   },
   {
     id: "grade",
-    icon: "📝",
+    icon: "",
     title: "Grade Calculator",
     color: "#f59e0b",
     paleBg: "#fffbeb",
@@ -180,7 +180,7 @@ const tools = [
   },
   {
     id: "attendance",
-    icon: "📅",
+    icon: "",
     title: "Attendance Calculator",
     color: "#16a34a",
     paleBg: "#f0fdf4",
@@ -268,7 +268,7 @@ const tools = [
   },
   {
     id: "gpa",
-    icon: "🧮",
+    icon: "",
     title: "Semester GPA Calculator",
     color: "#9333ea",
     paleBg: "#faf5ff",
@@ -422,7 +422,7 @@ const tools = [
   },
   {
     id: "kt",
-    icon: "⚠️",
+    icon: "",
     title: "KT / ATKT Eligibility",
     color: "#ef4444",
     paleBg: "#fff1f2",
