@@ -1,24 +1,28 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppProvider } from "./context/AppContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import NoticeStrip from "./components/NoticeStrip";
 import BottomNav from "./components/BottomNav";
-import Home from "./pages/Home";
-import FirstYear from "./pages/FirstYear";
-import Branches from "./pages/Branches";
-import BranchDetail from "./pages/BranchDetail";
-import Subject from "./pages/Subject";
-import Tools from "./pages/Tools";
-import News from "./pages/News";
-import Saved from "./pages/Saved";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Privacy from "./pages/Privacy";
-import Terms from "./pages/Terms";
-import "./styles/global.css";
 import ScrollToTop from "./components/ScrollToTop";
-import Contributions from "./pages/Contributions";
+import "./styles/global.css";
+
+const Home = lazy(() => import("./pages/Home"));
+const FirstYear = lazy(() => import("./pages/FirstYear"));
+const Branches = lazy(() => import("./pages/Branches"));
+const BranchDetail = lazy(() => import("./pages/BranchDetail"));
+const Subject = lazy(() => import("./pages/Subject"));
+const Tools = lazy(() => import("./pages/Tools"));
+const News = lazy(() => import("./pages/News"));
+const Saved = lazy(() => import("./pages/Saved"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Contributions = lazy(() => import("./pages/Contributions"));
+const History = lazy(() => import("./pages/History"));
 
 function NotFound() {
   return (
@@ -76,6 +80,7 @@ export default function App() {
           <NoticeStrip />
           <Navbar />
           <main style={{ flex: 1 }}>
+            <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/first-year" element={<FirstYear />} />
@@ -89,9 +94,12 @@ export default function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/history" element={<History />} />
               <Route path="/contributions" element={<Contributions />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
+            </Suspense>
           </main>
           <Footer />
           <BottomNav />
