@@ -3,16 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { useApp } from "../context/AppContext";
 import { branchMeta } from "../data/branches";
-import { trendingItems } from "../data/trending";
 import { newsItems, categoryLabels } from "../data/news";
 import ContributeModal from "../components/ContributeModal";
 import SyllabusModal from "../components/SyllabusModal";
-
-const typeColor = {
-  Notes: { bg: "#dbeafe", color: "#1e40af" },
-  PYQ: { bg: "#fef3c7", color: "#92400e" },
-  Practical: { bg: "#dcfce7", color: "#166534" },
-};
 
 export default function Home() {
   const navigate = useNavigate();
@@ -24,7 +17,7 @@ export default function Home() {
     title:
       "SPPUStudyHUB - SPPU Previous Year Question Papers, Notes, everything one stop",
     description:
-      "Free SPPU engineering notes, previous year question papers and practical tutorials for all branches. 2019 and 2024 pattern. Savitribai Phule Pune University.",
+      "Free SPPU engineering notes, previous year question papers and practical tutorials for all branches. 2019 and 2024 patterns. Savitribai Phule Pune University.",
     schema: {
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -37,7 +30,7 @@ export default function Home() {
 
   return (
     <div className="page-wrap">
-      {/* ── Hero ───────────────────────────────────────────── */}
+      {/* ── Hero ─────────────────────────────────────────── */}
       <div
         style={{
           padding: "52px 0 44px",
@@ -48,217 +41,393 @@ export default function Home() {
         }}
         className="hero-grid fade-up"
       >
+        {/* Left — redesigned */}
         <div>
+          {/* Live indicator */}
           <div
             style={{
-              display: "inline-flex",
+              display: "flex",
               alignItems: "center",
-              gap: 6,
-              background: "var(--gold-pale)",
-              border: "1px solid var(--gold-dim)",
-              borderRadius: 20,
-              padding: "5px 13px",
-              fontSize: 12,
-              fontWeight: 600,
-              color: "var(--gold-dim)",
-              marginBottom: 18,
-              letterSpacing: 0.3,
+              gap: 8,
+              marginBottom: 22,
             }}
           >
-            Savitribai Phule Pune University
+            <span
+              style={{
+                width: 8,
+                height: 8,
+                borderRadius: "50%",
+                flexShrink: 0,
+                background: "#22c55e",
+                boxShadow: "0 0 0 3px rgba(34,197,94,.22)",
+                display: "inline-block",
+              }}
+            />
+            <span
+              style={{
+                fontSize: 12,
+                fontWeight: 500,
+                color: "var(--text-3)",
+                letterSpacing: 0.2,
+              }}
+            >
+              2019 &amp; 2024 patterns &nbsp;·&nbsp; 7 branches &nbsp;·&nbsp;
+              Free forever
+            </span>
           </div>
+
+          {/* Headline */}
           <h1
             style={{
               fontFamily: "'DM Serif Display', serif",
-              fontSize: 46,
-              lineHeight: 1.12,
+              fontSize: 50,
+              lineHeight: 1.08,
               color: "var(--heading)",
-              marginBottom: 16,
-              letterSpacing: "-0.5px",
+              marginBottom: 18,
+              letterSpacing: "-0.6px",
             }}
           >
-            Everything you need.
+            Everything
+            <br />
+            you need.
             <br />
             <span style={{ fontStyle: "italic", color: "var(--gold-dim)" }}>
               One place.
             </span>
           </h1>
+
+          {/* Description */}
           <p
             style={{
               color: "var(--text-3)",
-              fontSize: 16,
-              lineHeight: 1.75,
-              marginBottom: 28,
-              maxWidth: 420,
+              fontSize: 15,
+              lineHeight: 1.8,
+              marginBottom: 24,
+              maxWidth: 400,
             }}
           >
             Notes, question papers, and practical tutorials for every SPPU
-            engineering subject. Both 2019 and 2024 patterns. Free forever.
+            engineering subject — both patterns, all branches.
           </p>
-          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+
+          {/* Feature chips */}
+          <div
+            style={{
+              display: "flex",
+              gap: 7,
+              flexWrap: "wrap",
+              marginBottom: 28,
+            }}
+          >
+            {[
+              { label: "Notes & Materials", dot: "#3b82f6" },
+              { label: "Question Papers", dot: "#f59e0b" },
+              { label: "SPPU Tools", dot: "#0d9488" },
+              { label: "AI Explain", dot: "#a78bfa" },
+            ].map(({ label, dot }) => (
+              <div
+                key={label}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
+                  borderRadius: 20,
+                  padding: "5px 13px",
+                  fontSize: 12,
+                  fontWeight: 500,
+                  color: "var(--text-3)",
+                }}
+              >
+                <span
+                  style={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: "50%",
+                    background: dot,
+                    flexShrink: 0,
+                    display: "inline-block",
+                  }}
+                />
+                {label}
+              </div>
+            ))}
+          </div>
+
+          {/* CTA buttons */}
+          <div
+            style={{
+              display: "flex",
+              gap: 10,
+              flexWrap: "wrap",
+              marginBottom: 32,
+            }}
+          >
             <Link
               to="/branches"
               className="btn btn-primary"
-              style={{ fontSize: 15, padding: "11px 22px" }}
+              style={{ fontSize: 14, padding: "11px 24px" }}
             >
-              Browse Branches
+              Browse Branches →
             </Link>
             <Link
               to="/first-year"
               className="btn btn-outline"
-              style={{ fontSize: 15, padding: "11px 22px" }}
+              style={{ fontSize: 14, padding: "11px 22px" }}
             >
               First Year
             </Link>
             <Link
               to="/tools"
               className="btn btn-ghost"
-              style={{
-                fontSize: 15,
-                padding: "11px 18px",
-                display: "flex",
-                alignItems: "center",
-                gap: 5,
-              }}
+              style={{ fontSize: 14, padding: "11px 18px" }}
             >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="3" />
-                <path d="M19.07 4.93a10 10 0 010 14.14M4.93 19.07a10 10 0 010-14.14" />
-              </svg>
               SPPU Tools
             </Link>
           </div>
         </div>
 
-        {/* Hero visual — dark card */}
+        {/* Right — redesigned hero card */}
         <div
           style={{
             background: "var(--navy)",
-            borderRadius: 20,
-            padding: 28,
-            position: "relative",
+            borderRadius: 10,
             overflow: "hidden",
+            position: "relative",
           }}
         >
-          {/* Background grid pattern */}
+          {/* Dot grid */}
           <div
             style={{
               position: "absolute",
               inset: 0,
               backgroundImage:
-                "radial-gradient(circle at 1px 1px, rgba(255,255,255,.04) 1px, transparent 0)",
-              backgroundSize: "28px 28px",
+                "radial-gradient(circle at 1px 1px, rgba(255,255,255,.035) 1px, transparent 0)",
+              backgroundSize: "26px 26px",
               pointerEvents: "none",
             }}
           />
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 10,
-              position: "relative",
-            }}
-          >
-            {[
-              ["200+", "Study Materials", "#3b82f6"],
-              ["7", "Branches", "#0d9488"],
-              ["100+", "Question Papers", "#f59e0b"],
-              ["Free", "Always", "#16a34a"],
-            ].map(([num, label, color]) => (
+
+          <div style={{ padding: "26px 26px 22px", position: "relative" }}>
+            {/* Header label */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                marginBottom: 20,
+              }}
+            >
               <div
-                key={label}
                 style={{
-                  background: "rgba(255,255,255,.06)",
-                  border: "1px solid rgba(255,255,255,.08)",
-                  borderRadius: 12,
-                  padding: "18px 14px",
-                  textAlign: "center",
-                  borderTop: `3px solid ${color}`,
+                  width: 30,
+                  height: 30,
+                  borderRadius: 8,
+                  background: "rgba(240,165,0,.15)",
+                  border: "1px solid rgba(240,165,0,.25)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
-                <span
-                  style={{
-                    fontFamily: "'DM Serif Display', serif",
-                    fontSize: 28,
-                    color: "#fff",
-                    display: "block",
-                    lineHeight: 1,
-                  }}
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--gold)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  {num}
-                </span>
-                <span
-                  style={{
-                    fontSize: 12,
-                    color: "rgba(255,255,255,.45)",
-                    marginTop: 5,
-                    display: "block",
-                  }}
-                >
-                  {label}
-                </span>
+                  <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+                  <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+                </svg>
               </div>
-            ))}
-          </div>
-          {/* Result CTA inside hero card */}
-          <a
-            href="https://results.unipune.ac.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginTop: 12,
-              padding: "12px 14px",
-              background: "rgba(240,165,0,.12)",
-              border: "1px solid rgba(240,165,0,.25)",
-              borderRadius: 10,
-              textDecoration: "none",
-              transition: "all .2s",
-              position: "relative",
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.background = "rgba(240,165,0,.2)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.background = "rgba(240,165,0,.12)")
-            }
-          >
-            <div>
-              <div
-                style={{ fontSize: 13, fontWeight: 600, color: "var(--gold)" }}
+              <span
+                style={{
+                  fontSize: 11,
+                  fontWeight: 700,
+                  color: "rgba(255,255,255,.4)",
+                  letterSpacing: 1,
+                  textTransform: "uppercase",
+                }}
               >
-                Check SPPU Result
-              </div>
-              <div style={{ fontSize: 11, color: "rgba(255,255,255,.4)" }}>
-                results.unipune.ac.in
-              </div>
+                Platform at a glance
+              </span>
             </div>
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="var(--gold)"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+
+            {/* Stats — 3 column bordered box */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr 1fr",
+                border: "1px solid rgba(255,255,255,.08)",
+                borderRadius: 14,
+                overflow: "hidden",
+                marginBottom: 18,
+              }}
             >
-              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-              <polyline points="15 3 21 3 21 9" />
-              <line x1="10" y1="14" x2="21" y2="3" />
-            </svg>
-          </a>
+              {[
+                { num: "200+", label: "Study\nMaterials", color: "#3b82f6" },
+                { num: "100+", label: "Question\nPapers", color: "#f59e0b" },
+                { num: "7", label: "Engineering\nBranches", color: "#0d9488" },
+              ].map(({ num, label, color }, i) => (
+                <div
+                  key={label}
+                  style={{
+                    padding: "18px 10px",
+                    textAlign: "center",
+                    background: "rgba(255,255,255,.04)",
+                    borderLeft:
+                      i > 0 ? "1px solid rgba(255,255,255,.08)" : "none",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: "'DM Serif Display', serif",
+                      fontSize: 30,
+                      color,
+                      lineHeight: 1,
+                      marginBottom: 6,
+                    }}
+                  >
+                    {num}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: 11,
+                      color: "rgba(255,255,255,.38)",
+                      lineHeight: 1.4,
+                      whiteSpace: "pre-line",
+                    }}
+                  >
+                    {label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Feature checklist */}
+            <div style={{ display: "grid", gap: 10, marginBottom: 20 }}>
+              {[
+                {
+                  text: "Notes & PYQs for every SPPU subject",
+                  color: "#3b82f6",
+                },
+                { text: "AI-powered question explanations", color: "#a78bfa" },
+                {
+                  text: "2019 and 2024 patterns fully covered",
+                  color: "#f59e0b",
+                },
+                {
+                  text: "Completely free forever",
+                  color: "#22c55e",
+                },
+              ].map(({ text, color }) => (
+                <div
+                  key={text}
+                  style={{ display: "flex", alignItems: "center", gap: 10 }}
+                >
+                  <div
+                    style={{
+                      width: 18,
+                      height: 18,
+                      borderRadius: "50%",
+                      flexShrink: 0,
+                      background: `${color}20`,
+                      border: `1px solid ${color}50`,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <svg
+                      width="9"
+                      height="9"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke={color}
+                      strokeWidth="3.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </div>
+                  <span
+                    style={{
+                      fontSize: 13,
+                      color: "rgba(255,255,255,.62)",
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    {text}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Result CTA */}
+            <a
+              href="https://results.unipune.ac.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: "12px 16px",
+                background: "rgba(240,165,0,.1)",
+                border: "1px solid rgba(240,165,0,.22)",
+                borderRadius: 11,
+                textDecoration: "none",
+                transition: "all .2s",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.background = "rgba(240,165,0,.18)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.background = "rgba(240,165,0,.1)")
+              }
+            >
+              <div>
+                <div
+                  style={{
+                    fontSize: 13,
+                    fontWeight: 600,
+                    color: "var(--gold)",
+                  }}
+                >
+                  Check SPPU Result
+                </div>
+                <div
+                  style={{
+                    fontSize: 11,
+                    color: "rgba(255,255,255,.35)",
+                    marginTop: 2,
+                  }}
+                >
+                  results.unipune.ac.in
+                </div>
+              </div>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--gold)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -267,109 +436,6 @@ export default function Home() {
           <p className="ad-label">Advertisement</p>
           <p>Google AdSense</p>
         </div>
-      </div>
-
-      {/* ── Trending ───────────────────────────────────────── */}
-      <div className="section-header fade-up fade-up-1">
-        <h2 className="section-title">Trending This Week</h2>
-        <span className="section-sub">Most accessed materials</span>
-      </div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: 14,
-          marginBottom: 8,
-        }}
-        className="trending-grid fade-up fade-up-2"
-      >
-        {trendingItems.map((item, i) => (
-          <div
-            key={item.code}
-            className="card card-interactive"
-            onClick={() => navigate(`/subject/${item.code}`, { state: item })}
-            style={{ padding: 18, position: "relative", overflow: "hidden" }}
-          >
-            {/* Large rank watermark */}
-            <div
-              style={{
-                position: "absolute",
-                top: -4,
-                right: 10,
-                fontFamily: "'DM Serif Display', serif",
-                fontSize: 64,
-                color: "var(--border)",
-                lineHeight: 1,
-                pointerEvents: "none",
-                userSelect: "none",
-              }}
-            >
-              {i + 1}
-            </div>
-            <span
-              style={{
-                fontSize: 10,
-                fontWeight: 700,
-                letterSpacing: 0.5,
-                textTransform: "uppercase",
-                padding: "3px 8px",
-                borderRadius: 10,
-                background: typeColor[item.type]?.bg,
-                color: typeColor[item.type]?.color,
-                display: "inline-block",
-                marginBottom: 10,
-              }}
-            >
-              {item.type}
-            </span>
-            <div
-              style={{
-                fontSize: 14,
-                fontWeight: 600,
-                color: "var(--heading)",
-                marginBottom: 3,
-                paddingRight: 30,
-                lineHeight: 1.4,
-              }}
-            >
-              {item.name}
-            </div>
-            <div style={{ fontSize: 12, color: "var(--text-3)" }}>
-              {item.branch.split(" ").slice(0, 2).join(" ")} · {item.sem}
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 7,
-                marginTop: 12,
-              }}
-            >
-              <span
-                style={{ fontSize: 11, color: "var(--text-4)", flexShrink: 0 }}
-              >
-                {item.downloads}
-              </span>
-              <div
-                style={{
-                  flex: 1,
-                  height: 3,
-                  background: "var(--border)",
-                  borderRadius: 2,
-                }}
-              >
-                <div
-                  style={{
-                    width: `${item.pct}%`,
-                    height: "100%",
-                    background: "var(--gold)",
-                    borderRadius: 2,
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-        ))}
       </div>
 
       {/* ── Year selector ──────────────────────────────────── */}
@@ -775,8 +841,15 @@ export default function Home() {
       />
 
       <style>{`
-        @media(max-width:900px){.hero-grid{grid-template-columns:1fr!important;gap:28px!important}.trending-grid{grid-template-columns:repeat(2,1fr)!important}.branch-grid{grid-template-columns:repeat(2,1fr)!important}.year-grid{grid-template-columns:repeat(2,1fr)!important}}
-        @media(max-width:600px){.hero-grid h1{font-size:32px!important}.trending-grid{grid-template-columns:1fr!important}.branch-grid{grid-template-columns:1fr!important}}
+        @media(max-width:900px){
+          .hero-grid{grid-template-columns:1fr!important;gap:28px!important}
+          .branch-grid{grid-template-columns:repeat(2,1fr)!important}
+          .year-grid{grid-template-columns:repeat(2,1fr)!important}
+        }
+        @media(max-width:600px){
+          .hero-grid h1{font-size:32px!important}
+          .branch-grid{grid-template-columns:1fr!important}
+        }
         @media(max-width:400px){.year-grid{grid-template-columns:1fr!important}}
       `}</style>
     </div>
