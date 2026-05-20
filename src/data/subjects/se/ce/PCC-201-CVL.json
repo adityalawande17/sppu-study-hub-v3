@@ -5,14 +5,7 @@
   "units": [
     {
       "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "10 MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
+      "files": []
     },
     { "title": "Unit 2 - Title", "files": [] },
     { "title": "Unit 3 - Title", "files": [] },

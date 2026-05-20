@@ -5,14 +5,7 @@
   "units": [
     {
       "title": "Unit 1 - Introduction to Data Structures and Algorithms",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
+      "files": []
     },
     {
       "title": "Unit 2 - Linear Data Structures, searching and sorting",

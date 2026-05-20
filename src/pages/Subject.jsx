@@ -1,8 +1,9 @@
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams, useLocation, Link, useNavigate } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { useApp } from "../context/AppContext";
 import UnitAccordion from "../components/UnitAccordion";
 import PracticalAccordion from "../components/PracticalAccordion";
+import PYQAccordion from "../components/PYQAccordion";
 import { searchIndex } from "../data/branches";
 import { feSearchIndex } from "../data/feSubjects";
 import subjectData from "../data/subjects/TE-CS-502.json";
@@ -107,7 +108,8 @@ const BookmarkEmpty = () => (
 export default function Subject() {
   const { code } = useParams();
   const { state } = useLocation();
-  const { toggleSaved, isSaved } = useApp();
+  const { toggleSaved, isSaved, switchPattern } = useApp();
+  const navigate = useNavigate();
 
   const subject = state ||
     allIndex.find((s) => s.code === code) || {
@@ -158,6 +160,7 @@ export default function Subject() {
   const pyq = hasPYQ ? content.pyq : null;
 
   const hasAnyContent = hasUnits || hasPracticals || hasPYQ;
+  const is2024Pattern = /[A-Z]/.test(code);
 
   useSEO({
     title: `${subject.name} Notes & Papers — SPPU ${subject.branch} ${subject.sem} | SPPUStudyHUB`,
@@ -296,26 +299,79 @@ export default function Subject() {
         </div>
       </div>
 
+      {is2024Pattern && (
+        <div
+          style={{
+            background: "var(--gold-pale)",
+            border: "1px solid var(--gold-dim)",
+            borderRadius: 12,
+            padding: "16px 20px",
+            marginBottom: 20,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 16,
+            flexWrap: "wrap",
+          }}
+        >
+          <div style={{ flex: 1, minWidth: 200 }}>
+            <p
+              style={{
+                fontSize: 14,
+                fontWeight: 700,
+                color: "var(--heading)",
+                margin: "0 0 5px",
+                display: "flex",
+                alignItems: "center",
+                gap: 7,
+              }}
+            >
+              Content missing for this subject?
+            </p>
+            <p
+              style={{
+                fontSize: 12,
+                color: "var(--text-3)",
+                margin: 0,
+                lineHeight: 1.6,
+              }}
+            >
+              The <strong>2019 pattern</strong> covers the same syllabus as 2024
+              — notes and question papers from 2019 are fully applicable here.
+              Switch pattern to browse available resources.
+            </p>
+          </div>
+          <button
+            onClick={() => {
+              switchPattern("2019");
+              navigate("/branches");
+            }}
+            style={{
+              flexShrink: 0,
+              padding: "9px 18px",
+              borderRadius: 8,
+              border: "1px solid var(--gold-dim)",
+              background: "var(--gold)",
+              color: "#111",
+              fontSize: 12,
+              fontWeight: 700,
+              cursor: "pointer",
+              fontFamily: "Inter, sans-serif",
+              whiteSpace: "nowrap",
+              transition: "opacity .15s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+          >
+            Switch to 2019 Pattern →
+          </button>
+        </div>
+      )}
+
       <div className="material-grid">
         {/* ✅ EMPTY STATE */}
         {!hasAnyContent && (
           <div className="empty-msg">Content will be added soon 🚧</div>
-        )}
-        {/* Notes */}
-        {hasUnits && (
-          <div className="mat-section">
-            <div className="mat-section-head">
-              <div className="mat-section-title">
-                Unit Notes <span className="badge badge-notes">Notes</span>
-              </div>
-              <span style={{ fontSize: 12, color: "var(--text-3)" }}>
-                Unit 1 to 6
-              </span>
-            </div>
-            <div className="mat-section-body">
-              <UnitAccordion units={units} />
-            </div>
-          </div>
         )}
 
         {/* PYQ */}
@@ -335,87 +391,28 @@ export default function Subject() {
                 Note : Section might also contain question papers from 2019
                 pattern, as the syllabus is same can refer them as well.
               </div>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(175px, 1fr))",
-                  gap: 10,
-                }}
-              >
-                {pyq.map((p, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      border: "1px solid var(--border)",
-                      borderRadius: 10,
-                      padding: 14,
-                      background: "var(--surface2)",
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: 5,
-                      transition: "all .15s",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = "var(--gold-dim)";
-                      e.currentTarget.style.background = "var(--gold-pale)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = "var(--border)";
-                      e.currentTarget.style.background = "var(--surface2)";
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontFamily: "'DM Serif Display', serif",
-                        fontSize: 22,
-                        color: "var(--heading)",
-                      }}
-                    >
-                      {p.year}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: 12,
-                        color: "var(--text-3)",
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      End Semester
-                      <br />
-                      {p.exam}
-                    </div>
-                    <a
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        marginTop: "auto",
-                        padding: "7px 0",
-                        background: "var(--navy)",
-                        color: "#fff",
-                        borderRadius: 8,
-                        fontSize: 12,
-                        fontWeight: 500,
-                        fontFamily: "Inter, sans-serif",
-                        textDecoration: "none",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: 5,
-                        transition: "opacity .15s",
-                      }}
-                      onMouseEnter={(e) =>
-                        (e.currentTarget.style.opacity = ".82")
-                      }
-                      onMouseLeave={(e) =>
-                        (e.currentTarget.style.opacity = "1")
-                      }
-                    >
-                      <DlIcon /> Download
-                    </a>
-                  </div>
-                ))}
+              <PYQAccordion
+                pyq={pyq}
+                subjectCode={code}
+                subjectName={subject.name}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* Notes */}
+        {hasUnits && (
+          <div className="mat-section">
+            <div className="mat-section-head">
+              <div className="mat-section-title">
+                Unit Notes <span className="badge badge-notes">Notes</span>
               </div>
+              <span style={{ fontSize: 12, color: "var(--text-3)" }}>
+                Unit 1 to 6
+              </span>
+            </div>
+            <div className="mat-section-body">
+              <UnitAccordion units={units} />
             </div>
           </div>
         )}
