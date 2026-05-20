@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { supabase } from "../lib/supabase";
 
 const AppContext = createContext(null);
 
@@ -26,6 +27,7 @@ export function AppProvider({ children }) {
       return [];
     }
   });
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "");
@@ -33,6 +35,16 @@ export function AppProvider({ children }) {
       localStorage.setItem("sppu_theme", isDark ? "dark" : "light");
     } catch {}
   }, [isDark]);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+    return () => subscription.unsubscribe();
+  }, []);
 
   useEffect(() => {
     try {
@@ -65,6 +77,17 @@ export function AppProvider({ children }) {
     return saved.some((s) => s.code === code);
   }
 
+  async function signInWithGoogle() {
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: window.location.origin },
+    });
+  }
+
+  async function signOut() {
+    await supabase.auth.signOut();
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -75,6 +98,9 @@ export function AppProvider({ children }) {
         saved,
         toggleSaved,
         isSaved,
+        user,
+        signInWithGoogle,
+        signOut,
       }}
     >
       {children}
