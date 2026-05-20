@@ -1,27 +1,8 @@
 import { useState, useRef, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useApp } from "../context/AppContext";
 import { branchMeta } from "../data/branches";
-import { searchIndex } from "../data/branches";
-import { feSearchIndex } from "../data/feSubjects";
 
-const allIndex = [...feSearchIndex, ...searchIndex];
-
-const SearchIcon = () => (
-  <svg
-    width="15"
-    height="15"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="11" cy="11" r="8" />
-    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-  </svg>
-);
 const MoonIcon = () => (
   <svg
     width="15"
@@ -87,6 +68,26 @@ const ChevronDown = () => (
     <polyline points="6 9 12 15 18 9" />
   </svg>
 );
+const GoogleIcon = () => (
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+    <path
+      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+      fill="#4285F4"
+    />
+    <path
+      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+      fill="#34A853"
+    />
+    <path
+      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+      fill="#FBBC05"
+    />
+    <path
+      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+      fill="#EA4335"
+    />
+  </svg>
+);
 const ExternalLink = () => (
   <svg
     width="12"
@@ -104,52 +105,88 @@ const ExternalLink = () => (
   </svg>
 );
 
+function NavLink({ to, children, pathname }) {
+  const active = pathname === to;
+  return (
+    <Link
+      to={to}
+      style={{
+        padding: "7px 11px",
+        borderRadius: 8,
+        fontSize: 13,
+        fontWeight: 500,
+        color: active ? "#fff" : "rgba(255,255,255,.78)",
+        textDecoration: "none",
+        background: active ? "rgba(255,255,255,.12)" : "transparent",
+        transition: "all .18s",
+        whiteSpace: "nowrap",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.color = "#fff";
+        e.currentTarget.style.background = "rgba(255,255,255,.09)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.color = active ? "#fff" : "rgba(255,255,255,.78)";
+        e.currentTarget.style.background = active
+          ? "rgba(255,255,255,.12)"
+          : "transparent";
+      }}
+    >
+      {children}
+    </Link>
+  );
+}
+
 export default function Navbar() {
-  const { isDark, toggleTheme, saved, pattern, switchPattern } = useApp();
+  const {
+    isDark,
+    toggleTheme,
+    saved,
+    pattern,
+    switchPattern,
+    user,
+    signInWithGoogle,
+    signOut,
+  } = useApp();
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState([]);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const navigate = useNavigate();
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
   const { pathname } = useLocation();
   const megaRef = useRef(null);
-  const searchRef = useRef(null);
+  const userMenuRef = useRef(null);
 
-  // Close mega on route change
   useEffect(() => {
     setMegaOpen(false);
     setMobileOpen(false);
+    setUserMenuOpen(false);
   }, [pathname]);
 
-  // Search
   useEffect(() => {
-    if (!query.trim()) {
-      setResults([]);
-      return;
+    function handleClick(e) {
+      if (userMenuRef.current && !userMenuRef.current.contains(e.target))
+        setUserMenuOpen(false);
+      if (megaRef.current && !megaRef.current.contains(e.target))
+        setMegaOpen(false);
     }
-    const q = query.toLowerCase();
-    setResults(
-      allIndex
-        .filter(
-          (s) =>
-            s.name.toLowerCase().includes(q) ||
-            s.code.toLowerCase().includes(q) ||
-            s.branch.toLowerCase().includes(q),
-        )
-        .slice(0, 7),
-    );
-  }, [query]);
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
 
-  function pickResult(sub) {
-    setQuery("");
-    setSearchOpen(false);
-    navigate(`/subject/${sub.code}`, { state: sub });
-  }
+  const dropdownLinkStyle = {
+    display: "flex",
+    alignItems: "center",
+    gap: 10,
+    padding: "9px 14px",
+    fontSize: 13,
+    fontWeight: 500,
+    color: "var(--text)",
+    textDecoration: "none",
+    borderBottom: "1px solid var(--border)",
+    transition: "background .12s",
+  };
 
   return (
     <>
-      {/* ── Top bar ───────────────────────────────────────────── */}
       <header
         style={{
           background: "var(--navy)",
@@ -159,10 +196,10 @@ export default function Navbar() {
           borderBottom: "1px solid rgba(255,255,255,0.06)",
         }}
       >
-        {/* Main row */}
+        {/* ── Main row ── */}
         <div
           className="container"
-          style={{ display: "flex", alignItems: "center", height: 60, gap: 12 }}
+          style={{ display: "flex", alignItems: "center", height: 60, gap: 8 }}
         >
           {/* Logo */}
           <Link
@@ -182,8 +219,8 @@ export default function Navbar() {
             SPPU<span style={{ color: "var(--gold)" }}>Study</span>Hub
           </Link>
 
-          {/* Pattern switcher — desktop */}
-          <div className="pattern-pill hide-sm" style={{ marginLeft: 8 }}>
+          {/* Pattern switcher */}
+          <div className="pattern-pill" style={{ marginLeft: 6 }}>
             {["2019", "2024"].map((p) => (
               <button
                 key={p}
@@ -195,209 +232,83 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Spacer */}
-          <div style={{ flex: 1 }} />
-
-          {/* Search bar — desktop */}
+          {/* Divider */}
           <div
-            ref={searchRef}
-            style={{ position: "relative", width: 300 }}
             className="hide-sm"
-          >
-            <div
-              style={{
-                position: "absolute",
-                left: 11,
-                top: "50%",
-                transform: "translateY(-50%)",
-                color: "rgba(255,255,255,.35)",
-                pointerEvents: "none",
-              }}
-            >
-              <SearchIcon />
-            </div>
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onFocus={() => setSearchOpen(true)}
-              onBlur={() => setTimeout(() => setSearchOpen(false), 180)}
-              placeholder="Search subjects, notes..."
-              style={{
-                width: "100%",
-                padding: "8px 14px 8px 36px",
-                borderRadius: 8,
-                border: "1px solid rgba(255,255,255,.12)",
-                background: "rgba(255,255,255,.08)",
-                color: "#fff",
-                fontSize: 13,
-                fontFamily: "Inter, sans-serif",
-                outline: "none",
-                transition: "all .2s",
-              }}
-            />
-            {searchOpen && results.length > 0 && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: "calc(100% + 6px)",
-                  left: 0,
-                  right: 0,
-                  background: "var(--surface)",
-                  border: "1px solid var(--border)",
-                  borderRadius: 12,
-                  boxShadow: "var(--shadow-lg)",
-                  zIndex: 300,
-                  overflow: "hidden",
-                }}
-              >
-                {results.map((r) => (
-                  <div
-                    key={r.code}
-                    onMouseDown={() => pickResult(r)}
-                    style={{
-                      padding: "10px 14px",
-                      cursor: "pointer",
-                      borderBottom: "1px solid var(--border)",
-                      display: "flex",
-                      gap: 10,
-                      alignItems: "center",
-                      transition: "background .1s",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.background = "var(--surface2)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.background = "transparent")
-                    }
-                  >
-                    <span
-                      style={{
-                        fontSize: 10,
-                        fontWeight: 700,
-                        color: "var(--gold-dim)",
-                        background: "var(--gold-pale)",
-                        padding: "2px 7px",
-                        borderRadius: 10,
-                        whiteSpace: "nowrap",
-                        flexShrink: 0,
-                      }}
-                    >
-                      {r.code}
-                    </span>
-                    <div>
-                      <div
-                        style={{
-                          fontSize: 13,
-                          fontWeight: 500,
-                          color: "var(--text)",
-                        }}
-                      >
-                        {r.name}
-                      </div>
-                      <div style={{ fontSize: 11, color: "var(--text-3)" }}>
-                        {r.branch} · {r.sem}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+            style={{
+              width: 1,
+              height: 18,
+              background: "rgba(255,255,255,.12)",
+              marginLeft: 4,
+            }}
+          />
 
-          {/* Nav items */}
+          {/* Desktop nav */}
           <nav
-            style={{ display: "flex", alignItems: "center", gap: 2 }}
             className="hide-sm"
+            style={{ display: "flex", alignItems: "center", gap: 2 }}
           >
-            {/* Browse mega trigger */}
-            <button
-              onClick={() => setMegaOpen((o) => !o)}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 4,
-                padding: "7px 12px",
-                borderRadius: 8,
-                border: "none",
-                background: megaOpen ? "rgba(255,255,255,.12)" : "transparent",
-                color: megaOpen ? "#fff" : "rgba(255,255,255,.8)",
-                fontSize: 13,
-                fontWeight: 500,
-                fontFamily: "Inter, sans-serif",
-                cursor: "pointer",
-                transition: "all .18s",
-              }}
-            >
-              Browse <ChevronDown />
-            </button>
+            <NavLink to="/" pathname={pathname}>
+              Home
+            </NavLink>
 
-            {[
-              ["/tools", "Tools"],
-              ["/news", "News"],
-            ].map(([path, label]) => (
-              <Link
-                key={path}
-                to={path}
+            {/* Browse mega trigger */}
+            <div ref={megaRef} style={{ position: "relative" }}>
+              <button
+                onClick={() => setMegaOpen((o) => !o)}
                 style={{
-                  padding: "7px 12px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 4,
+                  padding: "7px 11px",
                   borderRadius: 8,
+                  border: "none",
+                  background: megaOpen
+                    ? "rgba(255,255,255,.12)"
+                    : "transparent",
+                  color: megaOpen ? "#fff" : "rgba(255,255,255,.78)",
                   fontSize: 13,
                   fontWeight: 500,
-                  color: pathname === path ? "#fff" : "rgba(255,255,255,.8)",
-                  textDecoration: "none",
-                  background:
-                    pathname === path ? "rgba(255,255,255,.12)" : "transparent",
+                  fontFamily: "Inter, sans-serif",
+                  cursor: "pointer",
                   transition: "all .18s",
+                  whiteSpace: "nowrap",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = "#fff";
-                  e.currentTarget.style.background = "rgba(255,255,255,.08)";
+                  e.currentTarget.style.background = "rgba(255,255,255,.09)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color =
-                    pathname === path ? "#fff" : "rgba(255,255,255,.8)";
-                  e.currentTarget.style.background =
-                    pathname === path ? "rgba(255,255,255,.12)" : "transparent";
+                  e.currentTarget.style.color = megaOpen
+                    ? "#fff"
+                    : "rgba(255,255,255,.78)";
+                  e.currentTarget.style.background = megaOpen
+                    ? "rgba(255,255,255,.12)"
+                    : "transparent";
                 }}
               >
-                {label}
-              </Link>
-            ))}
+                Browse <ChevronDown />
+              </button>
+            </div>
 
-            {/* Result button */}
-            <a
-              href="https://results.unipune.ac.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 5,
-                padding: "6px 12px",
-                borderRadius: 8,
-                fontSize: 13,
-                fontWeight: 600,
-                background: "rgba(240,165,0,.18)",
-                color: "var(--gold)",
-                border: "1px solid rgba(240,165,0,.3)",
-                textDecoration: "none",
-                transition: "all .18s",
-                whiteSpace: "nowrap",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "var(--gold)";
-                e.currentTarget.style.color = "#111";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "rgba(240,165,0,.18)";
-                e.currentTarget.style.color = "var(--gold)";
-              }}
-            >
-              Check Result <ExternalLink />
-            </a>
+            <NavLink to="/tools" pathname={pathname}>
+              Tools
+            </NavLink>
+            <NavLink to="/news" pathname={pathname}>
+              News
+            </NavLink>
+            <NavLink to="/history" pathname={pathname}>
+              AI History
+            </NavLink>
+            <NavLink to="/contributions" pathname={pathname}>
+              Contributors
+            </NavLink>
           </nav>
 
-          {/* Saved badge + theme */}
+          {/* Spacer */}
+          <div style={{ flex: 1 }} />
+
+          {/* Right side actions */}
           <div
             style={{
               display: "flex",
@@ -406,66 +317,10 @@ export default function Navbar() {
               flexShrink: 0,
             }}
           >
-            <Link
-              to="/saved"
-              style={{
-                position: "relative",
-                width: 34,
-                height: 34,
-                borderRadius: 8,
-                border: "1px solid rgba(255,255,255,.15)",
-                background: "rgba(255,255,255,.07)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "rgba(255,255,255,.8)",
-                textDecoration: "none",
-                transition: "all .18s",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "rgba(255,255,255,.14)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.background = "rgba(255,255,255,.07)")
-              }
-            >
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />
-              </svg>
-              {saved.length > 0 && (
-                <span
-                  style={{
-                    position: "absolute",
-                    top: -5,
-                    right: -5,
-                    width: 16,
-                    height: 16,
-                    background: "var(--gold)",
-                    borderRadius: "50%",
-                    fontSize: 9,
-                    fontWeight: 700,
-                    color: "#111",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    border: "2px solid var(--navy)",
-                  }}
-                >
-                  {saved.length}
-                </span>
-              )}
-            </Link>
+            {/* Dark mode toggle */}
             <button
               onClick={toggleTheme}
+              title={isDark ? "Switch to light mode" : "Switch to dark mode"}
               style={{
                 width: 34,
                 height: 34,
@@ -488,7 +343,312 @@ export default function Navbar() {
             >
               {isDark ? <SunIcon /> : <MoonIcon />}
             </button>
-            {/* Hamburger */}
+
+            {/* Auth — desktop */}
+            {!user ? (
+              <button
+                onClick={signInWithGoogle}
+                className="hide-sm"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                  padding: "6px 12px",
+                  borderRadius: 8,
+                  border: "1px solid rgba(255,255,255,.15)",
+                  background: "rgba(255,255,255,.07)",
+                  color: "rgba(255,255,255,.85)",
+                  fontSize: 12,
+                  fontWeight: 600,
+                  fontFamily: "Inter, sans-serif",
+                  cursor: "pointer",
+                  whiteSpace: "nowrap",
+                  transition: "all .18s",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.background = "rgba(255,255,255,.14)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.background = "rgba(255,255,255,.07)")
+                }
+              >
+                <GoogleIcon /> Sign in
+              </button>
+            ) : (
+              <div
+                ref={userMenuRef}
+                style={{ position: "relative" }}
+                className="hide-sm"
+              >
+                <button
+                  onClick={() => setUserMenuOpen((o) => !o)}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 7,
+                    padding: "4px 10px 4px 4px",
+                    borderRadius: 8,
+                    border: "1px solid rgba(255,255,255,.15)",
+                    background: userMenuOpen
+                      ? "rgba(255,255,255,.14)"
+                      : "rgba(255,255,255,.07)",
+                    cursor: "pointer",
+                    transition: "all .18s",
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.background = "rgba(255,255,255,.14)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.background = userMenuOpen
+                      ? "rgba(255,255,255,.14)"
+                      : "rgba(255,255,255,.07)")
+                  }
+                >
+                  <div
+                    style={{
+                      width: 26,
+                      height: 26,
+                      borderRadius: "50%",
+                      background: "var(--accent)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 11,
+                      fontWeight: 700,
+                      color: "#fff",
+                      flexShrink: 0,
+                      overflow: "hidden",
+                    }}
+                  >
+                    {user.user_metadata?.avatar_url ? (
+                      <img
+                        src={user.user_metadata.avatar_url}
+                        alt=""
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                    ) : (
+                      (
+                        user.user_metadata?.full_name?.[0] ??
+                        user.email?.[0] ??
+                        "U"
+                      ).toUpperCase()
+                    )}
+                  </div>
+                  <span
+                    style={{
+                      fontSize: 12,
+                      fontWeight: 600,
+                      color: "rgba(255,255,255,.85)",
+                      maxWidth: 90,
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {user.user_metadata?.full_name?.split(" ")[0] ??
+                      user.email?.split("@")[0]}
+                  </span>
+                  <ChevronDown />
+                </button>
+
+                {userMenuOpen && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "calc(100% + 8px)",
+                      right: 0,
+                      background: "var(--surface)",
+                      border: "1px solid var(--border)",
+                      borderRadius: 12,
+                      boxShadow: "var(--shadow-lg)",
+                      minWidth: 200,
+                      zIndex: 300,
+                      overflow: "hidden",
+                    }}
+                  >
+                    {/* User info header */}
+                    <div
+                      style={{
+                        padding: "12px 14px 10px",
+                        borderBottom: "1px solid var(--border)",
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: 13,
+                          fontWeight: 600,
+                          color: "var(--heading)",
+                        }}
+                      >
+                        {user.user_metadata?.full_name ??
+                          user.email?.split("@")[0]}
+                      </div>
+                      <div
+                        style={{
+                          fontSize: 11,
+                          color: "var(--text-4)",
+                          marginTop: 2,
+                        }}
+                      >
+                        {user.email}
+                      </div>
+                    </div>
+
+                    <Link
+                      to="/dashboard"
+                      style={{ ...dropdownLinkStyle }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.background = "var(--surface2)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.background = "transparent")
+                      }
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <rect x="3" y="3" width="7" height="7" rx="1" />
+                        <rect x="14" y="3" width="7" height="7" rx="1" />
+                        <rect x="3" y="14" width="7" height="7" rx="1" />
+                        <rect x="14" y="14" width="7" height="7" rx="1" />
+                      </svg>
+                      My Dashboard
+                    </Link>
+
+                    <Link
+                      to="/saved"
+                      style={{
+                        ...dropdownLinkStyle,
+                        justifyContent: "space-between",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.background = "var(--surface2)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.background = "transparent")
+                      }
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 10,
+                        }}
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />
+                        </svg>
+                        Saved Subjects
+                      </div>
+                      {saved.length > 0 && (
+                        <span
+                          style={{
+                            fontSize: 10,
+                            fontWeight: 700,
+                            background: "var(--gold-pale)",
+                            color: "var(--gold-dim)",
+                            padding: "1px 7px",
+                            borderRadius: 10,
+                          }}
+                        >
+                          {saved.length}
+                        </span>
+                      )}
+                    </Link>
+
+                    <Link
+                      to="/history"
+                      style={{ ...dropdownLinkStyle }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.background = "var(--surface2)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.background = "transparent")
+                      }
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                      </svg>
+                      AI History
+                    </Link>
+
+                    <button
+                      onClick={signOut}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        width: "100%",
+                        padding: "9px 14px",
+                        fontSize: 13,
+                        fontWeight: 500,
+                        color: "#f87171",
+                        background: "transparent",
+                        border: "none",
+                        textAlign: "left",
+                        cursor: "pointer",
+                        fontFamily: "Inter, sans-serif",
+                        transition: "background .12s",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.background =
+                          "rgba(248,113,113,.08)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.background = "transparent")
+                      }
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                      </svg>
+                      Sign out
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Hamburger — mobile */}
             <button
               onClick={() => setMobileOpen((o) => !o)}
               className="show-sm"
@@ -507,41 +667,25 @@ export default function Navbar() {
                 gap: 4,
               }}
             >
-              <span
-                style={{
-                  width: 16,
-                  height: 1.5,
-                  background: "currentColor",
-                  borderRadius: 1,
-                  display: "block",
-                }}
-              />
-              <span
-                style={{
-                  width: 16,
-                  height: 1.5,
-                  background: "currentColor",
-                  borderRadius: 1,
-                  display: "block",
-                }}
-              />
-              <span
-                style={{
-                  width: 16,
-                  height: 1.5,
-                  background: "currentColor",
-                  borderRadius: 1,
-                  display: "block",
-                }}
-              />
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  style={{
+                    width: 16,
+                    height: 1.5,
+                    background: "currentColor",
+                    borderRadius: 1,
+                    display: "block",
+                  }}
+                />
+              ))}
             </button>
           </div>
         </div>
 
-        {/* ── Mega menu ─────────────────────────────────────── */}
+        {/* ── Mega menu ── */}
         {megaOpen && (
           <div
-            ref={megaRef}
             style={{
               background: "var(--surface)",
               borderTop: "1px solid var(--border)",
@@ -628,7 +772,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Years + FE */}
+              {/* By Year */}
               <div>
                 <p
                   style={{
@@ -642,7 +786,7 @@ export default function Navbar() {
                 >
                   By Year
                 </p>
-                <div style={{ display: "grid", gap: 4, marginBottom: 20 }}>
+                <div style={{ display: "grid", gap: 4 }}>
                   {[
                     {
                       path: "/first-year",
@@ -717,7 +861,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Quick links */}
+              {/* Quick Links */}
               <div>
                 <p
                   style={{
@@ -756,6 +900,12 @@ export default function Navbar() {
                       label: "About and Contribute",
                       sub: "Share your notes with us",
                       icon: "✋",
+                    },
+                    {
+                      path: "/history",
+                      label: "AI Answer History",
+                      sub: "Your recent AI-explained questions",
+                      icon: "✨",
                     },
                   ].map((item) => (
                     <Link
@@ -809,8 +959,6 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
-
-                {/* Result CTA in mega */}
                 <a
                   href="https://results.unipune.ac.in"
                   target="_blank"
@@ -855,85 +1003,17 @@ export default function Navbar() {
           </div>
         )}
 
-        {/* ── Mobile drawer ─────────────────────────────────── */}
+        {/* ── Mobile drawer ── */}
         {mobileOpen && (
           <div
             style={{
               background: "var(--surface)",
               borderTop: "1px solid var(--border)",
-              padding: "16px 20px 20px",
+              padding: "16px 20px 24px",
             }}
           >
-            {/* Mobile search */}
-            <div style={{ position: "relative", marginBottom: 14 }}>
-              <div
-                style={{
-                  position: "absolute",
-                  left: 10,
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  color: "var(--text-4)",
-                  pointerEvents: "none",
-                }}
-              >
-                <SearchIcon />
-              </div>
-              <input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search subjects..."
-                style={{
-                  width: "100%",
-                  padding: "9px 12px 9px 32px",
-                  borderRadius: 8,
-                  border: "1px solid var(--border)",
-                  background: "var(--surface2)",
-                  color: "var(--text)",
-                  fontSize: 13,
-                  fontFamily: "Inter, sans-serif",
-                  outline: "none",
-                }}
-              />
-              {results.length > 0 && (
-                <div
-                  style={{
-                    background: "var(--surface)",
-                    border: "1px solid var(--border)",
-                    borderRadius: 8,
-                    overflow: "hidden",
-                    marginTop: 4,
-                  }}
-                >
-                  {results.map((r) => (
-                    <div
-                      key={r.code}
-                      onMouseDown={() => pickResult(r)}
-                      style={{
-                        padding: "9px 12px",
-                        cursor: "pointer",
-                        borderBottom: "1px solid var(--border)",
-                        fontSize: 13,
-                        color: "var(--text)",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: 10,
-                          fontWeight: 700,
-                          color: "var(--gold-dim)",
-                          marginRight: 8,
-                        }}
-                      >
-                        {r.code}
-                      </span>
-                      {r.name}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
             {/* Pattern */}
-            <div style={{ marginBottom: 14 }}>
+            <div style={{ marginBottom: 16 }}>
               <p
                 style={{
                   fontSize: 11,
@@ -958,15 +1038,16 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
-            {/* Links */}
-            <div style={{ display: "grid", gap: 2 }}>
+
+            {/* Nav links */}
+            <div style={{ display: "grid", gap: 2, marginBottom: 4 }}>
               {[
                 ["/", "Home"],
                 ["/first-year", "First Year"],
-                ["/branches", "Branches"],
+                ["/branches", "Browse Branches"],
                 ["/tools", "Tools"],
                 ["/news", "News"],
-                ["/saved", `Saved (${saved.length})`],
+                ["/history", "AI History"],
                 ["/about", "About"],
               ].map(([path, label]) => (
                 <Link
@@ -982,12 +1063,15 @@ export default function Navbar() {
                     color: "var(--text)",
                     textDecoration: "none",
                     transition: "background .15s",
+                    background:
+                      pathname === path ? "var(--surface2)" : "transparent",
                   }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.background = "var(--surface2)")
                   }
                   onMouseLeave={(e) =>
-                    (e.currentTarget.style.background = "transparent")
+                    (e.currentTarget.style.background =
+                      pathname === path ? "var(--surface2)" : "transparent")
                   }
                 >
                   {label}
@@ -1011,6 +1095,163 @@ export default function Navbar() {
               >
                 Check Result <ExternalLink />
               </a>
+            </div>
+
+            {/* Mobile auth */}
+            <div
+              style={{
+                marginTop: 12,
+                paddingTop: 12,
+                borderTop: "1px solid var(--border)",
+              }}
+            >
+              {!user ? (
+                <button
+                  onClick={signInWithGoogle}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 8,
+                    width: "100%",
+                    padding: "10px 14px",
+                    borderRadius: 8,
+                    border: "1px solid var(--border)",
+                    background: "var(--surface2)",
+                    color: "var(--text)",
+                    fontSize: 13,
+                    fontWeight: 600,
+                    fontFamily: "Inter, sans-serif",
+                    cursor: "pointer",
+                  }}
+                >
+                  <GoogleIcon /> Sign in with Google
+                </button>
+              ) : (
+                <div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 10,
+                      padding: "8px 12px",
+                      marginBottom: 6,
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 32,
+                        height: 32,
+                        borderRadius: "50%",
+                        background: "var(--accent)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: 12,
+                        fontWeight: 700,
+                        color: "#fff",
+                        flexShrink: 0,
+                        overflow: "hidden",
+                      }}
+                    >
+                      {user.user_metadata?.avatar_url ? (
+                        <img
+                          src={user.user_metadata.avatar_url}
+                          alt=""
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                        />
+                      ) : (
+                        (
+                          user.user_metadata?.full_name?.[0] ??
+                          user.email?.[0] ??
+                          "U"
+                        ).toUpperCase()
+                      )}
+                    </div>
+                    <div>
+                      <div
+                        style={{
+                          fontSize: 13,
+                          fontWeight: 600,
+                          color: "var(--text)",
+                        }}
+                      >
+                        {user.user_metadata?.full_name ??
+                          user.email?.split("@")[0]}
+                      </div>
+                      <div style={{ fontSize: 11, color: "var(--text-3)" }}>
+                        {user.email}
+                      </div>
+                    </div>
+                  </div>
+
+                  {[
+                    ["/dashboard", "My Dashboard"],
+                    [
+                      "/saved",
+                      `Saved Subjects${saved.length > 0 ? ` (${saved.length})` : ""}`,
+                    ],
+                    ["/history", "AI History"],
+                  ].map(([path, label]) => (
+                    <Link
+                      key={path}
+                      to={path}
+                      onClick={() => setMobileOpen(false)}
+                      style={{
+                        display: "block",
+                        padding: "9px 12px",
+                        borderRadius: 8,
+                        fontSize: 14,
+                        fontWeight: 500,
+                        color: "var(--text)",
+                        textDecoration: "none",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.background = "var(--surface2)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.background = "transparent")
+                      }
+                    >
+                      {label}
+                    </Link>
+                  ))}
+
+                  <button
+                    onClick={() => {
+                      signOut();
+                      setMobileOpen(false);
+                    }}
+                    style={{
+                      display: "block",
+                      width: "100%",
+                      padding: "9px 12px",
+                      borderRadius: 8,
+                      border: "none",
+                      background: "transparent",
+                      textAlign: "left",
+                      fontSize: 14,
+                      fontWeight: 500,
+                      color: "#f87171",
+                      cursor: "pointer",
+                      fontFamily: "Inter, sans-serif",
+                    }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.background =
+                        "rgba(248,113,113,.08)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.background = "transparent")
+                    }
+                  >
+                    Sign out
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         )}
