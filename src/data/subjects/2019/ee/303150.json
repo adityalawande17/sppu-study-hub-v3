@@ -1,0 +1,22 @@
+﻿{
+    "code":  "303150",
+    "name":  "Control System Engineering",
+    "branch":  "Electrical Engineering",
+    "branchKey":  "ee",
+    "year":  "TE",
+    "sem":  "Sem 6",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

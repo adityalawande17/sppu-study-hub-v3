@@ -1,0 +1,22 @@
+﻿{
+    "code":  "107001",
+    "name":  "Engineering Mathematics I",
+    "branch":  "First Year Engineering",
+    "branchKey":  "fe",
+    "year":  "FE",
+    "sem":  "Sem 1",
+    "credits":  4,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

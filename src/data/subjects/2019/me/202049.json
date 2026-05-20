@@ -1,0 +1,22 @@
+﻿{
+    "code":  "202049",
+    "name":  "Fluid Mechanics",
+    "branch":  "Mechanical Engineering",
+    "branchKey":  "me",
+    "year":  "SE",
+    "sem":  "Sem 4",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

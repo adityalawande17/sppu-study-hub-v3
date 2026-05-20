@@ -1,0 +1,22 @@
+﻿{
+    "code":  "301012",
+    "name":  "Elective II",
+    "branch":  "Civil Engineering",
+    "branchKey":  "ce",
+    "year":  "TE",
+    "sem":  "Sem 6",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

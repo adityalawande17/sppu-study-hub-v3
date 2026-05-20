@@ -1,0 +1,22 @@
+﻿{
+    "code":  "204184",
+    "name":  "Data Structures",
+    "branch":  "Electronics and Telecommunication Engineering",
+    "branchKey":  "etc",
+    "year":  "SE",
+    "sem":  "Sem 3",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

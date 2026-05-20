@@ -1,0 +1,22 @@
+﻿{
+    "code":  "207001",
+    "name":  "Engineering Mathematics III",
+    "branch":  "Civil Engineering",
+    "branchKey":  "ce",
+    "year":  "SE",
+    "sem":  "Sem 3",
+    "credits":  4,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

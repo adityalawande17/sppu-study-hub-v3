@@ -1,0 +1,22 @@
+﻿{
+    "code":  "203144",
+    "name":  "Electrical Measurement and Instrumentation",
+    "branch":  "Electrical Engineering",
+    "branchKey":  "ee",
+    "year":  "SE",
+    "sem":  "Sem 3",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

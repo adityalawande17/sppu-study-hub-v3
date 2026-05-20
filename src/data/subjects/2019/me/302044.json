@@ -1,0 +1,22 @@
+﻿{
+    "code":  "302044",
+    "name":  "Mechatronics",
+    "branch":  "Mechanical Engineering",
+    "branchKey":  "me",
+    "year":  "TE",
+    "sem":  "Sem 5",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

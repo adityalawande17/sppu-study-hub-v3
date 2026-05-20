@@ -1,0 +1,22 @@
+﻿{
+    "code":  "201001",
+    "name":  "Building Technology and Architectural Planning",
+    "branch":  "Civil Engineering",
+    "branchKey":  "ce",
+    "year":  "SE",
+    "sem":  "Sem 3",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

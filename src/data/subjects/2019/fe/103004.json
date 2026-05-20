@@ -1,0 +1,22 @@
+﻿{
+    "code":  "103004",
+    "name":  "Basic Electrical Engineering",
+    "branch":  "First Year Engineering",
+    "branchKey":  "fe",
+    "year":  "FE",
+    "sem":  "Sem 1",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

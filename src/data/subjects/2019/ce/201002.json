@@ -1,0 +1,22 @@
+﻿{
+    "code":  "201002",
+    "name":  "Mechanics of Structure",
+    "branch":  "Civil Engineering",
+    "branchKey":  "ce",
+    "year":  "SE",
+    "sem":  "Sem 3",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

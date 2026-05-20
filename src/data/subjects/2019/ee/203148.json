@@ -1,0 +1,22 @@
+﻿{
+    "code":  "203148",
+    "name":  "Numerical Methods and Computer Programming",
+    "branch":  "Electrical Engineering",
+    "branchKey":  "ee",
+    "year":  "SE",
+    "sem":  "Sem 4",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

@@ -1,0 +1,22 @@
+﻿{
+    "code":  "214441",
+    "name":  "Discrete Mathematics",
+    "branch":  "Information Technology Engineering",
+    "branchKey":  "it",
+    "year":  "SE",
+    "sem":  "Sem 3",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

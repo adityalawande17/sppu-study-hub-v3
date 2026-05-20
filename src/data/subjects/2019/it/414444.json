@@ -1,0 +1,22 @@
+﻿{
+    "code":  "414444",
+    "name":  "Elective III",
+    "branch":  "Information Technology Engineering",
+    "branchKey":  "it",
+    "year":  "BE",
+    "sem":  "Sem 7",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

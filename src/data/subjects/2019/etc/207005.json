@@ -1,0 +1,22 @@
+﻿{
+    "code":  "207005",
+    "name":  "Engineering Mathematics III",
+    "branch":  "Electronics and Telecommunication Engineering",
+    "branchKey":  "etc",
+    "year":  "SE",
+    "sem":  "Sem 3",
+    "credits":  4,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

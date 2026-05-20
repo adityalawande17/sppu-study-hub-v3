@@ -1,0 +1,22 @@
+﻿{
+    "code":  "403148",
+    "name":  "Advanced Power Electronics",
+    "branch":  "Electrical Engineering",
+    "branchKey":  "ee",
+    "year":  "BE",
+    "sem":  "Sem 8",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

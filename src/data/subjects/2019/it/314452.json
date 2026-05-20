@@ -1,0 +1,22 @@
+﻿{
+    "code":  "314452",
+    "name":  "Data Science and Big Data Analytics",
+    "branch":  "Information Technology Engineering",
+    "branchKey":  "it",
+    "year":  "TE",
+    "sem":  "Sem 6",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

@@ -1,0 +1,22 @@
+﻿{
+    "code":  "210254",
+    "name":  "Microprocessor",
+    "branch":  "Computer Engineering",
+    "branchKey":  "cs",
+    "year":  "SE",
+    "sem":  "Sem 4",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

@@ -1,0 +1,22 @@
+﻿{
+    "code":  "104010",
+    "name":  "Basic Electronics Engineering",
+    "branch":  "First Year Engineering",
+    "branchKey":  "fe",
+    "year":  "FE",
+    "sem":  "Sem 2",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

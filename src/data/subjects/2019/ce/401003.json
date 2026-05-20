@@ -1,0 +1,22 @@
+﻿{
+    "code":  "401003",
+    "name":  "Elective III",
+    "branch":  "Civil Engineering",
+    "branchKey":  "ce",
+    "year":  "BE",
+    "sem":  "Sem 7",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

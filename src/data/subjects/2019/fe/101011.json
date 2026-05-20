@@ -1,0 +1,22 @@
+﻿{
+    "code":  "101011",
+    "name":  "Engineering Mechanics",
+    "branch":  "First Year Engineering",
+    "branchKey":  "fe",
+    "year":  "FE",
+    "sem":  "Sem 2",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

@@ -1,8 +1,21 @@
 export const feSubjects = {
   2019: {
-    sem1: [],
+    sem1: [
+      { code: "107001", name: "Engineering Mathematics I", credits: 4, type: "Theory + Tutorial" },
+      { code: "107002", name: "Engineering Physics", credits: 4, type: "Theory + Practical" },
+      { code: "102003", name: "Systems in Mechanical Engineering", credits: 3, type: "Theory + Practical" },
+      { code: "103004", name: "Basic Electrical Engineering", credits: 3, type: "Theory + Practical" },
+      { code: "110005", name: "Programming and Problem Solving", credits: 3, type: "Theory + Practical" },
+      { code: "111006", name: "Workshop Practice", credits: 2, type: "Practical" },
+    ],
 
-    sem2: [],
+    sem2: [
+      { code: "107008", name: "Engineering Mathematics II", credits: 4, type: "Theory + Tutorial" },
+      { code: "107009", name: "Engineering Chemistry", credits: 4, type: "Theory + Practical" },
+      { code: "101011", name: "Engineering Mechanics", credits: 3, type: "Theory + Practical" },
+      { code: "104010", name: "Basic Electronics Engineering", credits: 3, type: "Theory + Practical" },
+      { code: "102012", name: "Engineering Graphics", credits: 3, type: "Theory + Practical" },
+    ],
   },
 
   2024: {

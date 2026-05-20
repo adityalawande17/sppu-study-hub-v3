@@ -1,0 +1,22 @@
+﻿{
+    "code":  "214452",
+    "name":  "Database Management System",
+    "branch":  "Information Technology Engineering",
+    "branchKey":  "it",
+    "year":  "SE",
+    "sem":  "Sem 4",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

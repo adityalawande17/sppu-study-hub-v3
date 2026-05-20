@@ -1,0 +1,22 @@
+﻿{
+    "code":  "402049",
+    "name":  "Energy Engineering",
+    "branch":  "Mechanical Engineering",
+    "branchKey":  "me",
+    "year":  "BE",
+    "sem":  "Sem 8",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

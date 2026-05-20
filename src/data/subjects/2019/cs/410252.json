@@ -1,0 +1,22 @@
+﻿{
+    "code":  "410252",
+    "name":  "Elective V",
+    "branch":  "Computer Engineering",
+    "branchKey":  "cs",
+    "year":  "BE",
+    "sem":  "Sem 8",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

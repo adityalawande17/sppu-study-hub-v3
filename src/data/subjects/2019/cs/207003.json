@@ -1,0 +1,22 @@
+﻿{
+    "code":  "207003",
+    "name":  "Engineering Mathematics III",
+    "branch":  "Computer Engineering",
+    "branchKey":  "cs",
+    "year":  "SE",
+    "sem":  "Sem 4",
+    "credits":  4,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

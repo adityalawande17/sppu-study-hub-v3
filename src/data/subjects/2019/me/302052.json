@@ -1,0 +1,22 @@
+﻿{
+    "code":  "302052",
+    "name":  "Elective II",
+    "branch":  "Mechanical Engineering",
+    "branchKey":  "me",
+    "year":  "TE",
+    "sem":  "Sem 6",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

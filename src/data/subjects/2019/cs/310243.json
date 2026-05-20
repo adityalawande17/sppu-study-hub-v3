@@ -1,0 +1,22 @@
+﻿{
+    "code":  "310243",
+    "name":  "Systems Programming and Operating System",
+    "branch":  "Computer Engineering",
+    "branchKey":  "cs",
+    "year":  "TE",
+    "sem":  "Sem 5",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

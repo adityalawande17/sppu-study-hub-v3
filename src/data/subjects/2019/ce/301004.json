@@ -1,0 +1,22 @@
+﻿{
+    "code":  "301004",
+    "name":  "Engineering Economics and Financial Management",
+    "branch":  "Civil Engineering",
+    "branchKey":  "ce",
+    "year":  "TE",
+    "sem":  "Sem 5",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

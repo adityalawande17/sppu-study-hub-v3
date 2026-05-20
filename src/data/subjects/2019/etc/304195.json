@@ -1,0 +1,22 @@
+﻿{
+    "code":  "304195",
+    "name":  "Elective II",
+    "branch":  "Electronics and Telecommunication Engineering",
+    "branchKey":  "etc",
+    "year":  "TE",
+    "sem":  "Sem 6",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

@@ -1,0 +1,22 @@
+﻿{
+    "code":  "403144",
+    "name":  "Elective IV",
+    "branch":  "Electrical Engineering",
+    "branchKey":  "ee",
+    "year":  "BE",
+    "sem":  "Sem 7",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

@@ -1,0 +1,22 @@
+﻿{
+    "code":  "107009",
+    "name":  "Engineering Chemistry",
+    "branch":  "First Year Engineering",
+    "branchKey":  "fe",
+    "year":  "FE",
+    "sem":  "Sem 2",
+    "credits":  4,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

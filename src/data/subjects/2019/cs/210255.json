@@ -1,0 +1,22 @@
+﻿{
+    "code":  "210255",
+    "name":  "Principles of Programming Languages",
+    "branch":  "Computer Engineering",
+    "branchKey":  "cs",
+    "year":  "SE",
+    "sem":  "Sem 4",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

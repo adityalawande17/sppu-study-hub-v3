@@ -1,0 +1,22 @@
+﻿{
+    "code":  "214454",
+    "name":  "Software Engineering",
+    "branch":  "Information Technology Engineering",
+    "branchKey":  "it",
+    "year":  "SE",
+    "sem":  "Sem 4",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

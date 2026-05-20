@@ -1,0 +1,22 @@
+﻿{
+    "code":  "217529",
+    "name":  "Software Engineering",
+    "branch":  "Artificial Intelligence and Data Science Engineering",
+    "branchKey":  "aids",
+    "year":  "SE",
+    "sem":  "Sem 4",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

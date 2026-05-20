@@ -1,0 +1,22 @@
+﻿{
+    "code":  "304182",
+    "name":  "Electromagnetic Field Theory",
+    "branch":  "Electronics and Telecommunication Engineering",
+    "branchKey":  "etc",
+    "year":  "TE",
+    "sem":  "Sem 5",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

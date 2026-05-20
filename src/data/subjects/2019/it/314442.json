@@ -1,0 +1,22 @@
+﻿{
+    "code":  "314442",
+    "name":  "Operating Systems",
+    "branch":  "Information Technology Engineering",
+    "branchKey":  "it",
+    "year":  "TE",
+    "sem":  "Sem 5",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

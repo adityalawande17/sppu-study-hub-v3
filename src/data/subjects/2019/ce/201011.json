@@ -1,0 +1,22 @@
+﻿{
+    "code":  "201011",
+    "name":  "Structural Analysis",
+    "branch":  "Civil Engineering",
+    "branchKey":  "ce",
+    "year":  "SE",
+    "sem":  "Sem 4",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

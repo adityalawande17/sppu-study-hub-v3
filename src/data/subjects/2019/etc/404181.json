@@ -1,0 +1,22 @@
+﻿{
+    "code":  "404181",
+    "name":  "Radiation and Microwave Theory",
+    "branch":  "Electronics and Telecommunication Engineering",
+    "branchKey":  "etc",
+    "year":  "BE",
+    "sem":  "Sem 7",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

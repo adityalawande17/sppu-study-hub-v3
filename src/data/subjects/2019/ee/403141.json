@@ -1,0 +1,22 @@
+﻿{
+    "code":  "403141",
+    "name":  "Power System Operation and Control",
+    "branch":  "Electrical Engineering",
+    "branchKey":  "ee",
+    "year":  "BE",
+    "sem":  "Sem 7",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

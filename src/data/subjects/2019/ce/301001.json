@@ -1,0 +1,22 @@
+﻿{
+    "code":  "301001",
+    "name":  "Structural Analysis II",
+    "branch":  "Civil Engineering",
+    "branchKey":  "ce",
+    "year":  "TE",
+    "sem":  "Sem 5",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}

@@ -1,0 +1,22 @@
+﻿{
+    "code":  "202041",
+    "name":  "Solid Mechanics",
+    "branch":  "Mechanical Engineering",
+    "branchKey":  "me",
+    "year":  "SE",
+    "sem":  "Sem 3",
+    "credits":  3,
+    "pattern":  "2019",
+    "units":  [
+
+              ],
+    "practicals":  [
+
+                   ],
+    "pyq":  [
+
+            ],
+    "books":  [
+
+              ]
+}
