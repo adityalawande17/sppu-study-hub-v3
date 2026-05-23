@@ -292,12 +292,12 @@ export default function Subject() {
         </div>
       </div>
 
-      <div className="ad-slot">
+      {/* <div className="ad-slot">
         <div>
           <p className="ad-label">Advertisement</p>
           <p>Google AdSense</p>
         </div>
-      </div>
+      </div> */}
 
       {is2024Pattern && (
         <div
@@ -626,12 +626,12 @@ export default function Subject() {
         )}
       </div>
 
-      <div className="ad-slot" style={{ marginBottom: 40 }}>
+      {/* <div className="ad-slot" style={{ marginBottom: 40 }}>
         <div>
           <p className="ad-label">Advertisement</p>
           <p>Google AdSense</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -132,12 +132,12 @@ export default function About() {
         </button>
       </div>
 
-      <div className="ad-slot" style={{ marginBottom: 40 }}>
+      {/* <div className="ad-slot" style={{ marginBottom: 40 }}>
         <div>
           <p className="ad-label">Advertisement</p>
           <p>Google AdSense</p>
         </div>
-      </div>
+      </div> */}
       <ContributeModal open={open} onClose={() => setOpen(false)} />
       <style>{`@media(max-width:640px){.about-grid{grid-template-columns:1fr!important}}`}</style>
     </div>

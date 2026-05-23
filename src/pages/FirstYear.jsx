@@ -158,12 +158,12 @@ export default function FirstYear() {
         ))}
       </div>
 
-      <div className="ad-slot" style={{ margin: "24px 0 40px" }}>
+      {/* <div className="ad-slot" style={{ margin: "24px 0 40px" }}>
         <div>
           <p className="ad-label">Advertisement</p>
           <p>Google AdSense</p>
         </div>
-      </div>
+      </div> */}
       <SyllabusModal
         open={syllabusOpen}
         onClose={() => setSyllabusOpen(false)}

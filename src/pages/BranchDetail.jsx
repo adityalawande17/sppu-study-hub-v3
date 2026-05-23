@@ -187,12 +187,12 @@ export default function BranchDetail() {
         </div>
       ))}
 
-      <div className="ad-slot" style={{ marginBottom: 40 }}>
+      {/* <div className="ad-slot" style={{ marginBottom: 40 }}>
         <div>
           <p className="ad-label">Advertisement</p>
           <p>Google AdSense</p>
         </div>
-      </div>
+      </div> */}
       <SyllabusModal
         open={syllabusOpen}
         onClose={() => setSyllabusOpen(false)}

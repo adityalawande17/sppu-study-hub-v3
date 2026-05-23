@@ -226,12 +226,12 @@ export default function News() {
         </div>
       )}
 
-      <div className="ad-slot" style={{ marginTop: 20, marginBottom: 40 }}>
+      {/* <div className="ad-slot" style={{ marginTop: 20, marginBottom: 40 }}>
         <div>
           <p className="ad-label">Advertisement</p>
           <p>Google AdSense</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

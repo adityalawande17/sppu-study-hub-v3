@@ -431,12 +431,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="ad-slot">
+      {/* <div className="ad-slot">
         <div>
           <p className="ad-label">Advertisement</p>
           <p>Google AdSense</p>
         </div>
-      </div>
+      </div> */}
 
       {/* ── Year selector ──────────────────────────────────── */}
       <div className="section-header fade-up fade-up-2">
@@ -822,12 +822,12 @@ export default function Home() {
         </button>
       </div>
 
-      <div className="ad-slot" style={{ marginBottom: 40 }}>
+      {/* <div className="ad-slot" style={{ marginBottom: 40 }}>
         <div>
           <p className="ad-label">Advertisement</p>
           <p>Google AdSense</p>
         </div>
-      </div>
+      </div> */}
 
       <ContributeModal
         open={contributeOpen}
