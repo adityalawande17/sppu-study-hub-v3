@@ -79,7 +79,7 @@ export default function Contributions() {
         contributed so far
       </div>
 
-      {/* Contributors grid */}
+      {/* Contributors list */}
       {contributors.length === 0 ? (
         <div
           style={{
@@ -88,7 +88,6 @@ export default function Contributions() {
             color: "var(--text-3)",
           }}
         >
-          <div style={{ fontSize: 48, marginBottom: 12 }}>🙌</div>
           <h3
             style={{ fontSize: 20, color: "var(--heading)", marginBottom: 8 }}
           >
@@ -100,112 +99,64 @@ export default function Contributions() {
           </p>
         </div>
       ) : (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-            gap: 14,
-            marginBottom: 40,
-          }}
-        >
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 40 }}>
           {contributors.map((c, i) => (
             <div
               key={i}
               style={{
                 background: "var(--surface)",
                 border: "1px solid var(--border)",
-                borderRadius: 14,
-                padding: "18px 20px",
+                borderRadius: 8,
+                padding: "8px 12px",
                 display: "flex",
-                alignItems: "flex-start",
-                gap: 14,
-                transition: "all .2s",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "var(--gold-dim)";
-                e.currentTarget.style.boxShadow = "var(--shadow-md)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "var(--border)";
-                e.currentTarget.style.boxShadow = "";
+                alignItems: "center",
+                gap: 10,
               }}
             >
-              {/* Avatar */}
-              <div
-                style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: "50%",
-                  background: "var(--navy)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: 18,
-                  fontWeight: 700,
-                  color: "var(--gold)",
-                  flexShrink: 0,
-                  fontFamily: "'DM Serif Display', serif",
-                }}
-              >
-                {c.avatar ? (
-                  <img
-                    src={c.avatar}
-                    alt={c.name}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                    }}
-                  />
-                ) : (
-                  c.name.charAt(0).toUpperCase()
-                )}
-              </div>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 600,
-                    color: "var(--heading)",
-                    marginBottom: 2,
-                  }}
-                >
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 600, color: "var(--heading)", whiteSpace: "nowrap" }}>
                   {c.name}
                 </div>
-                <div
+                {c.college && (
+                  <div style={{ fontSize: 11, color: "var(--text-3)" }}>
+                    {c.college}
+                  </div>
+                )}
+              </div>
+              {c.linkedin && (
+                <a
+                  href={c.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="LinkedIn"
                   style={{
-                    fontSize: 12,
-                    color: "var(--text-3)",
-                    marginBottom: 8,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: 26,
+                    height: 26,
+                    borderRadius: 6,
+                    border: "1px solid #0a66c2",
+                    color: "#0a66c2",
+                    textDecoration: "none",
+                    flexShrink: 0,
+                    transition: "all .15s",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#0a66c2";
+                    e.currentTarget.style.color = "#fff";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.color = "#0a66c2";
                   }}
                 >
-                  {c.branch} · {c.year}
-                </div>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
-                  {c.subjects.map((s, j) => (
-                    <span
-                      key={j}
-                      style={{
-                        fontSize: 11,
-                        fontWeight: 500,
-                        padding: "2px 8px",
-                        borderRadius: 10,
-                        background: "var(--gold-pale)",
-                        color: "var(--gold-dim)",
-                        border: "1px solid var(--gold-dim)",
-                      }}
-                    >
-                      {s}
-                    </span>
-                  ))}
-                </div>
-                <div
-                  style={{ fontSize: 11, color: "var(--text-4)", marginTop: 8 }}
-                >
-                  {c.date}
-                </div>
-              </div>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                    <circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+              )}
             </div>
           ))}
         </div>

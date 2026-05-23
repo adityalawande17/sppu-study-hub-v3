@@ -420,103 +420,6 @@ const tools = [
       );
     },
   },
-  {
-    id: "kt",
-    icon: "",
-    title: "KT / ATKT Eligibility",
-    color: "#ef4444",
-    paleBg: "#fff1f2",
-    desc: "Check if you are eligible for ATKT (Allowed To Keep Terms) based on SPPU rules.",
-    Component: function KTCalc() {
-      const [year, setYear] = useState("SE");
-      const [kts, setKTs] = useState("");
-      let result = null;
-      const k = parseInt(kts);
-      if (!isNaN(k) && k >= 0) {
-        // SPPU general ATKT rules (approximate — verify with official circular)
-        const rules = {
-          SE: { max: 4, label: "Second Year" },
-          TE: { max: 4, label: "Third Year" },
-          BE: { max: 2, label: "Final Year" },
-        };
-        const rule = rules[year];
-        result = {
-          eligible: k <= rule.max,
-          max: rule.max,
-          kts: k,
-          label: rule.label,
-        };
-      }
-      return (
-        <div className="tool-body">
-          <div className="form-group">
-            <label className="form-label">Current Year</label>
-            <select
-              className="form-select"
-              value={year}
-              onChange={(e) => setYear(e.target.value)}
-            >
-              <option value="SE">Second Year (SE)</option>
-              <option value="TE">Third Year (TE)</option>
-              <option value="BE">Final Year (BE)</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label className="form-label">Number of KTs (backlogs)</label>
-            <input
-              className="form-input"
-              type="number"
-              min="0"
-              placeholder="e.g. 2"
-              value={kts}
-              onChange={(e) => setKTs(e.target.value)}
-            />
-          </div>
-          {result && (
-            <div
-              className="tool-result"
-              style={{
-                flexDirection: "column",
-                alignItems: "flex-start",
-                gap: 6,
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <div style={{ fontSize: 22 }}>
-                  {result.eligible ? "✅" : "❌"}
-                </div>
-                <div>
-                  <div className="tool-result-label">Eligibility</div>
-                  <div
-                    style={{
-                      fontSize: 16,
-                      fontWeight: 700,
-                      color: result.eligible ? "#16a34a" : "#dc2626",
-                    }}
-                  >
-                    {result.eligible
-                      ? "Eligible for ATKT"
-                      : "Not Eligible for ATKT"}
-                  </div>
-                </div>
-              </div>
-              <p
-                style={{
-                  fontSize: 13,
-                  color: "var(--text-3)",
-                  lineHeight: 1.5,
-                }}
-              >
-                {result.label} allows a maximum of {result.max} KTs for ATKT
-                eligibility. You have {result.kts}. Note: Always verify with the
-                official SPPU circular as rules may change.
-              </p>
-            </div>
-          )}
-        </div>
-      );
-    },
-  },
 ];
 
 export default function Tools() {
@@ -554,18 +457,16 @@ export default function Tools() {
         }}
         className="tools-grid"
       >
-        {tools.map((tool) => (
-          <div key={tool.id} className="tool-card fade-up">
+        {tools.map((tool, index) => (
+          <div
+            key={tool.id}
+            className="tool-card fade-up"
+            style={tools.length % 2 !== 0 && index === tools.length - 1 ? { gridColumn: "1 / -1" } : {}}
+          >
             <div
               className="tool-card-head"
               style={{ borderBottom: "1px solid var(--border)" }}
             >
-              <div
-                className="tool-icon"
-                style={{ background: tool.paleBg, fontSize: 22 }}
-              >
-                {tool.icon}
-              </div>
               <div>
                 <div
                   style={{
@@ -593,12 +494,12 @@ export default function Tools() {
         ))}
       </div>
 
-      <div className="ad-slot" style={{ marginBottom: 40 }}>
+      {/* <div className="ad-slot" style={{ marginBottom: 40 }}>
         <div>
           <p className="ad-label">Advertisement</p>
           <p>Google AdSense</p>
         </div>
-      </div>
+      </div> */}
       <style>{`@media(max-width:760px){.tools-grid{grid-template-columns:1fr!important}}`}</style>
     </div>
   );
