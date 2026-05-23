@@ -7,6 +7,7 @@ import NoticeStrip from "./components/NoticeStrip";
 import BottomNav from "./components/BottomNav";
 import ScrollToTop from "./components/ScrollToTop";
 import "./styles/global.css";
+import { Analytics } from "@vercel/analytics/react";
 
 const Home = lazy(() => import("./pages/Home"));
 const FirstYear = lazy(() => import("./pages/FirstYear"));
@@ -70,6 +71,7 @@ export default function App() {
     <AppProvider>
       <BrowserRouter>
         <ScrollToTop />
+        <Analytics />
         <div
           style={{
             display: "flex",
@@ -81,24 +83,24 @@ export default function App() {
           <Navbar />
           <main style={{ flex: 1 }}>
             <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/first-year" element={<FirstYear />} />
-              <Route path="/branches" element={<Branches />} />
-              <Route path="/branches/:branchKey" element={<BranchDetail />} />
-              <Route path="/subject/:code" element={<Subject />} />
-              <Route path="/tools" element={<Tools />} />
-              <Route path="/news" element={<News />} />
-              <Route path="/saved" element={<Saved />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/history" element={<History />} />
-              <Route path="/contributions" element={<Contributions />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/first-year" element={<FirstYear />} />
+                <Route path="/branches" element={<Branches />} />
+                <Route path="/branches/:branchKey" element={<BranchDetail />} />
+                <Route path="/subject/:code" element={<Subject />} />
+                <Route path="/tools" element={<Tools />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/saved" element={<Saved />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/history" element={<History />} />
+                <Route path="/contributions" element={<Contributions />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
             </Suspense>
           </main>
           <Footer />
