@@ -1,22 +1,70 @@
 ﻿{
-    "code":  "314453",
-    "name":  "Web Application Development",
-    "branch":  "Information Technology Engineering",
-    "branchKey":  "it",
-    "year":  "TE",
-    "sem":  "Sem 6",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "314453",
+  "name": "Web Application Development",
+  "branch": "Information Technology Engineering",
+  "branchKey": "it",
+  "year": "TE",
+  "sem": "Sem 6",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1kR8PDsD2Y4aokCswZmcUFmw8NGvZhAfC/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1Edo-pdATD5IHmQNpJ7kMFDW51BsIQNNz/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1i7U5YJRmP9ClOOgMLvED6CYxWEv36l5w/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1og1ljJ7Y6vIg2Jaqsln56FVxgXGDQEd7/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1al592IwuDhpVjo9YsbeGWDyog-uPEgB2/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/11WPlQHjHnAK0aVSMfB35wcN0StE550-l/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1EaXRvTkQlAyviqP4bgYvJtE6w0NW5Bnj/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1DtM7ZiMfdubqQ-4E750-yWOq8Eusnmpl/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1rOnra9jdTAc1a8Q9F-LQCPRJ2sxl86t6/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "Nov / Dec 2022",
+      "url": "https://drive.google.com/file/d/1VzZfDNs_L755CKLcKCHyoNvvp_6ztv_N/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": "https://drive.google.com/file/d/1P_p1cz-gnuBaXOQMzYqh8X79gAoZghSe/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

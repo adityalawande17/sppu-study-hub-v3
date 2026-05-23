@@ -1,22 +1,65 @@
 ﻿{
-    "code":  "310251",
-    "name":  "Data Science and Big Data Analytics",
-    "branch":  "Computer Engineering",
-    "branchKey":  "cs",
-    "year":  "TE",
-    "sem":  "Sem 6",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "310251",
+  "name": "Data Science and Big Data Analytics",
+  "branch": "Computer Engineering",
+  "branchKey": "cs",
+  "year": "TE",
+  "sem": "Sem 6",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1bhsdJFWUTVdHknmgwcoM6T59UmlV-hqt/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1wmhYc-jz2ww1qyWmQUxIRqkgOC0_YNzc/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1fVqVH41jJSOVq92izSsNez0ylDVQPASd/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1Gl_CSpk7eswLPsHhE-jPpzAEPz70uooM/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1UZNb0pPqOTxiZkF1Xr51WaZ482uKiaAU/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/14CGXov0QeiPr2GFUpNu1CQpAPCtyqy1B/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1QdbP0QfAbUvjFsL1fnvLn6lbGysv5jYj/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/17GhqNe8szjE7klsciv8L6QnI8ppIiVQl/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1ckDTrRBvUMXlYBnW6x74TziLmhqp1T7Q/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": "https://drive.google.com/file/d/1UxDXxKN7W1uE0zIBfCNULXES4hF3vAxe/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

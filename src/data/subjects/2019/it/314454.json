@@ -1,22 +1,65 @@
 ﻿{
-    "code":  "314454",
-    "name":  "Elective II",
-    "branch":  "Information Technology Engineering",
-    "branchKey":  "it",
-    "year":  "TE",
-    "sem":  "Sem 6",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "314454",
+  "name": "Elective II",
+  "branch": "Information Technology Engineering",
+  "branchKey": "it",
+  "year": "TE",
+  "sem": "Sem 6",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1w2kbRSTD8N1GLxNJL9d6ypq0-UwW5Pnz/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1JEcnv8SLUML-2xN4QqIMFnaLvKw-uASj/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1LC_11Lpq_edbfdWIUwXCpBYaIHofWNR6/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1mNujL5BVsUeyLBVy8liJL3i0jzhWAg_l/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1JHiEGJ8nLhZIyzs9JazhQCRyCGueyx5l/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1sEcB7PzCvrkZJu2odzUgbsu4DiTvTfeA/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1etYZ3iSsAuXHc6g5Ksb1gOJiilWECGi2/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1Gbyj_6x_mwopYDnE4Qlk3Yo-UdzgoxI3/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1UijK51Axpl8J1eYTK96_xe_OJ4d9ONxQ/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": "https://drive.google.com/file/d/1WBuFdHB5lrgj4hSHWY3f06f54zP0UgMz/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

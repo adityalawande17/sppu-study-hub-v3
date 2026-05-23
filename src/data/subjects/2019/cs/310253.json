@@ -1,22 +1,65 @@
 ﻿{
-    "code":  "310253",
-    "name":  "Artificial Intelligence",
-    "branch":  "Computer Engineering",
-    "branchKey":  "cs",
-    "year":  "TE",
-    "sem":  "Sem 6",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "310253",
+  "name": "Artificial Intelligence",
+  "branch": "Computer Engineering",
+  "branchKey": "cs",
+  "year": "TE",
+  "sem": "Sem 6",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1Q3P9WD682rtqeBY2qyNFoXul0eMa552w/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1bhdxqr8YckKwQKPOI_DMD3x8KtMZDhBh/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1Ak31TXqpraSY6BmwU4mKsDBzD0-vf2lw/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1A2Vqu0bOOIds2XIeS33FseCCk_91F00p/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1EXeOF714IO3Isz_aRKAtkErKGxrfHIOd/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1rEVZlpNoVjrTZezEMkNAaLAOnrXNttAb/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1FykzeBbkU5e6u_PvGIbqYPqX1yupX_kC/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1VJd9p10QFWymNjG7idi1DTeHHnWjYjgx/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1YFCSoaFqdv5OU92ggdBXevxD9lqAXKAq/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": "https://drive.google.com/file/d/1uK98wXSYAc2BwPBgS0Qf3JI-5enU1csh/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

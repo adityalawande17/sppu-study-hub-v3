@@ -1,22 +1,60 @@
 ﻿{
-    "code":  "317531",
-    "name":  "Artificial Neural Network",
-    "branch":  "Artificial Intelligence and Data Science Engineering",
-    "branchKey":  "aids",
-    "year":  "TE",
-    "sem":  "Sem 6",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "317531",
+  "name": "Artificial Neural Network",
+  "branch": "Artificial Intelligence and Data Science Engineering",
+  "branchKey": "aids",
+  "year": "TE",
+  "sem": "Sem 6",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/16XJJcUqx58LKUfMmCYXRYZxUwL0tN5X3/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1jWRE6HvMvfYSZnt_c7rvL8wHE_ueDbNj/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1Sa8ikMW7BvqRfOjmhmcMans9Il1TwzkJ/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1p2ZO7-rK9zfteAABRoccWHJQIrlFl63Y/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1ymJJMfzSe0yGmM3G7Bhr1WeDW5hAwymY/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1chClJBq5f2imi_SO3Ckvc0_lsvvyO2BO/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1FbQIZ13HoGyEi0dKGuLctI1J0mGdzVQJ/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1FDe7-X5dKvGnjgRPbXJyDc-n0ItD96RU/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1Qj8jobD55WVFLbS4D7xVs5xyCY-oQGf_/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

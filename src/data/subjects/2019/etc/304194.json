@@ -1,22 +1,65 @@
 ﻿{
-    "code":  "304194",
-    "name":  "Antenna and Wave Propagation",
-    "branch":  "Electronics and Telecommunication Engineering",
-    "branchKey":  "etc",
-    "year":  "TE",
-    "sem":  "Sem 6",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "304194",
+  "name": "Power Devices & Circuits",
+  "branch": "Electronics and Telecommunication Engineering",
+  "branchKey": "etc",
+  "year": "TE",
+  "sem": "Sem 6",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/10MJp2Pnk1cLqJuGOLbR3zru5jSfrkER1/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1m7KZMOerLd1ed4ZYFRQWoo6fJYYaOof-/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1OmaJHqcrDRZgZ5ZdYxbRRddCPsAb7MWe/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/17jqXPELz8DrF_kZSvO6dCZRkLPYmCaI_/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/12PsHl32BHsdrUKPspeepyyWdalTxlUpj/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1fvSkCAzzcL6OjjKYhNPEmw8gGpqMGbvX/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1ozvPC_Dj8HHRsR4LMWnVFF_ZiZCKZ4gy/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1DYeEWnj4GJu5nk8NEz5YUf8VsoySZS64/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1uQz1KIbAA6JTRhusPItWJ68eKzbiWI-T/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": "https://drive.google.com/file/d/1hrSJ3g0dHIMrrChXG3UHDNC_VEycXAEL/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

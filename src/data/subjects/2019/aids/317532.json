@@ -1,22 +1,45 @@
 ﻿{
-    "code":  "317532",
-    "name":  "Elective II",
-    "branch":  "Artificial Intelligence and Data Science Engineering",
-    "branchKey":  "aids",
-    "year":  "TE",
-    "sem":  "Sem 6",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "317532",
+  "name": "Elective II",
+  "branch": "Artificial Intelligence and Data Science Engineering",
+  "branchKey": "aids",
+  "year": "TE",
+  "sem": "Sem 6",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1VyB9X0_khP6I96OniBw643RtcyUZfqdZ/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1KDz0xpJR-ePpzReZ6Qp1rCvFJwSiHCEM/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1Z33woOWRlH2l-2QsIZ42aoeQ3Li0oEAk/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/11RaWEUZTpauV1KZoXhvGLpVYy1rJSjQf/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1XpCLITORTxx_5kdeBjOlEJo-brBjG9sL/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1hzCByAkczU44IDaYqP10B2_RyE7LSL8P/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

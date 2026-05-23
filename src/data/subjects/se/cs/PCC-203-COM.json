@@ -5,14 +5,7 @@
   "units": [
     {
       "title": "Unit 1 - Introduction to Operating System",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
+      "files": []
     },
     { "title": "Unit 2 - Process and Thread Management", "files": [] },
     {
@@ -24,18 +17,6 @@
     { "title": "Extra Material", "files": [] }
   ],
   "practicals": [],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
-    {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
-    }
-  ]
+  "pyq": [],
+  "books": []
 }

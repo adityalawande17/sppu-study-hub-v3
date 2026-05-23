@@ -1,22 +1,56 @@
 ﻿{
-    "code":  "317530",
-    "name":  "Cyber Security",
-    "branch":  "Artificial Intelligence and Data Science Engineering",
-    "branchKey":  "aids",
-    "year":  "TE",
-    "sem":  "Sem 6",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
+  "code": "317530",
+  "name": "Cyber Security",
+  "branch": "Artificial Intelligence and Data Science Engineering",
+  "branchKey": "aids",
+  "year": "TE",
+  "sem": "Sem 6",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1D1yJ-4hZFANJN-jlKnzMOyCXWUFR0N1T/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1q9AUxsnRhOLm1hJvqEoZ58GEDAsrIiHB/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1ukD8O9TYJ4E0mHCbN_ltLSDgkt9e9tx2/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1gSWCzu0mYr5avrxLoc9U6PqKuOKdqZg5/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1CVPEuiBVuatM4b6TWnZmn1gE1B7RVr3f/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1AWDq3Ztxy0vN5XtE6Vl-Xgi48R-FC5LK/view?usp=sharing"
+    },
 
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1kw_7mcqgHauRSti08u67MdGYP8M2qL7-/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1ogAJFQnCGun_c89bliox5nLV19EgG7xq/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

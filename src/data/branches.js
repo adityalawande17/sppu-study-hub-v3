@@ -76,20 +76,36 @@ const cs2019 = {
         label: "Semester 3",
         subjects: [
           { code: "210241", name: "Discrete Mathematics", credits: 3 },
-          { code: "210242", name: "Fundamentals of Data Structures", credits: 3 },
+          {
+            code: "210242",
+            name: "Fundamentals of Data Structures",
+            credits: 3,
+          },
           { code: "210243", name: "Object Oriented Programming", credits: 3 },
           { code: "210244", name: "Computer Graphics", credits: 3 },
-          { code: "210245", name: "Digital Electronics and Logic Design", credits: 3 },
+          {
+            code: "210245",
+            name: "Digital Electronics and Logic Design",
+            credits: 3,
+          },
         ],
       },
       {
         label: "Semester 4",
         subjects: [
           { code: "207003", name: "Engineering Mathematics III", credits: 4 },
-          { code: "210252", name: "Data Structures and Algorithms", credits: 3 },
+          {
+            code: "210252",
+            name: "Data Structures and Algorithms",
+            credits: 3,
+          },
           { code: "210253", name: "Software Engineering", credits: 3 },
           { code: "210254", name: "Microprocessor", credits: 3 },
-          { code: "210255", name: "Principles of Programming Languages", credits: 3 },
+          {
+            code: "210255",
+            name: "Principles of Programming Languages",
+            credits: 3,
+          },
         ],
       },
     ],
@@ -515,8 +531,16 @@ const it2019 = {
         label: "Semester 3",
         subjects: [
           { code: "214441", name: "Discrete Mathematics", credits: 3 },
-          { code: "214442", name: "Logic Design and Computer Organization", credits: 3 },
-          { code: "214443", name: "Data Structures and Algorithms", credits: 3 },
+          {
+            code: "214442",
+            name: "Logic Design and Computer Organization",
+            credits: 3,
+          },
+          {
+            code: "214443",
+            name: "Data Structures and Algorithms",
+            credits: 3,
+          },
           { code: "214444", name: "Object Oriented Programming", credits: 3 },
           { code: "214445", name: "Basics of Computer Network", credits: 3 },
         ],
@@ -663,8 +687,16 @@ const me2019 = {
           { code: "202041", name: "Solid Mechanics", credits: 3 },
           { code: "202042", name: "Solid Modeling and Drafting", credits: 3 },
           { code: "202043", name: "Engineering Thermodynamics", credits: 3 },
-          { code: "202044", name: "Engineering Materials and Metallurgy", credits: 3 },
-          { code: "203156", name: "Electrical and Electronics Engineering", credits: 3 },
+          {
+            code: "202044",
+            name: "Engineering Materials and Metallurgy",
+            credits: 3,
+          },
+          {
+            code: "203156",
+            name: "Electrical and Electronics Engineering",
+            credits: 3,
+          },
         ],
       },
       {
@@ -685,7 +717,11 @@ const me2019 = {
       {
         label: "Semester 5",
         subjects: [
-          { code: "302041", name: "Numerical and Statistical Methods", credits: 3 },
+          {
+            code: "302041",
+            name: "Numerical and Statistical Methods",
+            credits: 3,
+          },
           { code: "302042", name: "Heat and Mass Transfer", credits: 3 },
           { code: "302043", name: "Design of Machine Elements", credits: 3 },
           { code: "302044", name: "Mechatronics", credits: 3 },
@@ -695,9 +731,17 @@ const me2019 = {
       {
         label: "Semester 6",
         subjects: [
-          { code: "302049", name: "Artificial Intelligence and Machine Learning", credits: 3 },
+          {
+            code: "302049",
+            name: "Artificial Intelligence and Machine Learning",
+            credits: 3,
+          },
           { code: "302050", name: "Computer Aided Engineering", credits: 3 },
-          { code: "302051", name: "Design of Transmission Systems", credits: 3 },
+          {
+            code: "302051",
+            name: "Design of Transmission Systems",
+            credits: 3,
+          },
           { code: "302052", name: "Elective II", credits: 3 },
         ],
       },
@@ -709,7 +753,11 @@ const me2019 = {
       {
         label: "Semester 7",
         subjects: [
-          { code: "402041", name: "Heating Ventilation Air-Conditioning and Refrigeration", credits: 3 },
+          {
+            code: "402041",
+            name: "Heating Ventilation Air-Conditioning and Refrigeration",
+            credits: 3,
+          },
           { code: "402042", name: "Dynamics of Machinery", credits: 3 },
           { code: "402043", name: "Turbomachinery", credits: 3 },
           { code: "402044", name: "Elective III", credits: 3 },
@@ -719,7 +767,11 @@ const me2019 = {
       {
         label: "Semester 8",
         subjects: [
-          { code: "402048", name: "Computer Integrated Manufacturing", credits: 3 },
+          {
+            code: "402048",
+            name: "Computer Integrated Manufacturing",
+            credits: 3,
+          },
           { code: "402049", name: "Energy Engineering", credits: 3 },
           { code: "402050", name: "Elective V", credits: 3 },
           { code: "402051", name: "Elective VI", credits: 3 },
@@ -739,7 +791,11 @@ const ce2019 = {
         label: "Semester 3",
         subjects: [
           { code: "207001", name: "Engineering Mathematics III", credits: 4 },
-          { code: "201001", name: "Building Technology and Architectural Planning", credits: 3 },
+          {
+            code: "201001",
+            name: "Building Technology and Architectural Planning",
+            credits: 3,
+          },
           { code: "201002", name: "Mechanics of Structure", credits: 3 },
           { code: "201003", name: "Fluid Mechanics", credits: 3 },
           { code: "201005", name: "Engineering Geology", credits: 3 },
@@ -764,9 +820,17 @@ const ce2019 = {
         label: "Semester 5",
         subjects: [
           { code: "301001", name: "Structural Analysis II", credits: 3 },
-          { code: "301002", name: "Hydraulics and Hydraulic Machinery", credits: 3 },
+          {
+            code: "301002",
+            name: "Hydraulics and Hydraulic Machinery",
+            credits: 3,
+          },
           { code: "301003", name: "Geotechnical Engineering II", credits: 3 },
-          { code: "301004", name: "Engineering Economics and Financial Management", credits: 3 },
+          {
+            code: "301004",
+            name: "Engineering Economics and Financial Management",
+            credits: 3,
+          },
           { code: "301005", name: "Elective I", credits: 3 },
         ],
       },
@@ -967,8 +1031,16 @@ const ee2019 = {
         subjects: [
           { code: "203141", name: "Power Generation Technologies", credits: 3 },
           { code: "203142", name: "Material Science", credits: 3 },
-          { code: "203143", name: "Analog and Digital Electronics", credits: 3 },
-          { code: "203144", name: "Electrical Measurement and Instrumentation", credits: 3 },
+          {
+            code: "203143",
+            name: "Analog and Digital Electronics",
+            credits: 3,
+          },
+          {
+            code: "203144",
+            name: "Electrical Measurement and Instrumentation",
+            credits: 3,
+          },
         ],
       },
       {
@@ -977,8 +1049,16 @@ const ee2019 = {
           { code: "203145", name: "Power System I", credits: 3 },
           { code: "203146", name: "Electrical Machines I", credits: 3 },
           { code: "203147", name: "Network Analysis", credits: 3 },
-          { code: "203148", name: "Numerical Methods and Computer Programming", credits: 3 },
-          { code: "203149", name: "Fundamentals of Microcontrollers and Applications", credits: 3 },
+          {
+            code: "203148",
+            name: "Numerical Methods and Computer Programming",
+            credits: 3,
+          },
+          {
+            code: "203149",
+            name: "Fundamentals of Microcontrollers and Applications",
+            credits: 3,
+          },
         ],
       },
     ],
@@ -989,10 +1069,18 @@ const ee2019 = {
       {
         label: "Semester 5",
         subjects: [
-          { code: "303141", name: "Industrial and Technology Management", credits: 3 },
+          {
+            code: "303141",
+            name: "Industrial and Technology Management",
+            credits: 3,
+          },
           { code: "303142", name: "Power Electronics", credits: 3 },
           { code: "303143", name: "Electrical Machines II", credits: 3 },
-          { code: "303144", name: "Electrical Installation Design and Condition Based Maintenance", credits: 3 },
+          {
+            code: "303144",
+            name: "Electrical Installation Design and Condition Based Maintenance",
+            credits: 3,
+          },
           { code: "303145", name: "Elective I", credits: 3 },
         ],
       },
@@ -1000,7 +1088,11 @@ const ee2019 = {
         label: "Semester 6",
         subjects: [
           { code: "303148", name: "Power System II", credits: 3 },
-          { code: "303149", name: "Computer Aided Design of Electrical Machines", credits: 3 },
+          {
+            code: "303149",
+            name: "Computer Aided Design of Electrical Machines",
+            credits: 3,
+          },
           { code: "303150", name: "Control System Engineering", credits: 3 },
           { code: "303151", name: "Elective II", credits: 3 },
         ],
@@ -1013,7 +1105,11 @@ const ee2019 = {
       {
         label: "Semester 7",
         subjects: [
-          { code: "403141", name: "Power System Operation and Control", credits: 3 },
+          {
+            code: "403141",
+            name: "Power System Operation and Control",
+            credits: 3,
+          },
           { code: "403142", name: "Advanced Control System", credits: 3 },
           { code: "403143", name: "Elective III", credits: 3 },
           { code: "403144", name: "Elective IV", credits: 3 },
@@ -1209,7 +1305,11 @@ const etc2019 = {
         subjects: [
           { code: "204191", name: "Signals and Systems", credits: 3 },
           { code: "204192", name: "Control Systems", credits: 3 },
-          { code: "204193", name: "Principles of Communication Systems", credits: 3 },
+          {
+            code: "204193",
+            name: "Principles of Communication Systems",
+            credits: 3,
+          },
           { code: "204194", name: "Object Oriented Programming", credits: 3 },
         ],
       },
@@ -1231,9 +1331,9 @@ const etc2019 = {
       {
         label: "Semester 6",
         subjects: [
-          { code: "304192", name: "Power Electronics", credits: 3 },
-          { code: "304193", name: "Information Theory and Coding", credits: 3 },
-          { code: "304194", name: "Antenna and Wave Propagation", credits: 3 },
+          { code: "304192", name: "Cellular Networks", credits: 3 },
+          { code: "304193", name: "Project Management", credits: 3 },
+          { code: "304194", name: "Power Devices & Circuits", credits: 3 },
           { code: "304195", name: "Elective II", credits: 3 },
         ],
       },
@@ -1245,7 +1345,11 @@ const etc2019 = {
       {
         label: "Semester 7",
         subjects: [
-          { code: "404181", name: "Radiation and Microwave Theory", credits: 3 },
+          {
+            code: "404181",
+            name: "Radiation and Microwave Theory",
+            credits: 3,
+          },
           { code: "404182", name: "VLSI Design and Technology", credits: 3 },
           { code: "404183", name: "Cloud Computing", credits: 3 },
           { code: "404184", name: "Elective III", credits: 3 },
@@ -1255,7 +1359,11 @@ const etc2019 = {
       {
         label: "Semester 8",
         subjects: [
-          { code: "404190", name: "Advanced Communication Systems", credits: 3 },
+          {
+            code: "404190",
+            name: "Advanced Communication Systems",
+            credits: 3,
+          },
           { code: "404191", name: "Digital Signal Processing", credits: 3 },
           { code: "404192", name: "Elective V", credits: 3 },
           { code: "404193", name: "Elective VI", credits: 3 },
@@ -1420,7 +1528,11 @@ const aids2019 = {
         label: "Semester 3",
         subjects: [
           { code: "210241", name: "Discrete Mathematics", credits: 3 },
-          { code: "210242", name: "Fundamentals of Data Structures", credits: 3 },
+          {
+            code: "210242",
+            name: "Fundamentals of Data Structures",
+            credits: 3,
+          },
           { code: "210243", name: "Object Oriented Programming", credits: 3 },
           { code: "210244", name: "Computer Graphics", credits: 3 },
           { code: "217521", name: "Operating Systems", credits: 3 },

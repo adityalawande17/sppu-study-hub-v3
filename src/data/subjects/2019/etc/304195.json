@@ -1,22 +1,65 @@
 ﻿{
-    "code":  "304195",
-    "name":  "Elective II",
-    "branch":  "Electronics and Telecommunication Engineering",
-    "branchKey":  "etc",
-    "year":  "TE",
-    "sem":  "Sem 6",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "304195",
+  "name": "Elective II",
+  "branch": "Electronics and Telecommunication Engineering",
+  "branchKey": "etc",
+  "year": "TE",
+  "sem": "Sem 6",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": ""
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": ""
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": ""
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": ""
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": ""
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": ""
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": ""
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": ""
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": ""
+    },
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": ""
+    }
+  ],
+  "books": []
 }

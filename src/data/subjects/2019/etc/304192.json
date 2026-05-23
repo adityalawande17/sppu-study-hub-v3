@@ -1,22 +1,65 @@
 ﻿{
-    "code":  "304192",
-    "name":  "Power Electronics",
-    "branch":  "Electronics and Telecommunication Engineering",
-    "branchKey":  "etc",
-    "year":  "TE",
-    "sem":  "Sem 6",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "304192",
+  "name": "Cellular Networks",
+  "branch": "Electronics and Telecommunication Engineering",
+  "branchKey": "etc",
+  "year": "TE",
+  "sem": "Sem 6",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1Z1utGOurrW-mH1449Cf-L8WJD-SmuIRI/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1r8CHqddCmpwxlQpForgOlsD9HES4CVat/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1XR6FDh6Uz_M6MrmhdeqqJd5U_JXav-c2/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/11cXCYOH9qBxSlDgpkoJLDgAKT_qASvnb/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/14SA9CW1wFk9lf5QLGvgKrUKXhn7fXkM4/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1_kbWSZYoIIKERw0ZzBhXh3FjfeAWT7QE/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1zwx4lwY6ik_WJ7wWEm59BViIui63YhtY/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/19nwBU0C85vGNrkG_ynKoQ_WrjJU-DhBH/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1vg7PADWNC0Yr6F_TfEwd2GoA2CLHCxVm/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": "https://drive.google.com/file/d/1qoheJzOBrdbcoMeG9cV_x7ySFzSwtN1O/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

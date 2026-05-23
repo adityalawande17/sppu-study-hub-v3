@@ -61,71 +61,8 @@
     {
       "year": "2025",
       "exam": "Nov / Dec 2025",
-      "url": "https://drive.google.com/file/d/1o-T0eGCs2uZgINnGSynQu0QkwNUoKeIV/view?usp=sharing"
-    },
-    {
-      "year": "2025",
-      "exam": "Oct 2025",
-      "url": "https://drive.google.com/file/d/1A4M4rSJrGX5fsMnpEO6_iANT8bYVV6I5/view?usp=sharing"
-    },
-    {
-      "year": "2025",
-      "exam": "May / Jun 2025",
-      "url": "https://drive.google.com/file/d/1Ea-HljatFNJa2jV-19f29ber4iODNNoL/view?usp=sharing"
-    },
-
-    {
-      "year": "2024",
-      "exam": "Nov / Dec 2024",
-      "url": "https://drive.google.com/file/d/1yEkyiubgRxSEuohTKlp6q0MzerZK5ESt/view?usp=sharing"
-    },
-
-    {
-      "year": "2024",
-      "exam": "Sept 2024",
-      "url": "https://drive.google.com/file/d/1pcvB-x9Meo1Xl2Y5maam7ocDn8N4-Jkz/view?usp=sharing"
-    },
-    {
-      "year": "2024",
-      "exam": "May / Jun 2024",
-      "url": "https://drive.google.com/file/d/1AwXRk5SPZmHg20snVKwxXQGwk_MPrWaa/view?usp=sharing"
-    },
-
-    {
-      "year": "2023",
-      "exam": "Nov / Dec 2023",
-      "url": "https://drive.google.com/file/d/1Ho63g4q1vVcE3DGZ9u7PP5BhLIdC82DZ/view?usp=sharing"
-    },
-    {
-      "year": "2023",
-      "exam": "Oct 2023",
-      "url": "https://drive.google.com/file/d/1J9dKAXBqt33vM7TR6wSElGrgpl59QXCP/view?usp=sharing"
-    },
-    {
-      "year": "2023",
-      "exam": "May / Jun 2023",
-      "url": "https://drive.google.com/file/d/1k-W3b4tHsGP9tvUg82FJfo9ogGMVdo6u/view?usp=sharing"
-    },
-
-    {
-      "year": "2022",
-      "exam": "Nov / Dec 2022",
-      "url": "https://drive.google.com/file/d/1XChdYtZ__d-UporT4zf8GmU19H3XgayM/view?usp=sharing"
-    },
-    {
-      "year": "2022",
-      "exam": "Oct 2022",
-      "url": "https://drive.google.com/file/d/1UEJhj632JW_qcyDX5ua3iGxwZ2E8A6Va/view?usp=sharing"
+      "url": "https://drive.google.com/file/d/16xUPehV-vl937hNKwT9fur9lNgMvnykQ/view?usp=sharing"
     }
   ],
-  "books": [
-    {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
-    }
-  ]
+  "books": []
 }
