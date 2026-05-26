@@ -882,4 +882,32 @@ h3 {
   body {
     padding-bottom: 64px;
   }
+
+  /* Subject list on branch pages */
+  .subject-item {
+    padding: 11px 12px;
+    gap: 8px;
+  }
+  .subject-code {
+    font-size: 9px;
+    padding: 3px 7px;
+    letter-spacing: 0;
+  }
+  .subject-name {
+    font-size: 13px;
+  }
+  .subject-credits {
+    font-size: 11px;
+  }
+
+  /* Branch page header */
+  .branch-page-title {
+    font-size: 20px !important;
+  }
+
+  /* Sem tabs */
+  .sem-tab {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
 }

@@ -114,6 +114,7 @@ export default function BranchDetail() {
           </div>
           <div>
             <h1
+              className="branch-page-title"
               style={{
                 fontFamily: "'DM Serif Display', serif",
                 fontSize: 26,

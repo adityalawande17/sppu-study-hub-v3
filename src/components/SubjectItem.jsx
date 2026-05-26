@@ -54,6 +54,7 @@ export default function SubjectItem({
       >
         {subject.updated && (
           <span
+            className="hide-sm"
             style={{
               fontSize: 11,
               color: "var(--text-4)",
