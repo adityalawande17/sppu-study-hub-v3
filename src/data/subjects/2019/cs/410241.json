@@ -1,22 +1,70 @@
 ﻿{
-    "code":  "410241",
-    "name":  "Design and Analysis of Algorithms",
-    "branch":  "Computer Engineering",
-    "branchKey":  "cs",
-    "year":  "BE",
-    "sem":  "Sem 7",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "410241",
+  "name": "Design and Analysis of Algorithms",
+  "branch": "Computer Engineering",
+  "branchKey": "cs",
+  "year": "BE",
+  "sem": "Sem 7",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1sebWzYDiGppSsDB2ImdEd8wdX0yYLSeu/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/14E_uwNLRR5lSjG-KucC8DTNCTjlc6Vam/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "August 2025",
+      "url": "https://drive.google.com/file/d/1wh5y0PDaDTA9nVm1a18qcDzDvSqZ6R6O/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1Gpj60bsnWidnLDXtpI9QUczN64OhhetW/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1sYtb4sEv_7Y4SY_R1hZEihdURGmbW9lq/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "September 2024",
+      "url": "https://drive.google.com/file/d/1POSVLmUAj0gTXaZ1ySDi62G5GGdSaAII/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1SMTAF27DZU-Kvp8MZ4Q45yozr_EOVw1j/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1iKPCrKVxNA4CLA7s-piqXp6mEeXWPopT/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Sept 2023",
+      "url": "https://drive.google.com/file/d/11JOFac98mF3wXMoEUPR7UqY1hXRsu8Qp/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "Nov / Dec 2022",
+      "url": "https://drive.google.com/file/d/1PDh1961ZuBG4btSJmDsxfc5p9xpnYcYT/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "October 2022",
+      "url": "https://drive.google.com/file/d/1jIZVtjDB0gdjjxvjiKkEn5ZUTQ61mLEo/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

@@ -1,0 +1,25 @@
+﻿{
+  "code": "417533",
+  "name": "Elective VI",
+  "branch": "Artificial Intelligence and Data Science Engineering",
+  "branchKey": "aids",
+  "year": "BE",
+  "sem": "Sem 8",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1ycpULWKxa5wzFL06Jm1df1-d1ShsZ4SF/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1EpC_7ssSFFMjrEDsQBRFz4cfEvpXJXUK/view?usp=sharing"
+    }
+  ],
+  "books": []
+}

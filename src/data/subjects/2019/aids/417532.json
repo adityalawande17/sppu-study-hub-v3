@@ -1,0 +1,46 @@
+﻿{
+  "code": "417532",
+  "name": "Elective V",
+  "branch": "Artificial Intelligence and Data Science Engineering",
+  "branchKey": "aids",
+  "year": "BE",
+  "sem": "Sem 8",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025 DL",
+      "url": "https://drive.google.com/file/d/1uwSB7biAlWjcKGvNl00ohxktmAhjgf1l/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025 DL",
+      "url": "https://drive.google.com/file/d/1ZWpPjWwPFLfQmvJqaawmj8gmmgATzxIa/view?usp=sharing"
+    },
+
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024 DL",
+      "url": "https://drive.google.com/file/d/1EoqgN-DDDjE0HLyPArWYGGR6CEqgL0Gr/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024 DL",
+      "url": "https://drive.google.com/file/d/1NfI8XOii_tDq1RHBonN3pF0KVZWEDzQD/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024 BDA",
+      "url": "https://drive.google.com/file/d/1YOe_RjcaumMfIAj10p1mlxRsz_bpa6Az/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024 BDA",
+      "url": "https://drive.google.com/file/d/1G5cqyIfuff_dshQ-E73gsLyY4stnlN1r/view?usp=sharing"
+    }
+  ],
+  "books": []
+}

@@ -1,22 +1,55 @@
 ﻿{
-    "code":  "414452",
-    "name":  "Elective VI",
-    "branch":  "Information Technology Engineering",
-    "branchKey":  "it",
-    "year":  "BE",
-    "sem":  "Sem 8",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "414452",
+  "name": "Elective VI",
+  "branch": "Information Technology Engineering",
+  "branchKey": "it",
+  "year": "BE",
+  "sem": "Sem 8",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1duiJ7a_xlWzSiazyUhFSrJ_BYzqABz9n/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1NNKrgL6wYoOH6NMHDmo6ZHdX6_zqxojm/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1VIkRN5-0rUu1iSFZQPogohBGigHXhZBL/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1Qf5Kmt7XxxLKB94fIi2O2r5wsA_fmMvp/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1-fhDbd_1y8jevlbvmzsTJ3B7Ab5wR8p3/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1kRi7hWThF-8u9QaptOPavwZdxPkvYOM0/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1wkAn_32MrdVYHByWw7BWcE1WLKo4ih4M/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/18H3-1kzAu-iMVg3wmlYKCHgrekb0NUzs/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

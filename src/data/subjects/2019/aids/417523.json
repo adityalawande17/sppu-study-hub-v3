@@ -1,22 +1,14 @@
 ﻿{
-    "code":  "417523",
-    "name":  "Reinforcement Learning",
-    "branch":  "Artificial Intelligence and Data Science Engineering",
-    "branchKey":  "aids",
-    "year":  "BE",
-    "sem":  "Sem 7",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "417523",
+  "name": "Elective III",
+  "branch": "Artificial Intelligence and Data Science Engineering",
+  "branchKey": "aids",
+  "year": "BE",
+  "sem": "Sem 7",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [],
+  "books": []
 }

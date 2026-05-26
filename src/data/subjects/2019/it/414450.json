@@ -1,22 +1,60 @@
 ﻿{
-    "code":  "414450",
-    "name":  "Distributed Systems",
-    "branch":  "Information Technology Engineering",
-    "branchKey":  "it",
-    "year":  "BE",
-    "sem":  "Sem 8",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "414450",
+  "name": "Distributed Systems",
+  "branch": "Information Technology Engineering",
+  "branchKey": "it",
+  "year": "BE",
+  "sem": "Sem 8",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/10e30btQdhdUtE5roKJ5P5xoZ4l2f1lhx/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/15fjmemKeGXYTOvRn9RGDMjo-YeibumMq/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/144NpXIMF5-WyBWs-xCSK5tLSY0SuzgRv/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1mgyhk0bDyOyBETCpzULmKfM2aOBO6bg3/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1sUho2aw9ONiBSzrhOFTbb9oL3F_yqj8o/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1Gkyd2-TjTuoZkhVSlLATtSexmhzLHvhf/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1Hh0UAwxX4eelVr5B-i2RHhH6eMOOveYM/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1ZTjoVAwriDqopcseEK7PjSKdic9HVSrd/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1sz-421g5IZqKHqHHMPiIUC1_Td5bw4zi/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

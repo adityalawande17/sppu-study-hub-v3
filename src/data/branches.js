@@ -1579,20 +1579,19 @@ const aids2019 = {
       {
         label: "Semester 7",
         subjects: [
-          { code: "417521", name: "Business Intelligence", credits: 3 },
-          { code: "417522", name: "Computational Intelligence", credits: 3 },
-          { code: "417523", name: "Reinforcement Learning", credits: 3 },
-          { code: "417524", name: "Elective III", credits: 3 },
-          { code: "417525", name: "Elective IV", credits: 3 },
+          { code: "417521", name: "Machine Learning", credits: 3 },
+          { code: "417522", name: "Data Modeling & Visualization", credits: 3 },
+          { code: "417523", name: "Elective III", credits: 3 },
+          { code: "417524", name: "Elective IV", credits: 3 },
         ],
       },
       {
         label: "Semester 8",
         subjects: [
-          { code: "417526", name: "Distributed Computing", credits: 3 },
-          { code: "417527", name: "Deep Learning", credits: 3 },
-          { code: "417528", name: "Elective V", credits: 3 },
-          { code: "417529", name: "Elective VI", credits: 3 },
+          { code: "417530", name: "Computational Intelligence", credits: 3 },
+          { code: "417531", name: "Distributed Computing", credits: 3 },
+          { code: "417532", name: "Elective V", credits: 3 },
+          { code: "417533", name: "Elective VI", credits: 3 },
         ],
       },
     ],

@@ -1,22 +1,55 @@
 ﻿{
-    "code":  "410250",
-    "name":  "High Performance Computing",
-    "branch":  "Computer Engineering",
-    "branchKey":  "cs",
-    "year":  "BE",
-    "sem":  "Sem 8",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "410250",
+  "name": "High Performance Computing",
+  "branch": "Computer Engineering",
+  "branchKey": "cs",
+  "year": "BE",
+  "sem": "Sem 8",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1h7krYq5fkwUL6IJMh7bad29qGh82DAHb/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1NbrbcWDMzRtf71x3Y1HSIG9TS-DVED5k/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1frmjGMCgBP35vIDgWl_EYuBXMfmw8KSQ/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1GQISLLOa20q47MQOkX0FqrfIkFwsDGC3/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1ZuePIM3FQmnT0kAj_x4OmKxisFeawYr0/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1FynC9Ewy3SiuXZQPI6xBxReySAZfOzP0/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1_OGVKIfmGQOBdEoWU5MGRiieTBcvF4dz/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1lToWJMRrly4eI1Kn53bdWI5MND9bhdsj/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

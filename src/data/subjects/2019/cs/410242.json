@@ -1,22 +1,70 @@
 ﻿{
-    "code":  "410242",
-    "name":  "Machine Learning",
-    "branch":  "Computer Engineering",
-    "branchKey":  "cs",
-    "year":  "BE",
-    "sem":  "Sem 7",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "410242",
+  "name": "Machine Learning",
+  "branch": "Computer Engineering",
+  "branchKey": "cs",
+  "year": "BE",
+  "sem": "Sem 7",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1OSIFS_-yr_yC6qw6Q3LMz2BqwbNLa7Lo/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1d4YE9dszEshoKdvIby8MLFRM1lNmBSIb/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "August 2025",
+      "url": "https://drive.google.com/file/d/13v9RPVoDfSJ_MUOg-2DKzEDFYIvhr7ml/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/15zR5AnewvHLAIkk1V-LsOiJB-toLR2AQ/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1qTe-WTIJE5h4WcDpm7zkJxhekkgoyq3o/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "September 2024",
+      "url": "https://drive.google.com/file/d/1bovi3f68Qk8e6Zhtth0Nig1kSGeM__Fm/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/10VvbWpqfceS3JgN2MYeNe51N7IyMCXGP/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1HCz4kW6zgqJX-DkfijWJfvi2heClEx9q/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Sept 2023",
+      "url": "https://drive.google.com/file/d/1Mx3J_VjmqFF4hxFR6TPS3rM5V9hpKvlg/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "Nov / Dec 2022",
+      "url": "https://drive.google.com/file/d/1rDJ7dzmqm0AGtE1J6tgn5kUayKmLVsLU/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "October 2022",
+      "url": "https://drive.google.com/file/d/1Z5wkGZLrgqHCTHlCEMdryWFAYwLQXV69/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

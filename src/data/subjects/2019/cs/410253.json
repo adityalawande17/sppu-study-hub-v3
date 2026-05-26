@@ -1,22 +1,60 @@
 ﻿{
-    "code":  "410253",
-    "name":  "Elective VI",
-    "branch":  "Computer Engineering",
-    "branchKey":  "cs",
-    "year":  "BE",
-    "sem":  "Sem 8",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "410253",
+  "name": "Elective VI",
+  "branch": "Computer Engineering",
+  "branchKey": "cs",
+  "year": "BE",
+  "sem": "Sem 8",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1c4gEsZmkjrePTRRUQX0h2jqttGsA2U0i/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1Ger3bOpJZTEkvCIdxrwSxwrurr9gtRyf/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1u2BH9dCWSgXbBOw-uYnBRUCcYdI2WnEh/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1bUtm9UvTbLczMlPhXnEAkv6SU0YJdsHv/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1621SIq94PkoeYy0IYafa09kNEFkMiWCc/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1XufrdMBhif1u2mYyi2bcHR0JBCsYKFEx/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1MML9uDrJyOp7yf1Uwgr-zmIKI8Qb5Soy/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1amh1wRPMWFaZVzP3jbL1thp5mEpi7EIP/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Feb 2023",
+      "url": "https://drive.google.com/file/d/1C8tIJM_sWrOXCbnKAenvW_oXa58fgELT/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

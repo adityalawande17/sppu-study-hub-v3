@@ -1,22 +1,14 @@
 ﻿{
-    "code":  "417522",
-    "name":  "Computational Intelligence",
-    "branch":  "Artificial Intelligence and Data Science Engineering",
-    "branchKey":  "aids",
-    "year":  "BE",
-    "sem":  "Sem 7",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "417522",
+  "name": "Data Modeling & Visualization",
+  "branch": "Artificial Intelligence and Data Science Engineering",
+  "branchKey": "aids",
+  "year": "BE",
+  "sem": "Sem 7",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [],
+  "books": []
 }
