@@ -887,14 +887,21 @@ h3 {
   .subject-item {
     padding: 11px 12px;
     gap: 8px;
+    align-items: flex-start;
   }
   .subject-code {
     font-size: 9px;
     padding: 3px 7px;
     letter-spacing: 0;
+    flex-shrink: 1;
+    min-width: 0;
   }
   .subject-name {
     font-size: 13px;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    line-height: 1.4;
   }
   .subject-credits {
     font-size: 11px;
@@ -909,5 +916,12 @@ h3 {
   .sem-tab {
     padding: 7px 14px;
     font-size: 12px;
+  }
+
+  /* First Year banner */
+  .fy-banner {
+    padding: 22px 20px !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
   }
 }
