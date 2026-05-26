@@ -1,0 +1,28 @@
+[
+  {
+    "subjectCode": "PCC-201-COM",
+    "subjectName": "Data Structures",
+    "year": "SE",
+    "semester": 3,
+    "credits": 3,
+    "pattern": "2024",
+    "questions": [
+      {
+        "unit": 1,
+        "question_text": "Explain the concept of AVL trees with a suitable example. How is balance maintained after insertion?",
+        "marks": 6,
+        "exam_year": 2023,
+        "exam_month": "May",
+        "question_type": "long"
+      },
+      {
+        "unit": 2,
+        "question_text": "Write an algorithm for bubble sort and calculate its time complexity.",
+        "marks": 4,
+        "exam_year": 2023,
+        "exam_month": "May",
+        "question_type": "long"
+      }
+    ]
+  }
+]
