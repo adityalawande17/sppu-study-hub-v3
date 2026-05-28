@@ -1,22 +1,55 @@
 ﻿{
-    "code":  "103004",
-    "name":  "Basic Electrical Engineering",
-    "branch":  "First Year Engineering",
-    "branchKey":  "fe",
-    "year":  "FE",
-    "sem":  "Sem 1",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "103004",
+  "name": "Basic Electrical Engineering",
+  "branch": "First Year Engineering",
+  "branchKey": "fe",
+  "year": "FE",
+  "sem": "Sem 1",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1aMp83rWdm61qeSm32Hy-7qaNdRMtlzbt/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1pwvcgXRIwz1TT-6SggaiqygDuUTvd9A2/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1A54TOJDXxF87Blq8lV5GiLccOkxLnSu7/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1RGIL-3-xmlIRMenq_e4b_GsA-tTL10fp/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1l3fmGp2mGuuFjfpYZ3g4rYUltcU102AN/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1Mcw2Sjrdh80l4ljnuMFsSww4Vy5d0-kH/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1ptJk_Zi2dkAJhB7b-UmWLh4nG6rRAooc/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1pSuY4wSAj2uuIl7HcwJ_HIoAiJLxDP8a/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

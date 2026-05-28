@@ -1,22 +1,14 @@
 ﻿{
-    "code":  "102003",
-    "name":  "Systems in Mechanical Engineering",
-    "branch":  "First Year Engineering",
-    "branchKey":  "fe",
-    "year":  "FE",
-    "sem":  "Sem 1",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "102003",
+  "name": "Systems in Mechanical Engineering",
+  "branch": "First Year Engineering",
+  "branchKey": "fe",
+  "year": "FE",
+  "sem": "Sem 1",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [],
+  "books": []
 }

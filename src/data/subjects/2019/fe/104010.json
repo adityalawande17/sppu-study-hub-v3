@@ -1,22 +1,60 @@
 ﻿{
-    "code":  "104010",
-    "name":  "Basic Electronics Engineering",
-    "branch":  "First Year Engineering",
-    "branchKey":  "fe",
-    "year":  "FE",
-    "sem":  "Sem 2",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "104010",
+  "name": "Basic Electronics Engineering",
+  "branch": "First Year Engineering",
+  "branchKey": "fe",
+  "year": "FE",
+  "sem": "Sem 2",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1JR7tYFBtuWRq8ipCqJj4e5RMB1mLe1Gp/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1H6kFdqKr8x0uhUr8TXLk5vhADF340J0f/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1f8264NOy63HlS7-9ESlYznd2rufN5lPY/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1uieBALX9umaNFLJZXZYdQhSBxQ5pQiP_/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": ""
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1GlBSrWZD1N-fFwxkiteZjQ0q63uDFAYk/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1lh8kMlWl4gmK4Q4uCh3QoUEChtSlmaUj/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1Q9WamJi3Xlqye7Y2R-z9B_qFxKnIEIBw/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": "https://drive.google.com/file/d/1sNDWPEojrsSr7k_5m0_ZlFoMTWFFEP1v/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

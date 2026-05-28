@@ -1,22 +1,55 @@
 ﻿{
-    "code":  "107002",
-    "name":  "Engineering Physics",
-    "branch":  "First Year Engineering",
-    "branchKey":  "fe",
-    "year":  "FE",
-    "sem":  "Sem 1",
-    "credits":  4,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "107002",
+  "name": "Engineering Physics",
+  "branch": "First Year Engineering",
+  "branchKey": "fe",
+  "year": "FE",
+  "sem": "Sem 1",
+  "credits": 4,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1hQoWa2ivRMJ2yUdZZ8_JzN3XxiXS6Zrt/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/15R8Ht25HBJRxMabc0N-3Ma_fQDYjnimT/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1gG-EQYGlChOKZTBq8ihJsG_klMq9ioDq/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1YucYbArykVEx5sdsyYU5KXnxoTQ05j4I/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/123NEmuy3FOPmrUPwUXxrA9f2pFdTVKxf/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1o3XP_3OiSAPmoLG-KwOgtJXZ12AeEBGl/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1O4AEo2JznGzik4Z5JKUC43Kez55Q8FbL/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/16YFdRclMtjlXXlJ6JyVgglfAgaYmjmtF/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

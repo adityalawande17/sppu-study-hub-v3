@@ -1,22 +1,53 @@
 ﻿{
-    "code":  "102012",
-    "name":  "Engineering Graphics",
-    "branch":  "First Year Engineering",
-    "branchKey":  "fe",
-    "year":  "FE",
-    "sem":  "Sem 2",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
+  "code": "102012",
+  "name": "Engineering Graphics",
+  "branch": "First Year Engineering",
+  "branchKey": "fe",
+  "year": "FE",
+  "sem": "Sem 2",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1ABy_qNw92jCpgpFHw3ZAMMeW_4EOe1LC/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1J8jxa2lWAlvWyOf4yf8nN8qAu663JcH7/view?usp=sharing"
+    },
 
-              ],
-    "practicals":  [
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1aM7JN6sgB5uQ7DDyRqZ6soFLEgIWO0uS/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/16lX4sph9WZXvCKIMfCwJQ2r4Hb3IZnRW/view?usp=sharing"
+    },
 
-                   ],
-    "pyq":  [
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1FW0ja84-e5akRFgwpJA7_SSe422EExXF/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1-6A6U5J_-qqL6yJCLIpL2bWZGgeQtqTu/view?usp=sharing"
+    },
 
-            ],
-    "books":  [
-
-              ]
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": "https://drive.google.com/file/d/1NqZ5OUdgWtZkFA4EIhIppVwwpfsRkDk7/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

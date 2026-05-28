@@ -1,22 +1,55 @@
 ﻿{
-    "code":  "107009",
-    "name":  "Engineering Chemistry",
-    "branch":  "First Year Engineering",
-    "branchKey":  "fe",
-    "year":  "FE",
-    "sem":  "Sem 2",
-    "credits":  4,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "107009",
+  "name": "Engineering Chemistry",
+  "branch": "First Year Engineering",
+  "branchKey": "fe",
+  "year": "FE",
+  "sem": "Sem 2",
+  "credits": 4,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1Gp4EBHTMJupYJjMujtVw2PLKm6gTgb5N/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1Xlq-6vevqYswd-o4Wh-6PSo03-37VkHp/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "March 2025",
+      "url": "https://drive.google.com/file/d/1lekb1F7uZILSfPDMoRlRZA5AyKlIOHnI/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1hctCaca73C_WyApVhu4oFoc8pzH1cGDD/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1l306gnJEe6H2aSB-wAXfKjvWmrS48qix/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "March 2024",
+      "url": "https://drive.google.com/file/d/1MNN0gWrmMa4jx1a1e14eCaAjrZDNkKpv/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1aXAh1Hx4WDLFsQ89XbDNrrv48omWWVhe/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1P2Tcvp6ECe2y8eheauw5mkr_MraAeKrr/view?usp=sharing"
+    }
+  ],
+  "books": []
 }

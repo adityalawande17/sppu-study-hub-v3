@@ -1,22 +1,65 @@
 ﻿{
-    "code":  "107001",
-    "name":  "Engineering Mathematics I",
-    "branch":  "First Year Engineering",
-    "branchKey":  "fe",
-    "year":  "FE",
-    "sem":  "Sem 1",
-    "credits":  4,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "107001",
+  "name": "Engineering Mathematics I",
+  "branch": "First Year Engineering",
+  "branchKey": "fe",
+  "year": "FE",
+  "sem": "Sem 1",
+  "credits": 4,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://drive.google.com/file/d/1cRdOU8XqHN0fWQ1vXq_Fjd8xzAaZHWE1/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://drive.google.com/file/d/1J4zqKFpCnm8UB3EyG6xQxmiFrQd9_XaA/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "exam": "Oct 2025",
+      "url": "https://drive.google.com/file/d/1CplMsl7ZpLTfGhVoHtL6OQj24r8BbAQm/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://drive.google.com/file/d/1XkQF6Ik55DvEx_N_6xJdtD75NSZoGSBs/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://drive.google.com/file/d/1HKhYSWiwTl7-RuIGigaPT4dVZXRmelPW/view?usp=sharing"
+    },
+    {
+      "year": "2024",
+      "exam": "September 2024",
+      "url": "https://drive.google.com/file/d/10HOYhua4j9Vct2IYmbbkQpCWpE45XRk1/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://drive.google.com/file/d/1iW90jiI2No9SCWRocAzw_ivVa71pAr58/view?usp=sharing"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://drive.google.com/file/d/1bhPZtsm4F4_Ox6tzD2FhHMqwpKLak_zC/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "Oct 2022",
+      "url": "https://drive.google.com/file/d/17wEAk_9W5S0hOGW18vo-kKrdSBH-TsYR/view?usp=sharing"
+    },
+    {
+      "year": "2022",
+      "exam": "May / Jun 2022",
+      "url": "https://drive.google.com/file/d/10bTpdVbbnz6EfNDs5h-TYT3q2QYGBDSk/view?usp=sharing"
+    }
+  ],
+  "books": []
 }
