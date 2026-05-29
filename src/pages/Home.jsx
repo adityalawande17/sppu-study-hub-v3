@@ -206,9 +206,7 @@ export default function Home() {
             <br />
             you need.
             <br />
-            <span style={{ fontStyle: "italic", color: "var(--gold-dim)" }}>
-              One place.
-            </span>
+            <span style={{ color: "var(--gold-dim)" }}>One place.</span>
           </h1>
 
           {/* Description */}
