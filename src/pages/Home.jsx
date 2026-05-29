@@ -13,7 +13,7 @@ export default function Home() {
   const [contributeOpen, setContributeOpen] = useState(false);
   const [syllabusYear, setSyllabusYear] = useState(null);
   const [noticeDismissed, setNoticeDismissed] = useState(
-    () => sessionStorage.getItem("notice_dismissed") === "1"
+    () => sessionStorage.getItem("notice_dismissed") === "1",
   );
 
   useSEO({
@@ -38,58 +38,107 @@ export default function Home() {
 
   return (
     <div className="page-wrap">
-
       {/* ── Content notice popup ── */}
       {!noticeDismissed && (
-        <div style={{
-          position: "fixed",
-          bottom: 24,
-          right: 24,
-          zIndex: 500,
-          width: 320,
-          background: "var(--surface)",
-          border: "1px solid var(--border)",
-          borderLeft: "4px solid var(--gold)",
-          borderRadius: 12,
-          padding: "14px 16px",
-          boxShadow: "var(--shadow-lg)",
-          display: "flex",
-          alignItems: "flex-start",
-          gap: 12,
-          animation: "fadeUp .35s ease both",
-        }}
-        className="content-notice-popup"
+        <div
+          style={{
+            position: "fixed",
+            bottom: 24,
+            right: 24,
+            zIndex: 500,
+            width: 320,
+            background: "var(--surface)",
+            border: "1px solid var(--border)",
+            borderLeft: "4px solid var(--gold)",
+            borderRadius: 12,
+            padding: "14px 16px",
+            boxShadow: "var(--shadow-lg)",
+            display: "flex",
+            alignItems: "flex-start",
+            gap: 12,
+            animation: "fadeUp .35s ease both",
+          }}
+          className="content-notice-popup"
         >
-          <div style={{
-            width: 32, height: 32, borderRadius: 8, flexShrink: 0,
-            background: "var(--gold-pale)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-          }}>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dim)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          <div
+            style={{
+              width: 32,
+              height: 32,
+              borderRadius: 8,
+              flexShrink: 0,
+              background: "var(--gold-pale)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--gold-dim)"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
             </svg>
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 13, fontWeight: 600, color: "var(--heading)", marginBottom: 3 }}>
+            <div
+              style={{
+                fontSize: 13,
+                fontWeight: 600,
+                color: "var(--heading)",
+                marginBottom: 3,
+              }}
+            >
               We're still adding content
             </div>
-            <p style={{ fontSize: 12, color: "var(--text-3)", lineHeight: 1.6, margin: 0 }}>
-              We're sorry if the subject you're looking for doesn't have content yet. We're working hard on adding quality notes, question papers and more.
+            <p
+              style={{
+                fontSize: 12,
+                color: "var(--text-3)",
+                lineHeight: 1.6,
+                margin: 0,
+              }}
+            >
+              We're sorry if the subject you're looking for doesn't have content
+              yet. We're working hard on adding quality notes, question papers
+              and more.
             </p>
           </div>
           <button
             onClick={dismissNotice}
             title="Dismiss"
             style={{
-              flexShrink: 0, width: 24, height: 24,
-              border: "none", background: "transparent",
-              cursor: "pointer", color: "var(--text-4)",
-              fontSize: 18, lineHeight: 1,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              borderRadius: 6, transition: "all .15s", padding: 0,
+              flexShrink: 0,
+              width: 24,
+              height: 24,
+              border: "none",
+              background: "transparent",
+              cursor: "pointer",
+              color: "var(--text-4)",
+              fontSize: 18,
+              lineHeight: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 6,
+              transition: "all .15s",
+              padding: 0,
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = "var(--surface2)"; e.currentTarget.style.color = "var(--text)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--text-4)"; }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "var(--surface2)";
+              e.currentTarget.style.color = "var(--text)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "transparent";
+              e.currentTarget.style.color = "var(--text-4)";
+            }}
           >
             ×
           </button>
@@ -187,7 +236,7 @@ export default function Home() {
           >
             {[
               { label: "Notes & Materials", dot: "#3b82f6" },
-              { label: "Question Papers", dot: "#f59e0b" },
+              { label: "Question Papers", dot: "#ee9575" },
               { label: "SPPU Tools", dot: "#0d9488" },
               { label: "AI Explain", dot: "#a78bfa" },
             ].map(({ label, dot }) => (
@@ -290,8 +339,8 @@ export default function Home() {
                   width: 30,
                   height: 30,
                   borderRadius: 8,
-                  background: "rgba(240,165,0,.15)",
-                  border: "1px solid rgba(240,165,0,.25)",
+                  background: "rgba(0, 204, 240, 0.1)",
+                  border: "1px solid rgba(0, 204, 240, 0.1)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -337,7 +386,7 @@ export default function Home() {
             >
               {[
                 { num: "200+", label: "Study\nMaterials", color: "#3b82f6" },
-                { num: "100+", label: "Question\nPapers", color: "#f59e0b" },
+                { num: "100+", label: "Question\nPapers", color: "#7d6d9b" },
                 { num: "7", label: "Engineering\nBranches", color: "#0d9488" },
               ].map(({ num, label, color }, i) => (
                 <div
@@ -385,7 +434,7 @@ export default function Home() {
                 { text: "AI-powered question explanations", color: "#a78bfa" },
                 {
                   text: "2019 and 2024 patterns fully covered",
-                  color: "#f59e0b",
+                  color: "#f7bd59",
                 },
                 {
                   text: "Completely free forever",
@@ -445,17 +494,17 @@ export default function Home() {
                 alignItems: "center",
                 justifyContent: "space-between",
                 padding: "12px 16px",
-                background: "rgba(240,165,0,.1)",
-                border: "1px solid rgba(240,165,0,.22)",
+                background: "rgba(0, 204, 240, 0.1)",
+                border: "1px solid rgba(0, 204, 240, 0.1)",
                 borderRadius: 11,
                 textDecoration: "none",
                 transition: "all .2s",
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "rgba(240,165,0,.18)")
+                (e.currentTarget.style.background = "rgba(0, 135, 159, 0.1)")
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.background = "rgba(240,165,0,.1)")
+                (e.currentTarget.style.background = "rgba(0, 204, 240, 0.1)")
               }
             >
               <div>

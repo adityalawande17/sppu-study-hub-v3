@@ -82,9 +82,9 @@
   --navy: #0a1628;
   --navy-mid: #0f1e38;
   --navy-light: #1d3461;
-  --gold: #fbbf24;
-  --gold-dim: #f59e0b;
-  --gold-pale: #2a1d00;
+  --gold: #b7d8e6; /*#e5e9ec #fbbf24*/
+  --gold-dim: #5b7c99; /*#f59e0b*/
+  --gold-pale: rgba(0, 204, 240, 0.1);
   --gold-glow: rgba(251, 191, 36, 0.15);
 
   /* Heading color flips to light in dark mode */
