@@ -924,4 +924,18 @@ h3 {
     grid-template-columns: 1fr !important;
     gap: 14px !important;
   }
+
+  /* Content notice popup — bottom bar on mobile */
+  .content-notice-popup {
+    right: 5px !important;
+    left: 5px !important;
+    bottom: 70px !important;
+    width: auto !important;
+
+    border-radius: 10px !important;
+    border-left: none !important;
+    border-top: 3px solid var(--gold) !important;
+    border-right: none !important;
+    border-bottom: none !important;
+  }
 }

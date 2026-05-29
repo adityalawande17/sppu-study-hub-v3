@@ -12,6 +12,9 @@ export default function Home() {
   const { pattern } = useApp();
   const [contributeOpen, setContributeOpen] = useState(false);
   const [syllabusYear, setSyllabusYear] = useState(null);
+  const [noticeDismissed, setNoticeDismissed] = useState(
+    () => sessionStorage.getItem("notice_dismissed") === "1"
+  );
 
   useSEO({
     title:
@@ -28,8 +31,71 @@ export default function Home() {
 
   const recentNews = newsItems.slice(0, 3);
 
+  function dismissNotice() {
+    sessionStorage.setItem("notice_dismissed", "1");
+    setNoticeDismissed(true);
+  }
+
   return (
     <div className="page-wrap">
+
+      {/* ── Content notice popup ── */}
+      {!noticeDismissed && (
+        <div style={{
+          position: "fixed",
+          bottom: 24,
+          right: 24,
+          zIndex: 500,
+          width: 320,
+          background: "var(--surface)",
+          border: "1px solid var(--border)",
+          borderLeft: "4px solid var(--gold)",
+          borderRadius: 12,
+          padding: "14px 16px",
+          boxShadow: "var(--shadow-lg)",
+          display: "flex",
+          alignItems: "flex-start",
+          gap: 12,
+          animation: "fadeUp .35s ease both",
+        }}
+        className="content-notice-popup"
+        >
+          <div style={{
+            width: 32, height: 32, borderRadius: 8, flexShrink: 0,
+            background: "var(--gold-pale)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+          }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dim)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: 13, fontWeight: 600, color: "var(--heading)", marginBottom: 3 }}>
+              We're still adding content
+            </div>
+            <p style={{ fontSize: 12, color: "var(--text-3)", lineHeight: 1.6, margin: 0 }}>
+              We're sorry if the subject you're looking for doesn't have content yet. We're working hard on adding quality notes, question papers and more.
+            </p>
+          </div>
+          <button
+            onClick={dismissNotice}
+            title="Dismiss"
+            style={{
+              flexShrink: 0, width: 24, height: 24,
+              border: "none", background: "transparent",
+              cursor: "pointer", color: "var(--text-4)",
+              fontSize: 18, lineHeight: 1,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              borderRadius: 6, transition: "all .15s", padding: 0,
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = "var(--surface2)"; e.currentTarget.style.color = "var(--text)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--text-4)"; }}
+          >
+            ×
+          </button>
+        </div>
+      )}
+
       {/* ── Hero ─────────────────────────────────────────── */}
       <div
         style={{
