@@ -24,22 +24,22 @@
   --heading: #0a1628;
 
   /* Branch accent colors */
-  --cs-color: #3b82f6;
+  --cs-color: #0269cf;
   --cs-pale: #eff6ff;
   --cs-dark: #1d4ed8;
-  --it-color: #0d9488;
+  --it-color: #89b2df;
   --it-pale: #f0fdfa;
   --it-dark: #0f766e;
-  --me-color: #f59e0b;
+  --me-color: #0a2e54;
   --me-pale: #fffbeb;
   --me-dark: #b45309;
-  --ce-color: #16a34a;
+  --ce-color: #16a39a;
   --ce-pale: #f0fdf4;
   --ce-dark: #15803d;
-  --ee-color: #9333ea;
+  --ee-color: #87c6e8;
   --ee-pale: #faf5ff;
   --ee-dark: #7e22ce;
-  --etc-color: #ef4444;
+  --etc-color: #5197e2;
   --etc-pale: #fff1f2;
   --etc-dark: #dc2626;
 

@@ -569,31 +569,31 @@ export default function Home() {
           {
             key: "FE",
             tag: "All Branches",
-            label: "First Year",
+            label: "FE",
             desc: "FE — Common syllabus",
             path: "/first-year",
-            accent: "#f59e0b",
+            accent: "#8da7db",
           },
           {
             key: "SE",
             tag: "Second Year",
             label: "SE",
             desc: "Semester 3 and 4",
-            accent: "#3b82f6",
+            accent: "#0e4eb4",
           },
           {
             key: "TE",
             tag: "Third Year",
             label: "TE",
             desc: "Semester 5 and 6",
-            accent: "#0d9488",
+            accent: "#4b55a8",
           },
           {
             key: "BE",
             tag: "Final Year",
             label: "BE",
             desc: "Semester 7 and 8",
-            accent: "#9333ea",
+            accent: "#33a4ea",
           },
         ].map((yr) => (
           <div
