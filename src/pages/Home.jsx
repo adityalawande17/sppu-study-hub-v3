@@ -24,8 +24,8 @@ export default function Home() {
     schema: {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "sppuwalestudent",
-      url: "https://sppuwalestudent.com",
+      name: "SPPUStudyHUB",
+      url: "https://sppustudyhub.in",
     },
   });
 

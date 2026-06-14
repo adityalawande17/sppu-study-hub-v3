@@ -160,7 +160,7 @@ export default function Subject() {
   const pyq = hasPYQ ? content.pyq : null;
 
   const hasAnyContent = hasUnits || hasPracticals || hasPYQ;
-  const is2024Pattern = /[A-Z]/.test(code);
+  const is2024Pattern = /^\d+$/.test(code);
 
   useSEO({
     title: `${subject.name} Notes & Papers — SPPU ${subject.branch} ${subject.sem} | SPPUStudyHUB`,

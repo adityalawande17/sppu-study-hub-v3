@@ -28,6 +28,7 @@ export function AppProvider({ children }) {
     }
   });
   const [user, setUser] = useState(null);
+  const [sessionLoading, setSessionLoading] = useState(true);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "");
@@ -39,7 +40,8 @@ export function AppProvider({ children }) {
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
-    });
+      setSessionLoading(false);
+    }).catch(() => setSessionLoading(false));
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null);
     });
@@ -99,6 +101,7 @@ export function AppProvider({ children }) {
         toggleSaved,
         isSaved,
         user,
+        sessionLoading,
         signInWithGoogle,
         signOut,
       }}
