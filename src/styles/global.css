@@ -44,7 +44,7 @@
   --etc-dark: #dc2626;
 
   /* Surfaces */
-  --bg: #ede8d0;
+  --bg: #ffffff;
   --surface: #fffff0;
   --surface2: #f3f2ef;
   --surface3: #eceae5;
@@ -656,8 +656,8 @@ h3 {
 }
 .modal-title {
   font-family: "DM Serif Display", serif;
-  font-size: 22px;
-  color: var(--navy);
+  font-size: 30px;
+  color: white;
 }
 .modal-close {
   width: 30px;

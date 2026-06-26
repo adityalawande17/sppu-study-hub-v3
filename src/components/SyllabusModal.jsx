@@ -1,4 +1,5 @@
 import Modal from "./Modal";
+import { useState, useEffect } from "react";
 
 const yearLabels = {
   FE: "First Year (FE)",
@@ -202,16 +203,46 @@ export default function SyllabusModal({
   year,
   pattern = "2019",
 }) {
-  if (!year) return null;
+  const [activeYear, setActiveYear] = useState(year || "FE");
+  useEffect(() => {
+    if (year) setActiveYear(year);
+  }, [year]);
 
-  const branches = syllabusLinks[pattern]?.[year] || [];
+  const branches = syllabusLinks[pattern]?.[activeYear] || [];
 
   return (
     <Modal
       open={open}
       onClose={onClose}
-      title={`SPPU ${yearLabels[year]} Syllabus — ${pattern} Pattern`}
+      title={`SPPU ${yearLabels[activeYear]} Syllabus — ${pattern} Pattern`}
     >
+      <div style={{ display: "flex", gap: 8, marginBottom: 18 }}>
+        {["FE", "SE", "TE", "BE"].map((y) => {
+          const active = activeYear === y;
+
+          return (
+            <button
+              key={y}
+              onClick={() => setActiveYear(y)}
+              style={{
+                padding: "7px 45px",
+                borderRadius: 999,
+                border: `1px solid ${
+                  active ? "var(--primary)" : "var(--border)"
+                }`,
+                background: active ? "var(--primary)" : "transparent",
+                color: active ? "#fff" : "var(--text)",
+                fontSize: 13,
+                fontWeight: 600,
+                cursor: "pointer",
+              }}
+            >
+              {y}
+            </button>
+          );
+        })}
+      </div>
+
       <p style={{ fontSize: 14, color: "var(--text-3)", marginBottom: 18 }}>
         Official syllabus PDFs released by Savitribai Phule Pune University.
       </p>

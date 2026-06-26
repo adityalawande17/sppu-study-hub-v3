@@ -301,7 +301,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right — redesigned hero card */}
+        {/* Right — hero card */}
         <div
           style={{
             background: "var(--navy)",
@@ -332,7 +332,7 @@ export default function Home() {
                 marginBottom: 20,
               }}
             >
-              <div
+              {/* <div
                 style={{
                   width: 30,
                   height: 30,
@@ -357,7 +357,7 @@ export default function Home() {
                   <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
                   <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
                 </svg>
-              </div>
+              </div> */}
               <span
                 style={{
                   fontSize: 11,
