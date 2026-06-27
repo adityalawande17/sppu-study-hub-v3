@@ -222,20 +222,21 @@ export default function SyllabusModal({
 
           return (
             <button
+              className={`syllabus-pill ${active ? "active" : ""}`}
               key={y}
               onClick={() => setActiveYear(y)}
-              style={{
-                padding: "7px 45px",
-                borderRadius: 999,
-                border: `1px solid ${
-                  active ? "var(--primary)" : "var(--border)"
-                }`,
-                background: active ? "var(--primary)" : "transparent",
-                color: active ? "#fff" : "var(--text)",
-                fontSize: 13,
-                fontWeight: 600,
-                cursor: "pointer",
-              }}
+              // style={{
+              //   padding: "7px 45px",
+              //   borderRadius: 999,
+              //   border: `1px solid ${
+              //     active ? "var(--primary)" : "var(--border)"
+              //   }`,
+              //   background: active ? "#4b54675c" : "transparent",
+              //   color: active ? "#fff" : "var(--text)",
+              //   fontSize: 13,
+              //   fontWeight: 600,
+              //   cursor: "pointer",
+              // }}
             >
               {y}
             </button>

@@ -659,6 +659,34 @@ h3 {
   font-size: 30px;
   color: white;
 }
+
+.syllabus-pill {
+  padding: 7px 45px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.syllabus-pill:hover {
+  background: var(--surface2);
+  border-color: var(--primary);
+}
+
+.syllabus-pill.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.syllabus-pill.active:hover {
+  filter: brightness(1.08);
+}
+
 .modal-close {
   width: 30px;
   height: 30px;
