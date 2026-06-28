@@ -216,7 +216,7 @@ export default function SyllabusModal({
       onClose={onClose}
       title={`SPPU ${yearLabels[activeYear]} Syllabus — ${pattern} Pattern`}
     >
-      <div style={{ display: "flex", gap: 8, marginBottom: 18 }}>
+      <div className="syllabus-tabs">
         {["FE", "SE", "TE", "BE"].map((y) => {
           const active = activeYear === y;
 
@@ -225,18 +225,6 @@ export default function SyllabusModal({
               className={`syllabus-pill ${active ? "active" : ""}`}
               key={y}
               onClick={() => setActiveYear(y)}
-              // style={{
-              //   padding: "7px 45px",
-              //   borderRadius: 999,
-              //   border: `1px solid ${
-              //     active ? "var(--primary)" : "var(--border)"
-              //   }`,
-              //   background: active ? "#4b54675c" : "transparent",
-              //   color: active ? "#fff" : "var(--text)",
-              //   fontSize: 13,
-              //   fontWeight: 600,
-              //   cursor: "pointer",
-              // }}
             >
               {y}
             </button>
@@ -252,6 +240,7 @@ export default function SyllabusModal({
         {branches.map((b) => (
           <div
             key={b.name}
+            className="syllabus-card"
             style={{
               display: "flex",
               justifyContent: "space-between",

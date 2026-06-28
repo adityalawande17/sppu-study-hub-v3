@@ -661,7 +661,9 @@ h3 {
 }
 
 .syllabus-pill {
-  padding: 7px 45px;
+  padding: 9px 10px;
+  flex: 1;
+  min-width: 0;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: transparent;
@@ -685,6 +687,47 @@ h3 {
 
 .syllabus-pill.active:hover {
   filter: brightness(1.08);
+}
+
+.syllabus-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 480px) {
+  .syllabus-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .syllabus-pill {
+    width: 100%;
+    padding: 10px;
+  }
+  .modal-box {
+    padding: 18px;
+    max-height: 92vh;
+  }
+
+  .modal-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .syllabus-card {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .syllabus-dl-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 }
 
 .modal-close {
