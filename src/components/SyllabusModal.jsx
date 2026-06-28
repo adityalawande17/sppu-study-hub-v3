@@ -50,16 +50,28 @@ const syllabusLinks = {
     ],
 
     TE: [
-      { name: "Computer Engineering", url: "#" },
+      {
+        name: "Computer Engineering",
+        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus%202026/TE%20-%20Computer%20Engineering%20-%202024%20Pattern.pdf?Mobile=1&Source=%2Fsites%2Fdocuments%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3D274d1f79%252D0a80%252D45ab%252Db48f%252D70dbd7afc268%26View%3D17e162f7%252D6a44%252D4170%252D965c%252D9d5abe85e882%26CurrentPage%3D1",
+      },
       {
         name: "Information Technology",
         url: "https://aissmsioit.org/wp-content/uploads/2022/08/Third_Year_Information-Technology_2019_Course_09.07.2021.pdf",
       },
-      { name: "AI & DS", url: "#" },
+      {
+        name: "AI & DS",
+        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus%202026/TE-%20AI%20and%20DS%20-%202024%20Pattern.pdf?Mobile=1&Source=%2Fsites%2Fdocuments%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3D274d1f79%252D0a80%252D45ab%252Db48f%252D70dbd7afc268%26View%3D17e162f7%252D6a44%252D4170%252D965c%252D9d5abe85e882%26CurrentPage%3D1",
+      },
       { name: "Mechanical Engineering", url: "#" },
       { name: "Civil Engineering", url: "#" },
-      { name: "Electrical Engineering", url: "#" },
-      { name: "ENTC Engineering", url: "#" },
+      {
+        name: "Electrical Engineering",
+        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus%202026/TE_Electrical_Engg_2024_Pattern_Syllabus_10_june_2026_13062026.pdf?Mobile=1&Source=%2Fsites%2Fdocuments%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3D274d1f79%252D0a80%252D45ab%252Db48f%252D70dbd7afc268%26View%3D17e162f7%252D6a44%252D4170%252D965c%252D9d5abe85e882%26FilterField%3DTitle%26FilterValue%3D2024%26CurrentPage%3D1",
+      },
+      {
+        name: "ENTC Engineering",
+        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus%202026/TE_EandTC%20_2024%20Pat(R1)_23062026.pdf?Mobile=1&Source=%2Fsites%2Fdocuments%2F_layouts%2Fmobile%2Fview%2Easpx%3FList%3D274d1f79%252D0a80%252D45ab%252Db48f%252D70dbd7afc268%26View%3D17e162f7%252D6a44%252D4170%252D965c%252D9d5abe85e882%26FilterField%3DTitle%26FilterValue%3D2024%26CurrentPage%3D1",
+      },
     ],
 
     BE: [
