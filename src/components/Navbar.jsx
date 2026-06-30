@@ -353,7 +353,7 @@ export default function Navbar() {
                   display: "flex",
                   alignItems: "center",
                   gap: 6,
-                  padding: "6px 12px",
+                  padding: "9px 12px",
                   borderRadius: 20,
                   border: "1px solid rgba(255,255,255,.15)",
                   background: "rgba(255,255,255,.07)",
