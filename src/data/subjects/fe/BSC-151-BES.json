@@ -1,7 +1,7 @@
 {
   "code": "BSC-151-BES",
   "name": "Engineering Mathematics- II",
-  "pattern": "2019",
+  "pattern": "2024",
   "units": [
     {
       "title": "Unit 1 - Integral Calculus",
@@ -106,6 +106,11 @@
       "year": "2025",
       "exam": "April / May 2025",
       "url": "https://drive.google.com/file/d/13uXnx4gHP-JMQMu4TjgtowNXnaPzSoh1/view?usp=sharing"
+    },
+    {
+      "year": "2026",
+      "exam": "April / May 2026",
+      "url": "https://drive.google.com/file/d/1Bw1nBMrvFtTEZaeq7riSdY35-AN1nIQF/view?usp=sharing"
     }
   ],
   "books": []

@@ -1,7 +1,7 @@
 {
   "code": "PCC-151-ITT",
-  "name": "Subject Name Here",
-  "pattern": "2019",
+  "name": "Programming and Problem Solving",
+  "pattern": "2024",
   "units": [
     {
       "title": "Unit 1 -  Problem Solving, Programming and Python Programming",
@@ -69,6 +69,11 @@
       "year": "2025",
       "exam": "April / May 2025",
       "url": "https://drive.google.com/file/d/1t7ZU_jLDyEGrdCA2gBcbr8WZLB454OgR/view?usp=sharing"
+    },
+    {
+      "year": "2026",
+      "exam": "April / May 2026",
+      "url": "https://drive.google.com/file/d/183vbvDRq9NUFwPI1QG0Mybzxru5apoxj/view?usp=sharing"
     }
   ],
   "books": []
