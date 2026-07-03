@@ -813,7 +813,7 @@ h3 {
   font-size: 20px;
 }
 .tool-body {
-  padding: 0 20px 20px;
+  padding: 20px 20px 20px;
 }
 .tool-result {
   background: var(--surface2);

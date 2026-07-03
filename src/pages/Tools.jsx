@@ -461,7 +461,11 @@ export default function Tools() {
           <div
             key={tool.id}
             className="tool-card fade-up"
-            style={tools.length % 2 !== 0 && index === tools.length - 1 ? { gridColumn: "1 / -1" } : {}}
+            style={
+              tools.length % 2 !== 0 && index === tools.length - 1
+                ? { gridColumn: "1 / -1" }
+                : {}
+            }
           >
             <div
               className="tool-card-head"
@@ -479,7 +483,7 @@ export default function Tools() {
                 </div>
                 <div
                   style={{
-                    fontSize: 13,
+                    fontSize: 12,
                     color: "var(--text-3)",
                     marginTop: 2,
                     lineHeight: 1.4,
