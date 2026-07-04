@@ -168,7 +168,7 @@ export default function Navbar() {
       if (megaRef.current && !megaRef.current.contains(e.target))
         setMegaOpen(false);
     }
-    document.addEventListener("mousedown", handleClick);
+    document.addEventListener("click", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
@@ -260,7 +260,7 @@ export default function Navbar() {
                   display: "flex",
                   alignItems: "center",
                   gap: 4,
-                  padding: "7px 11px",
+                  padding: "9px 11px",
                   borderRadius: 8,
                   border: "none",
                   background: megaOpen
