@@ -194,8 +194,8 @@ export default function Home() {
           {/* Headline */}
           <h1
             style={{
-              fontFamily: "'DM Serif Display', serif",
-              fontSize: 50,
+              fontFamily: "'Black Ops One', serif",
+              fontSize: 70,
               lineHeight: 1.08,
               color: "var(--heading)",
               marginBottom: 18,
@@ -960,7 +960,7 @@ export default function Home() {
           .year-grid{grid-template-columns:repeat(2,1fr)!important}
         }
         @media(max-width:600px){
-          .hero-grid h1{font-size:32px!important}
+          .hero-grid h1{font-size:50px!important}
           .branch-grid{grid-template-columns:1fr!important}
         }
         @media(max-width:400px){.year-grid{grid-template-columns:1fr!important}}
