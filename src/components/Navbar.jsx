@@ -205,7 +205,7 @@ export default function Navbar() {
           <Link
             to="/"
             style={{
-              fontFamily: "'DM Serif Display', serif",
+              fontFamily: "'Black Ops One', serif",
               color: "#fff",
               fontSize: 20,
               textDecoration: "none",
@@ -216,7 +216,7 @@ export default function Navbar() {
               letterSpacing: "-0.3px",
             }}
           >
-            SPPU<span style={{ color: "var(--gold)" }}>Study</span>HUB
+            SPPU<span style={{ color: "var(--gold)" }}>StudyHUB</span>
           </Link>
 
           {/* Pattern switcher */}
