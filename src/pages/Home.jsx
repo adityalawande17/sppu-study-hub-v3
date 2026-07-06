@@ -148,7 +148,7 @@ export default function Home() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <div
         style={{
-          padding: "52px 0 44px",
+          padding: "44px 0 44px",
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gap: 56,
@@ -322,7 +322,7 @@ export default function Home() {
             }}
           />
 
-          <div style={{ padding: "26px 26px 22px", position: "relative" }}>
+          <div style={{ padding: "43px 26px 43px 26px", position: "relative" }}>
             {/* Header label */}
             <div
               style={{
