@@ -108,7 +108,7 @@ const BookmarkEmpty = () => (
 export default function Subject() {
   const { code } = useParams();
   const { state } = useLocation();
-  const { toggleSaved, isSaved, switchPattern } = useApp();
+  const { toggleSaved, isSaved, switchPattern, pattern } = useApp();
   const navigate = useNavigate();
 
   const subject = state ||
@@ -160,7 +160,7 @@ export default function Subject() {
   const pyq = hasPYQ ? content.pyq : null;
 
   const hasAnyContent = hasUnits || hasPracticals || hasPYQ;
-  const is2024Pattern = /^\d+$/.test(code);
+  const is2024Pattern = pattern === "2024";
 
   useSEO({
     title: `${subject.name} Notes & Papers — SPPU ${subject.branch} ${subject.sem} | SPPUStudyHUB`,
