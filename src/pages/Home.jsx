@@ -305,9 +305,10 @@ export default function Home() {
         <div
           style={{
             background: "var(--navy)",
-            borderRadius: 10,
+            borderRadius: 16,
             overflow: "hidden",
             position: "relative",
+            boxShadow: "var(--shadow-lg)",
           }}
         >
           {/* Dot grid */}
@@ -322,54 +323,53 @@ export default function Home() {
             }}
           />
 
-          <div style={{ padding: "43px 26px 43px 26px", position: "relative" }}>
-            {/* Header label */}
+          <div style={{ padding: "40px 28px 32px", position: "relative" }}>
+            {/* Live indicator — mirrors the left column's eyebrow */}
             <div
               style={{
                 display: "flex",
                 alignItems: "center",
                 gap: 8,
-                marginBottom: 20,
+                marginBottom: 14,
               }}
             >
-              {/* <div
-                style={{
-                  width: 30,
-                  height: 30,
-                  borderRadius: 8,
-                  background: "rgba(0, 204, 240, 0.1)",
-                  border: "1px solid rgba(0, 204, 240, 0.1)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--gold)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
-                  <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
-                </svg>
-              </div> */}
               <span
                 style={{
-                  fontSize: 11,
-                  fontWeight: 700,
+                  width: 8,
+                  height: 8,
+                  borderRadius: "50%",
+                  flexShrink: 0,
+                  background: "#22c55e",
+                  boxShadow: "0 0 0 3px rgba(34,197,94,.22)",
+                  display: "inline-block",
+                }}
+              />
+              <span
+                style={{
+                  fontSize: 12,
+                  fontWeight: 500,
                   color: "rgba(255,255,255,.4)",
-                  letterSpacing: 1,
-                  textTransform: "uppercase",
+                  letterSpacing: 0.2,
                 }}
               >
                 Platform at a glance
               </span>
             </div>
+
+            {/* Heading — same display font as the left headline */}
+            <h2
+              style={{
+                fontFamily: "'Black Ops One', serif",
+                fontSize: 27,
+                lineHeight: 1.25,
+                color: "#fff",
+                marginBottom: 24,
+                letterSpacing: "-0.3px",
+              }}
+            >
+              Built for every <span style={{ color: "var(--gold)" }}>SPPU</span>{" "}
+              student
+            </h2>
 
             {/* Stats — 3 column bordered box */}
             <div
@@ -379,12 +379,12 @@ export default function Home() {
                 border: "1px solid rgba(255,255,255,.08)",
                 borderRadius: 14,
                 overflow: "hidden",
-                marginBottom: 18,
+                marginBottom: 20,
               }}
             >
               {[
                 { num: "200+", label: "Study\nMaterials", color: "#3b82f6" },
-                { num: "100+", label: "Question\nPapers", color: "#7d6d9b" },
+                { num: "100+", label: "Question\nPapers", color: "#ee9575" },
                 { num: "7", label: "Engineering\nBranches", color: "#0d9488" },
               ].map(({ num, label, color }, i) => (
                 <div
@@ -397,13 +397,23 @@ export default function Home() {
                       i > 0 ? "1px solid rgba(255,255,255,.08)" : "none",
                   }}
                 >
+                  <span
+                    style={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: "50%",
+                      background: color,
+                      display: "inline-block",
+                      marginBottom: 8,
+                    }}
+                  />
                   <div
                     style={{
-                      fontFamily: "'DM Serif Display', serif",
-                      fontSize: 30,
-                      color,
+                      fontFamily: "'Black Ops One', serif",
+                      fontSize: 22,
+                      color: "#fff",
                       lineHeight: 1,
-                      marginBottom: 6,
+                      marginBottom: 8,
                     }}
                   >
                     {num}
@@ -432,7 +442,7 @@ export default function Home() {
                 { text: "AI-powered question explanations", color: "#a78bfa" },
                 {
                   text: "2019 and 2024 patterns fully covered",
-                  color: "#f7bd59",
+                  color: "#f0a500",
                 },
                 {
                   text: "Completely free forever",
@@ -492,18 +502,16 @@ export default function Home() {
                 alignItems: "center",
                 justifyContent: "space-between",
                 padding: "12px 16px",
-                background: "rgba(0, 204, 240, 0.1)",
-                border: "1px solid rgba(0, 204, 240, 0.1)",
+                background: "var(--gold-pale)",
+                border: "1px solid var(--gold-pale)",
                 borderRadius: 11,
                 textDecoration: "none",
                 transition: "all .2s",
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "rgba(0, 135, 159, 0.1)")
+                (e.currentTarget.style.filter = "brightness(1.3)")
               }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.background = "rgba(0, 204, 240, 0.1)")
-              }
+              onMouseLeave={(e) => (e.currentTarget.style.filter = "")}
             >
               <div>
                 <div
