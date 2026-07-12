@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import NoticeStrip from "./components/NoticeStrip";
 import BottomNav from "./components/BottomNav";
 import ScrollToTop from "./components/ScrollToTop";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 import "./styles/global.css";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -72,6 +73,7 @@ export default function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Analytics />
+        <GoogleAnalytics />
         <div
           style={{
             display: "flex",
