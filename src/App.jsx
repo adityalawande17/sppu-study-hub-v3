@@ -25,6 +25,8 @@ const Terms = lazy(() => import("./pages/Terms"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Contributions = lazy(() => import("./pages/Contributions"));
 const History = lazy(() => import("./pages/History"));
+const AdminLogin = lazy(() => import("./pages/AdminLogin"));
+const AdminQuestions = lazy(() => import("./pages/AdminQuestions"));
 
 function NotFound() {
   return (
@@ -101,6 +103,8 @@ export default function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/history" element={<History />} />
                 <Route path="/contributions" element={<Contributions />} />
+                <Route path="/admin/login" element={<AdminLogin />} />
+                <Route path="/admin/questions" element={<AdminQuestions />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

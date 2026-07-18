@@ -4,6 +4,7 @@ import cors from 'cors';
 import { generalRateLimiter } from './middleware/rateLimiter.js';
 import aiRouter from './routes/ai.js';
 import questionsRouter from './routes/questions.js';
+import adminRouter from './routes/admin.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -18,7 +19,7 @@ app.use(cors({
     if (!origin || ALLOWED_ORIGINS.includes(origin)) return cb(null, true);
     cb(new Error(`CORS: origin ${origin} not allowed`));
   },
-  methods: ['GET', 'POST'],
+  methods: ['GET', 'POST', 'DELETE'],
 }));
 
 app.use(express.json({ limit: '50kb' }));
@@ -31,6 +32,7 @@ app.get('/health', (_req, res) => {
 
 app.use('/api/ai', aiRouter);
 app.use('/api/questions', questionsRouter);
+app.use('/api/admin', adminRouter);
 
 // Global error handler
 app.use((err, _req, res, _next) => {
