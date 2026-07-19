@@ -5,7 +5,10 @@ import { useSEO } from "../hooks/useSEO";
 import { branchMeta } from "../data/branches";
 import { semesterLabel } from "../utils/semester";
 import { getAuthHeader } from "../utils/supabaseAuth";
+import { getSubjectsFor } from "../utils/subjectLookup";
+import { useSemesterProgress } from "../hooks/useSemesterProgress";
 import ProfileForm from "../components/ProfileForm";
+import SubjectProgressCard from "../components/SubjectProgressCard";
 
 const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
@@ -20,6 +23,14 @@ export default function Dashboard() {
   const [editingProfile, setEditingProfile] = useState(false);
   const [savingProfile, setSavingProfile] = useState(false);
   const [profileError, setProfileError] = useState(null);
+
+  // Computed before the early returns below so this hook always runs in the
+  // same order — pass an empty list until the profile has actually loaded.
+  const currentSubjects = profile
+    ? getSubjectsFor(profile.branch, profile.current_semester, profile.pattern)
+    : [];
+  const { items: subjectProgress, loading: progressLoading, overallPct } =
+    useSemesterProgress(currentSubjects);
 
   if (sessionLoading || profileLoading) return null;
   if (!user) return <Navigate to="/" replace />;
@@ -267,6 +278,86 @@ export default function Dashboard() {
               submitLabel="Save changes"
             />
           </div>
+        )}
+      </div>
+
+      {/* Current semester subjects */}
+      <div style={{ marginBottom: 36 }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: 16,
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: "'DM Serif Display', serif",
+              fontSize: 20,
+              color: "var(--heading)",
+            }}
+          >
+            {semesterLabel(profile.current_semester)} Subjects
+          </h2>
+          {currentSubjects.length > 0 && (
+            <span style={{ fontSize: 12, color: "var(--text-3)" }}>
+              {progressLoading ? "Loading…" : `${overallPct}% complete`}
+            </span>
+          )}
+        </div>
+
+        {currentSubjects.length === 0 ? (
+          <div className="card" style={{ padding: "32px 24px", textAlign: "center" }}>
+            <p style={{ color: "var(--text-3)", fontSize: 13 }}>
+              No subjects found yet for {profile.branch.toUpperCase()} ·{" "}
+              {semesterLabel(profile.current_semester)} · {profile.pattern} pattern.
+              This branch/pattern/semester combination may not be added to the
+              site yet.
+            </p>
+          </div>
+        ) : (
+          <>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gap: 12,
+                marginBottom: 12,
+              }}
+            >
+              {subjectProgress.map(
+                ({ subject, unitsDone, unitsTotal, questionsDone, questionsTotal }) => (
+                  <SubjectProgressCard
+                    key={subject.code}
+                    subject={subject}
+                    unitsDone={unitsDone}
+                    unitsTotal={unitsTotal}
+                    questionsDone={questionsDone}
+                    questionsTotal={questionsTotal}
+                    loading={progressLoading}
+                  />
+                ),
+              )}
+            </div>
+            <div
+              style={{
+                height: 8,
+                borderRadius: 4,
+                background: "var(--surface3)",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  width: `${overallPct}%`,
+                  height: "100%",
+                  background: "var(--gold)",
+                  transition: "width .2s",
+                }}
+              />
+            </div>
+          </>
         )}
       </div>
 

@@ -46,6 +46,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
   const [dbQuestions, setDbQuestions] = useState([]);
   const [aiStates, setAiStates] = useState({});
   const [paperAiStates, setPaperAiStates] = useState({});
+  const [doneQuestionIds, setDoneQuestionIds] = useState(new Set());
 
   useEffect(() => {
     if (!BACKEND) return;
@@ -54,6 +55,43 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
       .then((data) => { if (data?.questions?.length) setDbQuestions(data.questions); })
       .catch(() => {});
   }, [subjectCode]);
+
+  useEffect(() => {
+    if (!BACKEND || !user) return;
+    (async () => {
+      const authHeader = await getAuthHeader();
+      fetch(`${BACKEND}/api/progress/${subjectCode}`, { headers: authHeader })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((data) => { if (data?.questionIds) setDoneQuestionIds(new Set(data.questionIds)); })
+        .catch(() => {});
+    })();
+  }, [subjectCode, user]);
+
+  async function toggleQuestionDone(questionId) {
+    const wasDone = doneQuestionIds.has(questionId);
+    setDoneQuestionIds((prev) => {
+      const next = new Set(prev);
+      if (wasDone) next.delete(questionId);
+      else next.add(questionId);
+      return next;
+    });
+    try {
+      const authHeader = await getAuthHeader();
+      await fetch(`${BACKEND}/api/progress/question`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...authHeader },
+        body: JSON.stringify({ questionId, completed: !wasDone }),
+      });
+    } catch {
+      // revert on failure
+      setDoneQuestionIds((prev) => {
+        const next = new Set(prev);
+        if (wasDone) next.add(questionId);
+        else next.delete(questionId);
+        return next;
+      });
+    }
+  }
 
   // Lock body scroll when panel is open
   useEffect(() => {
@@ -397,16 +435,27 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
                       </p>
                       {activeQuestions.map((q) => {
                         const as = aiStates[q.id] ?? {};
+                        const isDone = doneQuestionIds.has(q.id);
                         return (
                           <div key={q.id} style={{
                             padding: "10px 12px", borderRadius: 10,
-                            border: "1px solid var(--border)", background: "var(--surface2)",
+                            border: `1px solid ${isDone ? "rgba(34,197,94,.35)" : "var(--border)"}`,
+                            background: isDone ? "rgba(34,197,94,.06)" : "var(--surface2)",
                             display: "flex", flexDirection: "column", gap: 8,
                           }}>
                             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
-                              <p style={{ fontSize: 13, color: "var(--text)", lineHeight: 1.65, margin: 0, flex: 1 }}>
-                                {q.question_text}
-                              </p>
+                              <label style={{ display: "flex", alignItems: "flex-start", gap: 8, flex: 1, cursor: "pointer" }}>
+                                <input
+                                  type="checkbox"
+                                  checked={isDone}
+                                  onChange={() => toggleQuestionDone(q.id)}
+                                  style={{ marginTop: 3, flexShrink: 0, cursor: "pointer" }}
+                                  title="Mark as done"
+                                />
+                                <p style={{ fontSize: 13, color: "var(--text)", lineHeight: 1.65, margin: 0 }}>
+                                  {q.question_text}
+                                </p>
+                              </label>
                               <div style={{ display: "flex", gap: 5, flexShrink: 0 }}>
                                 {q.marks && (
                                   <span style={{ fontSize: 11, fontWeight: 700, color: "var(--text-3)", background: "var(--surface3)", padding: "2px 7px", borderRadius: 10 }}>
