@@ -4,13 +4,13 @@ import { requireUser } from '../middleware/auth.js';
 
 const router = Router();
 
-// GET /api/progress/activity — distinct dates this user completed anything,
-// used to compute the dashboard's study streak client-side.
+// GET /api/progress/activity — how many things this user completed on each
+// day they were active. Powers both the study streak and the activity heatmap.
 // Must come before /:subjectCode so it isn't swallowed by the param route.
 router.get('/activity', requireUser, async (req, res) => {
   try {
     const result = await query(
-      `SELECT DISTINCT date_trunc('day', activity_at) AS day
+      `SELECT date_trunc('day', activity_at) AS day, COUNT(*) AS count
        FROM (
          SELECT completed_at AS activity_at FROM unit_progress WHERE user_id = $1
          UNION ALL
@@ -18,10 +18,16 @@ router.get('/activity', requireUser, async (req, res) => {
          UNION ALL
          SELECT updated_at AS activity_at FROM academic_records WHERE user_id = $1
        ) all_activity
-       ORDER BY day DESC`,
+       GROUP BY day
+       ORDER BY day ASC`,
       [req.userId]
     );
-    return res.json({ dates: result.rows.map((r) => r.day.toISOString().slice(0, 10)) });
+    return res.json({
+      activity: result.rows.map((r) => ({
+        date: r.day.toISOString().slice(0, 10),
+        count: parseInt(r.count, 10),
+      })),
+    });
   } catch (err) {
     console.error('Activity fetch error:', err.message);
     return res.status(500).json({ error: 'Could not fetch activity.' });

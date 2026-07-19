@@ -1,4 +1,12 @@
 import jwt from 'jsonwebtoken';
+import { createRemoteJWKSet, jwtVerify } from 'jose';
+
+// Supabase signs user session tokens with this project's asymmetric key
+// (ES256, rotated via JWKS) — not a shared HS256 secret. jose caches the
+// public keys and handles rotation automatically.
+const supabaseJWKS = createRemoteJWKSet(
+  new URL(`${process.env.SUPABASE_URL}/auth/v1/.well-known/jwks.json`)
+);
 
 // Verifies the admin session token issued by POST /api/admin/login.
 // Distinct from rateLimiter.js's extractUserId, which decodes without
@@ -20,10 +28,10 @@ export function requireAdmin(req, res, next) {
   }
 }
 
-function verifySupabaseToken(auth) {
+async function verifySupabaseToken(auth) {
   if (!auth?.startsWith('Bearer ')) return null;
   try {
-    const payload = jwt.verify(auth.slice(7), process.env.SUPABASE_JWT_SECRET, { algorithms: ['HS256'] });
+    const { payload } = await jwtVerify(auth.slice(7), supabaseJWKS);
     return payload.sub ? payload : null;
   } catch {
     return null;
@@ -33,8 +41,8 @@ function verifySupabaseToken(auth) {
 // Hard-gates a route to a signed-in Supabase user. Every new profile/progress/
 // academic route uses req.userId for scoping — never a client-supplied id —
 // since the backend talks to Postgres directly via pg and bypasses Supabase RLS.
-export function requireUser(req, res, next) {
-  const payload = verifySupabaseToken(req.headers.authorization);
+export async function requireUser(req, res, next) {
+  const payload = await verifySupabaseToken(req.headers.authorization);
   if (!payload) {
     return res.status(401).json({ error: 'Missing or invalid session.' });
   }
@@ -46,8 +54,8 @@ export function requireUser(req, res, next) {
 // Soft version for routes that must keep working for anonymous users
 // (e.g. the AI explainer). Attaches req.userId when a valid token is present,
 // otherwise continues on as anonymous.
-export function optionalUser(req, res, next) {
-  const payload = verifySupabaseToken(req.headers.authorization);
+export async function optionalUser(req, res, next) {
+  const payload = await verifySupabaseToken(req.headers.authorization);
   req.userId = payload?.sub ?? null;
   req.userEmail = payload?.email ?? null;
   next();

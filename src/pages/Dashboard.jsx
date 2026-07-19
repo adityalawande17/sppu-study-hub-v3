@@ -11,6 +11,7 @@ import { useQuickStats } from "../hooks/useQuickStats";
 import ProfileForm from "../components/ProfileForm";
 import SubjectProgressCard from "../components/SubjectProgressCard";
 import CgpaTracker from "../components/CgpaTracker";
+import ActivityHeatmap from "../components/ActivityHeatmap";
 
 const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
@@ -33,7 +34,7 @@ export default function Dashboard() {
     : [];
   const { items: subjectProgress, loading: progressLoading, overallPct } =
     useSemesterProgress(currentSubjects);
-  const { streak, aiRemaining, aiLimit } = useQuickStats(!!user);
+  const { streak, activity, aiRemaining, aiLimit } = useQuickStats(!!user);
 
   if (sessionLoading || profileLoading) return null;
   if (!user) return <Navigate to="/" replace />;
@@ -284,6 +285,11 @@ export default function Dashboard() {
         )}
       </div>
 
+      {/* Activity heatmap */}
+      <div style={{ marginBottom: 36 }}>
+        <ActivityHeatmap activity={activity} />
+      </div>
+
       {/* Current semester subjects */}
       <div style={{ marginBottom: 36 }}>
         <div
@@ -324,10 +330,11 @@ export default function Dashboard() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gridTemplateColumns: "repeat(2, 1fr)",
                 gap: 12,
                 marginBottom: 12,
               }}
+              className="subject-grid"
             >
               {subjectProgress.map(
                 ({ subject, unitsDone, unitsTotal, questionsDone, questionsTotal }) => (
@@ -362,10 +369,6 @@ export default function Dashboard() {
             </div>
           </>
         )}
-      </div>
-
-      <div style={{ marginBottom: 36 }}>
-        <CgpaTracker />
       </div>
 
       {/* Stats row */}
@@ -417,6 +420,10 @@ export default function Dashboard() {
             )}
           </div>
         ))}
+      </div>
+
+      <div style={{ marginBottom: 36 }}>
+        <CgpaTracker />
       </div>
 
       {/* Saved subjects */}
@@ -508,6 +515,12 @@ export default function Dashboard() {
           </div>
         )}
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .subject-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </div>
   );
 }

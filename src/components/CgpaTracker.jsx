@@ -13,12 +13,12 @@ const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
 const inputStyle = {
   width: "100%",
-  padding: "8px 10px",
-  borderRadius: 8,
+  padding: "6px 8px",
+  borderRadius: 7,
   border: "1px solid var(--border)",
   background: "var(--surface2)",
   color: "var(--text)",
-  fontSize: 13,
+  fontSize: 12,
   fontFamily: "Inter, sans-serif",
   outline: "none",
   boxSizing: "border-box",
@@ -26,17 +26,17 @@ const inputStyle = {
 
 const labelStyle = {
   display: "block",
-  fontSize: 11,
+  fontSize: 10,
   fontWeight: 600,
   color: "var(--text-3)",
-  marginBottom: 5,
+  marginBottom: 4,
 };
 
 function StatBox({ label, value }) {
   return (
-    <div className="card" style={{ padding: "14px 16px", textAlign: "center" }}>
-      <div style={{ fontSize: 20, fontWeight: 700, color: "var(--heading)" }}>{value}</div>
-      <div style={{ fontSize: 11, color: "var(--text-3)", marginTop: 2 }}>{label}</div>
+    <div className="card" style={{ padding: "10px 10px", textAlign: "center" }}>
+      <div style={{ fontSize: 16, fontWeight: 700, color: "var(--heading)" }}>{value}</div>
+      <div style={{ fontSize: 10, color: "var(--text-3)", marginTop: 2 }}>{label}</div>
     </div>
   );
 }
@@ -107,20 +107,20 @@ export default function CgpaTracker() {
 
   if (loading) {
     return (
-      <div className="card" style={{ padding: "20px 22px" }}>
-        <p style={{ color: "var(--text-3)", fontSize: 13 }}>Loading…</p>
+      <div className="card" style={{ padding: "14px 16px" }}>
+        <p style={{ color: "var(--text-3)", fontSize: 12 }}>Loading…</p>
       </div>
     );
   }
 
   return (
-    <div className="card" style={{ padding: "20px 22px" }}>
+    <div className="card" style={{ padding: "14px 16px" }}>
       <h2
         style={{
           fontFamily: "'DM Serif Display', serif",
-          fontSize: 20,
+          fontSize: 16,
           color: "var(--heading)",
-          marginBottom: 16,
+          marginBottom: 12,
         }}
       >
         CGPA Tracker
@@ -128,20 +128,20 @@ export default function CgpaTracker() {
 
       <form onSubmit={handleSave}>
         {YEARS.map((year) => (
-          <div key={year} style={{ marginBottom: 14 }}>
+          <div key={year} style={{ marginBottom: 8 }}>
             <div
               style={{
-                fontSize: 11,
+                fontSize: 10,
                 fontWeight: 700,
                 letterSpacing: 0.5,
                 textTransform: "uppercase",
                 color: "var(--text-4)",
-                marginBottom: 8,
+                marginBottom: 5,
               }}
             >
               {year}
             </div>
-            <div style={{ display: "flex", gap: 10 }}>
+            <div style={{ display: "flex", gap: 6 }}>
               {[1, 2].map((half) => {
                 const sem = semesterFor(year, half);
                 return (
@@ -168,35 +168,35 @@ export default function CgpaTracker() {
           <div
             style={{
               color: "#f87171",
-              fontSize: 13,
-              marginBottom: 14,
-              padding: "8px 12px",
+              fontSize: 12,
+              marginBottom: 10,
+              padding: "6px 10px",
               background: "rgba(248,113,113,.08)",
-              borderRadius: 8,
+              borderRadius: 7,
             }}
           >
             {error}
           </div>
         )}
 
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <button type="submit" disabled={saving} className="btn btn-primary" style={{ padding: "9px 20px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <button type="submit" disabled={saving} className="btn btn-primary" style={{ padding: "7px 16px", fontSize: 13 }}>
             {saving ? "Saving…" : "Save"}
           </button>
           {savedFlash && (
-            <span style={{ fontSize: 12, color: "#22c55e", fontWeight: 600 }}>Saved.</span>
+            <span style={{ fontSize: 11, color: "#22c55e", fontWeight: 600 }}>Saved.</span>
           )}
         </div>
       </form>
 
       {records.length > 0 && (
-        <div style={{ marginTop: 22, paddingTop: 20, borderTop: "1px solid var(--border)" }}>
+        <div style={{ marginTop: 14, paddingTop: 12, borderTop: "1px solid var(--border)" }}>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(110px, 1fr))",
-              gap: 10,
-              marginBottom: 16,
+              gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
+              gap: 8,
+              marginBottom: 12,
             }}
           >
             <StatBox label="Overall CGPA" value={overallCgpa.toFixed(2)} />
@@ -204,7 +204,7 @@ export default function CgpaTracker() {
             <StatBox label="Class" value={overallClass} />
           </div>
 
-          <div style={{ display: "grid", gap: 4, marginBottom: 16 }}>
+          <div style={{ display: "grid", gap: 3, marginBottom: 12 }}>
             {YEARS.map((year) => {
               const cgpa = yearCgpa(records, year);
               if (cgpa === null) return null;
@@ -214,7 +214,7 @@ export default function CgpaTracker() {
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
-                    fontSize: 12,
+                    fontSize: 11,
                     color: "var(--text-3)",
                   }}
                 >
@@ -230,11 +230,11 @@ export default function CgpaTracker() {
           {!distinctionTarget.achieved && distinctionTarget.remaining > 0 && (
             <div
               style={{
-                fontSize: 12,
+                fontSize: 11,
                 color: "var(--text-3)",
-                padding: "10px 12px",
+                padding: "7px 9px",
                 background: "var(--gold-pale)",
-                borderRadius: 8,
+                borderRadius: 7,
               }}
             >
               {distinctionTarget.alreadyGuaranteed

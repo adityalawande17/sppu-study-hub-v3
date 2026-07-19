@@ -6,6 +6,7 @@ const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
 export function useQuickStats(enabled) {
   const [streak, setStreak] = useState(0);
+  const [activity, setActivity] = useState([]);
   const [aiUsed, setAiUsed] = useState(0);
   const [aiLimit, setAiLimit] = useState(3);
   const [loading, setLoading] = useState(true);
@@ -24,10 +25,12 @@ export function useQuickStats(enabled) {
           fetch(`${BACKEND}/api/progress/activity`, { headers: authHeader }),
           fetch(`${BACKEND}/api/ai/usage`, { headers: authHeader }),
         ]);
-        const activityData = activityRes.ok ? await activityRes.json() : { dates: [] };
+        const activityData = activityRes.ok ? await activityRes.json() : { activity: [] };
         const usageData = usageRes.ok ? await usageRes.json() : { used: 0, limit: 3 };
         if (cancelled) return;
-        setStreak(computeStreak(activityData.dates ?? []));
+        const activityList = activityData.activity ?? [];
+        setActivity(activityList);
+        setStreak(computeStreak(activityList.map((a) => a.date)));
         setAiUsed(usageData.used ?? 0);
         setAiLimit(usageData.limit ?? 3);
       } catch {
@@ -41,5 +44,12 @@ export function useQuickStats(enabled) {
     };
   }, [enabled]);
 
-  return { streak, aiUsed, aiLimit, aiRemaining: Math.max(0, aiLimit - aiUsed), loading };
+  return {
+    streak,
+    activity,
+    aiUsed,
+    aiLimit,
+    aiRemaining: Math.max(0, aiLimit - aiUsed),
+    loading,
+  };
 }
