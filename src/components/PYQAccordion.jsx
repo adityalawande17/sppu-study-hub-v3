@@ -202,25 +202,23 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
 
   return (
     <>
-      {/* Chip grid */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(175px, 1fr))",
-        gap: 10,
-      }}>
+      {/* Paper list — horizontal rows */}
+      <div style={{ display: "grid", gap: 10 }}>
         {pyq.map((p, i) => {
           const isActive = activeIdx === i;
           return (
             <div
               key={i}
+              className="pyq-card"
               style={{
                 border: `1px solid ${isActive ? "rgba(124,58,237,.4)" : "var(--border)"}`,
                 borderRadius: 10,
-                padding: 14,
+                padding: "12px 16px",
                 background: isActive ? "rgba(124,58,237,.06)" : "var(--surface2)",
                 display: "flex",
-                flexDirection: "column",
-                gap: 8,
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: 16,
                 transition: "all .15s",
               }}
               onMouseEnter={(e) => {
@@ -236,52 +234,54 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
                 }
               }}
             >
-              <div style={{ fontFamily: "'DM Serif Display', serif", fontSize: 22, color: "var(--heading)" }}>
+              <div style={{ fontFamily: "'DM Serif Display', serif", fontSize: 22, color: "var(--heading)", flexShrink: 0 }}>
                 {p.year}
               </div>
-              <div style={{ fontSize: 12, color: "var(--text-3)", lineHeight: 1.5, flex: 1 }}>
+              <div style={{ fontSize: 12, color: "var(--text-3)", lineHeight: 1.5, flex: 1, minWidth: 120 }}>
                 End Semester<br />{p.exam}
               </div>
-              <a
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  padding: "7px 0",
-                  background: "var(--navy)", color: "#fff",
-                  borderRadius: 8, fontSize: 12, fontWeight: 500,
-                  fontFamily: "Inter, sans-serif", textDecoration: "none",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  gap: 5, transition: "opacity .15s",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.opacity = ".82")}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
-              >
-                <DlIcon /> Download
-              </a>
-              <button
-                onClick={() => setActiveIdx(isActive ? null : i)}
-                style={{
-                  padding: "6px 0",
-                  background: isActive ? "rgba(124,58,237,.15)" : "transparent",
-                  border: `1px solid ${isActive ? "rgba(124,58,237,.4)" : "var(--border)"}`,
-                  borderRadius: 8, fontSize: 11, fontWeight: 600,
-                  color: isActive ? "#a78bfa" : "var(--text-3)",
-                  cursor: "pointer", fontFamily: "Inter, sans-serif",
-                  width: "100%", transition: "all .15s",
-                  display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
-                }}
-              >
-                <AIIcon /> Ask AI
-                <span style={{
-                  fontSize: 9, fontWeight: 700, letterSpacing: 0.4,
-                  background: "linear-gradient(135deg, #7c3aed, #a855f7)",
-                  color: "#fff", padding: "1px 5px", borderRadius: 5,
-                  lineHeight: 1.5,
-                }}>
-                  BETA
-                </span>
-              </button>
+              <div className="pyq-actions" style={{ display: "flex", gap: 8, flexShrink: 0 }}>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    padding: "8px 16px",
+                    background: "var(--navy)", color: "#fff",
+                    borderRadius: 8, fontSize: 12, fontWeight: 500,
+                    fontFamily: "Inter, sans-serif", textDecoration: "none",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    gap: 5, whiteSpace: "nowrap", transition: "opacity .15s",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.opacity = ".82")}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+                >
+                  <DlIcon /> Download
+                </a>
+                <button
+                  onClick={() => setActiveIdx(isActive ? null : i)}
+                  style={{
+                    padding: "7px 14px",
+                    background: isActive ? "rgba(124,58,237,.15)" : "transparent",
+                    border: `1px solid ${isActive ? "rgba(124,58,237,.4)" : "var(--border)"}`,
+                    borderRadius: 8, fontSize: 11, fontWeight: 600,
+                    color: isActive ? "#a78bfa" : "var(--text-3)",
+                    cursor: "pointer", fontFamily: "Inter, sans-serif",
+                    whiteSpace: "nowrap", transition: "all .15s",
+                    display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
+                  }}
+                >
+                  <AIIcon /> Ask AI
+                  <span style={{
+                    fontSize: 9, fontWeight: 700, letterSpacing: 0.4,
+                    background: "linear-gradient(135deg, #7c3aed, #a855f7)",
+                    color: "#fff", padding: "1px 5px", borderRadius: 5,
+                    lineHeight: 1.5,
+                  }}>
+                    BETA
+                  </span>
+                </button>
+              </div>
             </div>
           );
         })}
@@ -590,6 +590,14 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
           </div>
         </>
       )}
+
+      <style>{`
+        @media (max-width: 520px) {
+          .pyq-card { padding: 12px !important; }
+          .pyq-actions { flex-basis: 100%; margin-top: 4px; }
+          .pyq-actions a, .pyq-actions button { flex: 1; }
+        }
+      `}</style>
     </>
   );
 }
