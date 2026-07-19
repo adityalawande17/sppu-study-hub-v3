@@ -9,6 +9,7 @@ import { getSubjectsFor } from "../utils/subjectLookup";
 import { useSemesterProgress } from "../hooks/useSemesterProgress";
 import ProfileForm from "../components/ProfileForm";
 import SubjectProgressCard from "../components/SubjectProgressCard";
+import CgpaTracker from "../components/CgpaTracker";
 
 const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
@@ -359,6 +360,10 @@ export default function Dashboard() {
             </div>
           </>
         )}
+      </div>
+
+      <div style={{ marginBottom: 36 }}>
+        <CgpaTracker />
       </div>
 
       {/* Stats row */}
