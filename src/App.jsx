@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AppProvider } from "./context/AppContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -7,6 +7,7 @@ import NoticeStrip from "./components/NoticeStrip";
 import BottomNav from "./components/BottomNav";
 import ScrollToTop from "./components/ScrollToTop";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import ErrorBoundary from "./components/ErrorBoundary";
 import "./styles/global.css";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -28,6 +29,14 @@ const Contributions = lazy(() => import("./pages/Contributions"));
 const History = lazy(() => import("./pages/History"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminQuestions = lazy(() => import("./pages/AdminQuestions"));
+
+// Remounting the boundary on every route change means navigating to a
+// different (working) page recovers automatically after a crash, rather
+// than staying stuck on the fallback until a full page reload.
+function RouteErrorBoundary({ children }) {
+  const location = useLocation();
+  return <ErrorBoundary key={location.pathname}>{children}</ErrorBoundary>;
+}
 
 function NotFound() {
   return (
@@ -87,29 +96,31 @@ export default function App() {
           <NoticeStrip />
           <Navbar />
           <main style={{ flex: 1 }}>
-            <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/first-year" element={<FirstYear />} />
-                <Route path="/branches" element={<Branches />} />
-                <Route path="/branches/:branchKey" element={<BranchDetail />} />
-                <Route path="/subject/:code" element={<Subject />} />
-                <Route path="/tools" element={<Tools />} />
-                <Route path="/news" element={<News />} />
-                <Route path="/saved" element={<Saved />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/privacy" element={<Privacy />} />
-                <Route path="/terms" element={<Terms />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/onboarding" element={<Onboarding />} />
-                <Route path="/history" element={<History />} />
-                <Route path="/contributions" element={<Contributions />} />
-                <Route path="/admin/login" element={<AdminLogin />} />
-                <Route path="/admin/questions" element={<AdminQuestions />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
+            <RouteErrorBoundary>
+              <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/first-year" element={<FirstYear />} />
+                  <Route path="/branches" element={<Branches />} />
+                  <Route path="/branches/:branchKey" element={<BranchDetail />} />
+                  <Route path="/subject/:code" element={<Subject />} />
+                  <Route path="/tools" element={<Tools />} />
+                  <Route path="/news" element={<News />} />
+                  <Route path="/saved" element={<Saved />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/privacy" element={<Privacy />} />
+                  <Route path="/terms" element={<Terms />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/onboarding" element={<Onboarding />} />
+                  <Route path="/history" element={<History />} />
+                  <Route path="/contributions" element={<Contributions />} />
+                  <Route path="/admin/login" element={<AdminLogin />} />
+                  <Route path="/admin/questions" element={<AdminQuestions />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </RouteErrorBoundary>
           </main>
           <Footer />
           <BottomNav />
