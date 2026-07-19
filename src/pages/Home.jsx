@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { useApp } from "../context/AppContext";
@@ -6,15 +6,30 @@ import { branchMeta } from "../data/branches";
 import { newsItems, categoryLabels } from "../data/news";
 import ContributeModal from "../components/ContributeModal";
 import SyllabusModal from "../components/SyllabusModal";
+import LoginPromoModal from "../components/LoginPromoModal";
 
 export default function Home() {
   const navigate = useNavigate();
-  const { pattern } = useApp();
+  const { pattern, user, sessionLoading } = useApp();
   const [contributeOpen, setContributeOpen] = useState(false);
   const [syllabusYear, setSyllabusYear] = useState(null);
   const [noticeDismissed, setNoticeDismissed] = useState(
     () => sessionStorage.getItem("notice_dismissed") === "1",
   );
+  const [loginPromoOpen, setLoginPromoOpen] = useState(false);
+
+  useEffect(() => {
+    if (sessionLoading || user) return;
+    if (localStorage.getItem("sppu_login_promo_seen") === "1") return;
+    setLoginPromoOpen(true);
+  }, [user, sessionLoading]);
+
+  function dismissLoginPromo() {
+    try {
+      localStorage.setItem("sppu_login_promo_seen", "1");
+    } catch {}
+    setLoginPromoOpen(false);
+  }
 
   useSEO({
     title:
@@ -960,6 +975,7 @@ export default function Home() {
         year={syllabusYear}
         pattern={pattern}
       />
+      <LoginPromoModal open={loginPromoOpen} onClose={dismissLoginPromo} />
 
       <style>{`
         @media(max-width:900px){

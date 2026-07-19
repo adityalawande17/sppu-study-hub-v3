@@ -7,6 +7,7 @@ import { semesterLabel } from "../utils/semester";
 import { getAuthHeader } from "../utils/supabaseAuth";
 import { getSubjectsFor } from "../utils/subjectLookup";
 import { useSemesterProgress } from "../hooks/useSemesterProgress";
+import { useQuickStats } from "../hooks/useQuickStats";
 import ProfileForm from "../components/ProfileForm";
 import SubjectProgressCard from "../components/SubjectProgressCard";
 import CgpaTracker from "../components/CgpaTracker";
@@ -32,6 +33,7 @@ export default function Dashboard() {
     : [];
   const { items: subjectProgress, loading: progressLoading, overallPct } =
     useSemesterProgress(currentSubjects);
+  const { streak, aiRemaining, aiLimit } = useQuickStats(!!user);
 
   if (sessionLoading || profileLoading) return null;
   if (!user) return <Navigate to="/" replace />;
@@ -377,8 +379,12 @@ export default function Dashboard() {
       >
         {[
           { label: "Saved Subjects", value: saved.length },
-          { label: "AI Explanations", value: "—", note: "Coming soon" },
-          { label: "Questions This Month", value: "—", note: "Coming soon" },
+          { label: "Study Streak", value: `${streak} day${streak !== 1 ? "s" : ""}` },
+          { label: "AI Calls Left Today", value: `${aiRemaining}/${aiLimit}` },
+          {
+            label: "Questions Done This Sem",
+            value: subjectProgress.reduce((sum, i) => sum + i.questionsDone, 0),
+          },
         ].map((stat) => (
           <div
             key={stat.label}

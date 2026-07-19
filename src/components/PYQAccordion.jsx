@@ -413,7 +413,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
                     Sign in to get AI explanations for<br />questions from this paper
                   </p>
                   <button
-                    onClick={signInWithGoogle}
+                    onClick={() => signInWithGoogle(window.location.pathname)}
                     style={{
                       display: "inline-flex", alignItems: "center", gap: 8,
                       padding: "10px 22px", borderRadius: 9,

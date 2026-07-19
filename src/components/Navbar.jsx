@@ -303,6 +303,11 @@ export default function Navbar() {
             <NavLink to="/contributions" pathname={pathname}>
               Contributors
             </NavLink>
+            {user && (
+              <NavLink to="/dashboard" pathname={pathname}>
+                Dashboard
+              </NavLink>
+            )}
           </nav>
 
           {/* Spacer */}
@@ -347,7 +352,7 @@ export default function Navbar() {
             {/* Auth — desktop */}
             {!user ? (
               <button
-                onClick={signInWithGoogle}
+                onClick={() => signInWithGoogle()}
                 className="hide-sm"
                 style={{
                   display: "flex",
@@ -1178,7 +1183,7 @@ export default function Navbar() {
             >
               {!user ? (
                 <button
-                  onClick={signInWithGoogle}
+                  onClick={() => signInWithGoogle()}
                   style={{
                     display: "flex",
                     alignItems: "center",

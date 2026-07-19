@@ -4,6 +4,30 @@ import { requireUser } from '../middleware/auth.js';
 
 const router = Router();
 
+// GET /api/progress/activity — distinct dates this user completed anything,
+// used to compute the dashboard's study streak client-side.
+// Must come before /:subjectCode so it isn't swallowed by the param route.
+router.get('/activity', requireUser, async (req, res) => {
+  try {
+    const result = await query(
+      `SELECT DISTINCT date_trunc('day', activity_at) AS day
+       FROM (
+         SELECT completed_at AS activity_at FROM unit_progress WHERE user_id = $1
+         UNION ALL
+         SELECT completed_at AS activity_at FROM question_progress WHERE user_id = $1
+         UNION ALL
+         SELECT updated_at AS activity_at FROM academic_records WHERE user_id = $1
+       ) all_activity
+       ORDER BY day DESC`,
+      [req.userId]
+    );
+    return res.json({ dates: result.rows.map((r) => r.day.toISOString().slice(0, 10)) });
+  } catch (err) {
+    console.error('Activity fetch error:', err.message);
+    return res.status(500).json({ error: 'Could not fetch activity.' });
+  }
+});
+
 // GET /api/progress/:subjectCode — this user's completed units + question ids for one subject
 router.get('/:subjectCode', requireUser, async (req, res) => {
   const { subjectCode } = req.params;

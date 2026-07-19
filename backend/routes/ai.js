@@ -3,12 +3,13 @@ import Anthropic from '@anthropic-ai/sdk';
 import { query } from '../db/index.js';
 import { buildExplainerPrompt } from '../prompts/explainer.js';
 import { aiRateLimiter } from '../middleware/rateLimiter.js';
+import { optionalUser, requireUser } from '../middleware/auth.js';
 
 const router = Router();
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 // POST /api/ai/explain
-router.post('/explain', aiRateLimiter, async (req, res) => {
+router.post('/explain', aiRateLimiter, optionalUser, async (req, res) => {
   const { questionText, subjectCode, marks, unit, examYear, examMonth } = req.body;
 
   if (!questionText?.trim() || !subjectCode?.trim()) {
@@ -57,7 +58,7 @@ router.post('/explain', aiRateLimiter, async (req, res) => {
         [questionId]
       );
       if (cached.rows.length > 0) {
-        logUsage(req, '/api/ai/explain');
+        logUsage(req, '/api/ai/explain', req.userId);
         return res.json({ answer: cached.rows[0].answer_text, cached: true });
       }
     }
@@ -97,7 +98,7 @@ router.post('/explain', aiRateLimiter, async (req, res) => {
     }
 
     // 6. Log usage
-    logUsage(req, '/api/ai/explain');
+    logUsage(req, '/api/ai/explain', req.userId);
 
     return res.json({ answer, cached: false });
 
@@ -108,7 +109,7 @@ router.post('/explain', aiRateLimiter, async (req, res) => {
 });
 
 // POST /api/ai/explain/stream — SSE streaming version
-router.post('/explain/stream', aiRateLimiter, async (req, res) => {
+router.post('/explain/stream', aiRateLimiter, optionalUser, async (req, res) => {
   const { questionText, subjectCode, marks, unit, examYear, examMonth } = req.body;
 
   if (!questionText?.trim() || !subjectCode?.trim()) {
@@ -156,7 +157,7 @@ router.post('/explain/stream', aiRateLimiter, async (req, res) => {
 
     res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
     res.end();
-    logUsage(req, '/api/ai/explain/stream');
+    logUsage(req, '/api/ai/explain/stream', req.userId);
 
   } catch (err) {
     console.error('AI stream error:', err.message);
@@ -167,12 +168,32 @@ router.post('/explain/stream', aiRateLimiter, async (req, res) => {
   }
 });
 
-async function logUsage(req, endpoint) {
+// GET /api/ai/usage — how many of today's 3 free AI calls this user has left
+router.get('/usage', requireUser, async (req, res) => {
+  const LIMIT = 3;
+  try {
+    const result = await query(
+      `SELECT COUNT(*) AS count
+       FROM api_usage
+       WHERE user_id = $1
+         AND endpoint IN ('/api/ai/explain', '/api/ai/explain/stream')
+         AND called_at > NOW() - INTERVAL '24 hours'`,
+      [req.userId]
+    );
+    const used = parseInt(result.rows[0].count, 10);
+    return res.json({ used, limit: LIMIT, remaining: Math.max(0, LIMIT - used) });
+  } catch (err) {
+    console.error('AI usage fetch error:', err.message);
+    return res.status(500).json({ error: 'Could not fetch usage.' });
+  }
+});
+
+async function logUsage(req, endpoint, userId) {
   const ip = req.ip ?? req.socket?.remoteAddress ?? 'unknown';
   // Fire-and-forget — never let logging failure surface to the caller
   query(
-    `INSERT INTO api_usage (ip_address, endpoint) VALUES ($1, $2)`,
-    [ip, endpoint]
+    `INSERT INTO api_usage (user_id, ip_address, endpoint) VALUES ($1, $2, $3)`,
+    [userId ?? null, ip, endpoint]
   ).catch(() => {});
 }
 

@@ -106,10 +106,10 @@ export function AppProvider({ children }) {
     return saved.some((s) => s.code === code);
   }
 
-  async function signInWithGoogle() {
+  async function signInWithGoogle(redirectPath = "/dashboard") {
     await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: window.location.origin },
+      options: { redirectTo: `${window.location.origin}${redirectPath}` },
     });
   }
 
