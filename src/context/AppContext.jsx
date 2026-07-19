@@ -1,5 +1,8 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { supabase } from "../lib/supabase";
+import { getAuthHeader } from "../utils/supabaseAuth";
+
+const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
 const AppContext = createContext(null);
 
@@ -29,6 +32,8 @@ export function AppProvider({ children }) {
   });
   const [user, setUser] = useState(null);
   const [sessionLoading, setSessionLoading] = useState(true);
+  const [profile, setProfile] = useState(null);
+  const [profileLoading, setProfileLoading] = useState(true);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "");
@@ -53,6 +58,28 @@ export function AppProvider({ children }) {
       localStorage.setItem("sppu_pattern", pattern);
     } catch {}
   }, [pattern]);
+
+  useEffect(() => {
+    if (sessionLoading) return;
+    if (!user) {
+      setProfile(null);
+      setProfileLoading(false);
+      return;
+    }
+    setProfileLoading(true);
+    (async () => {
+      try {
+        const authHeader = await getAuthHeader();
+        const res = await fetch(`${BACKEND}/api/profile`, { headers: authHeader });
+        const data = await res.json();
+        setProfile(data.profile ?? null);
+      } catch {
+        setProfile(null);
+      } finally {
+        setProfileLoading(false);
+      }
+    })();
+  }, [user, sessionLoading]);
 
   function toggleTheme() {
     setIsDark((d) => !d);
@@ -104,6 +131,9 @@ export function AppProvider({ children }) {
         sessionLoading,
         signInWithGoogle,
         signOut,
+        profile,
+        setProfile,
+        profileLoading,
       }}
     >
       {children}

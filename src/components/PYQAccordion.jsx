@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useApp } from "../context/AppContext";
-import { supabase } from "../lib/supabase";
 import { saveToHistory } from "../utils/aiHistory";
+import { getAuthHeader } from "../utils/supabaseAuth";
 
 const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
@@ -71,13 +71,6 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
       setAiStates({});
     }
     setActiveIdx(null);
-  }
-
-  async function getAuthHeader() {
-    try {
-      const { data: { session } } = await supabase.auth.getSession();
-      return session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {};
-    } catch { return {}; }
   }
 
   async function streamAI(body, onChunk) {

@@ -65,6 +65,48 @@ CREATE TABLE IF NOT EXISTS contributors (
   contributed_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Personalised dashboard — user_id references auth.users directly since
+-- Supabase's auth schema lives in this same Postgres database.
+
+-- One row per user: branch + current semester, manually set/changed by the student
+CREATE TABLE IF NOT EXISTS user_profiles (
+  user_id          UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  branch           VARCHAR(20) NOT NULL,   -- 'cs' | 'it' | 'aids' | 'me' | 'ce' | 'ee' | 'etc'
+  pattern          VARCHAR(10) NOT NULL,   -- '2019' | '2024'
+  current_semester INT NOT NULL CHECK (current_semester BETWEEN 1 AND 8),
+  updated_at       TIMESTAMPTZ DEFAULT NOW(),
+  created_at       TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Per-user, per-unit completion tick
+CREATE TABLE IF NOT EXISTS unit_progress (
+  id           SERIAL PRIMARY KEY,
+  user_id      UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  subject_code VARCHAR(30) NOT NULL,
+  unit         INT NOT NULL,
+  completed_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(user_id, subject_code, unit)
+);
+
+-- Per-user, per-PYQ-question completion tick
+CREATE TABLE IF NOT EXISTS question_progress (
+  id           SERIAL PRIMARY KEY,
+  user_id      UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  question_id  INT REFERENCES questions(id) ON DELETE CASCADE,
+  completed_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(user_id, question_id)
+);
+
+-- Per-user SGPA entry per semester, feeds the CGPA tracker
+CREATE TABLE IF NOT EXISTS academic_records (
+  id         SERIAL PRIMARY KEY,
+  user_id    UUID REFERENCES auth.users(id) ON DELETE CASCADE,
+  semester   INT NOT NULL CHECK (semester BETWEEN 1 AND 8),
+  sgpa       NUMERIC(4,2) NOT NULL,
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(user_id, semester)
+);
+
 -- Indexes
 CREATE INDEX IF NOT EXISTS questions_embedding_idx
   ON questions USING ivfflat (question_embedding vector_cosine_ops)
@@ -72,3 +114,6 @@ CREATE INDEX IF NOT EXISTS questions_embedding_idx
 
 CREATE INDEX IF NOT EXISTS questions_subject_idx ON questions(subject_id);
 CREATE INDEX IF NOT EXISTS api_usage_ip_idx      ON api_usage(ip_address, called_at);
+CREATE INDEX IF NOT EXISTS unit_progress_user_idx     ON unit_progress(user_id);
+CREATE INDEX IF NOT EXISTS question_progress_user_idx ON question_progress(user_id);
+CREATE INDEX IF NOT EXISTS academic_records_user_idx  ON academic_records(user_id);

@@ -5,6 +5,7 @@ import { generalRateLimiter } from './middleware/rateLimiter.js';
 import aiRouter from './routes/ai.js';
 import questionsRouter from './routes/questions.js';
 import adminRouter from './routes/admin.js';
+import profileRouter from './routes/profile.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -33,6 +34,7 @@ app.get('/health', (_req, res) => {
 app.use('/api/ai', aiRouter);
 app.use('/api/questions', questionsRouter);
 app.use('/api/admin', adminRouter);
+app.use('/api/profile', profileRouter);
 
 // Global error handler
 app.use((err, _req, res, _next) => {

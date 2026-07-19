@@ -23,6 +23,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Onboarding = lazy(() => import("./pages/Onboarding"));
 const Contributions = lazy(() => import("./pages/Contributions"));
 const History = lazy(() => import("./pages/History"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
@@ -101,6 +102,7 @@ export default function App() {
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/onboarding" element={<Onboarding />} />
                 <Route path="/history" element={<History />} />
                 <Route path="/contributions" element={<Contributions />} />
                 <Route path="/admin/login" element={<AdminLogin />} />

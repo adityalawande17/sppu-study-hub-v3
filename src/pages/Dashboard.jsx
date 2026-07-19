@@ -1,6 +1,13 @@
+import { useState } from "react";
 import { useApp } from "../context/AppContext";
 import { Link, Navigate } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
+import { branchMeta } from "../data/branches";
+import { semesterLabel } from "../utils/semester";
+import { getAuthHeader } from "../utils/supabaseAuth";
+import ProfileForm from "../components/ProfileForm";
+
+const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
 export default function Dashboard() {
   useSEO({
@@ -8,15 +15,42 @@ export default function Dashboard() {
     description: "Your saved subjects and study activity on SPPUStudyHub.",
   });
 
-  const { user, sessionLoading, signOut, saved } = useApp();
+  const { user, sessionLoading, signOut, saved, profile, profileLoading, setProfile } =
+    useApp();
+  const [editingProfile, setEditingProfile] = useState(false);
+  const [savingProfile, setSavingProfile] = useState(false);
+  const [profileError, setProfileError] = useState(null);
 
-  if (sessionLoading) return null;
+  if (sessionLoading || profileLoading) return null;
   if (!user) return <Navigate to="/" replace />;
+  if (!profile) return <Navigate to="/onboarding" replace />;
 
   const displayName =
     user.user_metadata?.full_name ?? user.email?.split("@")[0] ?? "Student";
   const avatarUrl = user.user_metadata?.avatar_url ?? null;
   const initial = displayName[0].toUpperCase();
+  const branchInfo = branchMeta[profile.branch];
+
+  async function handleProfileUpdate(payload) {
+    setSavingProfile(true);
+    setProfileError(null);
+    try {
+      const authHeader = await getAuthHeader();
+      const res = await fetch(`${BACKEND}/api/profile`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...authHeader },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Could not save changes.");
+      setProfile(data.profile);
+      setEditingProfile(false);
+    } catch (err) {
+      setProfileError(err.message);
+    } finally {
+      setSavingProfile(false);
+    }
+  }
 
   return (
     <div className="container" style={{ padding: "40px 24px 80px" }}>
@@ -106,6 +140,134 @@ export default function Dashboard() {
         >
           Sign out
         </button>
+      </div>
+
+      {/* Your profile */}
+      <div className="card" style={{ padding: "20px 22px", marginBottom: 24 }}>
+        {!editingProfile ? (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 16,
+              flexWrap: "wrap",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              {branchInfo && (
+                <span
+                  style={{
+                    width: 34,
+                    height: 34,
+                    borderRadius: 8,
+                    background: branchInfo.color,
+                    color: "#fff",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}
+                >
+                  {branchInfo.abbr}
+                </span>
+              )}
+              <div>
+                <div
+                  style={{ fontSize: 14, fontWeight: 600, color: "var(--heading)" }}
+                >
+                  {branchInfo?.short ?? profile.branch}
+                </div>
+                <div style={{ fontSize: 12, color: "var(--text-3)" }}>
+                  {semesterLabel(profile.current_semester)} · {profile.pattern} pattern
+                </div>
+              </div>
+            </div>
+            <button
+              onClick={() => setEditingProfile(true)}
+              style={{
+                padding: "7px 14px",
+                borderRadius: 8,
+                border: "1px solid var(--border)",
+                background: "transparent",
+                color: "var(--text-3)",
+                fontSize: 12,
+                fontWeight: 600,
+                cursor: "pointer",
+                fontFamily: "Inter, sans-serif",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "var(--surface2)";
+                e.currentTarget.style.color = "var(--text)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "var(--text-3)";
+              }}
+            >
+              Change semester
+            </button>
+          </div>
+        ) : (
+          <div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginBottom: 16,
+              }}
+            >
+              <h2
+                style={{
+                  fontFamily: "'DM Serif Display', serif",
+                  fontSize: 17,
+                  color: "var(--heading)",
+                }}
+              >
+                Update your profile
+              </h2>
+              <button
+                onClick={() => {
+                  setEditingProfile(false);
+                  setProfileError(null);
+                }}
+                style={{
+                  border: "none",
+                  background: "transparent",
+                  color: "var(--text-3)",
+                  fontSize: 13,
+                  cursor: "pointer",
+                  fontFamily: "Inter, sans-serif",
+                }}
+              >
+                Cancel
+              </button>
+            </div>
+            {profileError && (
+              <div
+                style={{
+                  color: "#f87171",
+                  fontSize: 13,
+                  marginBottom: 14,
+                  padding: "8px 12px",
+                  background: "rgba(248,113,113,.08)",
+                  borderRadius: 8,
+                }}
+              >
+                {profileError}
+              </div>
+            )}
+            <ProfileForm
+              initial={profile}
+              onSubmit={handleProfileUpdate}
+              submitting={savingProfile}
+              submitLabel="Save changes"
+            />
+          </div>
+        )}
       </div>
 
       {/* Stats row */}
