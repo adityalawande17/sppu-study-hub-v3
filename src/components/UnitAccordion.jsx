@@ -1,4 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useApp } from "../context/AppContext";
+import { getAuthHeader } from "../utils/supabaseAuth";
+
+const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
 const defaultUnits = [
   {
@@ -166,8 +170,48 @@ function FileRow({ file }) {
   );
 }
 
-export default function UnitAccordion({ units = defaultUnits }) {
+export default function UnitAccordion({ units = defaultUnits, subjectCode }) {
+  const { user } = useApp();
   const [open, setOpen] = useState(null);
+  const [doneUnits, setDoneUnits] = useState(new Set());
+
+  useEffect(() => {
+    if (!BACKEND || !user || !subjectCode) return;
+    (async () => {
+      const authHeader = await getAuthHeader();
+      fetch(`${BACKEND}/api/progress/${subjectCode}`, { headers: authHeader })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((data) => { if (data?.units) setDoneUnits(new Set(data.units)); })
+        .catch(() => {});
+    })();
+  }, [subjectCode, user]);
+
+  async function toggleUnitDone(e, unitNum) {
+    e.stopPropagation();
+    const wasDone = doneUnits.has(unitNum);
+    setDoneUnits((prev) => {
+      const next = new Set(prev);
+      if (wasDone) next.delete(unitNum);
+      else next.add(unitNum);
+      return next;
+    });
+    try {
+      const authHeader = await getAuthHeader();
+      await fetch(`${BACKEND}/api/progress/unit`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...authHeader },
+        body: JSON.stringify({ subjectCode, unit: unitNum, completed: !wasDone }),
+      });
+    } catch {
+      setDoneUnits((prev) => {
+        const next = new Set(prev);
+        if (wasDone) next.add(unitNum);
+        else next.delete(unitNum);
+        return next;
+      });
+    }
+  }
+
   return (
     <div style={{ display: "grid", gap: 6 }}>
       {units.map((unit, i) => {
@@ -181,8 +225,16 @@ export default function UnitAccordion({ units = defaultUnits }) {
               overflow: "hidden",
             }}
           >
-            <button
+            <div
+              role="button"
+              tabIndex={0}
               onClick={() => setOpen(isOpen ? null : i)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setOpen(isOpen ? null : i);
+                }
+              }}
               style={{
                 width: "100%",
                 display: "flex",
@@ -199,6 +251,7 @@ export default function UnitAccordion({ units = defaultUnits }) {
                 textAlign: "left",
                 gap: 10,
                 transition: "background .15s",
+                boxSizing: "border-box",
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -231,6 +284,37 @@ export default function UnitAccordion({ units = defaultUnits }) {
                   flexShrink: 0,
                 }}
               >
+                {user && subjectCode && (
+                  <button
+                    type="button"
+                    onClick={(e) => toggleUnitDone(e, i + 1)}
+                    title={doneUnits.has(i + 1) ? "Mark as not done" : "Mark unit as done"}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 4,
+                      padding: "3px 9px",
+                      borderRadius: 20,
+                      fontSize: 11,
+                      fontWeight: 600,
+                      cursor: "pointer",
+                      fontFamily: "Inter, sans-serif",
+                      border: doneUnits.has(i + 1)
+                        ? "1px solid rgba(34,197,94,.45)"
+                        : `1px solid ${isOpen ? "rgba(255,255,255,.25)" : "var(--border)"}`,
+                      background: doneUnits.has(i + 1)
+                        ? "rgba(34,197,94,.15)"
+                        : "transparent",
+                      color: doneUnits.has(i + 1)
+                        ? "#22c55e"
+                        : isOpen
+                          ? "rgba(255,255,255,.7)"
+                          : "var(--text-3)",
+                    }}
+                  >
+                    {doneUnits.has(i + 1) ? "✓ Done" : "Mark done"}
+                  </button>
+                )}
                 <span style={{ fontSize: 11, opacity: 0.7 }}>
                   {unit.files.length} file{unit.files.length !== 1 ? "s" : ""}
                 </span>
@@ -247,7 +331,7 @@ export default function UnitAccordion({ units = defaultUnits }) {
                   }}
                 />
               </div>
-            </button>
+            </div>
             {isOpen && (
               <div
                 style={{

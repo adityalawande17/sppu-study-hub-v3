@@ -412,7 +412,7 @@ export default function Subject() {
               </span>
             </div>
             <div className="mat-section-body">
-              <UnitAccordion units={units} />
+              <UnitAccordion units={units} subjectCode={code} />
             </div>
           </div>
         )}
