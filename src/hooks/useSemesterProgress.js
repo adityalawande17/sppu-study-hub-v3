@@ -21,33 +21,30 @@ export function useSemesterProgress(subjects) {
     setLoading(true);
     (async () => {
       const authHeader = await getAuthHeader();
-      const results = await Promise.all(
-        subjects.map(async (subject) => {
-          const content = getSubjectContent(subject.code);
-          const unitsTotal = content?.units?.length ?? 0;
-          try {
-            const [progressRes, questionsRes] = await Promise.all([
-              fetch(`${BACKEND}/api/progress/${subject.code}`, { headers: authHeader }),
-              fetch(`${BACKEND}/api/questions/${subject.code}`),
-            ]);
-            const progressData = progressRes.ok
-              ? await progressRes.json()
-              : { units: [], questionIds: [] };
-            const questionsData = questionsRes.ok
-              ? await questionsRes.json()
-              : { questions: [] };
-            return {
-              subject,
-              unitsDone: progressData.units?.length ?? 0,
-              unitsTotal,
-              questionsDone: progressData.questionIds?.length ?? 0,
-              questionsTotal: questionsData.questions?.length ?? 0,
-            };
-          } catch {
-            return { subject, unitsDone: 0, unitsTotal, questionsDone: 0, questionsTotal: 0 };
-          }
-        }),
-      );
+      let summary = {};
+      try {
+        const res = await fetch(
+          `${BACKEND}/api/progress/summary?codes=${encodeURIComponent(subjectCodes)}`,
+          { headers: authHeader },
+        );
+        if (res.ok) summary = (await res.json()).summary ?? {};
+      } catch {
+        // leave summary empty — cards fall back to zeroed progress below
+      }
+
+      const results = subjects.map((subject) => {
+        const content = getSubjectContent(subject.code);
+        const unitsTotal = content?.units?.length ?? 0;
+        const s = summary[subject.code] ?? { unitsDone: 0, questionsDone: 0, questionsTotal: 0 };
+        return {
+          subject,
+          unitsDone: s.unitsDone,
+          unitsTotal,
+          questionsDone: s.questionsDone,
+          questionsTotal: s.questionsTotal,
+        };
+      });
+
       if (!cancelled) {
         setItems(results);
         setLoading(false);

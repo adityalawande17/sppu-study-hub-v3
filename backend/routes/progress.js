@@ -34,6 +34,66 @@ router.get('/activity', requireUser, async (req, res) => {
   }
 });
 
+// GET /api/progress/summary?codes=CODE1,CODE2 — units done, questions done,
+// and questions total for several subjects in one round trip (3 queries
+// total instead of 2 per subject). Must come before /:subjectCode.
+router.get('/summary', requireUser, async (req, res) => {
+  const codes = (req.query.codes || '')
+    .split(',')
+    .map((c) => c.trim())
+    .filter(Boolean);
+
+  if (codes.length === 0) return res.json({ summary: {} });
+
+  try {
+    const [unitsRes, questionsDoneRes, questionsTotalRes] = await Promise.all([
+      query(
+        `SELECT subject_code, COUNT(*) AS count
+         FROM unit_progress
+         WHERE user_id = $1 AND subject_code = ANY($2::text[])
+         GROUP BY subject_code`,
+        [req.userId, codes]
+      ),
+      query(
+        `SELECT s.code AS subject_code, COUNT(*) AS count
+         FROM question_progress qp
+         JOIN questions q ON q.id = qp.question_id
+         JOIN subjects s ON s.id = q.subject_id
+         WHERE qp.user_id = $1 AND s.code = ANY($2::text[])
+         GROUP BY s.code`,
+        [req.userId, codes]
+      ),
+      query(
+        `SELECT s.code AS subject_code, COUNT(*) AS count
+         FROM questions q
+         JOIN subjects s ON s.id = q.subject_id
+         WHERE s.code = ANY($1::text[])
+         GROUP BY s.code`,
+        [codes]
+      ),
+    ]);
+
+    const summary = {};
+    for (const code of codes) {
+      summary[code] = { unitsDone: 0, questionsDone: 0, questionsTotal: 0 };
+    }
+    for (const r of unitsRes.rows) {
+      summary[r.subject_code].unitsDone = parseInt(r.count, 10);
+    }
+    for (const r of questionsDoneRes.rows) {
+      summary[r.subject_code].questionsDone = parseInt(r.count, 10);
+    }
+    for (const r of questionsTotalRes.rows) {
+      summary[r.subject_code].questionsTotal = parseInt(r.count, 10);
+    }
+
+    return res.json({ summary });
+  } catch (err) {
+    console.error('Progress summary error:', err.message);
+    return res.status(500).json({ error: 'Could not fetch progress summary.' });
+  }
+});
+
 // GET /api/progress/:subjectCode — this user's completed units + question ids for one subject
 router.get('/:subjectCode', requireUser, async (req, res) => {
   const { subjectCode } = req.params;

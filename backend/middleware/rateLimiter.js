@@ -25,10 +25,16 @@ export const aiRateLimiter = rateLimit({
   legacyHeaders: false,
 });
 
-// General API throttle — all other routes
+// General API throttle — all other routes. Keyed by user ID when logged in
+// (like aiRateLimiter) so students sharing an IP on campus/hostel WiFi don't
+// share a request budget; falls back to IP only for anonymous requests.
 export const generalRateLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 100,
+  max: 300,
+  keyGenerator: (req) => {
+    const userId = extractUserId(req);
+    return userId ? `user:${userId}` : `ip:${req.ip}`;
+  },
   message: { error: 'Too many requests. Try again in 15 minutes.' },
   standardHeaders: true,
   legacyHeaders: false,

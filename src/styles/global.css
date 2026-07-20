@@ -20,6 +20,10 @@
   --gold-pale: #fef3d0;
   --gold-glow: rgba(240, 165, 0, 0.15);
 
+  /* Activity heatmap fill — deliberately separate from --gold, which
+     resolves to a light blue in dark mode (see below) */
+  --heat-green: #26a641;
+
   /* Heading color — used for h1/h2/h3, subject names, card titles */
   --heading: #0a1628;
 
@@ -86,6 +90,7 @@
   --gold-dim: #5b7c99; /*#f59e0b*/
   --gold-pale: rgba(0, 204, 240, 0.1);
   --gold-glow: rgba(251, 191, 36, 0.15);
+  --heat-green: #39d353;
 
   /* Heading color flips to light in dark mode */
   --heading: #f0f6fc;

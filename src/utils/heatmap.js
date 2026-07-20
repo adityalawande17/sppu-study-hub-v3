@@ -1,29 +1,32 @@
-// Builds a GitHub/LeetCode-style week-column grid (7 rows: Sun–Sat) from a
-// list of {date, count} entries, ending with the current week. Days beyond
+// Builds a GitHub/LeetCode-style week-column grid (7 rows: Sun–Sat) for one
+// calendar year from a list of {date, count} entries. Days outside the
+// selected year (padding to align the first/last week) and days beyond
 // today get count: null so the grid can render them blank.
-export function buildHeatmapGrid(activity, weeks = 20) {
+export function buildHeatmapGrid(activity, year) {
   const countByDate = new Map(activity.map((a) => [a.date, a.count]));
 
   const today = new Date();
   today.setUTCHours(0, 0, 0, 0);
 
-  const endOfWeek = new Date(today);
-  endOfWeek.setUTCDate(endOfWeek.getUTCDate() + (6 - endOfWeek.getUTCDay()));
+  const yearStart = new Date(Date.UTC(year, 0, 1));
+  const yearEnd = new Date(Date.UTC(year, 11, 31));
 
-  const totalDays = weeks * 7;
-  const start = new Date(endOfWeek);
-  start.setUTCDate(start.getUTCDate() - totalDays + 1);
+  const start = new Date(yearStart);
+  start.setUTCDate(start.getUTCDate() - start.getUTCDay());
+  const end = new Date(yearEnd);
+  end.setUTCDate(end.getUTCDate() + (6 - end.getUTCDay()));
 
   const columns = [];
   const cursor = new Date(start);
-  for (let w = 0; w < weeks; w++) {
+  while (cursor <= end) {
     const column = [];
     for (let d = 0; d < 7; d++) {
       const iso = cursor.toISOString().slice(0, 10);
+      const inYear = cursor.getUTCFullYear() === year;
       const isFuture = cursor > today;
       column.push({
         date: iso,
-        count: isFuture ? null : (countByDate.get(iso) ?? 0),
+        count: !inYear || isFuture ? null : (countByDate.get(iso) ?? 0),
       });
       cursor.setUTCDate(cursor.getUTCDate() + 1);
     }
@@ -32,7 +35,29 @@ export function buildHeatmapGrid(activity, weeks = 20) {
   return columns;
 }
 
-// 0 = no activity, 1–4 = increasing intensity tiers, null = future day (don't render)
+// Returns { index, label } for each week-column that contains the 1st of a
+// month, so the heatmap can print a month name above that column.
+export function getMonthLabels(columns) {
+  const labels = [];
+  columns.forEach((col, i) => {
+    const firstOfMonth = col.find((day) => day.count !== null && day.date.endsWith("-01"));
+    if (firstOfMonth) {
+      const d = new Date(`${firstOfMonth.date}T00:00:00Z`);
+      labels.push({ index: i, label: d.toLocaleString("en-US", { month: "short", timeZone: "UTC" }) });
+    }
+  });
+  return labels;
+}
+
+// Distinct calendar years present in the activity data, newest first, always
+// including the current year even if it has no activity yet.
+export function getActivityYears(activity) {
+  const years = new Set(activity.map((a) => Number(a.date.slice(0, 4))));
+  years.add(new Date().getUTCFullYear());
+  return Array.from(years).sort((a, b) => b - a);
+}
+
+// 0 = no activity, 1–4 = increasing intensity tiers, null = outside range (don't render)
 export function intensityLevel(count) {
   if (count === null || count === undefined) return null;
   if (count === 0) return 0;

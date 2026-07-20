@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
+import compression from 'compression';
 import { generalRateLimiter } from './middleware/rateLimiter.js';
 import aiRouter from './routes/ai.js';
 import questionsRouter from './routes/questions.js';
@@ -25,6 +26,7 @@ app.use(cors({
   methods: ['GET', 'POST', 'DELETE'],
 }));
 
+app.use(compression());
 app.use(express.json({ limit: '50kb' }));
 app.use(generalRateLimiter);
 
@@ -39,6 +41,7 @@ app.use('/api/admin', adminRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/progress', progressRouter);
 app.use('/api/academic', academicRouter);
+app.use('/api/announcements', announcementsRouter);
 
 // Global error handler
 app.use((err, _req, res, _next) => {

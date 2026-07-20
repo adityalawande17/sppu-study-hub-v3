@@ -4,9 +4,23 @@ import { createRemoteJWKSet, jwtVerify } from 'jose';
 // Supabase signs user session tokens with this project's asymmetric key
 // (ES256, rotated via JWKS) — not a shared HS256 secret. jose caches the
 // public keys and handles rotation automatically.
-const supabaseJWKS = createRemoteJWKSet(
-  new URL(`${process.env.SUPABASE_URL}/auth/v1/.well-known/jwks.json`)
-);
+//
+// Built lazily (not at module load) so a missing/misconfigured SUPABASE_URL
+// only fails auth-gated requests, instead of throwing on `new URL(undefined)`
+// at import time and crashing the whole backend before it can even start —
+// which would take down anonymous browsing too, not just logged-in features.
+let supabaseJWKS = null;
+function getSupabaseJWKS() {
+  if (!supabaseJWKS) {
+    if (!process.env.SUPABASE_URL) {
+      throw new Error('SUPABASE_URL is not set');
+    }
+    supabaseJWKS = createRemoteJWKSet(
+      new URL(`${process.env.SUPABASE_URL}/auth/v1/.well-known/jwks.json`)
+    );
+  }
+  return supabaseJWKS;
+}
 
 // Verifies the admin session token issued by POST /api/admin/login.
 // Distinct from rateLimiter.js's extractUserId, which decodes without
@@ -31,9 +45,10 @@ export function requireAdmin(req, res, next) {
 async function verifySupabaseToken(auth) {
   if (!auth?.startsWith('Bearer ')) return null;
   try {
-    const { payload } = await jwtVerify(auth.slice(7), supabaseJWKS);
+    const { payload } = await jwtVerify(auth.slice(7), getSupabaseJWKS());
     return payload.sub ? payload : null;
-  } catch {
+  } catch (err) {
+    console.error('Supabase token verification error:', err.message);
     return null;
   }
 }
