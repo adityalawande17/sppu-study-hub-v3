@@ -41,7 +41,6 @@ app.use('/api/admin', adminRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/progress', progressRouter);
 app.use('/api/academic', academicRouter);
-app.use('/api/announcements', announcementsRouter);
 
 // Global error handler
 app.use((err, _req, res, _next) => {
