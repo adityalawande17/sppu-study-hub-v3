@@ -938,6 +938,19 @@ h3 {
 .fade-up-4 {
   animation-delay: 0.2s;
 }
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--gold);
+  animation: spin 0.7s linear infinite;
+}
 .fade-up-5 {
   animation-delay: 0.25s;
 }

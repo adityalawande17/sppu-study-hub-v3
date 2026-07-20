@@ -8,6 +8,7 @@ import { getAuthHeader } from "../utils/supabaseAuth";
 import { getSubjectsFor } from "../utils/subjectLookup";
 import { useSemesterProgress } from "../hooks/useSemesterProgress";
 import { useQuickStats } from "../hooks/useQuickStats";
+import PageLoader from "../components/PageLoader";
 import ProfileForm from "../components/ProfileForm";
 import SubjectProgressCard from "../components/SubjectProgressCard";
 import CgpaTracker from "../components/CgpaTracker";
@@ -36,7 +37,12 @@ export default function Dashboard() {
     useSemesterProgress(currentSubjects);
   const { streak, activity, aiRemaining, aiLimit } = useQuickStats(!!user);
 
-  if (sessionLoading || profileLoading) return null;
+  if (sessionLoading || profileLoading)
+    return (
+      <div className="container" style={{ padding: "40px 24px 80px" }}>
+        <PageLoader label="Loading your dashboard…" />
+      </div>
+    );
   if (!user) return <Navigate to="/" replace />;
   if (!profile) return <Navigate to="/onboarding" replace />;
 
