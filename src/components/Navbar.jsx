@@ -251,7 +251,11 @@ export default function Navbar() {
             <NavLink to="/" pathname={pathname}>
               Home
             </NavLink>
-
+            {user && (
+              <NavLink to="/dashboard" pathname={pathname}>
+                Dashboard
+              </NavLink>
+            )}
             {/* Browse mega trigger */}
             <div ref={megaRef} style={{ position: "relative" }}>
               <button
@@ -303,11 +307,6 @@ export default function Navbar() {
             <NavLink to="/contributions" pathname={pathname}>
               Contributors
             </NavLink>
-            {user && (
-              <NavLink to="/dashboard" pathname={pathname}>
-                Dashboard
-              </NavLink>
-            )}
           </nav>
 
           {/* Spacer */}
