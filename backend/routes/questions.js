@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { query } from '../db/index.js';
 import { requireAdmin } from '../middleware/auth.js';
+import { getEmbedding, embeddingToSql } from '../utils/embedding.js';
 
 const router = Router();
 
@@ -32,6 +33,16 @@ router.post('/', requireAdmin, async (req, res) => {
        RETURNING id, unit, question_text, marks, exam_year, exam_month, question_type`,
       [subjectId, unit ?? null, questionText.trim(), marks ?? null, examYear ?? null, examMonth ?? null, questionType ?? null]
     );
+
+    // Generate and store embedding in the background — don't block the response
+    const questionId = result.rows[0].id;
+    getEmbedding(questionText.trim()).then((embedding) => {
+      if (!embedding) return;
+      query(
+        `UPDATE questions SET question_embedding = $1::vector WHERE id = $2`,
+        [embeddingToSql(embedding), questionId]
+      ).catch(() => {});
+    }).catch(() => {});
 
     return res.status(201).json({ question: result.rows[0] });
   } catch (err) {

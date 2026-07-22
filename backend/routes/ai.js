@@ -4,6 +4,7 @@ import { query } from '../db/index.js';
 import { buildExplainerPrompt } from '../prompts/explainer.js';
 import { aiRateLimiter } from '../middleware/rateLimiter.js';
 import { optionalUser, requireUser } from '../middleware/auth.js';
+import { getEmbedding, embeddingToSql } from '../utils/embedding.js';
 
 const router = Router();
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
@@ -11,30 +12,9 @@ const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 // Cosine distance threshold — 0 = identical, 0.15 = very similar phrasing
 const SIMILARITY_THRESHOLD = 0.15;
 
-// ── helpers ───────────────────────────────────────────────────────────────────
-
-async function getEmbedding(text) {
-  if (!process.env.OPENAI_API_KEY) return null;
-  try {
-    const res = await fetch('https://api.openai.com/v1/embeddings', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ model: 'text-embedding-ada-002', input: text }),
-    });
-    if (!res.ok) return null;
-    const data = await res.json();
-    return data.data[0].embedding; // 1536-dim float array
-  } catch {
-    return null;
-  }
-}
-
 async function findSimilarCachedAnswer(subjectId, embedding) {
   if (!subjectId || !embedding) return null;
-  const vectorStr = `[${embedding.join(',')}]`;
+  const vectorStr = embeddingToSql(embedding);
   const result = await query(
     `SELECT q.id, a.answer_text,
             (q.question_embedding <=> $1::vector) AS distance
@@ -105,7 +85,7 @@ function cacheAnswerAndEmbedding(questionId, answer, embedding) {
     query(
       `UPDATE questions SET question_embedding = $1::vector
        WHERE id = $2 AND question_embedding IS NULL`,
-      [`[${embedding.join(',')}]`, questionId]
+      [embeddingToSql(embedding), questionId]
     ).catch(() => {});
   }
 }
