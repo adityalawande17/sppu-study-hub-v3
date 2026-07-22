@@ -107,6 +107,24 @@ CREATE TABLE IF NOT EXISTS academic_records (
   UNIQUE(user_id, semester)
 );
 
+-- Per-user email announcement opt-out. No row = subscribed (opt-out model);
+-- a row only gets written when the user actually unsubscribes.
+CREATE TABLE IF NOT EXISTS email_preferences (
+  user_id    UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  opted_out  BOOLEAN NOT NULL DEFAULT false,
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Audit log of admin-sent announcement emails (exams, results, notices).
+CREATE TABLE IF NOT EXISTS announcements (
+  id               SERIAL PRIMARY KEY,
+  subject          VARCHAR(200) NOT NULL,
+  body             TEXT NOT NULL,
+  sent_by          VARCHAR(200),
+  recipient_count  INT NOT NULL DEFAULT 0,
+  sent_at          TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- Indexes
 CREATE INDEX IF NOT EXISTS questions_embedding_idx
   ON questions USING ivfflat (question_embedding vector_cosine_ops)

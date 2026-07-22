@@ -8,98 +8,143 @@ import { optionalUser, requireUser } from '../middleware/auth.js';
 const router = Router();
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-// POST /api/ai/explain
+// Cosine distance threshold — 0 = identical, 0.15 = very similar phrasing
+const SIMILARITY_THRESHOLD = 0.15;
+
+// ── helpers ───────────────────────────────────────────────────────────────────
+
+async function getEmbedding(text) {
+  if (!process.env.OPENAI_API_KEY) return null;
+  try {
+    const res = await fetch('https://api.openai.com/v1/embeddings', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ model: 'text-embedding-ada-002', input: text }),
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data.data[0].embedding; // 1536-dim float array
+  } catch {
+    return null;
+  }
+}
+
+async function findSimilarCachedAnswer(subjectId, embedding) {
+  if (!subjectId || !embedding) return null;
+  const vectorStr = `[${embedding.join(',')}]`;
+  const result = await query(
+    `SELECT q.id, a.answer_text,
+            (q.question_embedding <=> $1::vector) AS distance
+     FROM questions q
+     JOIN ai_answers a ON a.question_id = q.id
+     WHERE q.subject_id = $2
+       AND q.question_embedding IS NOT NULL
+     ORDER BY q.question_embedding <=> $1::vector
+     LIMIT 1`,
+    [vectorStr, subjectId]
+  );
+  const row = result.rows[0];
+  if (!row || parseFloat(row.distance) > SIMILARITY_THRESHOLD) return null;
+  return { questionId: row.id, answer: row.answer_text };
+}
+
+async function lookupSubject(subjectCode) {
+  const result = await query(
+    `SELECT s.id, s.name, s.year, s.semester, s.pattern, b.name AS branch
+     FROM subjects s
+     LEFT JOIN branches b ON b.id = s.branch_id
+     WHERE s.code = $1`,
+    [subjectCode]
+  );
+  return result.rows[0] ?? {
+    id: null, name: subjectCode, year: '', semester: null, pattern: '2024', branch: '',
+  };
+}
+
+async function lookupExactQuestion(subjectId, questionText) {
+  if (!subjectId) return null;
+  const result = await query(
+    `SELECT id FROM questions WHERE subject_id = $1 AND question_text = $2 LIMIT 1`,
+    [subjectId, questionText]
+  );
+  return result.rows[0]?.id ?? null;
+}
+
+async function lookupExactCache(questionId) {
+  if (!questionId) return null;
+  const result = await query(
+    `SELECT answer_text FROM ai_answers
+     WHERE question_id = $1 ORDER BY generated_at DESC LIMIT 1`,
+    [questionId]
+  );
+  return result.rows[0]?.answer_text ?? null;
+}
+
+function buildPrompt(subject, { unit, marks, examYear, examMonth, questionText }) {
+  const { system, user } = buildExplainerPrompt({
+    subjectName: subject.name, branch: subject.branch,
+    year: subject.year, semester: subject.semester,
+    unit: unit ?? null, marks: marks ?? null,
+    examYear: examYear ?? null, examMonth: examMonth ?? null,
+    pattern: subject.pattern, questionText,
+  });
+  const maxTokens = Math.min((marks ?? 4) * 150, 1500);
+  return { system, user, maxTokens };
+}
+
+function cacheAnswerAndEmbedding(questionId, answer, embedding) {
+  if (!questionId || !answer) return;
+  query(
+    `INSERT INTO ai_answers (question_id, answer_text, model_used) VALUES ($1, $2, $3)`,
+    [questionId, answer, 'claude-haiku-4-5-20251001']
+  ).catch(() => {});
+  if (embedding) {
+    query(
+      `UPDATE questions SET question_embedding = $1::vector
+       WHERE id = $2 AND question_embedding IS NULL`,
+      [`[${embedding.join(',')}]`, questionId]
+    ).catch(() => {});
+  }
+}
+
+// ── POST /api/ai/explain (non-streaming) ──────────────────────────────────────
 router.post('/explain', aiRateLimiter, optionalUser, async (req, res) => {
   const { questionText, subjectCode, marks, unit, examYear, examMonth } = req.body;
-
-  if (!questionText?.trim() || !subjectCode?.trim()) {
+  if (!questionText?.trim() || !subjectCode?.trim())
     return res.status(400).json({ error: 'questionText and subjectCode are required.' });
-  }
 
   try {
-    // 1. Look up subject metadata
-    const subjectResult = await query(
-      `SELECT s.id, s.name, s.year, s.semester, s.pattern, b.name AS branch
-       FROM subjects s
-       LEFT JOIN branches b ON b.id = s.branch_id
-       WHERE s.code = $1`,
-      [subjectCode]
-    );
+    const subject    = await lookupSubject(subjectCode);
+    const questionId = await lookupExactQuestion(subject.id, questionText.trim());
 
-    // Fallback metadata when subject isn't in DB yet
-    const subject = subjectResult.rows[0] ?? {
-      id: null,
-      name: subjectCode,
-      year: '',
-      semester: null,
-      pattern: '2024',
-      branch: '',
-    };
-
-    // 2. Check if this exact question is already stored
-    let questionId = null;
-    if (subject.id) {
-      const qResult = await query(
-        `SELECT id FROM questions
-         WHERE subject_id = $1 AND question_text = $2
-         LIMIT 1`,
-        [subject.id, questionText.trim()]
-      );
-      questionId = qResult.rows[0]?.id ?? null;
+    // 1. Exact cache hit
+    const exactAnswer = await lookupExactCache(questionId);
+    if (exactAnswer) {
+      logUsage(req, '/api/ai/explain', req.userId);
+      return res.json({ answer: exactAnswer, cached: true });
     }
 
-    // 3. Check answer cache
-    if (questionId) {
-      const cached = await query(
-        `SELECT answer_text FROM ai_answers
-         WHERE question_id = $1
-         ORDER BY generated_at DESC
-         LIMIT 1`,
-        [questionId]
-      );
-      if (cached.rows.length > 0) {
-        logUsage(req, '/api/ai/explain', req.userId);
-        return res.json({ answer: cached.rows[0].answer_text, cached: true });
-      }
+    // 2. Semantic similarity cache
+    const embedding = await getEmbedding(questionText.trim());
+    const similar   = await findSimilarCachedAnswer(subject.id, embedding).catch(() => null);
+    if (similar) {
+      logUsage(req, '/api/ai/explain', req.userId);
+      return res.json({ answer: similar.answer, cached: true });
     }
 
-    // 4. Build prompt and call Claude
-    const { system, user } = buildExplainerPrompt({
-      subjectName: subject.name,
-      branch: subject.branch,
-      year: subject.year,
-      semester: subject.semester,
-      unit: unit ?? null,
-      marks: marks ?? null,
-      examYear: examYear ?? null,
-      examMonth: examMonth ?? null,
-      pattern: subject.pattern,
-      questionText: questionText.trim(),
-    });
-
-    const maxTokens = Math.min((marks ?? 4) * 150, 1500);
-
+    // 3. Call Claude
+    const { system, user, maxTokens } = buildPrompt(subject, { unit, marks, examYear, examMonth, questionText: questionText.trim() });
     const message = await anthropic.messages.create({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: maxTokens,
-      system,
-      messages: [{ role: 'user', content: user }],
+      model: 'claude-haiku-4-5-20251001', max_tokens: maxTokens,
+      system, messages: [{ role: 'user', content: user }],
     });
-
     const answer = message.content[0]?.text ?? '';
 
-    // 5. Cache the answer if we have a question_id
-    if (questionId && answer) {
-      await query(
-        `INSERT INTO ai_answers (question_id, answer_text, model_used)
-         VALUES ($1, $2, $3)`,
-        [questionId, answer, 'claude-haiku-4-5-20251001']
-      );
-    }
-
-    // 6. Log usage
+    cacheAnswerAndEmbedding(questionId, answer, embedding);
     logUsage(req, '/api/ai/explain', req.userId);
-
     return res.json({ answer, cached: false });
 
   } catch (err) {
@@ -108,73 +153,81 @@ router.post('/explain', aiRateLimiter, optionalUser, async (req, res) => {
   }
 });
 
-// POST /api/ai/explain/stream — SSE streaming version
+// ── POST /api/ai/explain/stream ───────────────────────────────────────────────
 router.post('/explain/stream', aiRateLimiter, optionalUser, async (req, res) => {
   const { questionText, subjectCode, marks, unit, examYear, examMonth } = req.body;
-
-  if (!questionText?.trim() || !subjectCode?.trim()) {
+  if (!questionText?.trim() || !subjectCode?.trim())
     return res.status(400).json({ error: 'questionText and subjectCode are required.' });
-  }
 
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
   res.flushHeaders();
 
+  const send = (payload) => res.write(`data: ${JSON.stringify(payload)}\n\n`);
+
   try {
-    const subjectResult = await query(
-      `SELECT s.id, s.name, s.year, s.semester, s.pattern, b.name AS branch
-       FROM subjects s
-       LEFT JOIN branches b ON b.id = s.branch_id
-       WHERE s.code = $1`,
-      [subjectCode]
-    );
-    const subject = subjectResult.rows[0] ?? {
-      id: null, name: subjectCode, year: '', semester: null, pattern: '2024', branch: '',
-    };
+    const subject    = await lookupSubject(subjectCode);
+    const questionId = await lookupExactQuestion(subject.id, questionText.trim());
 
-    const { system, user } = buildExplainerPrompt({
-      subjectName: subject.name, branch: subject.branch, year: subject.year,
-      semester: subject.semester, unit: unit ?? null, marks: marks ?? null,
-      examYear: examYear ?? null, examMonth: examMonth ?? null,
-      pattern: subject.pattern, questionText: questionText.trim(),
-    });
+    // 1. Exact cache hit
+    const exactAnswer = await lookupExactCache(questionId);
+    if (exactAnswer) {
+      send({ text: exactAnswer, cached: true });
+      send({ done: true });
+      res.end();
+      logUsage(req, '/api/ai/explain/stream', req.userId);
+      return;
+    }
 
-    const maxTokens = Math.min((marks ?? 4) * 150, 1500);
+    // 2. Semantic similarity cache
+    const embedding = await getEmbedding(questionText.trim());
+    const similar   = await findSimilarCachedAnswer(subject.id, embedding).catch(() => null);
+    if (similar) {
+      send({ text: similar.answer, cached: true });
+      send({ done: true });
+      res.end();
+      logUsage(req, '/api/ai/explain/stream', req.userId);
+      return;
+    }
 
+    // 3. Stream from Claude
+    const { system, user, maxTokens } = buildPrompt(subject, { unit, marks, examYear, examMonth, questionText: questionText.trim() });
     const stream = anthropic.messages.stream({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: maxTokens,
-      system,
-      messages: [{ role: 'user', content: user }],
+      model: 'claude-haiku-4-5-20251001', max_tokens: maxTokens,
+      system, messages: [{ role: 'user', content: user }],
     });
 
+    let fullAnswer = '';
     for await (const event of stream) {
       if (event.type === 'content_block_delta' && event.delta?.type === 'text_delta') {
-        res.write(`data: ${JSON.stringify({ text: event.delta.text })}\n\n`);
+        fullAnswer += event.delta.text;
+        send({ text: event.delta.text });
       }
     }
 
-    res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
+    send({ done: true });
     res.end();
     logUsage(req, '/api/ai/explain/stream', req.userId);
+
+    // Cache after response is sent — non-blocking
+    cacheAnswerAndEmbedding(questionId, fullAnswer, embedding);
 
   } catch (err) {
     console.error('AI stream error:', err.message);
     if (!res.writableEnded) {
-      res.write(`data: ${JSON.stringify({ error: 'AI service unavailable. Try again later.' })}\n\n`);
+      send({ error: 'AI service unavailable. Try again later.' });
       res.end();
     }
   }
 });
 
-// GET /api/ai/usage — how many of today's 3 free AI calls this user has left
+// ── GET /api/ai/usage ─────────────────────────────────────────────────────────
 router.get('/usage', requireUser, async (req, res) => {
   const LIMIT = 3;
   try {
     const result = await query(
-      `SELECT COUNT(*) AS count
-       FROM api_usage
+      `SELECT COUNT(*) AS count FROM api_usage
        WHERE user_id = $1
          AND endpoint IN ('/api/ai/explain', '/api/ai/explain/stream')
          AND called_at > NOW() - INTERVAL '24 hours'`,
@@ -188,9 +241,8 @@ router.get('/usage', requireUser, async (req, res) => {
   }
 });
 
-async function logUsage(req, endpoint, userId) {
+function logUsage(req, endpoint, userId) {
   const ip = req.ip ?? req.socket?.remoteAddress ?? 'unknown';
-  // Fire-and-forget — never let logging failure surface to the caller
   query(
     `INSERT INTO api_usage (user_id, ip_address, endpoint) VALUES ($1, $2, $3)`,
     [userId ?? null, ip, endpoint]
