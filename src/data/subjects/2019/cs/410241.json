@@ -7,7 +7,34 @@
   "sem": "Sem 7",
   "credits": 3,
   "pattern": "2019",
-  "units": [],
+  "units": [
+    {
+      "title": "Unit 1 - Algorithms and Problem Solving",
+      "files": [
+        {
+          "name": "Unit 1 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/cs/Design%20%26%20Analysis%20of%20Algorithms/Unit%20I%20%E2%80%93%20Algorithms%20and%20Problem%20Solving.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 2 - Analysis of Algorithms and Complexity Theory",
+      "files": [
+        {
+          "name": "Unit 2 Notes",
+          "size": "200 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/cs/Design%20%26%20Analysis%20of%20Algorithms/Unit%20II%20%E2%80%93%20Analysis%20of%20Algorithms%20and%20Complexity%20Theory.pdf"
+        }
+      ]
+    },
+    { "title": "Unit 3 - Title", "files": [] },
+    { "title": "Unit 4 - Title", "files": [] },
+    { "title": "Unit 5 - Title", "files": [] },
+    { "title": "Unit 6 - Title", "files": [] }
+  ],
   "practicals": [],
   "pyq": [
     {
