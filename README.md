@@ -178,31 +178,10 @@ Health check: `curl http://localhost:3001/health`
 ## Database Setup (Supabase)
 
 1. Create a project at [supabase.com](https://supabase.com)
-2. SQL Editor → run `backend/db/schema.sql`
-3. SQL Editor → run the email tables migration:
-
-```sql
-CREATE TABLE IF NOT EXISTS email_preferences (
-  user_id     UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
-  opted_out   BOOLEAN NOT NULL DEFAULT false,
-  updated_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
-);
-
-CREATE TABLE IF NOT EXISTS announcements (
-  id               BIGSERIAL PRIMARY KEY,
-  subject          TEXT NOT NULL,
-  body             TEXT NOT NULL,
-  sent_by          TEXT NOT NULL,
-  recipient_count  INTEGER NOT NULL DEFAULT 0,
-  sent_at          TIMESTAMPTZ NOT NULL DEFAULT NOW()
-);
-
-CREATE INDEX IF NOT EXISTS announcements_sent_at_idx ON announcements (sent_at DESC);
-```
-
-4. Go to **Project → Connect** → copy the **Connection Pooler** URL (port 5432) — use this as `DATABASE_URL`
-5. Authentication → Providers → Google → add your Google OAuth Client ID and Secret
-6. Add your domain to Authorized JavaScript Origins in Google Cloud Console
+2. SQL Editor → run `backend/db/schema.sql` (creates all tables in one shot)
+3. Go to **Project → Connect** → copy the **Connection Pooler** URL (port 5432) — use this as `DATABASE_URL`
+4. Authentication → Providers → Google → add your Google OAuth Client ID and Secret
+5. Add your domain to Authorized JavaScript Origins in Google Cloud Console
 
 Tables created by the schema:
 - `branches` — branch registry
