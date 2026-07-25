@@ -15,17 +15,53 @@
   --navy: #0a1628;
   --navy-mid: #112240;
   --navy-light: #1d3461;
-  --gold: #f0a500;
-  --gold-dim: #c8861a;
-  --gold-pale: #fef3d0;
-  --gold-glow: rgba(240, 165, 0, 0.15);
+  --gold: #1d3461;
+  --gold-dim: #1d3461;
+  --gold-pale: #e8edf5;
+  --gold-glow: rgba(29, 52, 97, 0.15);
 
   /* Activity heatmap fill — deliberately separate from --gold, which
      resolves to a light blue in dark mode (see below) */
   --heat-green: #26a641;
 
   /* Heading color — used for h1/h2/h3, subject names, card titles */
-  --heading: #0a1628;
+  --heading: #111111;
+
+  /* Navbar / notice-strip — theme-aware so the header can differ from
+     dark mode, which keeps its original navy bar unchanged (see dark block below) */
+  --nav-bg: #ffffff;
+  --nav-text: #111111;
+  --nav-text-dim: rgba(17, 17, 17, 0.65);
+  --nav-border: #e5e3de;
+  --nav-hover-bg: rgba(17, 17, 17, 0.05);
+  --nav-active-bg: rgba(17, 17, 17, 0.08);
+  --nav-icon-border: rgba(17, 17, 17, 0.14);
+  --nav-icon-bg: rgba(17, 17, 17, 0.04);
+  --nav-icon-bg-hover: rgba(17, 17, 17, 0.08);
+  --notice-bg: #f3f2ef;
+  --notice-text: #3f3f3f;
+  --notice-text-dim: rgba(17, 17, 17, 0.4);
+  --notice-border: #e5e3de;
+
+  /* Footer — navy in light mode, unchanged darker navy in dark mode */
+  --footer-bg: #1d3461;
+
+  /* "Contribute" banner at the bottom of the homepage — black/white in
+     light mode, stays navy in dark mode (see override below) */
+  --navy-card: #000000;
+
+  /* Homepage hero card (right column) — white with black text/border in
+     light mode, unchanged navy card in dark mode (see override below) */
+  --hero-card-bg: #ffffff;
+  --hero-card-outline: #000000;
+  --hero-card-text: #111111;
+  --hero-card-label: rgba(17, 17, 17, 0.5);
+  --hero-card-border: rgba(17, 17, 17, 0.12);
+  --hero-card-cell-bg: rgba(17, 17, 17, 0.03);
+  --hero-card-stat-label: rgba(17, 17, 17, 0.55);
+  --hero-card-checklist-text: rgba(17, 17, 17, 0.75);
+  --hero-card-subtext: var(--text-3);
+  --hero-card-highlight: var(--gold);
 
   /* Branch accent colors */
   --cs-color: #0269cf;
@@ -54,14 +90,18 @@
   --surface3: #eceae5;
 
   /* Text */
-  --text: #111827;
-  --text-2: #374151;
-  --text-3: #6b7280;
-  --text-4: #9ca3af;
+  --text: #1a1a1a;
+  --text-2: #3f3f3f;
+  --text-3: #6b6b6b;
+  --text-4: #9a9a9a;
 
   /* Borders */
-  --border: #e5e3de;
-  --border-2: #d1cfc8;
+  --border: #000000;
+  --border-2: #000000;
+  --border-w: 1.5px;
+
+  /* Accent used for avatar circles etc. */
+  --accent: var(--gold);
 
   /* Radius */
   --r-sm: 6px;
@@ -95,6 +135,39 @@
   /* Heading color flips to light in dark mode */
   --heading: #f0f6fc;
 
+  /* Navbar / notice-strip — unchanged from the original always-navy look */
+  --nav-bg: var(--navy);
+  --nav-text: #ffffff;
+  --nav-text-dim: rgba(255, 255, 255, 0.78);
+  --nav-border: rgba(255, 255, 255, 0.06);
+  --nav-hover-bg: rgba(255, 255, 255, 0.09);
+  --nav-active-bg: rgba(255, 255, 255, 0.12);
+  --nav-icon-border: rgba(255, 255, 255, 0.15);
+  --nav-icon-bg: rgba(255, 255, 255, 0.07);
+  --nav-icon-bg-hover: rgba(255, 255, 255, 0.14);
+  --notice-bg: linear-gradient(90deg, #1d3461 0%, #0a1628 100%);
+  --notice-text: rgba(255, 255, 255, 0.75);
+  --notice-text-dim: rgba(255, 255, 255, 0.35);
+  --notice-border: rgba(255, 255, 255, 0.06);
+
+  /* Footer — unchanged from the original always-navy look */
+  --footer-bg: var(--navy);
+
+  /* Unchanged from the original look — contribute banner stays navy/black */
+  --navy-card: var(--navy);
+
+  /* Hero card — unchanged from the original always-navy look */
+  --hero-card-bg: var(--navy);
+  --hero-card-outline: transparent;
+  --hero-card-text: #ffffff;
+  --hero-card-label: rgba(255, 255, 255, 0.4);
+  --hero-card-border: rgba(255, 255, 255, 0.08);
+  --hero-card-cell-bg: rgba(255, 255, 255, 0.04);
+  --hero-card-stat-label: rgba(255, 255, 255, 0.38);
+  --hero-card-checklist-text: rgba(255, 255, 255, 0.62);
+  --hero-card-subtext: rgba(255, 255, 255, 0.35);
+  --hero-card-highlight: var(--gold);
+
   /* Branch pale colors darken for dark mode */
   --cs-pale: #0c1a2e;
   --it-pale: #061a18;
@@ -118,6 +191,7 @@
   /* Borders */
   --border: #30363d;
   --border-2: #484f58;
+  --border-w: 1px;
 
   /* Shadows deepen */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
@@ -186,16 +260,25 @@ h3 {
   white-space: nowrap;
 }
 .btn-primary {
-  background: #0a1628;
+  background: var(--gold);
   color: #fff;
 }
 .btn-primary:hover {
-  background: #112240;
+  background: var(--gold-dim);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
+[data-theme="dark"] .btn-primary {
+  background: #0a1628;
+}
+[data-theme="dark"] .btn-primary:hover {
+  background: #112240;
+}
 .btn-gold {
   background: var(--gold);
+  color: #fff;
+}
+[data-theme="dark"] .btn-gold {
   color: #0a1628;
 }
 .btn-gold:hover {
@@ -225,7 +308,7 @@ h3 {
 /* ---- Cards ---- */
 .card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: var(--border-w) solid var(--border);
   border-radius: var(--r-lg);
   box-shadow: var(--shadow-sm);
   transition: all var(--t-base);
@@ -253,8 +336,8 @@ h3 {
   text-transform: uppercase;
 }
 .badge-notes {
-  background: #dbeafe;
-  color: #1e40af;
+  background: var(--gold-pale);
+  color: var(--gold-dim);
 }
 .badge-pyq {
   background: #fef3c7;
@@ -270,7 +353,7 @@ h3 {
 }
 .badge-new {
   background: var(--gold);
-  color: var(--navy);
+  color: #fff;
 }
 .badge-result {
   background: #fee2e2;
@@ -333,7 +416,7 @@ h3 {
   justify-content: space-between;
   margin-bottom: 20px;
   padding-top: 40px;
-  border-top: 1px solid var(--border);
+  border-top: var(--border-w) solid var(--border);
 }
 .section-title {
   font-size: 22px;
@@ -351,7 +434,7 @@ h3 {
   justify-content: space-between;
   padding: 14px 18px;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: var(--border-w) solid var(--border);
   border-radius: var(--r-md);
   cursor: pointer;
   transition: all var(--t-base);
@@ -450,7 +533,7 @@ h3 {
 /* ---- Subject header ---- */
 .subject-header {
   padding: 20px 0 22px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: var(--border-w) solid var(--border);
   margin-bottom: 24px;
 }
 .subject-header h1 {
@@ -482,13 +565,13 @@ h3 {
 }
 .mat-section {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: var(--border-w) solid var(--border);
   border-radius: var(--r-lg);
   overflow: hidden;
 }
 .mat-section-head {
   padding: 15px 20px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: var(--border-w) solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -508,12 +591,12 @@ h3 {
 
 /* ---- Info strip ---- */
 .info-strip {
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
+  background: var(--gold-pale);
+  border: 1px solid var(--gold-dim);
   border-radius: var(--r-md);
   padding: 11px 15px;
   font-size: 13px;
-  color: #1e40af;
+  color: var(--gold-dim);
   margin-bottom: 16px;
   line-height: 1.5;
 }
@@ -552,7 +635,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: var(--border-w) solid var(--border);
   border-left: 4px solid var(--gold);
   border-radius: var(--r-md);
   padding: 13px 16px;
@@ -585,7 +668,7 @@ h3 {
 /* ---- Legal ---- */
 .legal-wrap {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: var(--border-w) solid var(--border);
   border-radius: var(--r-lg);
   padding: 36px;
   margin-bottom: 40px;
@@ -634,7 +717,7 @@ h3 {
 .modal-box {
   background: var(--surface);
   border-radius: var(--r-xl);
-  border: 1px solid var(--border);
+  border: var(--border-w) solid var(--border);
   padding: 28px;
   max-width: 540px;
   width: 100%;
@@ -670,7 +753,7 @@ h3 {
   flex: 1;
   min-width: 0;
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: var(--border-w) solid var(--border);
   background: transparent;
   color: var(--text);
   font-size: 13px;
@@ -738,7 +821,7 @@ h3 {
 .modal-close {
   width: 30px;
   height: 30px;
-  border: 1px solid var(--border);
+  border: var(--border-w) solid var(--border);
   border-radius: var(--r-sm);
   background: transparent;
   cursor: pointer;
@@ -796,7 +879,7 @@ h3 {
 /* ---- Tool cards ---- */
 .tool-card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: var(--border-w) solid var(--border);
   border-radius: var(--r-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -822,7 +905,7 @@ h3 {
 }
 .tool-result {
   background: var(--surface2);
-  border: 1px solid var(--border);
+  border: var(--border-w) solid var(--border);
   border-radius: var(--r-md);
   padding: 16px 18px;
   margin-top: 14px;
@@ -851,7 +934,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   background: var(--surface2);
-  border: 1px solid var(--border);
+  border: var(--border-w) solid var(--border);
   border-radius: 30px;
   padding: 3px;
   gap: 2px;
@@ -880,7 +963,7 @@ h3 {
 /* ---- News card ---- */
 .news-card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: var(--border-w) solid var(--border);
   border-radius: var(--r-lg);
   padding: 16px 18px;
   display: flex;
@@ -1014,17 +1097,27 @@ h3 {
     gap: 14px !important;
   }
 
-  /* Content notice popup — bottom bar on mobile */
+  /* Content notice popup */
   .content-notice-popup {
     right: 5px !important;
     left: 5px !important;
-    bottom: 70px !important;
+    bottom: 24px !important;
     width: auto !important;
-
     border-radius: 10px !important;
     border-left: none !important;
     border-top: 3px solid var(--gold) !important;
     border-right: none !important;
     border-bottom: none !important;
+  }
+
+  /* Contribute banner — stack on mobile */
+  .contribute-banner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 24px 20px !important;
+  }
+  .contribute-banner .btn-gold {
+    width: 100% !important;
+    justify-content: center !important;
   }
 }
