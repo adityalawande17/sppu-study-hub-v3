@@ -51,7 +51,7 @@ export default function About() {
             key={c.title}
             style={{
               background: "var(--surface)",
-              border: "1px solid var(--border)",
+              border: "var(--border-w) solid var(--border)",
               borderRadius: 14,
               padding: 24,
             }}

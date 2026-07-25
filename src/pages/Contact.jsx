@@ -29,7 +29,7 @@ export default function Contact() {
         <div
           style={{
             background: "var(--surface)",
-            border: "1px solid var(--border)",
+            border: "var(--border-w) solid var(--border)",
             borderRadius: 14,
             padding: 28,
             textAlign: "center",
@@ -77,7 +77,7 @@ export default function Contact() {
               key={c.title}
               style={{
                 background: "var(--surface)",
-                border: "1px solid var(--border)",
+                border: "var(--border-w) solid var(--border)",
                 borderRadius: 12,
                 padding: 20,
               }}

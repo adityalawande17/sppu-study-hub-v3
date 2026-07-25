@@ -31,7 +31,7 @@ export default function News() {
       <div
         style={{
           padding: "28px 0 22px",
-          borderBottom: "1px solid var(--border)",
+          borderBottom: "var(--border-w) solid var(--border)",
           marginBottom: 24,
           display: "flex",
           alignItems: "flex-end",

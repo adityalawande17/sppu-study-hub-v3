@@ -257,7 +257,7 @@ export default function SyllabusModal({
               display: "flex",
               justifyContent: "space-between",
               padding: "12px 14px",
-              border: "1px solid var(--border)",
+              border: "var(--border-w) solid var(--border)",
               borderRadius: 10,
               background: "var(--surface2)",
             }}

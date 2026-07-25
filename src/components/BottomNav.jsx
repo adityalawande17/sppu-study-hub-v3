@@ -114,8 +114,8 @@ export default function BottomNav() {
           left: 0,
           right: 0,
           zIndex: 150,
-          background: "var(--navy)",
-          borderTop: "1px solid rgba(255,255,255,.08)",
+          background: "var(--nav-bg)",
+          borderTop: "1px solid var(--nav-border)",
         }}
       >
         <div style={{ display: "flex" }}>
@@ -136,7 +136,7 @@ export default function BottomNav() {
                   justifyContent: "center",
                   padding: "8px 2px 6px",
                   textDecoration: "none",
-                  color: active ? "var(--gold)" : "rgba(255,255,255,.45)",
+                  color: active ? "var(--gold)" : "var(--nav-text-dim)",
                   fontSize: 9,
                   fontWeight: 600,
                   gap: 3,
@@ -160,11 +160,11 @@ export default function BottomNav() {
                       borderRadius: "50%",
                       fontSize: 8,
                       fontWeight: 700,
-                      color: "#111",
+                      color: "#fff",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      border: "1.5px solid var(--navy)",
+                      border: "1.5px solid var(--nav-bg)",
                     }}
                   >
                     {saved.length}

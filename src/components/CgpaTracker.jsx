@@ -15,7 +15,7 @@ const inputStyle = {
   width: "100%",
   padding: "6px 8px",
   borderRadius: 7,
-  border: "1px solid var(--border)",
+  border: "var(--border-w) solid var(--border)",
   background: "var(--surface2)",
   color: "var(--text)",
   fontSize: 12,
@@ -190,7 +190,7 @@ export default function CgpaTracker() {
       </form>
 
       {records.length > 0 && (
-        <div style={{ marginTop: 14, paddingTop: 12, borderTop: "1px solid var(--border)" }}>
+        <div style={{ marginTop: 14, paddingTop: 12, borderTop: "var(--border-w) solid var(--border)" }}>
           <div
             style={{
               display: "grid",

@@ -10,8 +10,8 @@ export default function NoticeStrip({
   return (
     <div
       style={{
-        background: "linear-gradient(90deg, #1d3461 0%, #0a1628 100%)",
-        borderBottom: "1px solid rgba(255,255,255,.06)",
+        background: "var(--notice-bg)",
+        borderBottom: "1px solid var(--notice-border)",
         padding: "9px 24px",
         display: "flex",
         alignItems: "center",
@@ -25,7 +25,7 @@ export default function NoticeStrip({
           alignItems: "center",
           gap: 10,
           fontSize: 13,
-          color: "rgba(255,255,255,.75)",
+          color: "var(--notice-text)",
           overflow: "hidden",
         }}
       >
@@ -61,7 +61,7 @@ export default function NoticeStrip({
         style={{
           background: "none",
           border: "none",
-          color: "rgba(255,255,255,.35)",
+          color: "var(--notice-text-dim)",
           cursor: "pointer",
           fontSize: 18,
           lineHeight: 1,

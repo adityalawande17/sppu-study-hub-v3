@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, Link, useLocation } from "react-router-dom";
 import { searchIndex } from "../data/branches";
 import { feSearchIndex } from "../data/feSubjects";
 import {
@@ -23,7 +23,7 @@ const inputStyle = {
   width: "100%",
   padding: "9px 11px",
   borderRadius: 8,
-  border: "1px solid var(--border)",
+  border: "var(--border-w) solid var(--border)",
   background: "var(--surface2)",
   color: "var(--text)",
   fontSize: 13,
@@ -40,8 +40,14 @@ const labelStyle = {
   marginBottom: 5,
 };
 
+const ADMIN_TABS = [
+  { path: "/admin/questions", label: "PYQ Questions" },
+  { path: "/admin/announcements", label: "Announcements" },
+];
+
 export default function AdminQuestions() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const [checking, setChecking] = useState(true);
   const [authorized, setAuthorized] = useState(false);
 
@@ -197,6 +203,28 @@ export default function AdminQuestions() {
 
   return (
     <div className="container" style={{ padding: "36px 24px 80px" }}>
+      {/* Admin tab bar */}
+      <div style={{ display: "flex", gap: 4, borderBottom: "var(--border-w) solid var(--border)", marginBottom: 28 }}>
+        {ADMIN_TABS.map(({ path, label }) => (
+          <Link
+            key={path}
+            to={path}
+            style={{
+              padding: "8px 16px",
+              fontSize: 13,
+              fontWeight: 600,
+              color: pathname === path ? "var(--gold)" : "var(--text-3)",
+              borderBottom: pathname === path ? "2px solid var(--gold)" : "2px solid transparent",
+              textDecoration: "none",
+              marginBottom: -1,
+              transition: "color .15s",
+            }}
+          >
+            {label}
+          </Link>
+        ))}
+      </div>
+
       <div
         style={{
           display: "flex",
@@ -221,7 +249,7 @@ export default function AdminQuestions() {
           style={{
             padding: "8px 16px",
             borderRadius: 8,
-            border: "1px solid var(--border)",
+            border: "var(--border-w) solid var(--border)",
             background: "transparent",
             color: "var(--text-3)",
             fontSize: 13,
@@ -448,7 +476,7 @@ export default function AdminQuestions() {
                   style={{
                     padding: "10px 12px",
                     borderRadius: 10,
-                    border: "1px solid var(--border)",
+                    border: "var(--border-w) solid var(--border)",
                     background: "var(--surface2)",
                     display: "flex",
                     justifyContent: "space-between",

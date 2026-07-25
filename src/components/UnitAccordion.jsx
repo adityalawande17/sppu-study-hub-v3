@@ -72,7 +72,7 @@ function FileRow({ file }) {
         alignItems: "center",
         gap: 10,
         padding: "10px 12px",
-        border: "1px solid var(--border)",
+        border: "var(--border-w) solid var(--border)",
         borderRadius: 8,
         background: "var(--surface2)",
         transition: "all .15s",
@@ -220,7 +220,7 @@ export default function UnitAccordion({ units = defaultUnits, subjectCode }) {
           <div
             key={i}
             style={{
-              border: "1px solid var(--border)",
+              border: "var(--border-w) solid var(--border)",
               borderRadius: 10,
               overflow: "hidden",
             }}
@@ -337,7 +337,7 @@ export default function UnitAccordion({ units = defaultUnits, subjectCode }) {
                 style={{
                   padding: "12px 14px",
                   background: "var(--surface)",
-                  borderTop: "1px solid var(--border)",
+                  borderTop: "var(--border-w) solid var(--border)",
                   display: "grid",
                   gap: 6,
                 }}

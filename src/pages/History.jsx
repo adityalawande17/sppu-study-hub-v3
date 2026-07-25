@@ -29,7 +29,7 @@ function HistoryCard({ entry, onDelete }) {
   return (
     <div
       style={{
-        border: "1px solid var(--border)",
+        border: "var(--border-w) solid var(--border)",
         borderRadius: 12,
         background: "var(--surface)",
         overflow: "hidden",
@@ -173,7 +173,7 @@ function HistoryCard({ entry, onDelete }) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            border: "1px solid var(--border)",
+            border: "var(--border-w) solid var(--border)",
             borderRadius: 7,
             background: "transparent",
             color: "var(--text-4)",
@@ -198,7 +198,7 @@ function HistoryCard({ entry, onDelete }) {
       {open && (
         <div
           style={{
-            borderTop: "1px solid var(--border)",
+            borderTop: "var(--border-w) solid var(--border)",
             borderLeft: "3px solid #7c3aed",
             padding: "14px 16px",
             background: "rgba(124,58,237,.05)",
@@ -330,7 +330,7 @@ export default function History() {
             style={{
               padding: "7px 14px",
               borderRadius: 8,
-              border: "1px solid var(--border)",
+              border: "var(--border-w) solid var(--border)",
               background: "transparent",
               color: "var(--text-3)",
               fontSize: 12,

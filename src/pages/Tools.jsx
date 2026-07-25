@@ -372,7 +372,7 @@ const tools = [
                     width: 34,
                     height: 34,
                     borderRadius: 7,
-                    border: "1px solid var(--border)",
+                    border: "var(--border-w) solid var(--border)",
                     background: "var(--surface2)",
                     cursor: "pointer",
                     color: "var(--text-3)",
@@ -469,7 +469,7 @@ export default function Tools() {
           >
             <div
               className="tool-card-head"
-              style={{ borderBottom: "1px solid var(--border)" }}
+              style={{ borderBottom: "var(--border-w) solid var(--border)" }}
             >
               <div>
                 <div

@@ -9,6 +9,7 @@ import adminRouter from './routes/admin.js';
 import profileRouter from './routes/profile.js';
 import progressRouter from './routes/progress.js';
 import academicRouter from './routes/academic.js';
+import announcementsRouter from './routes/announcements.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -41,6 +42,7 @@ app.use('/api/admin', adminRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/progress', progressRouter);
 app.use('/api/academic', academicRouter);
+app.use('/api/announcements', announcementsRouter);
 
 // Global error handler
 app.use((err, _req, res, _next) => {

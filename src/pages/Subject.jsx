@@ -254,7 +254,7 @@ export default function Subject() {
               gap: 5,
               padding: "4px 10px",
               background: "var(--surface2)",
-              border: "1px solid var(--border)",
+              border: "var(--border-w) solid var(--border)",
               borderRadius: 16,
             }}
           >
@@ -482,7 +482,7 @@ export default function Subject() {
                     key={i}
                     style={{
                       background: "var(--surface)",
-                      border: "1px solid var(--border)",
+                      border: "var(--border-w) solid var(--border)",
                       borderRadius: 12,
                       padding: 15,
                       display: "flex",
@@ -601,7 +601,7 @@ export default function Subject() {
                           fontSize: 11,
                           fontWeight: 500,
                           textDecoration: "none",
-                          border: "1px solid var(--border)",
+                          border: "var(--border-w) solid var(--border)",
                           fontFamily: "Inter, sans-serif",
                         }}
                       >

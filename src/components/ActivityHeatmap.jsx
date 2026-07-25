@@ -60,7 +60,7 @@ export default function ActivityHeatmap({ activity }) {
           style={{
             padding: "5px 10px",
             borderRadius: 8,
-            border: "1px solid var(--border)",
+            border: "var(--border-w) solid var(--border)",
             background: "var(--surface2)",
             color: "var(--text)",
             fontSize: 12,

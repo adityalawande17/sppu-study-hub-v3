@@ -330,7 +330,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
             {/* Panel header */}
             <div style={{
               padding: "18px 20px 14px",
-              borderBottom: "1px solid var(--border)",
+              borderBottom: "var(--border-w) solid var(--border)",
               flexShrink: 0,
             }}>
               <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
@@ -381,7 +381,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
                     flexShrink: 0,
                     width: 32, height: 32,
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    border: "1px solid var(--border)", borderRadius: 8,
+                    border: "var(--border-w) solid var(--border)", borderRadius: 8,
                     background: "transparent", color: "var(--text-3)",
                     cursor: "pointer", fontSize: 18, lineHeight: 1,
                     transition: "all .15s", fontFamily: "Inter, sans-serif",
@@ -417,7 +417,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
                     style={{
                       display: "inline-flex", alignItems: "center", gap: 8,
                       padding: "10px 22px", borderRadius: 9,
-                      border: "1px solid var(--border)", background: "var(--surface2)",
+                      border: "var(--border-w) solid var(--border)", background: "var(--surface2)",
                       color: "var(--text)", fontSize: 13, fontWeight: 600,
                       cursor: "pointer", fontFamily: "Inter, sans-serif",
                     }}
@@ -533,7 +533,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
                       min={1} max={20}
                       style={{
                         width: 130, padding: "8px 10px", borderRadius: 8,
-                        border: "1px solid var(--border)", background: "var(--surface2)",
+                        border: "var(--border-w) solid var(--border)", background: "var(--surface2)",
                         color: "var(--text)", fontSize: 13, fontFamily: "Inter, sans-serif", outline: "none",
                       }}
                     />
@@ -545,7 +545,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
                       min={1} max={8}
                       style={{
                         width: 120, padding: "8px 10px", borderRadius: 8,
-                        border: "1px solid var(--border)", background: "var(--surface2)",
+                        border: "var(--border-w) solid var(--border)", background: "var(--surface2)",
                         color: "var(--text)", fontSize: 13, fontFamily: "Inter, sans-serif", outline: "none",
                       }}
                     />

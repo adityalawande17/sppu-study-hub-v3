@@ -105,7 +105,7 @@ export default function Contributions() {
               key={i}
               style={{
                 background: "var(--surface)",
-                border: "1px solid var(--border)",
+                border: "var(--border-w) solid var(--border)",
                 borderRadius: 8,
                 padding: "8px 12px",
                 display: "flex",

@@ -36,7 +36,7 @@ export default function Branches() {
               gap: 16,
               padding: "20px 18px",
               background: "var(--surface)",
-              border: "1px solid var(--border)",
+              border: "var(--border-w) solid var(--border)",
               borderRadius: 14,
               textDecoration: "none",
               transition: "all .2s",

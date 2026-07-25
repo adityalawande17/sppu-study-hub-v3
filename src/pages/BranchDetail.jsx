@@ -84,7 +84,7 @@ export default function BranchDetail() {
       <div
         style={{
           padding: "20px 0 22px",
-          borderBottom: "1px solid var(--border)",
+          borderBottom: "var(--border-w) solid var(--border)",
           marginBottom: 22,
           display: "flex",
           alignItems: "flex-start",

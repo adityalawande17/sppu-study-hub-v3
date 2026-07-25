@@ -1,22 +1,14 @@
 ﻿{
-    "code":  "210241",
-    "name":  "Discrete Mathematics",
-    "branch":  "Computer Engineering",
-    "branchKey":  "cs",
-    "year":  "SE",
-    "sem":  "Sem 3",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "210241",
+  "name": "Discrete Mathematics",
+  "branch": "Computer Engineering",
+  "branchKey": "cs",
+  "year": "SE",
+  "sem": "Sem 3",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [],
+  "books": []
 }

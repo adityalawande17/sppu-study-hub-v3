@@ -88,7 +88,7 @@ function ResourceRow({ resource }) {
         alignItems: "center",
         gap: 10,
         padding: "10px 12px",
-        border: "1px solid var(--border)",
+        border: "var(--border-w) solid var(--border)",
         borderRadius: 8,
         background: "var(--surface2)",
         transition: "all .15s",
@@ -231,7 +231,7 @@ export default function PracticalAccordion({ practicals }) {
           <div
             key={i}
             style={{
-              border: "1px solid var(--border)",
+              border: "var(--border-w) solid var(--border)",
               borderRadius: 10,
               overflow: "hidden",
             }}
@@ -355,7 +355,7 @@ export default function PracticalAccordion({ practicals }) {
                 style={{
                   padding: "12px 14px",
                   background: "var(--surface)",
-                  borderTop: "1px solid var(--border)",
+                  borderTop: "var(--border-w) solid var(--border)",
                   display: "grid",
                   gap: 8,
                 }}
@@ -368,7 +368,7 @@ export default function PracticalAccordion({ practicals }) {
                       color: "var(--text-3)",
                       lineHeight: 1.5,
                       paddingBottom: 4,
-                      borderBottom: "1px solid var(--border)",
+                      borderBottom: "var(--border-w) solid var(--border)",
                     }}
                   >
                     {p.desc}

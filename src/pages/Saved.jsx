@@ -103,7 +103,7 @@ export default function Saved() {
                     style={{
                       padding: "6px 12px",
                       borderRadius: 8,
-                      border: "1px solid var(--border)",
+                      border: "var(--border-w) solid var(--border)",
                       background: "transparent",
                       color: "var(--text-3)",
                       fontSize: 12,
