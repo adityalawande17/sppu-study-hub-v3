@@ -46,9 +46,9 @@
   /* Footer — navy in light mode, unchanged darker navy in dark mode */
   --footer-bg: #1d3461;
 
-  /* "Contribute" banner at the bottom of the homepage — black/white in
+  /* "Contribute" banner at the bottom of the homepage — light surface in
      light mode, stays navy in dark mode (see override below) */
-  --navy-card: #000000;
+  --navy-card: var(--surface);
 
   /* Homepage hero card (right column) — white with black text/border in
      light mode, unchanged navy card in dark mode (see override below) */

@@ -1129,6 +1129,7 @@ export default function Home() {
       <div
         style={{
           background: "var(--navy-card)",
+          border: "var(--border-w) solid var(--border)",
           borderRadius: 16,
           padding: "32px 36px",
           display: "flex",
@@ -1146,7 +1147,7 @@ export default function Home() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "radial-gradient(circle at 1px 1px, rgba(255,255,255,.03) 1px, transparent 0)",
+              "radial-gradient(circle at 1px 1px, rgba(0,0,0,.04) 1px, transparent 0)",
             backgroundSize: "24px 24px",
             pointerEvents: "none",
           }}
@@ -1156,7 +1157,7 @@ export default function Home() {
             style={{
               fontFamily: "'DM Serif Display', serif",
               fontSize: 22,
-              color: "#fff",
+              color: "var(--heading)",
               marginBottom: 6,
             }}
           >
@@ -1164,7 +1165,7 @@ export default function Home() {
           </h3>
           <p
             style={{
-              color: "rgba(255,255,255,.55)",
+              color: "var(--text-3)",
               fontSize: 14,
               lineHeight: 1.6,
               maxWidth: 440,
