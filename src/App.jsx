@@ -4,7 +4,6 @@ import { AppProvider } from "./context/AppContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import NoticeStrip from "./components/NoticeStrip";
-import BottomNav from "./components/BottomNav";
 import ScrollToTop from "./components/ScrollToTop";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -29,6 +28,8 @@ const Contributions = lazy(() => import("./pages/Contributions"));
 const History = lazy(() => import("./pages/History"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminQuestions = lazy(() => import("./pages/AdminQuestions"));
+const AdminAnnouncements = lazy(() => import("./pages/AdminAnnouncements"));
+const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 
 // Remounting the boundary on every route change means navigating to a
 // different (working) page recovers automatically after a crash, rather
@@ -117,13 +118,14 @@ export default function App() {
                   <Route path="/contributions" element={<Contributions />} />
                   <Route path="/admin/login" element={<AdminLogin />} />
                   <Route path="/admin/questions" element={<AdminQuestions />} />
+                  <Route path="/admin/announcements" element={<AdminAnnouncements />} />
+                  <Route path="/unsubscribe" element={<Unsubscribe />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>
             </RouteErrorBoundary>
           </main>
           <Footer />
-          <BottomNav />
         </div>
       </BrowserRouter>
     </AppProvider>
