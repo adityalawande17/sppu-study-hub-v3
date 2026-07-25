@@ -13,6 +13,7 @@ import ProfileForm from "../components/ProfileForm";
 import SubjectProgressCard from "../components/SubjectProgressCard";
 import CgpaTracker from "../components/CgpaTracker";
 import ActivityHeatmap from "../components/ActivityHeatmap";
+import EmailPreferenceToggle from "../components/EmailPreferenceToggle";
 
 const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
@@ -28,8 +29,6 @@ export default function Dashboard() {
   const [savingProfile, setSavingProfile] = useState(false);
   const [profileError, setProfileError] = useState(null);
 
-  // Computed before the early returns below so this hook always runs in the
-  // same order — pass an empty list until the profile has actually loaded.
   const currentSubjects = profile
     ? getSubjectsFor(profile.branch, profile.current_semester, profile.pattern)
     : [];
@@ -75,307 +74,186 @@ export default function Dashboard() {
 
   return (
     <div className="container" style={{ padding: "40px 24px 80px" }}>
-      {/* Header */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginBottom: 32,
-          flexWrap: "wrap",
-          gap: 16,
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: "50%",
-              background: "var(--accent)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 22,
-              fontWeight: 700,
-              color: "#fff",
-              flexShrink: 0,
-              overflow: "hidden",
-            }}
-          >
-            {avatarUrl ? (
-              <img
-                src={avatarUrl}
-                alt={displayName}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            ) : (
-              initial
-            )}
-          </div>
-          <div>
-            <h1
-              style={{
-                fontFamily: "'DM Serif Display', serif",
-                fontSize: 26,
-                color: "var(--heading)",
-                margin: 0,
-                lineHeight: 1.2,
-              }}
-            >
-              {displayName}
-            </h1>
-            <p
-              style={{
-                color: "var(--text-3)",
-                fontSize: 13,
-                margin: "4px 0 0",
-              }}
-            >
-              {user.email}
-            </p>
-          </div>
-        </div>
-        <button
-          onClick={signOut}
-          style={{
-            padding: "8px 16px",
-            borderRadius: 8,
-            border: "1px solid var(--border)",
-            background: "transparent",
-            color: "var(--text-3)",
-            fontSize: 13,
-            fontWeight: 600,
-            cursor: "pointer",
-            fontFamily: "Inter, sans-serif",
-            transition: "all .18s",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = "var(--surface2)";
-            e.currentTarget.style.color = "var(--text)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = "transparent";
-            e.currentTarget.style.color = "var(--text-3)";
-          }}
-        >
-          Sign out
-        </button>
-      </div>
 
-      {/* Your profile */}
-      <div className="card" style={{ padding: "20px 22px", marginBottom: 24 }}>
-        {!editingProfile ? (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: 16,
-              flexWrap: "wrap",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              {branchInfo && (
-                <span
-                  style={{
-                    width: 34,
-                    height: 34,
-                    borderRadius: 8,
-                    background: branchInfo.color,
-                    color: "#fff",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                  }}
-                >
-                  {branchInfo.abbr}
-                </span>
-              )}
+      {/* ── Two-column layout ── */}
+      <div className="dash-layout" style={{ display: "flex", gap: 20, alignItems: "flex-start", marginBottom: 36 }}>
+
+        {/* ── LEFT COLUMN (1/3) ── */}
+        <div className="dash-left" style={{ flex: "0 0 33%", minWidth: 0, display: "flex", flexDirection: "column", gap: 16 }}>
+
+          {/* Profile card */}
+          <div className="card" style={{ padding: "20px 20px" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12, textAlign: "center" }}>
+              <div
+                style={{
+                  width: 64, height: 64, borderRadius: "50%",
+                  background: "var(--accent)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: 24, fontWeight: 700, color: "#fff",
+                  flexShrink: 0, overflow: "hidden",
+                  border: "3px solid var(--border)",
+                }}
+              >
+                {avatarUrl ? (
+                  <img src={avatarUrl} alt={displayName} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                ) : initial}
+              </div>
               <div>
-                <div
-                  style={{ fontSize: 14, fontWeight: 600, color: "var(--heading)" }}
-                >
-                  {branchInfo?.short ?? profile.branch}
+                <div style={{ fontSize: 15, fontWeight: 700, color: "var(--heading)", lineHeight: 1.3 }}>
+                  {displayName}
                 </div>
-                <div style={{ fontSize: 12, color: "var(--text-3)" }}>
-                  {semesterLabel(profile.current_semester)} · {profile.pattern} pattern
+                <div style={{ fontSize: 12, color: "var(--text-3)", marginTop: 3 }}>
+                  {user.email}
                 </div>
               </div>
-            </div>
-            <button
-              onClick={() => setEditingProfile(true)}
-              style={{
-                padding: "7px 14px",
-                borderRadius: 8,
-                border: "1px solid var(--border)",
-                background: "transparent",
-                color: "var(--text-3)",
-                fontSize: 12,
-                fontWeight: 600,
-                cursor: "pointer",
-                fontFamily: "Inter, sans-serif",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "var(--surface2)";
-                e.currentTarget.style.color = "var(--text)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.color = "var(--text-3)";
-              }}
-            >
-              Change semester
-            </button>
-          </div>
-        ) : (
-          <div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginBottom: 16,
-              }}
-            >
-              <h2
-                style={{
-                  fontFamily: "'DM Serif Display', serif",
-                  fontSize: 17,
-                  color: "var(--heading)",
-                }}
-              >
-                Update your profile
-              </h2>
               <button
-                onClick={() => {
-                  setEditingProfile(false);
-                  setProfileError(null);
-                }}
+                onClick={signOut}
                 style={{
-                  border: "none",
-                  background: "transparent",
-                  color: "var(--text-3)",
-                  fontSize: 13,
-                  cursor: "pointer",
-                  fontFamily: "Inter, sans-serif",
+                  width: "100%", padding: "7px 0",
+                  borderRadius: 8, border: "var(--border-w) solid var(--border)",
+                  background: "transparent", color: "var(--text-3)",
+                  fontSize: 12, fontWeight: 600, cursor: "pointer",
+                  fontFamily: "Inter, sans-serif", transition: "all .15s",
                 }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "var(--surface2)"; e.currentTarget.style.color = "var(--text)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--text-3)"; }}
               >
-                Cancel
+                Sign out
               </button>
             </div>
-            {profileError && (
-              <div
-                style={{
-                  color: "#f87171",
-                  fontSize: 13,
-                  marginBottom: 14,
-                  padding: "8px 12px",
-                  background: "rgba(248,113,113,.08)",
-                  borderRadius: 8,
-                }}
-              >
-                {profileError}
-              </div>
-            )}
-            <ProfileForm
-              initial={profile}
-              onSubmit={handleProfileUpdate}
-              submitting={savingProfile}
-              submitLabel="Save changes"
-            />
           </div>
-        )}
-      </div>
 
-      {/* Activity heatmap */}
-      <div style={{ marginBottom: 36 }}>
-        <ActivityHeatmap activity={activity} />
-      </div>
+          {/* Branch + semester card */}
+          <div className="card" style={{ padding: "18px 20px" }}>
+            {!editingProfile ? (
+              <>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
+                  {branchInfo && (
+                    <span
+                      style={{
+                        width: 36, height: 36, borderRadius: 9,
+                        background: branchInfo.color, color: "#fff",
+                        fontSize: 12, fontWeight: 700, flexShrink: 0,
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                      }}
+                    >
+                      {branchInfo.abbr}
+                    </span>
+                  )}
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: "var(--heading)", lineHeight: 1.3 }}>
+                      {branchInfo?.short ?? profile.branch}
+                    </div>
+                    <div style={{ fontSize: 11, color: "var(--text-3)" }}>
+                      {semesterLabel(profile.current_semester)} · {profile.pattern} pattern
+                    </div>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setEditingProfile(true)}
+                  style={{
+                    width: "100%", padding: "7px 0",
+                    borderRadius: 8, border: "var(--border-w) solid var(--border)",
+                    background: "transparent", color: "var(--text-3)",
+                    fontSize: 12, fontWeight: 600, cursor: "pointer",
+                    fontFamily: "Inter, sans-serif", transition: "all .15s",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "var(--surface2)"; e.currentTarget.style.color = "var(--text)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--text-3)"; }}
+                >
+                  Change semester
+                </button>
+              </>
+            ) : (
+              <>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
+                  <span style={{ fontFamily: "'DM Serif Display', serif", fontSize: 15, color: "var(--heading)" }}>
+                    Update profile
+                  </span>
+                  <button
+                    onClick={() => { setEditingProfile(false); setProfileError(null); }}
+                    style={{ border: "none", background: "transparent", color: "var(--text-3)", fontSize: 12, cursor: "pointer", fontFamily: "Inter, sans-serif" }}
+                  >
+                    Cancel
+                  </button>
+                </div>
+                {profileError && (
+                  <div style={{ color: "#f87171", fontSize: 12, marginBottom: 12, padding: "7px 10px", background: "rgba(248,113,113,.08)", borderRadius: 7 }}>
+                    {profileError}
+                  </div>
+                )}
+                <ProfileForm
+                  initial={profile}
+                  onSubmit={handleProfileUpdate}
+                  submitting={savingProfile}
+                  submitLabel="Save"
+                />
+              </>
+            )}
+          </div>
 
-      {/* Current semester subjects */}
-      <div style={{ marginBottom: 36 }}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginBottom: 16,
-          }}
-        >
-          <h2
-            style={{
-              fontFamily: "'DM Serif Display', serif",
-              fontSize: 20,
-              color: "var(--heading)",
-            }}
-          >
-            {semesterLabel(profile.current_semester)} Subjects
-          </h2>
-          {currentSubjects.length > 0 && (
-            <span style={{ fontSize: 12, color: "var(--text-3)" }}>
-              {progressLoading ? "Loading…" : `${overallPct}% complete`}
-            </span>
-          )}
+          {/* CGPA Tracker */}
+          <div style={{ flex: 1 }}>
+            <CgpaTracker />
+          </div>
+
+          {/* Email preferences */}
+          <EmailPreferenceToggle />
+
         </div>
 
-        {currentSubjects.length === 0 ? (
-          <div className="card" style={{ padding: "32px 24px", textAlign: "center" }}>
-            <p style={{ color: "var(--text-3)", fontSize: 13 }}>
-              No subjects found yet for {profile.branch.toUpperCase()} ·{" "}
-              {semesterLabel(profile.current_semester)} · {profile.pattern} pattern.
-              This branch/pattern/semester combination may not be added to the
-              site yet.
-            </p>
-          </div>
-        ) : (
-          <>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
-                gap: 12,
-                marginBottom: 12,
-              }}
-              className="subject-grid"
-            >
-              {subjectProgress.map(
-                ({ subject, unitsDone, unitsTotal, questionsDone, questionsTotal }) => (
-                  <SubjectProgressCard
-                    key={subject.code}
-                    subject={subject}
-                    unitsDone={unitsDone}
-                    unitsTotal={unitsTotal}
-                    questionsDone={questionsDone}
-                    questionsTotal={questionsTotal}
-                    loading={progressLoading}
-                  />
-                ),
+        {/* ── RIGHT COLUMN (2/3) ── */}
+        <div className="dash-right" style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: 20 }}>
+
+          {/* Activity heatmap */}
+          <ActivityHeatmap activity={activity} />
+
+          {/* Current semester subjects */}
+          <div>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
+              <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 18, color: "var(--heading)", margin: 0 }}>
+                {semesterLabel(profile.current_semester)} Subjects
+              </h2>
+              {currentSubjects.length > 0 && (
+                <span style={{ fontSize: 12, color: "var(--text-3)" }}>
+                  {progressLoading ? "Loading…" : `${overallPct}% complete`}
+                </span>
               )}
             </div>
-            <div
-              style={{
-                height: 8,
-                borderRadius: 4,
-                background: "var(--surface3)",
-                overflow: "hidden",
-              }}
-            >
-              <div
-                style={{
-                  width: `${overallPct}%`,
-                  height: "100%",
-                  background: "var(--gold)",
-                  transition: "width .2s",
-                }}
-              />
-            </div>
-          </>
-        )}
+
+            {currentSubjects.length === 0 ? (
+              <div className="card" style={{ padding: "28px 20px", textAlign: "center" }}>
+                <p style={{ color: "var(--text-3)", fontSize: 13 }}>
+                  No subjects found for {profile.branch.toUpperCase()} ·{" "}
+                  {semesterLabel(profile.current_semester)} · {profile.pattern} pattern.
+                </p>
+              </div>
+            ) : (
+              <>
+                <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 12 }}>
+                  {subjectProgress.map(({ subject, unitsDone, unitsTotal, questionsDone, questionsTotal }) => (
+                    <SubjectProgressCard
+                      key={subject.code}
+                      subject={subject}
+                      unitsDone={unitsDone}
+                      unitsTotal={unitsTotal}
+                      questionsDone={questionsDone}
+                      questionsTotal={questionsTotal}
+                      loading={progressLoading}
+                    />
+                  ))}
+                </div>
+                <div style={{ height: 6, borderRadius: 3, background: "var(--surface3)", overflow: "hidden" }}>
+                  <div style={{ width: `${overallPct}%`, height: "100%", background: "var(--gold)", transition: "width .2s" }} />
+                </div>
+              </>
+            )}
+          </div>
+
+        </div>
       </div>
+
+      {/* ── Below: Stats, Email pref, Saved ── */}
 
       {/* Stats row */}
       <div
@@ -395,67 +273,29 @@ export default function Dashboard() {
             value: subjectProgress.reduce((sum, i) => sum + i.questionsDone, 0),
           },
         ].map((stat) => (
-          <div
-            key={stat.label}
-            className="card"
-            style={{ padding: "20px 22px" }}
-          >
-            <div style={{ fontSize: 22, marginBottom: 8 }}>{stat.icon}</div>
-            <div
-              style={{
-                fontSize: 28,
-                fontWeight: 700,
-                color: "var(--heading)",
-                lineHeight: 1,
-                marginBottom: 4,
-              }}
-            >
+          <div key={stat.label} className="card" style={{ padding: "20px 22px" }}>
+            <div style={{ fontSize: 28, fontWeight: 700, color: "var(--heading)", lineHeight: 1, marginBottom: 4 }}>
               {stat.value}
             </div>
-            <div
-              style={{ fontSize: 12, color: "var(--text-3)", fontWeight: 500 }}
-            >
+            <div style={{ fontSize: 12, color: "var(--text-3)", fontWeight: 500 }}>
               {stat.label}
             </div>
-            {stat.note && (
-              <div
-                style={{ fontSize: 11, color: "var(--text-4)", marginTop: 4 }}
-              >
-                {stat.note}
-              </div>
-            )}
           </div>
         ))}
       </div>
 
-      <div style={{ marginBottom: 36 }}>
-        <CgpaTracker />
-      </div>
-
       {/* Saved subjects */}
-      <div>
-        <h2
-          style={{
-            fontFamily: "'DM Serif Display', serif",
-            fontSize: 20,
-            color: "var(--heading)",
-            marginBottom: 16,
-          }}
-        >
+      <div style={{ marginTop: 36 }}>
+        <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 20, color: "var(--heading)", marginBottom: 16 }}>
           Saved Subjects
         </h2>
 
         {saved.length === 0 ? (
-          <div
-            className="card"
-            style={{ padding: "40px 24px", textAlign: "center" }}
-          >
+          <div className="card" style={{ padding: "40px 24px", textAlign: "center" }}>
             <p style={{ color: "var(--text-3)", marginBottom: 16 }}>
               No saved subjects yet. Hit the bookmark icon on any subject page.
             </p>
-            <Link to="/branches" className="btn btn-primary">
-              Browse Subjects
-            </Link>
+            <Link to="/branches" className="btn btn-primary">Browse Subjects</Link>
           </div>
         ) : (
           <div style={{ display: "grid", gap: 8 }}>
@@ -465,54 +305,23 @@ export default function Dashboard() {
                 to={`/subject/${s.code}`}
                 state={s}
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 12,
-                  padding: "14px 16px",
-                  borderRadius: 10,
-                  border: "1px solid var(--border)",
-                  background: "var(--surface)",
-                  textDecoration: "none",
+                  display: "flex", alignItems: "center", gap: 12,
+                  padding: "14px 16px", borderRadius: 10,
+                  border: "var(--border-w) solid var(--border)",
+                  background: "var(--surface)", textDecoration: "none",
                   transition: "background .15s",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "var(--surface2)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = "var(--surface)")
-                }
+                onMouseEnter={(e) => (e.currentTarget.style.background = "var(--surface2)")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "var(--surface)")}
               >
-                <span
-                  style={{
-                    fontSize: 10,
-                    fontWeight: 700,
-                    color: "var(--gold-dim)",
-                    background: "var(--gold-pale)",
-                    padding: "3px 8px",
-                    borderRadius: 10,
-                    whiteSpace: "nowrap",
-                    flexShrink: 0,
-                  }}
-                >
+                <span style={{ fontSize: 10, fontWeight: 700, color: "var(--gold-dim)", background: "var(--gold-pale)", padding: "3px 8px", borderRadius: 10, whiteSpace: "nowrap", flexShrink: 0 }}>
                   {s.code}
                 </span>
-                <span
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 500,
-                    color: "var(--text)",
-                  }}
-                >
+                <span style={{ fontSize: 14, fontWeight: 500, color: "var(--text)" }}>
                   {s.name}
                 </span>
                 {s.branch && (
-                  <span
-                    style={{
-                      fontSize: 12,
-                      color: "var(--text-3)",
-                      marginLeft: "auto",
-                    }}
-                  >
+                  <span style={{ fontSize: 12, color: "var(--text-3)", marginLeft: "auto" }}>
                     {s.branch}
                   </span>
                 )}
@@ -523,8 +332,10 @@ export default function Dashboard() {
       </div>
 
       <style>{`
-        @media (max-width: 640px) {
-          .subject-grid { grid-template-columns: 1fr !important; }
+        @media (max-width: 768px) {
+          .dash-layout { flex-direction: column !important; gap: 0 !important; }
+          .dash-left { flex: unset !important; width: 100% !important; margin-bottom: 20px; }
+          .dash-right { width: 100% !important; }
         }
       `}</style>
     </div>
