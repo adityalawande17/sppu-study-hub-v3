@@ -1,95 +1,135 @@
 # SPPUStudyHUB
 
-Free SPPU engineering study platform — notes, previous year question papers, practicals, and AI-powered explanations for all branches. Live at **[sppustudyhub.in](https://sppustudyhub.in)**.
+**Free study platform for SPPU engineering students across 7 branches and 2019/2024 syllabus patterns.**
+
+[![Live Site](https://img.shields.io/badge/live-sppustudyhub.in-1d3461?style=flat-square)](https://sppustudyhub.in)
+[![React](https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react)](https://react.dev)
+[![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=flat-square&logo=nodedotjs)](https://nodejs.org)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supabase-4169e1?style=flat-square&logo=postgresql)](https://supabase.com)
+[![Claude API](https://img.shields.io/badge/AI-Claude%20Haiku-d97706?style=flat-square)](https://anthropic.com)
+[![Status](https://img.shields.io/badge/status-active-22c55e?style=flat-square)](#)
+
+> 4,300+ students · 30,000+ page views in the first 29 days — no paid promotion.
 
 ---
 
-## What's Inside
+## What it does
 
-- Unit-wise notes and PYQ downloads for all SPPU engineering branches
-- 2019 and 2024 pattern support with a one-click switcher
-- First Year (FE) subjects — Semester 1 and 2
-- AI explanations for previous year questions (Claude Haiku, streamed) with semantic similarity cache
-- Google OAuth login via Supabase
-- AI answer history — localStorage for guests, Supabase sync for logged-in users
-- Personal dashboard — saved subjects, CGPA tracker, activity heatmap, email preferences
-- Dark / light mode (persisted to localStorage)
-- Subject bookmarks
-- News and announcements feed
-- Tools page — CGPA calculator and study utilities
-- Contributors page with college name and LinkedIn
-- Syllabus PDF modal per branch
-- Mobile-first design with slide-in sidebar navigation
+- Notes, PYQs, and practicals for 7 branches (CS, IT, AIDS, ME, CE, EE, ETC) across 2019 and 2024 SPPU syllabus patterns
+- AI-powered PYQ explainer using Claude API — answers calibrated to marks allocation and SPPU exam format, streamed token by token
+- Cache-first AI architecture — same question never hits the API twice; semantic similarity extends the cache to rephrased questions
+- Google OAuth login via Supabase Auth with JWKS/ES256 JWT verification on the backend
+- Per-user AI rate limiting (3 calls/24h) keyed by user ID, with IP fallback for guests
+- SPPU calculators — SGPA, CGPA, attendance, grade, KT checker
+- Personalised student dashboard with branch/year selection, semester subject tracker, and CGPA/SGPA academic record
+- GitHub-style activity heatmap built from scratch
+- Per-question progress tracker with localStorage fallback for guests
 - Email announcements — admin-triggered blast emails via Resend with one-click unsubscribe
-- Admin panel — PYQ question manager and announcements composer (password-protected)
-- Content notice popup on homepage (dismissible per session)
-- SEO: per-page title, meta description, JSON-LD structured data
 
 ---
 
 ## Tech Stack
 
-### Frontend
-| | |
-|---|---|
-| Framework | React 18 + Vite 5 |
-| Routing | React Router v6 |
-| Styling | Custom design system (`global.css`) — no UI library |
-| Fonts | Inter + DM Serif Display (Google Fonts) |
-| Auth | Supabase JS (`@supabase/supabase-js`) |
-| Analytics | Vercel Analytics |
-| State | Context API — no Redux |
-| Persistence | localStorage (theme, pattern, bookmarks), sessionStorage (popup dismiss) |
-| Deploy | Vercel (SPA routing via `vercel.json`) |
-
-### Backend
-| | |
-|---|---|
-| Runtime | Node.js (ES modules) |
-| Framework | Express.js |
-| AI | Claude Haiku (`claude-haiku-4-5-20251001`) via Anthropic SDK — SSE streaming |
-| Email | Resend SDK — batch sends with per-user unsubscribe tokens |
-| Database | Supabase PostgreSQL (connection pooler, port 5432, IPv4) |
-| Rate limiting | express-rate-limit — 5 AI calls / user / day |
-| CORS | Multi-origin via comma-separated `FRONTEND_URLS` env var |
-| Deploy | Render |
+| Layer | Technology | Why |
+|---|---|---|
+| Frontend | React 18, Vite 5, React Router v6 | SPA with static JSON bundling |
+| Backend | Node.js, Express | REST API, AI routes, auth middleware |
+| Database | PostgreSQL on Supabase + pgvector | Structured queries + semantic similarity |
+| Auth | Supabase Auth, Google OAuth, JWKS/ES256 | Asymmetric key verification, auto-rotating |
+| AI | Claude Haiku (`claude-haiku-4-5-20251001`) | Exam answer generation |
+| Embeddings | OpenAI `text-embedding-ada-002` (1536-dim) | Semantic question similarity via fetch |
+| Frontend CDN | Vercel | Static build deployment |
+| Backend host | Render | Always-on Node.js service |
+| Email | Resend | Announcement blasts with unsubscribe tokens |
 
 ---
 
-## Quick Start
+## Architecture Decisions
 
-### Frontend
+**Frontend independent of backend**
+All study content — notes, PYQs, practicals — loads from static JSON files bundled at Vite build time, not from API calls. The backend only powers AI features, the questions database, and user-specific data. If the backend goes down, 95% of the site still works. Deliberate tradeoff: reliability over edit convenience.
+
+**Cache-first AI architecture**
+Before every Claude API call the backend checks the `ai_answers` table for a cached response keyed by `question_id`. SPPU papers repeat questions heavily across years — cache hit rate is expected to be high based on question repeat patterns. One API call serves unlimited users for that question forever. Cached responses are served in both the streaming and non-streaming endpoints, appearing to stream from the client's perspective.
+
+**Semantic similarity cache via pgvector**
+When there is no exact cache hit, the backend calls OpenAI `text-embedding-ada-002` to embed the question and queries the `question_embedding` column using pgvector cosine distance (`<=>`). Questions within a cosine distance of 0.15 (very similar phrasing) share the same cached answer — so "Explain stack" and "What is a stack?" resolve to the same response without an additional Claude call. The embedding and cached answer are written back asynchronously after the response is sent, so latency is not affected.
+
+**Direct PostgreSQL over ORM with Supavisor pooling**
+The backend connects directly to PostgreSQL via Supabase's Supavisor connection pooler rather than an ORM. This gives full SQL control for complex queries including the pgvector cosine similarity searches that ORMs handle poorly. Supavisor safely manages concurrent connections within the free tier's connection limit. The `pg` pool and a shared `query()` helper are the only database abstractions in use.
+
+**Dual authentication systems on one backend**
+End users authenticate via Google OAuth with JWKS/ES256-verified JWTs issued by Supabase (`jose` handles key rotation automatically via the remote JWKS endpoint). The admin role uses a separate HS256 JWT scheme issued at `/api/admin/login`. Both are verified server-side — `req.userId` is always derived from the verified token, never from a client-supplied value. This matters because the backend talks directly to Postgres and bypasses Supabase RLS entirely.
+
+**Rate limiter keyed by user ID, not IP**
+The AI rate limiter (3 calls/24h) and general limiter (300 requests/15 min) both key by the JWT `sub` claim when a valid token is present, falling back to IP only for anonymous requests. This prevents students sharing campus or hostel Wi-Fi from consuming each other's request budget — a real problem in a college-use context.
+
+**N+1 query elimination on dashboard**
+The dashboard originally made one API call per saved subject — roughly 20 requests per page load. All dashboard data is consolidated into batched endpoints (`/api/profile`, `/api/progress`, `/api/academic`) that return a user's complete state in a small number of queries, reducing both request count and concurrent database connections significantly.
+
+**Static JSON over a CMS for content**
+Adding a subject means dropping a JSON file under `src/data/subjects/` and pushing to git — Vercel redeploys in under a minute. A database-backed CMS would add backend dependency to every page load, eliminating the reliability advantage. The tradeoff is that content edits require a git push; this is acceptable since contributors are developers.
+
+---
+
+## Screenshots
+
+<!-- Add 2-3 screenshots of the live site here -->
+<!-- Suggested: Homepage, Subject page with AI accordion, Dashboard -->
+
+---
+
+## Local Setup
+
+### Prerequisites
+
+- Node.js 18+
+- A Supabase project (free tier works)
+- Anthropic API key
+- OpenAI API key (for question embeddings)
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/adityalawande17/sppu-study-hub-v3.git
+cd sppu-study-hub-v3
+```
+
+### 2. Frontend setup
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
-npm run build      # output to dist/
-npm run preview    # preview production build
 ```
 
 Create `.env.local` in the project root:
+
 ```
 VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key
 VITE_BACKEND_URL=http://localhost:3001
 ```
 
-### Backend
+```bash
+npm run dev   # http://localhost:5173
+```
+
+### 3. Backend setup
 
 ```bash
 cd backend
 npm install
-npm run dev        # http://localhost:3001
 ```
 
 Create `backend/.env`:
+
 ```
 ANTHROPIC_API_KEY=sk-ant-...
+OPENAI_API_KEY=sk-...
 DATABASE_URL=postgresql://postgres.xxx:password@aws-0-region.pooler.supabase.com:5432/postgres
 PORT=3001
-FRONTEND_URLS=http://localhost:5173
 SUPABASE_URL=https://your-project.supabase.co
 SUPABASE_JWT_SECRET=your-jwt-secret
+FRONTEND_URLS=http://localhost:5173
 ADMIN_EMAIL=your@email.com
 ADMIN_PASSWORD=your-admin-password
 ADMIN_JWT_SECRET=a-long-random-secret
@@ -98,249 +138,115 @@ RESEND_FROM_EMAIL=YourSite <no-reply@yourdomain.com>
 FRONTEND_URL=http://localhost:5173
 ```
 
+```bash
+npm run dev   # http://localhost:3001
+```
+
 Health check: `curl http://localhost:3001/health`
+
+### 4. Database setup
+
+Run `backend/db/schema.sql` in the Supabase SQL Editor. This creates all tables and indexes in one shot, including pgvector extension setup.
+
+### Environment variables reference
+
+| Variable | Location | Where to get it |
+|---|---|---|
+| `VITE_SUPABASE_URL` | frontend `.env.local` | Supabase → Settings → API |
+| `VITE_SUPABASE_ANON_KEY` | frontend `.env.local` | Supabase → Settings → API |
+| `VITE_BACKEND_URL` | frontend `.env.local` | `http://localhost:3001` for dev |
+| `ANTHROPIC_API_KEY` | backend `.env` | [console.anthropic.com](https://console.anthropic.com) |
+| `OPENAI_API_KEY` | backend `.env` | [platform.openai.com](https://platform.openai.com) |
+| `DATABASE_URL` | backend `.env` | Supabase → Settings → Database → Connection Pooler |
+| `SUPABASE_URL` | backend `.env` | Supabase → Settings → API |
+| `SUPABASE_JWT_SECRET` | backend `.env` | Supabase → Settings → API |
+| `ADMIN_EMAIL` | backend `.env` | Your choice — admin login credential |
+| `ADMIN_PASSWORD` | backend `.env` | Your choice — admin login credential |
+| `ADMIN_JWT_SECRET` | backend `.env` | Any long random string |
+| `RESEND_API_KEY` | backend `.env` | [resend.com](https://resend.com) |
+| `RESEND_FROM_EMAIL` | backend `.env` | Verified sender on Resend |
 
 ---
 
 ## Project Structure
 
 ```
-├── index.html                     Favicon, fonts, meta
-├── vercel.json                    SPA routing rewrites
-├── src/
-│   ├── main.jsx                   App entry point
-│   ├── App.jsx                    Routes + AppProvider wrapper
-│   ├── context/AppContext.jsx     Global state: pattern, theme, auth, bookmarks
-│   ├── lib/supabase.js            Supabase client (guards missing env vars)
-│   ├── utils/aiHistory.js         AI history — localStorage + Supabase sync
-│   ├── utils/adminAuth.js         Admin JWT helpers (set, get, clear token)
-│   ├── hooks/useSEO.js            Dynamic title, meta, JSON-LD per page
-│   ├── styles/global.css          Full design system, dark/light themes, mobile
-│   ├── data/
-│   │   ├── branches.js            All branches + subjects for 2019 and 2024 patterns
-│   │   ├── feSubjects.js          First Year subjects
-│   │   ├── contributors.js        Contributors list (name, college, LinkedIn)
-│   │   ├── news.js                News/announcements feed
-│   │   ├── trending.js            Trending materials on homepage
-│   │   └── subjects/              Per-subject JSON files (units, practicals, PYQ, books)
-│   ├── components/
-│   │   ├── Navbar.jsx             Top nav + slide-in mobile sidebar, pattern switcher, auth
-│   │   ├── UnitAccordion.jsx      Unit notes accordion with file rows
-│   │   ├── PYQAccordion.jsx       PYQ grid + AI explain slide-in panel
-│   │   ├── PracticalAccordion.jsx Practical steps + resources
-│   │   ├── ActivityHeatmap.jsx    GitHub-style contribution heatmap on dashboard
-│   │   ├── CgpaTracker.jsx        CGPA calculator card on dashboard
-│   │   ├── EmailPreferenceToggle.jsx  Email opt-out toggle on dashboard
-│   │   ├── SubjectItem.jsx        Subject row on branch pages
-│   │   ├── SyllabusModal.jsx      Syllabus PDF modal
-│   │   ├── ContributeModal.jsx    Contribution form modal
-│   │   ├── Footer.jsx
-│   │   └── NoticeStrip.jsx        Top announcement strip
-│   └── pages/
-│       ├── Home.jsx               Landing page + login benefits card + content notice popup
-│       ├── Branches.jsx           Branch grid
-│       ├── BranchDetail.jsx       SE/TE/BE year tabs + subject list
-│       ├── FirstYear.jsx          FE Sem 1 and 2 subjects
-│       ├── Subject.jsx            Notes, PYQ, practicals, books for one subject
-│       ├── Tools.jsx              CGPA calculator and study tools
-│       ├── Dashboard.jsx          User profile + saved subjects + heatmap + CGPA tracker
-│       ├── History.jsx            AI answer history
-│       ├── News.jsx               Announcements
-│       ├── Contributions.jsx      Contributors page
-│       ├── Saved.jsx              Bookmarked subjects
-│       ├── AdminLogin.jsx         Admin password login (/admin/login)
-│       ├── AdminQuestions.jsx     PYQ question manager (/admin/questions)
-│       ├── AdminAnnouncements.jsx Email blast composer (/admin/announcements)
-│       ├── Unsubscribe.jsx        One-click unsubscribe (/unsubscribe?token=...)
-│       ├── About.jsx
-│       ├── Contact.jsx
-│       ├── Privacy.jsx
-│       └── Terms.jsx
-└── backend/
-    ├── server.js                  Express app, CORS, routes
-    ├── middleware/
-    │   ├── auth.js                requireUser + requireAdmin JWT middleware
-    │   └── rateLimiter.js         AI rate limiter (5/day) + general limiter
-    ├── routes/
-    │   ├── ai.js                  POST /api/ai/explain/stream — SSE AI answers
-    │   ├── questions.js           GET/POST/DELETE /api/questions
-    │   ├── admin.js               POST /api/admin/login, GET /api/admin/me
-    │   └── announcements.js       Email blast + preferences + unsubscribe
+SPPUStudyHUB/
+├── src/                              # React frontend
+│   ├── components/                   # Reusable UI components
+│   │   ├── Navbar.jsx                # Top nav + slide-in mobile sidebar
+│   │   ├── ActivityHeatmap.jsx       # GitHub-style heatmap (dashboard)
+│   │   ├── CgpaTracker.jsx           # CGPA/SGPA tracker card
+│   │   ├── EmailPreferenceToggle.jsx # Email opt-out toggle (dashboard)
+│   │   ├── PYQAccordion.jsx          # PYQ list + AI explain panel
+│   │   └── ...
+│   ├── context/AppContext.jsx        # Auth, theme, pattern, saved subjects
+│   ├── data/                         # Static JSON — bundled at build time
+│   │   ├── branches.js               # Branch metadata + subject lists
+│   │   └── subjects/                 # One JSON file per subject
+│   ├── hooks/                        # Custom React hooks (useSEO, etc.)
+│   ├── pages/                        # Route-level page components
+│   │   ├── AdminQuestions.jsx        # PYQ manager (/admin/questions)
+│   │   ├── AdminAnnouncements.jsx    # Email blast composer (/admin/announcements)
+│   │   ├── Unsubscribe.jsx           # One-click unsubscribe (/unsubscribe?token=...)
+│   │   └── ...
+│   └── styles/global.css             # Design system + CSS custom properties
+└── backend/                          # Express API
     ├── db/
-    │   ├── index.js               pg.Pool with SSL, query helper
-    │   ├── schema.sql             All tables (run once in Supabase SQL editor)
-    │   └── seed.js                Bulk question seed script
-    └── prompts/explainer.js       Claude prompt builder
-```
-
----
-
-## Database Setup (Supabase)
-
-1. Create a project at [supabase.com](https://supabase.com)
-2. SQL Editor → run `backend/db/schema.sql` (creates all tables in one shot)
-3. Go to **Project → Connect** → copy the **Connection Pooler** URL (port 5432) — use this as `DATABASE_URL`
-4. Authentication → Providers → Google → add your Google OAuth Client ID and Secret
-5. Add your domain to Authorized JavaScript Origins in Google Cloud Console
-
-Tables created by the schema:
-- `branches` — branch registry
-- `subjects` — subject registry (linked to branches)
-- `questions` — PYQ bank with optional pgvector embeddings
-- `ai_answers` — cached AI responses per question
-- `api_usage` — rate-limit audit log
-- `user_ai_history` — per-user AI answer history (synced from frontend)
-- `email_preferences` — per-user email opt-out state
-- `announcements` — audit log of every email blast sent
-
----
-
-## Admin Panel
-
-The admin panel is completely independent of Google auth — it uses a separate email/password stored in `.env`.
-
-| Route | Purpose |
-|---|---|
-| `/admin/login` | Password login — issues a 7-day JWT |
-| `/admin/questions` | Add and delete PYQ questions per subject |
-| `/admin/announcements` | Compose and send email blasts to all subscribed users |
-
-Both admin pages share a tab bar so you can switch between them without editing the URL.
-
-**Required env vars:** `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `ADMIN_JWT_SECRET`
-
----
-
-## Email Announcements
-
-- Admin sends a blast from `/admin/announcements` — delivered via Resend to every user who hasn't opted out
-- Each email contains a one-click unsubscribe link (`/unsubscribe?token=...`) signed with a 365-day JWT
-- Users can also toggle email preferences from their Dashboard
-- Emails are sent in batches of 100 (Resend's per-call cap)
-
-**Required env vars:** `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `FRONTEND_URL`
-
-To use a custom from-address, verify your domain in the [Resend dashboard](https://resend.com/domains) and set `RESEND_FROM_EMAIL=YourSite <no-reply@yourdomain.com>`. For local testing without domain verification, use `onboarding@resend.dev` (delivers only to the Resend account's registered email).
-
----
-
-## How to Add a Subject's Content
-
-1. Copy any existing file from `src/data/subjects/` as a template
-2. Name it after the subject code, e.g. `SE-CS-302.json`
-3. Fill in the arrays:
-
-```json
-{
-  "code": "SE-CS-302",
-  "name": "Subject Name",
-  "pattern": "2019",
-  "units": [
-    {
-      "title": "Unit 1 - Introduction",
-      "files": [
-        { "name": "Unit 1 Notes", "size": "2.1 MB", "type": "PDF", "url": "DRIVE_LINK" }
-      ]
-    }
-  ],
-  "practicals": [...],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "DRIVE_LINK" }
-  ],
-  "books": [...]
-}
-```
-
-**Google Drive link format:**
-- Upload PDF → Share → Anyone with link → copy the file ID from the URL
-- Use: `https://drive.google.com/uc?export=download&id=YOUR_FILE_ID`
-
-The file is auto-discovered via `import.meta.glob` — no import needed in `Subject.jsx`.
-
----
-
-## How to Bulk Add Questions (AI feature)
-
-1. Create a `backend/db/questions-seed.json` file:
-
-```json
-[
-  {
-    "subject_code": "TE-CS-502",
-    "subject_name": "Computer Networks",
-    "branch": "cs",
-    "year": "TE",
-    "semester": 5,
-    "pattern": "2019",
-    "questions": [
-      {
-        "unit": 1,
-        "question_text": "Explain the OSI model with all 7 layers.",
-        "marks": 8,
-        "exam_year": 2023,
-        "exam_month": "Nov",
-        "question_type": "long"
-      }
-    ]
-  }
-]
-```
-
-2. Run: `node backend/db/seed.js`
-
-The script upserts subjects and skips duplicate question text per subject — safe to run multiple times.
-
----
-
-## How to Add a News Item
-
-Edit `src/data/news.js`:
-
-```js
-{
-  id: 8,
-  title: 'Your announcement',
-  date: '2025-06-01',
-  category: 'result',   // result | exam | syllabus | notice | new
-  link: 'https://...',  // or null
-  description: 'Short description.',
-}
+    │   ├── schema.sql                # All tables + pgvector setup (run once)
+    │   └── index.js                  # pg Pool + shared query() helper
+    ├── middleware/
+    │   ├── auth.js                   # requireUser, optionalUser, requireAdmin
+    │   └── rateLimiter.js            # AI limiter (3/24h) + general limiter (300/15m)
+    ├── prompts/
+    │   └── explainer.js              # Claude prompt builder (marks-aware)
+    ├── utils/
+    │   └── embedding.js              # OpenAI text-embedding-ada-002 via fetch
+    └── routes/
+        ├── ai.js                     # POST /explain, POST /explain/stream, GET /usage
+        ├── questions.js              # Questions CRUD + admin add/delete
+        ├── admin.js                  # POST /login, GET /me
+        ├── profile.js                # GET/POST user branch + semester profile
+        ├── progress.js               # Unit and question completion tracking
+        ├── academic.js               # SGPA records per semester
+        └── announcements.js          # Email blast + preferences + unsubscribe
 ```
 
 ---
 
 ## Deployment
 
-### Frontend (Vercel)
-- Connect GitHub repo → Vercel auto-deploys on push to `main`
-- Add env vars in Vercel dashboard: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_BACKEND_URL`
-- `vercel.json` handles SPA routing (all paths → `index.html`)
+| Service | Platform | Notes |
+|---|---|---|
+| Frontend | Vercel | Auto-deploys on git push to `main`; `vercel.json` handles SPA routing |
+| Backend | Render | Node.js web service; start command: `node server.js` |
+| Database | Supabase | PostgreSQL + pgvector + Auth + JWKS endpoint |
+| Domain | BigRock (.in) | DNS A/CNAME pointed to Vercel |
 
-### Backend (Render)
-- Connect GitHub repo → Render web service
-- Build command: `npm install`
-- Start command: `node server.js`
-- Add all env vars from `backend/.env` — at minimum:
-  `ANTHROPIC_API_KEY`, `DATABASE_URL`, `FRONTEND_URLS`, `SUPABASE_URL`, `SUPABASE_JWT_SECRET`,
-  `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `ADMIN_JWT_SECRET`,
-  `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `FRONTEND_URL`
-- Set `FRONTEND_URLS=https://sppustudyhub.in,https://www.sppustudyhub.in` (comma-separated, no spaces)
+**Backend env vars on Render:** set `FRONTEND_URLS=https://sppustudyhub.in,https://www.sppustudyhub.in` (comma-separated, no spaces). Use the Supabase Connection Pooler URL (port 5432) as `DATABASE_URL`.
 
 ---
 
-## Auth Flow
+## Admin Panel
 
-1. User clicks Sign In → `supabase.auth.signInWithOAuth({ provider: 'google' })`
-2. Supabase redirects to Google consent → back to `window.location.origin`
-3. `onAuthStateChange` in `AppContext` picks up the session → `user` state updates
-4. Session persists in localStorage — restored on page reload via `getSession()`
-5. Dashboard is auth-guarded: renders `null` while session loads, then redirects if no user
+The admin panel is independent of Google auth — it uses a separate email/password stored in `.env`.
+
+| Route | Purpose |
+|---|---|
+| `/admin/login` | Password login — issues a 7-day HS256 JWT |
+| `/admin/questions` | Add and delete PYQ questions per subject |
+| `/admin/announcements` | Compose and send email blasts to all subscribed users |
 
 ---
 
-## Pattern System
+## Contributing
 
-Students toggle between **2019** and **2024** SPPU patterns in the navbar. The selected pattern persists in `localStorage`. All branch/subject data is organised under `branchData['2019']` and `branchData['2024']` in `branches.js`.
+Found incorrect notes or want to add content? Use the [Contribute page](https://sppustudyhub.in) on the site or open a GitHub issue.
 
-2019 pattern subject codes are alphanumeric (`TE-CS-502`).
-2024 pattern subject codes are purely numeric (`210241`).
+Pull requests for bug fixes are welcome. Open an issue before starting any large change.
+
+---
+
+## License
+
+MIT
