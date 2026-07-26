@@ -34,14 +34,7 @@ export default function SubjectItem({
       >
         <span className="subject-code">{subject.code}</span>
         <div style={{ minWidth: 0 }}>
-          <div
-            className="subject-name"
-            style={{
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap",
-            }}
-          >
+          <div className="subject-name">
             {subject.name}
           </div>
           <div className="subject-credits">

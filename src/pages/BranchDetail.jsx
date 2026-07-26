@@ -26,7 +26,6 @@ const DlIcon = () => (
 export default function BranchDetail() {
   const { branchKey } = useParams();
   const { pattern } = useApp();
-  const [activeYear, setActiveYear] = useState("SE");
   const [syllabusOpen, setSyllabusOpen] = useState(false);
 
   const meta = branchMeta[branchKey];
@@ -63,8 +62,6 @@ export default function BranchDetail() {
         </Link>
       </div>
     );
-
-  const yearData = data[activeYear];
 
   return (
     <div className="page-wrap">
@@ -146,47 +143,71 @@ export default function BranchDetail() {
         </button>
       </div>
 
-      <div className="sem-tabs">
-        {["SE", "TE", "BE"].map((yr) => (
-          <button
-            key={yr}
-            className={`sem-tab ${activeYear === yr ? "active" : ""}`}
-            onClick={() => setActiveYear(yr)}
-          >
-            {data[yr]?.label || yr}
-          </button>
-        ))}
-      </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: 20,
+          alignItems: "start",
+        }}
+      >
+        {["SE", "TE", "BE"].map((yr) => {
+          const yearData = data[yr];
+          if (!yearData) return null;
+          return (
+            <div key={yr} style={{ minWidth: 0, overflow: "hidden" }}>
+              <div
+                style={{
+                  padding: "11px 16px",
+                  borderRadius: 10,
+                  marginBottom: 14,
+                }}
+              >
+                <h2
+                  style={{
+                    fontFamily: "'DM Serif Display', serif",
+                    fontSize: 16,
+                    color: "#fff",
+                    margin: 0,
+                  }}
+                >
+                  {yearData.label || yr}
+                </h2>
+              </div>
 
-      {yearData?.semesters.map((sem) => (
-        <div key={sem.label}>
-          <p
-            style={{
-              fontSize: 12,
-              fontWeight: 600,
-              color: "var(--text-4)",
-              textTransform: "uppercase",
-              letterSpacing: 0.8,
-              padding: "14px 0 8px",
-            }}
-          >
-            {sem.label}
-          </p>
-          <div style={{ display: "grid", gap: 6, marginBottom: 6 }}>
-            {sem.subjects.map((s) => (
-              <SubjectItem
-                key={s.code}
-                subject={s}
-                branch={meta.name}
-                branchKey={branchKey}
-                yearKey={activeYear}
-                sem={sem.label}
-                accentColor={meta.color}
-              />
-            ))}
-          </div>
-        </div>
-      ))}
+              {yearData.semesters.map((sem) => (
+                <div key={sem.label} style={{ marginBottom: 16 }}>
+                  <p
+                    style={{
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: "var(--text-4)",
+                      textTransform: "uppercase",
+                      letterSpacing: 0.8,
+                      margin: "0 0 8px",
+                    }}
+                  >
+                    {sem.label}
+                  </p>
+                  <div style={{ display: "grid", gap: 6 }}>
+                    {sem.subjects.map((s) => (
+                      <SubjectItem
+                        key={s.code}
+                        subject={s}
+                        branch={meta.name}
+                        branchKey={branchKey}
+                        yearKey={yr}
+                        sem={sem.label}
+                        accentColor={meta.color}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          );
+        })}
+      </div>
 
       {/* <div className="ad-slot" style={{ marginBottom: 40 }}>
         <div>
@@ -197,7 +218,7 @@ export default function BranchDetail() {
       <SyllabusModal
         open={syllabusOpen}
         onClose={() => setSyllabusOpen(false)}
-        year={activeYear}
+        year="SE"
         pattern={pattern}
       />
     </div>
