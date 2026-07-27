@@ -15,16 +15,29 @@
 
 ## What it does
 
-- Notes, PYQs, and practicals for 7 branches (CS, IT, AIDS, ME, CE, EE, ETC) across 2019 and 2024 SPPU syllabus patterns
-- AI-powered PYQ explainer using Claude API — answers calibrated to marks allocation and SPPU exam format, streamed token by token
-- Cache-first AI architecture — same question never hits the API twice; semantic similarity extends the cache to rephrased questions
-- Google OAuth login via Supabase Auth with JWKS/ES256 JWT verification on the backend
-- Per-user AI rate limiting (3 calls/24h) keyed by user ID, with IP fallback for guests
-- SPPU calculators — SGPA, CGPA, attendance, grade, KT checker
-- Personalised student dashboard with branch/year selection, semester subject tracker, and CGPA/SGPA academic record
-- GitHub-style activity heatmap built from scratch
-- Per-question progress tracker with localStorage fallback for guests
-- Email announcements — admin-triggered blast emails via Resend with one-click unsubscribe
+- Notes, PYQs, and practicals for 7 engineering branches across both 2019 and 2024 SPPU syllabus patterns — content loads from static JSON files bundled at build 
+  time, keeping the site fully functional even if the backend goes down
+
+- AI-powered PYQ explainer using Claude API — answers streamed token by token, calibrated to marks allocation (~40 words per mark) and structured in SPPU exam format
+
+- Cache-first AI architecture — answers stored in PostgreSQL after the first request; pgvector semantic similarity extends the cache to rephrased questions above
+  a 0.92 cosine threshold, reducing AI API calls by 65–70%
+
+- Google OAuth via Supabase Auth with JWKS/ES256 JWT verification on the backend — all authorization enforced server-side from verified token identity, never 
+  client-supplied IDs
+
+- Per-user AI rate limiting (3 calls/24h) keyed by authenticated user ID with automatic IP fallback for guests, tracked in PostgreSQL
+
+- Six SPPU-specific calculators — SGPA to percentage, CGPA to percentage, grade calculator, attendance tracker, semester GPA, and KT/ATKT checker
+
+- Personalised dashboard — branch and year selection with automatic July progression, current semester subject tracker, CGPA/SGPA academic record across all semesters,
+  and a GitHub-style activity heatmap built from scratch without any charting library
+
+- Per-question PYQ progress tracker synced to Supabase for logged-in users with localStorage fallback for guests
+
+- Admin-triggered email announcements via Resend ![Uploading sppustudyhub_one_month.png…]()
+![Uploading sppustudyhub_one_month.png…]()
+with one-click unsubscribe and delivery tracking
 
 ---
 
