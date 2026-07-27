@@ -89,6 +89,8 @@ Adding a subject means dropping a JSON file under `src/data/subjects/` and pushi
 <img width="1882" height="1594" alt="Screenshot_26-7-2026_124652_www sppustudyhub in" src="https://github.com/user-attachments/assets/4a2ba9ae-f3e8-4dc0-8796-cb0c6e41d7e9" />
 <img width="1507" height="694" alt="Screenshot 2026-07-26 124735" src="https://github.com/user-attachments/assets/3813b7fd-0f7e-48d3-8d18-3c3680cafd76" />
 <img width="1161" height="412" alt="Screenshot 2026-07-26 124532" src="https://github.com/user-attachments/assets/6558250a-9d6d-4d9c-a6e7-5126c7e2b111" />
+<img width="1236" height="584" alt="sppustudyhub_one_month" src="https://github.com/user-attachments/assets/f61c67c4-2586-43d8-8986-15abcf1a1576" />
+
 
 ---
 
