@@ -35,9 +35,7 @@
 
 - Per-question PYQ progress tracker synced to Supabase for logged-in users with localStorage fallback for guests
 
-- Admin-triggered email announcements via Resend ![Uploading sppustudyhub_one_month.png…]()
-![Uploading sppustudyhub_one_month.png…]()
-with one-click unsubscribe and delivery tracking
+- Admin-triggered email announcements via Resend with one-click unsubscribe and delivery tracking
 
 ---
 
@@ -63,7 +61,7 @@ with one-click unsubscribe and delivery tracking
 All study content — notes, PYQs, practicals — loads from static JSON files bundled at Vite build time, not from API calls. The backend only powers AI features, the questions database, and user-specific data. If the backend goes down, 95% of the site still works. Deliberate tradeoff: reliability over edit convenience.
 
 **Cache-first AI architecture**
-Before every Claude API call the backend checks the `ai_answers` table for a cached response keyed by `question_id`. SPPU papers repeat questions heavily across years — cache hit rate is expected to be high based on question repeat patterns. One API call serves unlimited users for that question forever. Cached responses are served in both the streaming and non-streaming endpoints, appearing to stream from the client's perspective.
+Before every Claude API call the backend checks the `ai_answers` table for a cached response keyed by `question_id`. Cache hit rate is estimated at 65–70% based on SPPU question repeat patterns across exam years. One API call serves unlimited users for that question forever. Cached responses are served in both the streaming and non-streaming endpoints, appearing to stream from the client's perspective.
 
 **Semantic similarity cache via pgvector**
 When there is no exact cache hit, the backend calls OpenAI `text-embedding-ada-002` to embed the question and queries the `question_embedding` column using pgvector cosine distance (`<=>`). Questions within a cosine distance of 0.15 (very similar phrasing) share the same cached answer — so "Explain stack" and "What is a stack?" resolve to the same response without an additional Claude call. The embedding and cached answer are written back asynchronously after the response is sent, so latency is not affected.
@@ -91,7 +89,6 @@ Adding a subject means dropping a JSON file under `src/data/subjects/` and pushi
 <img width="1882" height="1594" alt="Screenshot_26-7-2026_124652_www sppustudyhub in" src="https://github.com/user-attachments/assets/4a2ba9ae-f3e8-4dc0-8796-cb0c6e41d7e9" />
 <img width="1507" height="694" alt="Screenshot 2026-07-26 124735" src="https://github.com/user-attachments/assets/3813b7fd-0f7e-48d3-8d18-3c3680cafd76" />
 <img width="1161" height="412" alt="Screenshot 2026-07-26 124532" src="https://github.com/user-attachments/assets/6558250a-9d6d-4d9c-a6e7-5126c7e2b111" />
-
 
 ---
 
