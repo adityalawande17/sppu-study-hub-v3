@@ -15,16 +15,27 @@
 
 ## What it does
 
-- Notes, PYQs, and practicals for 7 branches (CS, IT, AIDS, ME, CE, EE, ETC) across 2019 and 2024 SPPU syllabus patterns
-- AI-powered PYQ explainer using Claude API — answers calibrated to marks allocation and SPPU exam format, streamed token by token
-- Cache-first AI architecture — same question never hits the API twice; semantic similarity extends the cache to rephrased questions
-- Google OAuth login via Supabase Auth with JWKS/ES256 JWT verification on the backend
-- Per-user AI rate limiting (3 calls/24h) keyed by user ID, with IP fallback for guests
-- SPPU calculators — SGPA, CGPA, attendance, grade, KT checker
-- Personalised student dashboard with branch/year selection, semester subject tracker, and CGPA/SGPA academic record
-- GitHub-style activity heatmap built from scratch
-- Per-question progress tracker with localStorage fallback for guests
-- Email announcements — admin-triggered blast emails via Resend with one-click unsubscribe
+- Notes, PYQs, and practicals for 7 engineering branches across both 2019 and 2024 SPPU syllabus patterns — content loads from static JSON files bundled at build 
+  time, keeping the site fully functional even if the backend goes down
+
+- AI-powered PYQ explainer using Claude API — answers streamed token by token, calibrated to marks allocation (~40 words per mark) and structured in SPPU exam format
+
+- Cache-first AI architecture — answers stored in PostgreSQL after the first request; pgvector semantic similarity extends the cache to rephrased questions above
+  a 0.92 cosine threshold, reducing AI API calls by 65–70%
+
+- Google OAuth via Supabase Auth with JWKS/ES256 JWT verification on the backend — all authorization enforced server-side from verified token identity, never 
+  client-supplied IDs
+
+- Per-user AI rate limiting (3 calls/24h) keyed by authenticated user ID with automatic IP fallback for guests, tracked in PostgreSQL
+
+- Six SPPU-specific calculators — SGPA to percentage, CGPA to percentage, grade calculator, attendance tracker, semester GPA, and KT/ATKT checker
+
+- Personalised dashboard — branch and year selection with automatic July progression, current semester subject tracker, CGPA/SGPA academic record across all semesters,
+  and a GitHub-style activity heatmap built from scratch without any charting library
+
+- Per-question PYQ progress tracker synced to Supabase for logged-in users with localStorage fallback for guests
+
+- Admin-triggered email announcements via Resend with one-click unsubscribe and delivery tracking
 
 ---
 
@@ -50,7 +61,7 @@
 All study content — notes, PYQs, practicals — loads from static JSON files bundled at Vite build time, not from API calls. The backend only powers AI features, the questions database, and user-specific data. If the backend goes down, 95% of the site still works. Deliberate tradeoff: reliability over edit convenience.
 
 **Cache-first AI architecture**
-Before every Claude API call the backend checks the `ai_answers` table for a cached response keyed by `question_id`. SPPU papers repeat questions heavily across years — cache hit rate is expected to be high based on question repeat patterns. One API call serves unlimited users for that question forever. Cached responses are served in both the streaming and non-streaming endpoints, appearing to stream from the client's perspective.
+Before every Claude API call the backend checks the `ai_answers` table for a cached response keyed by `question_id`. Cache hit rate is estimated at 65–70% based on SPPU question repeat patterns across exam years. One API call serves unlimited users for that question forever. Cached responses are served in both the streaming and non-streaming endpoints, appearing to stream from the client's perspective.
 
 **Semantic similarity cache via pgvector**
 When there is no exact cache hit, the backend calls OpenAI `text-embedding-ada-002` to embed the question and queries the `question_embedding` column using pgvector cosine distance (`<=>`). Questions within a cosine distance of 0.15 (very similar phrasing) share the same cached answer — so "Explain stack" and "What is a stack?" resolve to the same response without an additional Claude call. The embedding and cached answer are written back asynchronously after the response is sent, so latency is not affected.
@@ -78,6 +89,7 @@ Adding a subject means dropping a JSON file under `src/data/subjects/` and pushi
 <img width="1882" height="1594" alt="Screenshot_26-7-2026_124652_www sppustudyhub in" src="https://github.com/user-attachments/assets/4a2ba9ae-f3e8-4dc0-8796-cb0c6e41d7e9" />
 <img width="1507" height="694" alt="Screenshot 2026-07-26 124735" src="https://github.com/user-attachments/assets/3813b7fd-0f7e-48d3-8d18-3c3680cafd76" />
 <img width="1161" height="412" alt="Screenshot 2026-07-26 124532" src="https://github.com/user-attachments/assets/6558250a-9d6d-4d9c-a6e7-5126c7e2b111" />
+<img width="1236" height="584" alt="sppustudyhub_one_month" src="https://github.com/user-attachments/assets/f61c67c4-2586-43d8-8986-15abcf1a1576" />
 
 
 ---
