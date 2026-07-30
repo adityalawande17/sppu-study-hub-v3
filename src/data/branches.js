@@ -348,6 +348,29 @@ const cs2024 = {
       },
     ],
   },
+  TE: {
+    label: "Third Year (TE)",
+    semesters: [
+      {
+        label: "Semester 5",
+        subjects: [
+          { code: "PCC301COM", name: "Artificial Intelligence", credits: 3, updated: "2024" },
+          { code: "PCC302COM", name: "Computer Networks", credits: 3, updated: "2024" },
+          { code: "PCC303COM", name: "Theory of Computation", credits: 3, updated: "2024" },
+          { code: "PEC321COM", name: "Elective I", credits: 3, updated: "2024", type: "Elective" },
+        ],
+      },
+      {
+        label: "Semester 6",
+        subjects: [
+          { code: "PCC351COM", name: "Machine Learning", credits: 3, updated: "2024" },
+          { code: "PCC352COM", name: "Software Engineering and Modelling", credits: 2, updated: "2024" },
+          { code: "PEC361COM", name: "Elective II", credits: 3, updated: "2024", type: "Elective" },
+          { code: "PEC362COM", name: "Elective III", credits: 3, updated: "2024", type: "Elective" },
+        ],
+      },
+    ],
+  },
 };
 
 // Simplified entries for other branches (2019 pattern)
@@ -1742,6 +1765,29 @@ const aids2024 = {
             credits: 2,
             updated: "2024",
           },
+        ],
+      },
+    ],
+  },
+  TE: {
+    label: "Third Year (TE)",
+    semesters: [
+      {
+        label: "Semester 5",
+        subjects: [
+          { code: "PCC301AID", name: "Networks and Security", credits: 3, updated: "2024" },
+          { code: "PCC302AID", name: "Machine Learning", credits: 3, updated: "2024" },
+          { code: "PCC303AID", name: "Natural Language Processing", credits: 3, updated: "2024" },
+          { code: "PEC321AID", name: "Elective I", credits: 3, updated: "2024", type: "Elective" },
+        ],
+      },
+      {
+        label: "Semester 6",
+        subjects: [
+          { code: "PCC351AID", name: "Software Engineering", credits: 3, updated: "2024" },
+          { code: "PCC352AID", name: "Deep Learning", credits: 3, updated: "2024" },
+          { code: "PEC361AID", name: "Elective II", credits: 2, updated: "2024", type: "Elective" },
+          { code: "PEC362AID", name: "Elective III", credits: 3, updated: "2024", type: "Elective" },
         ],
       },
     ],

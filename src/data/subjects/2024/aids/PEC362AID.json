@@ -1,0 +1,20 @@
+{
+  "code": "PEC362AID",
+  "name": "Elective III",
+  "branch": "Artificial Intelligence and Data Science Engineering",
+  "branchKey": "aids",
+  "year": "TE",
+  "sem": "Semester 6",
+  "credits": 3,
+  "pattern": "2024",
+  "electives": [
+    "Ethical Hacking",
+    "Quantum AI",
+    "Reinforcement Learning",
+    "UI/UX Design"
+  ],
+  "units": [],
+  "practicals": [],
+  "pyq": [],
+  "books": []
+}

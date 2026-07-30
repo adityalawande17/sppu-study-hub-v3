@@ -146,27 +146,29 @@ export default function BranchDetail() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: 20,
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: 16,
           alignItems: "start",
         }}
       >
         {["SE", "TE", "BE"].map((yr) => {
           const yearData = data[yr];
-          if (!yearData) return null;
+          if (!yearData) return <div key={yr} />;
           return (
-            <div key={yr} style={{ minWidth: 0, overflow: "hidden" }}>
+            <div key={yr} style={{ minWidth: 0 }}>
+              {/* Year header */}
               <div
                 style={{
-                  padding: "11px 16px",
+                  padding: "10px 16px",
                   borderRadius: 10,
                   marginBottom: 14,
+                  textAlign: "left",
                 }}
               >
                 <h2
                   style={{
                     fontFamily: "'DM Serif Display', serif",
-                    fontSize: 16,
+                    fontSize: 15,
                     color: "#fff",
                     margin: 0,
                   }}
@@ -175,8 +177,14 @@ export default function BranchDetail() {
                 </h2>
               </div>
 
-              {yearData.semesters.map((sem) => (
-                <div key={sem.label} style={{ marginBottom: 16 }}>
+              {/* Both semesters stacked with no gap between them */}
+              {yearData.semesters.map((sem, i) => (
+                <div
+                  key={sem.label}
+                  style={{
+                    marginBottom: i < yearData.semesters.length - 1 ? 14 : 0,
+                  }}
+                >
                   <p
                     style={{
                       fontSize: 11,

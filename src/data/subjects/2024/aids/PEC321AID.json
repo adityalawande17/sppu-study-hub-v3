@@ -1,0 +1,20 @@
+{
+  "code": "PEC321AID",
+  "name": "Elective I",
+  "branch": "Artificial Intelligence and Data Science Engineering",
+  "branchKey": "aids",
+  "year": "TE",
+  "sem": "Semester 5",
+  "credits": 3,
+  "pattern": "2024",
+  "electives": [
+    "Blockchain",
+    "Cloud Computing",
+    "Computer Vision",
+    "Gaming and Animation"
+  ],
+  "units": [],
+  "practicals": [],
+  "pyq": [],
+  "books": []
+}

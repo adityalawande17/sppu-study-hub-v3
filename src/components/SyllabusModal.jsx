@@ -45,7 +45,7 @@ const syllabusLinks = {
       },
       {
         name: "ENTC Engineering",
-        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus2025/SE_EandTC_NEP%202024%20Pat_R2_AY_%2025-26._21072025.pdf",
+        url: "https://keystone.ac.in/doc/SE_ENTC_2024.pdf",
       },
     ],
 

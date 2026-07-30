@@ -1,0 +1,20 @@
+{
+  "code": "PEC361COM",
+  "name": "Elective II",
+  "branch": "Computer Engineering",
+  "branchKey": "cs",
+  "year": "TE",
+  "sem": "Semester 6",
+  "credits": 3,
+  "pattern": "2024",
+  "electives": [
+    "Quantum Computing",
+    "Distributed System",
+    "UX/UI Design",
+    "System Programming"
+  ],
+  "units": [],
+  "practicals": [],
+  "pyq": [],
+  "books": []
+}

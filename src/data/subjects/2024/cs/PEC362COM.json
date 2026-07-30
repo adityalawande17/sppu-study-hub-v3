@@ -1,0 +1,20 @@
+{
+  "code": "PEC362COM",
+  "name": "Elective III",
+  "branch": "Computer Engineering",
+  "branchKey": "cs",
+  "year": "TE",
+  "sem": "Semester 6",
+  "credits": 3,
+  "pattern": "2024",
+  "electives": [
+    "Information Retrieval",
+    "Data Visualization and Analytics",
+    "Cryptography and Network Security",
+    "Advanced Databases"
+  ],
+  "units": [],
+  "practicals": [],
+  "pyq": [],
+  "books": []
+}

@@ -1,0 +1,20 @@
+{
+  "code": "PEC361AID",
+  "name": "Elective II",
+  "branch": "Artificial Intelligence and Data Science Engineering",
+  "branchKey": "aids",
+  "year": "TE",
+  "sem": "Semester 6",
+  "credits": 2,
+  "pattern": "2024",
+  "electives": [
+    "Cyber Security and Data Privacy",
+    "Big Data Engineering",
+    "High Performance Computing",
+    "AR/VR"
+  ],
+  "units": [],
+  "practicals": [],
+  "pyq": [],
+  "books": []
+}
