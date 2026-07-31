@@ -262,25 +262,25 @@ const cs2024 = {
             updated: "2024",
           },
 
-          {
-            code: "PCC-204-COM",
-            name: "Data Structures Laboratory",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "PCC-205-COM",
-            name: "OOP and Computer Graphics Laboratory",
-            credits: 1,
-            updated: "2024",
-          },
+          // {
+          //   code: "PCC-204-COM",
+          //   name: "Data Structures Laboratory",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "PCC-205-COM",
+          //   name: "OOP and Computer Graphics Laboratory",
+          //   credits: 1,
+          //   updated: "2024",
+          // },
 
-          {
-            code: "OE-1-COM",
-            name: "Open Elective I",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+          //   code: "OE-1-COM",
+          //   name: "Open Elective I",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
 
           {
             code: "MDM-221-COM",
@@ -312,25 +312,25 @@ const cs2024 = {
             updated: "2024",
           },
 
-          {
-            code: "PCC-254-COM",
-            name: "Database Management Laboratory",
-            credits: 1,
-            updated: "2024",
-          },
-          {
-            code: "PCC-255-COM",
-            name: "Microprocessor Laboratory",
-            credits: 1,
-            updated: "2024",
-          },
+          // {
+          //   code: "PCC-254-COM",
+          //   name: "Database Management Laboratory",
+          //   credits: 1,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "PCC-255-COM",
+          //   name: "Microprocessor Laboratory",
+          //   credits: 1,
+          //   updated: "2024",
+          // },
 
-          {
-            code: "OE-2-COM",
-            name: "Open Elective II",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+          //   code: "OE-2-COM",
+          //   name: "Open Elective II",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
 
           {
             code: "MDM-271-COM",
@@ -338,12 +338,12 @@ const cs2024 = {
             credits: 2,
             updated: "2024",
           },
-          {
-            code: "VSE-281-COM",
-            name: "Web Development",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+          //   code: "VSE-281-COM",
+          //   name: "Web Development",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
         ],
       },
     ],
@@ -354,19 +354,62 @@ const cs2024 = {
       {
         label: "Semester 5",
         subjects: [
-          { code: "PCC301COM", name: "Artificial Intelligence", credits: 3, updated: "2024" },
-          { code: "PCC302COM", name: "Computer Networks", credits: 3, updated: "2024" },
-          { code: "PCC303COM", name: "Theory of Computation", credits: 3, updated: "2024" },
-          { code: "PEC321COM", name: "Elective I", credits: 3, updated: "2024", type: "Elective" },
+          {
+            code: "PCC301COM",
+            name: "Artificial Intelligence",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC302COM",
+            name: "Computer Networks",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC303COM",
+            name: "Theory of Computation",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PEC321COM",
+            name: "Elective I",
+            credits: 3,
+            updated: "2024",
+            type: "Elective",
+          },
         ],
       },
       {
         label: "Semester 6",
         subjects: [
-          { code: "PCC351COM", name: "Machine Learning", credits: 3, updated: "2024" },
-          { code: "PCC352COM", name: "Software Engineering and Modelling", credits: 2, updated: "2024" },
-          { code: "PEC361COM", name: "Elective II", credits: 3, updated: "2024", type: "Elective" },
-          { code: "PEC362COM", name: "Elective III", credits: 3, updated: "2024", type: "Elective" },
+          {
+            code: "PCC351COM",
+            name: "Machine Learning",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC352COM",
+            name: "Software Engineering and Modelling",
+            credits: 2,
+            updated: "2024",
+          },
+          {
+            code: "PEC361COM",
+            name: "Elective II",
+            credits: 3,
+            updated: "2024",
+            type: "Elective",
+          },
+          {
+            code: "PEC362COM",
+            name: "Elective III",
+            credits: 3,
+            updated: "2024",
+            type: "Elective",
+          },
         ],
       },
     ],
@@ -474,15 +517,15 @@ const it2024 = {
             updated: "2024",
           },
 
-          { code: "PCC-204-ITT", name: "DSA Lab", credits: 1, updated: "2024" },
-          { code: "PCC-205-ITT", name: "OOP Lab", credits: 1, updated: "2024" },
+          // { code: "PCC-204-ITT", name: "DSA Lab", credits: 1, updated: "2024" },
+          // { code: "PCC-205-ITT", name: "OOP Lab", credits: 1, updated: "2024" },
 
-          {
-            code: "OE-1-ITT",
-            name: "Open Elective I",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+          //   code: "OE-1-ITT",
+          //   name: "Open Elective I",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
 
           {
             code: "MDM-221-ITT",
@@ -514,25 +557,25 @@ const it2024 = {
             updated: "2024",
           },
 
-          {
-            code: "PCC-254-ITT",
-            name: "DBMS Lab",
-            credits: 1,
-            updated: "2024",
-          },
-          {
-            code: "PCC-255-ITT",
-            name: "Computer Graphics Lab",
-            credits: 1,
-            updated: "2024",
-          },
+          // {
+          //   code: "PCC-254-ITT",
+          //   name: "DBMS Lab",
+          //   credits: 1,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "PCC-255-ITT",
+          //   name: "Computer Graphics Lab",
+          //   credits: 1,
+          //   updated: "2024",
+          // },
 
-          {
-            code: "OE-2-ITT",
-            name: "Open Elective II",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+          //   code: "OE-2-ITT",
+          //   name: "Open Elective II",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
 
           {
             code: "MDM-271-ITT",
@@ -1647,25 +1690,25 @@ const aids2024 = {
             updated: "2024",
           },
 
-          {
-            code: "PCC-204-AID",
-            name: "Data Structures Lab",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "PCC-205-AID",
-            name: "Artificial Intelligence Lab",
-            credits: 1,
-            updated: "2024",
-          },
+          // {
+          //   code: "PCC-204-AID",
+          //   name: "Data Structures Lab",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "PCC-205-AID",
+          //   name: "Artificial Intelligence Lab",
+          //   credits: 1,
+          //   updated: "2024",
+          // },
 
-          {
-            code: "OE-1-AID",
-            name: "Open Elective I",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+          //   code: "OE-1-AID",
+          //   name: "Open Elective I",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
 
           {
             code: "MDM-221-AID",
@@ -1673,24 +1716,24 @@ const aids2024 = {
             credits: 2,
             updated: "2024",
           },
-          {
-            code: "EEM-231-AID",
-            name: "Entrepreneurship Development",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "VEC-232-AID",
-            name: "Universal Human Values and Professional Ethics",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "CEP-241-AID",
-            name: "Community Engagement Project",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+          //   code: "EEM-231-AID",
+          //   name: "Entrepreneurship Development",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "VEC-232-AID",
+          //   name: "Universal Human Values and Professional Ethics",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "CEP-241-AID",
+          //   name: "Community Engagement Project",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
         ],
       },
       {
@@ -1715,25 +1758,25 @@ const aids2024 = {
             updated: "2024",
           },
 
-          {
-            code: "PCC-254-AID",
-            name: "DBMS Lab",
-            credits: 1,
-            updated: "2024",
-          },
-          {
-            code: "PCC-255-AID",
-            name: "Data Science Lab",
-            credits: 1,
-            updated: "2024",
-          },
+          // {
+          //   code: "PCC-254-AID",
+          //   name: "DBMS Lab",
+          //   credits: 1,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "PCC-255-AID",
+          //   name: "Data Science Lab",
+          //   credits: 1,
+          //   updated: "2024",
+          // },
 
-          {
-            code: "OE-2-AID",
-            name: "Open Elective II",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+          //   code: "OE-2-AID",
+          //   name: "Open Elective II",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
 
           {
             code: "MDM-271-AID",
@@ -1741,30 +1784,30 @@ const aids2024 = {
             credits: 2,
             updated: "2024",
           },
-          {
-            code: "VSE-281-AID",
-            name: "Object Oriented Programming",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "AEC-282-AID",
-            name: "Modern Indian Language (Marathi)",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "EEM-283-AID",
-            name: "Startup Development",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "VEC-284-AID",
-            name: "Environmental Studies",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+          //   code: "VSE-281-AID",
+          //   name: "Object Oriented Programming",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "AEC-282-AID",
+          //   name: "Modern Indian Language (Marathi)",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "EEM-283-AID",
+          //   name: "Startup Development",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "VEC-284-AID",
+          //   name: "Environmental Studies",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
         ],
       },
     ],
@@ -1775,19 +1818,62 @@ const aids2024 = {
       {
         label: "Semester 5",
         subjects: [
-          { code: "PCC301AID", name: "Networks and Security", credits: 3, updated: "2024" },
-          { code: "PCC302AID", name: "Machine Learning", credits: 3, updated: "2024" },
-          { code: "PCC303AID", name: "Natural Language Processing", credits: 3, updated: "2024" },
-          { code: "PEC321AID", name: "Elective I", credits: 3, updated: "2024", type: "Elective" },
+          {
+            code: "PCC301AID",
+            name: "Networks and Security",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC302AID",
+            name: "Machine Learning",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC303AID",
+            name: "Natural Language Processing",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PEC321AID",
+            name: "Elective I",
+            credits: 3,
+            updated: "2024",
+            type: "Elective",
+          },
         ],
       },
       {
         label: "Semester 6",
         subjects: [
-          { code: "PCC351AID", name: "Software Engineering", credits: 3, updated: "2024" },
-          { code: "PCC352AID", name: "Deep Learning", credits: 3, updated: "2024" },
-          { code: "PEC361AID", name: "Elective II", credits: 2, updated: "2024", type: "Elective" },
-          { code: "PEC362AID", name: "Elective III", credits: 3, updated: "2024", type: "Elective" },
+          {
+            code: "PCC351AID",
+            name: "Software Engineering",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC352AID",
+            name: "Deep Learning",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PEC361AID",
+            name: "Elective II",
+            credits: 2,
+            updated: "2024",
+            type: "Elective",
+          },
+          {
+            code: "PEC362AID",
+            name: "Elective III",
+            credits: 3,
+            updated: "2024",
+            type: "Elective",
+          },
         ],
       },
     ],

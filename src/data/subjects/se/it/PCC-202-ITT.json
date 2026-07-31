@@ -7,6 +7,12 @@
       "title": "Unit 1 - Foundations of Object Oriented Programming",
       "files": [
         {
+          "name": "Unit 1 - Last Minute Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/oop/note%20(14).pdf"
+        },
+        {
           "name": "Unit 1 Question Bank",
           "size": "1 MB",
           "type": "PDF",
@@ -44,7 +50,17 @@
         }
       ]
     },
-    { "title": "Unit 2 - Methods and Constructors", "files": [] },
+    {
+      "title": "Unit 2 - Methods and Constructors",
+      "files": [
+        {
+          "name": "Unit 2 - Last Minute Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/oop/note%20(15).pdf"
+        }
+      ]
+    },
     { "title": "Unit 3 - Inheritance & Polymorphism", "files": [] },
     {
       "title": "Unit 4 - Exception Handling and Generic Programming",

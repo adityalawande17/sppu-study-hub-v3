@@ -5,11 +5,25 @@
   "units": [
     {
       "title": "Unit 1 - Introduction to OOP Concepts and Control Structure",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 1 - Last Minute Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/oopcg/Unit%20I%20-%20Introduction%20to%20OOP%20Concepts%20and%20Control%20Structure.pdf"
+        }
+      ]
     },
     {
       "title": "Unit 2 - Introduction to Classes and Objects and Arrays",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 2 - Last Minute Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/oopcg/Unit%20II%20%E2%80%93%20Introduction%20to%20Classes%20and%20Objects%20and%20Arrays.pdf"
+        }
+      ]
     },
     {
       "title": "Unit 3 - Inheritance and Polymorphism Exception Handling and Multithreading",

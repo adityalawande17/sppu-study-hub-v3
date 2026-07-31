@@ -5,9 +5,26 @@
   "units": [
     {
       "title": "Unit 1 - Introduction to Computer Networking Fundamentals",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 1 - Last Minute Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/bcn/note%20(16).pdf"
+        }
+      ]
     },
-    { "title": "Unit 2 - Data Communications", "files": [] },
+    {
+      "title": "Unit 2 - Data Communications",
+      "files": [
+        {
+          "name": "Unit 2 - Last Minute Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/bcn/note%20(17).pdf"
+        }
+      ]
+    },
     {
       "title": "Unit 3 - Data Link Layer and Multiple Access Protocols",
       "files": []
