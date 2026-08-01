@@ -330,6 +330,7 @@ export default function Navbar() {
             <button
               onClick={toggleTheme}
               title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              className="hide-sm"
               style={{
                 width: 34,
                 height: 34,

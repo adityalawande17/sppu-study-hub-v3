@@ -27,6 +27,7 @@ export default function BranchDetail() {
   const { branchKey } = useParams();
   const { pattern } = useApp();
   const [syllabusOpen, setSyllabusOpen] = useState(false);
+  const [activeYear, setActiveYear] = useState("SE");
 
   const meta = branchMeta[branchKey];
   const data =
@@ -143,10 +144,71 @@ export default function BranchDetail() {
         </button>
       </div>
 
+      {/* Mobile-only year tabs */}
+      <div className="branch-year-tabs">
+        {["SE", "TE", "BE"].map((yr) => (
+          data[yr] && (
+            <button
+              key={yr}
+              onClick={() => setActiveYear(yr)}
+              style={{
+                flex: 1,
+                padding: "9px 0",
+                fontSize: 13,
+                fontWeight: 600,
+                fontFamily: "Inter, sans-serif",
+                cursor: "pointer",
+                border: "none",
+                borderBottom: activeYear === yr ? `2px solid ${meta.color}` : "2px solid transparent",
+                background: "transparent",
+                color: activeYear === yr ? "var(--heading)" : "var(--text-3)",
+                transition: "all .15s",
+              }}
+            >
+              {data[yr].label?.split(" ")[0] || yr}
+            </button>
+          )
+        ))}
+      </div>
+
+      {/* Mobile-only: single year content */}
+      <div className="branch-mobile-year">
+        {(() => {
+          const yearData = data[activeYear];
+          if (!yearData) return null;
+          return (
+            <>
+              {yearData.semesters.map((sem, i) => (
+                <div key={sem.label} style={{ marginBottom: i < yearData.semesters.length - 1 ? 14 : 0 }}>
+                  <p style={{ fontSize: 11, fontWeight: 600, color: "var(--text-4)", textTransform: "uppercase", letterSpacing: 0.8, margin: "0 0 8px" }}>
+                    {sem.label}
+                  </p>
+                  <div style={{ display: "grid", gap: 6 }}>
+                    {sem.subjects.map((s) => (
+                      <SubjectItem
+                        key={s.code}
+                        subject={s}
+                        branch={meta.name}
+                        branchKey={branchKey}
+                        yearKey={activeYear}
+                        sem={sem.label}
+                        accentColor={meta.color}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </>
+          );
+        })()}
+      </div>
+
+      {/* Desktop-only: all three year columns */}
       <div
+        className="branch-desktop-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
           gap: 16,
           alignItems: "start",
         }}

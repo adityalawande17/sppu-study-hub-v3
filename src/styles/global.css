@@ -201,6 +201,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -209,6 +210,7 @@ body {
   color: var(--text);
   font-size: 15px;
   line-height: 1.6;
+  overflow-x: hidden;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   transition:
@@ -500,6 +502,20 @@ h3 {
   background: #0a1628;
   color: #fff;
   border-color: #0a1628;
+}
+
+/* ---- Branch page year selector (mobile/desktop split) ---- */
+.branch-year-tabs { display: none; }
+.branch-mobile-year { display: none; }
+
+@media (max-width: 768px) {
+  .branch-year-tabs {
+    display: flex;
+    border-bottom: var(--border-w) solid var(--border);
+    margin-bottom: 16px;
+  }
+  .branch-mobile-year { display: block; }
+  .branch-desktop-grid { display: none !important; }
 }
 
 /* ---- Breadcrumb ---- */
@@ -1044,6 +1060,15 @@ h3 {
 }
 
 /* ---- Responsive ---- */
+@media (max-width: 360px) {
+  /* On very narrow phones (320px iPhone SE etc) the navbar logo + pattern pill
+     + action buttons exceed the viewport. The pattern pill is available inside
+     the mobile sidebar so it is safe to hide it from the top bar. */
+  .pattern-pill { display: none !important; }
+  .page-wrap { padding: 0 12px 80px; }
+  .container { padding: 0 12px; }
+}
+
 @media (max-width: 640px) {
   .page-wrap {
     padding: 0 16px 80px;
