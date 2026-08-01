@@ -25,8 +25,11 @@
   ],
   "practicals": [],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
+    {
+      "year": "2026",
+      "exam": "May / Jun 2026",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/prob%26stat/prob%26stat.pdf"
+    }
   ],
   "books": [
     {
