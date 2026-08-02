@@ -37,7 +37,9 @@ function HistoryIcon() {
 function matchesPaper(q, paper) {
   if (q.exam_year !== parseInt(paper.year)) return false;
   if (!q.exam_month) return false;
-  return paper.exam.toLowerCase().includes(q.exam_month.toLowerCase());
+  const paperLower = paper.exam.toLowerCase();
+  const monthLower = q.exam_month.toLowerCase();
+  return paperLower.includes(monthLower) || paperLower.includes(monthLower.slice(0, 3));
 }
 
 export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
