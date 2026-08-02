@@ -1,0 +1,61 @@
+{
+  "code": "418545",
+  "name": "Elective IV",
+  "branch": "Artificial Intelligence and Machine Learning Engineering",
+  "branchKey": "aiml",
+  "year": "BE",
+  "sem": "Semester 7",
+  "credits": 3,
+  "pattern": "2019",
+  "electives": [],
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025 Ethical Hacking and Cyber Forensics",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/aiml/ele_iv/ele-iv-aiml.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024 Ethical Hacking and Cyber Forensics",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/aiml/ele_iv/ele_iv_aiml_2.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024 Ethical Hacking and Cyber Forensics",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/aiml/ele_iv/ele_iv_aiml_6.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025 Augumented and Virtual Reality",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/aiml/ele_iv/ele-iv-aiml_2.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024 Augumented and Virtual Reality",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/aiml/ele_iv/ele_iv_aiml_4.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024 Augumented and Virtual Reality",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/aiml/ele_iv/ele_iv_aiml_7.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025 Devops in ML",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/aiml/ele_iv/ele-iv-aiml_3.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024 Devops in ML",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/aiml/ele_iv/ele_iv_aiml_5.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024 Devops in ML",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/aiml/ele_iv/ele_iv_aiml_8.pdf"
+    }
+  ],
+  "books": []
+}

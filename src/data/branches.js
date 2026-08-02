@@ -62,6 +62,15 @@ export const branchMeta = {
     pale: "var(--etc-pale)",
     dark: "var(--etc-dark)",
   },
+  aiml: {
+    key: "aiml",
+    name: "Artificial Intelligence and Machine Learning Engineering",
+    short: "AI and ML",
+    abbr: "ML",
+    color: "var(--aiml-color)",
+    pale: "var(--aiml-pale)",
+    dark: "var(--aiml-dark)",
+  },
 };
 
 // ── subjects per pattern ──────────────────────────────────────────────────────
@@ -1880,6 +1889,33 @@ const aids2024 = {
   },
 };
 
+// ── AIML 2019 ─────────────────────────────────────────────────────────────────
+const aiml2019 = {
+  BE: {
+    label: "Final Year (BE)",
+    semesters: [
+      {
+        label: "Semester 7",
+        subjects: [
+          { code: "418541", name: "Information Retrieval in AI", credits: 3 },
+          { code: "418542", name: "Cloud Computing", credits: 3 },
+          { code: "418543", name: "Deep Learning for AI", credits: 3 },
+          { code: "418544", name: "Elective III", credits: 3, type: "Elective" },
+          { code: "418545", name: "Elective IV", credits: 3, type: "Elective" },
+        ],
+      },
+      {
+        label: "Semester 8",
+        subjects: [
+          { code: "418550", name: "Natural Language Processing", credits: 3 },
+          { code: "418551", name: "Elective V", credits: 3, type: "Elective" },
+          { code: "418552", name: "Elective VI", credits: 3, type: "Elective" },
+        ],
+      },
+    ],
+  },
+};
+
 export const branchData = {
   2019: {
     cs: cs2019,
@@ -1889,6 +1925,7 @@ export const branchData = {
     ce: ce2019,
     ee: ee2019,
     etc: etc2019,
+    aiml: aiml2019,
   },
   2024: {
     cs: cs2024,

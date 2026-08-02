@@ -1,0 +1,30 @@
+{
+  "code": "418541",
+  "name": "Information Retrieval in AI",
+  "branch": "Artificial Intelligence and Machine Learning Engineering",
+  "branchKey": "aiml",
+  "year": "BE",
+  "sem": "Semester 7",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/aiml/ir/ir_aiml.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/aiml/ir/ir_aiml_2.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/aiml/ir/ir_aiml_3.pdf"
+    }
+  ],
+  "books": []
+}
