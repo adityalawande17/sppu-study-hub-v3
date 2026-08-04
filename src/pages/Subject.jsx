@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useParams, useLocation, Link, useNavigate } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { useApp } from "../context/AppContext";
@@ -6,45 +7,8 @@ import PracticalAccordion from "../components/PracticalAccordion";
 import PYQAccordion from "../components/PYQAccordion";
 import { searchIndex } from "../data/branches";
 import { feSearchIndex } from "../data/feSubjects";
-import subjectData from "../data/subjects/TE-CS-502.json";
 
-//First year Subjects Common
-//sem 1
-// import m1 from "../data/subjects/fe/BSC-101-BES.json";
-// import phy from "../data/subjects/fe/BSC-102-BES.json";
-// import chem from "../data/subjects/fe/BSC-103-BES.json";
-// import bee from "../data/subjects/fe/ESC-101-ETC.json";
-// import beee from "../data/subjects/fe/ESC-102-ELE.json";
-// import eg from "../data/subjects/fe/ESC-103-MEC.json";
-// import mech from "../data/subjects/fe/ESC-104-CVL.json";
-// import fpl from "../data/subjects/fe/ESC-105-COM.json";
-// import workshop from "../data/subjects/fe/VSE-101.json";
-// import comm from "../data/subjects/fe/AEC-101.json";
-// import cc1 from "../data/subjects/fe/CCC-101.json";
-
-//sem 2
-// import m2 from "../data/subjects/fe/BSC-151-BES.json";
-// import pps from "../data/subjects/fe/PCC-151-ITT.json";
-// import dt from "../data/subjects/fe/VSE-102.json";
-// import iks from "../data/subjects/fe/IKS-151.json";
-// import cc2 from "../data/subjects/fe/CCC-151.json";
-
-const modules = import.meta.glob("../data/subjects/**/*.json", { eager: true });
-
-const subjectFiles = {};
-
-for (const path in modules) {
-  const data = modules[path].default;
-
-  // Use code inside JSON if available
-  if (data?.code) {
-    subjectFiles[data.code] = data;
-  } else {
-    // fallback → filename
-    const fileName = path.split("/").pop().replace(".json", "");
-    subjectFiles[fileName] = data;
-  }
-}
+const modules = import.meta.glob("../data/subjects/**/*.json");
 
 const allIndex = [...feSearchIndex, ...searchIndex];
 
@@ -121,30 +85,17 @@ export default function Subject() {
     };
   const saved = isSaved(code);
 
-  // Use the per-subject JSON file if available, fall back to defaults
-  // add one line per subject file you create (below)
-
-  // const subjectFiles = {
-  //   "TE-CS-502": subjectData,
-  //   "BSC-101-BES": m1,
-  //   "BSC-102-BES": phy,
-  //   "BSC-103-BES": chem,
-  //   "ESC-101-ETC": bee, // Basic Electronics
-  //   "ESC-102-ELE": beee, // Basic Electrical
-  //   "ESC-103-MEC": eg,
-  //   "ESC-104-CVL": mech,
-  //   "ESC-105-COM": fpl,
-  //   "VSE-101": workshop,
-  //   "AEC-101": comm,
-  //   "CCC-101": cc1,
-
-  //   "BSC-151-BES": m2,
-  //   "PCC-151-ITT": pps,
-  //   "VSE-102": dt,
-  //   "IKS-151": iks,
-  //   "CCC-151": cc2,
-  // };
-  const content = subjectFiles[code] || null;
+  const [content, setContent] = useState(null);
+  const [contentLoading, setContentLoading] = useState(true);
+  useEffect(() => {
+    setContent(null);
+    setContentLoading(true);
+    const path = Object.keys(modules).find(p =>
+      p.split("/").pop().replace(".json", "") === code
+    );
+    if (!path) { setContentLoading(false); return; }
+    modules[path]().then(m => { setContent(m.default ?? null); setContentLoading(false); });
+  }, [code]);
   //const practicals = content?.practicals || undefined; // undefined → PracticalAccordion uses its own defaults
   //const pyq = content?.pyq || defaultPYQ;
   const books = content?.books || [];
@@ -370,7 +321,7 @@ export default function Subject() {
 
       <div className="material-grid">
         {/* ✅ EMPTY STATE */}
-        {!hasAnyContent && (
+        {!hasAnyContent && !contentLoading && (
           <div className="empty-msg">Content will be added soon 🚧</div>
         )}
 

@@ -98,7 +98,11 @@ export default function App() {
           <Navbar />
           <main style={{ flex: 1 }}>
             <RouteErrorBoundary>
-              <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
+              <Suspense fallback={
+                <div style={{ minHeight: "60vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div className="spinner" />
+                </div>
+              }>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/first-year" element={<FirstYear />} />
