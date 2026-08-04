@@ -1,3 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /dashboard
+Disallow: /history
+Disallow: /saved
+Disallow: /onboarding
+Disallow: /admin/
+Disallow: /unsubscribe
+
 Sitemap: https://sppustudyhub.in/sitemap.xml

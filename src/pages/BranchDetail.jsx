@@ -40,6 +40,13 @@ export default function BranchDetail() {
     description: meta
       ? `Free notes, question papers and practicals for SPPU ${meta.name}. SE, TE and BE subjects. ${pattern} pattern.`
       : "",
+    schema: meta ? {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: `${meta.name} — SPPU ${pattern} Study Materials`,
+      description: `Free notes and question papers for SPPU ${meta.name} ${pattern} pattern`,
+      url: `https://sppustudyhub.in/branches/${branchKey}`,
+    } : undefined,
   });
 
   if (!meta || !data)

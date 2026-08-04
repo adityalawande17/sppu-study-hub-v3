@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useSEO } from "../hooks/useSEO";
 
-useSEO && null; // silence lint
-
 function calc(val, mode) {
   const v = parseFloat(val);
   if (isNaN(v) || v < 0 || v > 10) return null;
