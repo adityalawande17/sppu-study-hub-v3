@@ -4,7 +4,7 @@ import { requireUser } from '../middleware/auth.js';
 
 const router = Router();
 
-const VALID_BRANCHES = ['cs', 'it', 'aids', 'me', 'ce', 'ee', 'etc'];
+const VALID_BRANCHES = ['cs', 'it', 'aids', 'me', 'ce', 'ee', 'etc', 'aiml'];
 const VALID_PATTERNS = ['2019', '2024'];
 
 // GET /api/profile — returns null if the signed-in user hasn't onboarded yet

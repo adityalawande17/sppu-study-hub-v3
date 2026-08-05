@@ -1935,6 +1935,7 @@ export const branchData = {
     ce: ce2024,
     ee: ee2024,
     etc: etc2024,
+    aiml: aiml2019,
   },
 };
 

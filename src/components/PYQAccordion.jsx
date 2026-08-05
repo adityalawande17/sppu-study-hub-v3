@@ -46,16 +46,19 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
   const { user, signInWithGoogle } = useApp();
   const [activeIdx, setActiveIdx] = useState(null);
   const [dbQuestions, setDbQuestions] = useState([]);
+  const [questionsLoading, setQuestionsLoading] = useState(true);
   const [aiStates, setAiStates] = useState({});
   const [paperAiStates, setPaperAiStates] = useState({});
   const [doneQuestionIds, setDoneQuestionIds] = useState(new Set());
 
   useEffect(() => {
-    if (!BACKEND) return;
+    if (!BACKEND) { setQuestionsLoading(false); return; }
+    setQuestionsLoading(true);
     fetch(`${BACKEND}/api/questions/${subjectCode}`)
       .then((r) => (r.ok ? r.json() : null))
       .then((data) => { if (data?.questions?.length) setDbQuestions(data.questions); })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setQuestionsLoading(false));
   }, [subjectCode]);
 
   useEffect(() => {
@@ -430,7 +433,30 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
               ) : (
                 <>
                   {/* DB questions for this paper */}
-                  {activeQuestions.length > 0 && (
+                  {questionsLoading ? (
+                    <div style={{ display: "grid", gap: 8, marginBottom: 20 }}>
+                      <p style={{ fontSize: 11, color: "var(--text-4)", margin: "0 0 4px", fontWeight: 600, letterSpacing: 0.2 }}>
+                        QUESTIONS FROM THIS PAPER
+                      </p>
+                      {[1, 2, 3].map((i) => (
+                        <div key={i} style={{
+                          padding: "10px 12px", borderRadius: 10,
+                          border: "1px solid var(--border)",
+                          background: "var(--surface2)",
+                          display: "flex", flexDirection: "column", gap: 10,
+                        }}>
+                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
+                            <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 6 }}>
+                              <div className="skeleton" style={{ height: 13, width: `${75 + i * 7}%` }} />
+                              <div className="skeleton" style={{ height: 13, width: `${45 + i * 5}%` }} />
+                            </div>
+                            <div className="skeleton" style={{ height: 20, width: 28, borderRadius: 10, flexShrink: 0 }} />
+                          </div>
+                          <div className="skeleton" style={{ height: 26, width: 72, borderRadius: 7 }} />
+                        </div>
+                      ))}
+                    </div>
+                  ) : activeQuestions.length > 0 && (
                     <div style={{ display: "grid", gap: 8, marginBottom: 20 }}>
                       <p style={{ fontSize: 11, color: "var(--text-4)", margin: "0 0 4px", fontWeight: 600, letterSpacing: 0.2 }}>
                         QUESTIONS FROM THIS PAPER
