@@ -276,7 +276,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
                     display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
                   }}
                 >
-                  <AIIcon /> Ask AI
+                  <AIIcon /> View / Ask AI
                   <span style={{
                     fontSize: 9, fontWeight: 700, letterSpacing: 0.4,
                     background: "linear-gradient(135deg, #7c3aed, #a855f7)",
@@ -346,7 +346,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
                       fontSize: 15, fontWeight: 700,
                       color: "var(--heading)", fontFamily: "Inter, sans-serif",
                     }}>
-                      Ask AI
+                      View / Ask AI
                     </span>
                     <span style={{
                       fontSize: 9, fontWeight: 700, letterSpacing: 0.5,
