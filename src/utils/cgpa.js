@@ -15,7 +15,7 @@ export function averageSgpa(records) {
 
 export function percentageFromCgpa(cgpa) {
   if (cgpa === null) return null;
-  return (cgpa - 0.5) * 10;
+  return (cgpa * 10) - 7.5;
 }
 
 export function yearCgpa(records, year) {
