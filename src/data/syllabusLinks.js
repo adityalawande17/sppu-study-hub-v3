@@ -29,6 +29,10 @@ export const syllabusLinks = {
         url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-aids-2024.pdf",
       },
       {
+        name: "AI & ML",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-aiml-2024.pdf",
+      },
+      {
         name: "Mechanical Engineering",
         url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-mech-2024.pdf",
       },
@@ -43,6 +47,10 @@ export const syllabusLinks = {
       {
         name: "ENTC Engineering",
         url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-entc-2024.pdf",
+      },
+      {
+        name: "Electronics & Communication Engg (ECE)",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-ece-2024.pdf",
       },
     ],
 
@@ -59,11 +67,15 @@ export const syllabusLinks = {
         name: "AI & DS",
         url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/te/te-aids-2024.pdf",
       },
+      { name: "AI & ML", url: "#" },
       {
         name: "Mechanical Engineering",
         url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/te/te-mech-2024.pdf",
       },
-      { name: "Civil Engineering", url: "#" },
+      {
+        name: "Civil Engineering",
+        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus%202026/TE_Civil_Syllabus_with_Honors_23062026.pdf?Mobile=1&Source=%2Fsites%2Fdocuments%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3D274d1f79%252D0a80%252D45ab%252Db48f%252D70dbd7afc268%26View%3D17e162f7%252D6a44%252D4170%252D965c%252D9d5abe85e882%26CurrentPage%3D1",
+      },
       {
         name: "Electrical Engineering",
         url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/te/te-ele-2024.pdf",
@@ -71,6 +83,10 @@ export const syllabusLinks = {
       {
         name: "ENTC Engineering",
         url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/te/te-entc-2024.pdf",
+      },
+      {
+        name: "Electronics & Communication Engg (ECE)",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/te/te-ece-2024.pdf",
       },
     ],
 
@@ -81,10 +97,12 @@ export const syllabusLinks = {
         url: "https://aissmsioit.org/wp-content/uploads/2022/08/BE_IT_2019_Course_Syllabus.pdf",
       },
       { name: "AI & DS", url: "#" },
+      { name: "AI & ML", url: "#" },
       { name: "Mechanical Engineering", url: "#" },
       { name: "Civil Engineering", url: "#" },
       { name: "Electrical Engineering", url: "#" },
       { name: "ENTC Engineering", url: "#" },
+      { name: "Electronics & Communication Engg (ECE)", url: "#" },
     ],
   },
 
@@ -110,6 +128,7 @@ export const syllabusLinks = {
         name: "AI & DS",
         url: "https://aissmsioit.org/wp-content/uploads/2021/11/SE_AI-DS_Curriculam_2021_28.06.2021.pdf",
       },
+      { name: "AI & ML", url: "#" },
       {
         name: "Mechanical Engineering",
         url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus2020/SE-Mechanical%20SW%20(Sandwich)%20[2019%20Course]_27.012021.pdf",
@@ -126,6 +145,7 @@ export const syllabusLinks = {
         name: "ENTC Engineering",
         url: "https://aissmsioit.org/wp-content/uploads/2020/07/SE-E-Tc-and-Electronics-Engg.-2019-Patt_01.072020.pdf",
       },
+      { name: "Electronics & Communication Engg (ECE)", url: "#" },
     ],
 
     TE: [
@@ -141,6 +161,7 @@ export const syllabusLinks = {
         name: "AI & DS",
         url: "https://indiraicem.ac.in/assets/pdf/syllabus/TE-syllabus-1.pdf",
       },
+      { name: "AI & ML", url: "#" },
       {
         name: "Mechanical Engineering",
         url: "https://www.aitpune.com/Documents/Mech/TE_Mechanical%20Engineering%20(2019%20Course)_27.07.2021.pdf",
@@ -157,6 +178,7 @@ export const syllabusLinks = {
         name: "ENTC Engineering",
         url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus2025/TE_ECE-ACT_R_2019%20pattern_12082025.pdf?Mobile=1&Source=%2Fsites%2Fdocuments%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3D00d69db3%252Dddae%252D4aee%252Dbeb1%252Dae2ce3acbbb9%26View%3D6cebb808%252D8104%252D422b%252Dbf3d%252D83cf839c6de5%26CurrentPage%3D1",
       },
+      { name: "Electronics & Communication Engg (ECE)", url: "#" },
     ],
 
     BE: [
@@ -173,6 +195,10 @@ export const syllabusLinks = {
         url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus2023/BE%20-%20AIDS%20-%202020%20%20Syllabus_03082023.pdf?Mobile=1&Source=%2Fsites%2Fdocuments%2F%5Flayouts%2Fmobile%2Fdispform%2Easpx%3FList%3D2287d775%252D5837%252D48c6%252Db1f7%252D9bf338f36c4f%26View%3D98410d72%252D1f22%252D4e17%252Dac3e%252D55bb1e160c8b%26ID%3D59%26CurrentPage%3D1",
       },
       {
+        name: "AI & ML",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/syllabus-pdf/be-aiml-2019.pdf",
+      },
+      {
         name: "Mechanical Engineering",
         url: "https://engg.dypvp.edu.in/syllabus/Mechanical/BE-Mech-2019.pdf",
       },
@@ -187,6 +213,10 @@ export const syllabusLinks = {
       {
         name: "ENTC Engineering",
         url: "https://www.aitpune.com/Documents/ETC/BEETC_SYLLABUS.pdf",
+      },
+      {
+        name: "Electronics & Communication Engg (ECE)",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/syllabus-pdf/be-ece-2019.pdf",
       },
     ],
   },
