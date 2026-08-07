@@ -11,63 +11,66 @@ export const syllabusLinks = {
       {
         name: "All Branches — Common Syllabus",
         note: "Single syllabus for all engineering branches",
-        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus2024/FE%202024%20Pattern%20Syllabus%20-%2016%20July%202024%20(1).pdf",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/fe/fe-2024.pdf",
       },
     ],
 
     SE: [
       {
         name: "Computer Engineering",
-        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus2025/SE%20-%20Computer%20Engineering%20-%202024%20Pattern_18072025.pdf",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-comp-2024.pdf",
       },
       {
         name: "Information Technology",
-        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus2025/SE%20IT%202024%20Pattern%20Syllabus_15072025.pdf",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-it-2024.pdf",
       },
       {
         name: "AI & DS",
-        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus2025/SE%20-%20AIandDS%20-%202024%20Pattern_18072025.pdf",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-aids-2024.pdf",
       },
       {
         name: "Mechanical Engineering",
-        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus2025/SE%20(2024)%20Mechanical%20Engineering%20Syllabus_15072025.pdf",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-mech-2024.pdf",
       },
       {
         name: "Civil Engineering",
-        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus2025/SE-Civil2024_pattern-_final_version_22072025.pdf",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-civil-2024.pdf",
       },
       {
         name: "Electrical Engineering",
-        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus2025/SE_Electrical_Syllabus_2024_pattern_14th_July_15072025.pdf",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-ele-2024.pdf",
       },
       {
         name: "ENTC Engineering",
-        url: "https://keystone.ac.in/doc/SE_ENTC_2024.pdf",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-entc-2024.pdf",
       },
     ],
 
     TE: [
       {
         name: "Computer Engineering",
-        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus%202026/TE%20-%20Computer%20Engineering%20-%202024%20Pattern.pdf?Mobile=1&Source=%2Fsites%2Fdocuments%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3D274d1f79%252D0a80%252D45ab%252Db48f%252D70dbd7afc268%26View%3D17e162f7%252D6a44%252D4170%252D965c%252D9d5abe85e882%26CurrentPage%3D1",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/te/te-comp-2024.pdf",
       },
       {
         name: "Information Technology",
-        url: "https://aissmsioit.org/wp-content/uploads/2022/08/Third_Year_Information-Technology_2019_Course_09.07.2021.pdf",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/te/te-it-2024.pdf",
       },
       {
         name: "AI & DS",
-        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus%202026/TE-%20AI%20and%20DS%20-%202024%20Pattern.pdf?Mobile=1&Source=%2Fsites%2Fdocuments%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3D274d1f79%252D0a80%252D45ab%252Db48f%252D70dbd7afc268%26View%3D17e162f7%252D6a44%252D4170%252D965c%252D9d5abe85e882%26CurrentPage%3D1",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/te/te-aids-2024.pdf",
       },
-      { name: "Mechanical Engineering", url: "#" },
+      {
+        name: "Mechanical Engineering",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/te/te-mech-2024.pdf",
+      },
       { name: "Civil Engineering", url: "#" },
       {
         name: "Electrical Engineering",
-        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus%202026/TE_Electrical_Engg_2024_Pattern_Syllabus_10_june_2026_13062026.pdf?Mobile=1&Source=%2Fsites%2Fdocuments%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3D274d1f79%252D0a80%252D45ab%252Db48f%252D70dbd7afc268%26View%3D17e162f7%252D6a44%252D4170%252D965c%252D9d5abe85e882%26FilterField%3DTitle%26FilterValue%3D2024%26CurrentPage%3D1",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/te/te-ele-2024.pdf",
       },
       {
         name: "ENTC Engineering",
-        url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus%202026/TE_EandTC%20_2024%20Pat(R1)_23062026.pdf?Mobile=1&Source=%2Fsites%2Fdocuments%2F_layouts%2Fmobile%2Fview%2Easpx%3FList%3D274d1f79%252D0a80%252D45ab%252Db48f%252D70dbd7afc268%26View%3D17e162f7%252D6a44%252D4170%252D965c%252D9d5abe85e882%26FilterField%3DTitle%26FilterValue%3D2024%26CurrentPage%3D1",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/te/te-entc-2024.pdf",
       },
     ],
 
