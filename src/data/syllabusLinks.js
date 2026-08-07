@@ -1,14 +1,11 @@
-import Modal from "./Modal";
-import { useState, useEffect } from "react";
-
-const yearLabels = {
+export const yearLabels = {
   FE: "First Year (FE)",
   SE: "Second Year (SE)",
   TE: "Third Year (TE)",
   BE: "Final Year (BE)",
 };
 
-const syllabusLinks = {
+export const syllabusLinks = {
   2024: {
     FE: [
       {
@@ -191,97 +188,3 @@ const syllabusLinks = {
     ],
   },
 };
-
-const DlIcon = () => (
-  <svg
-    width="12"
-    height="12"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-    <polyline points="7 10 12 15 17 10" />
-    <line x1="12" y1="15" x2="12" y2="3" />
-  </svg>
-);
-
-export default function SyllabusModal({
-  open,
-  onClose,
-  year,
-  pattern = "2019",
-}) {
-  const [activeYear, setActiveYear] = useState(year || "FE");
-  useEffect(() => {
-    if (year) setActiveYear(year);
-  }, [year]);
-
-  const branches = syllabusLinks[pattern]?.[activeYear] || [];
-
-  return (
-    <Modal
-      open={open}
-      onClose={onClose}
-      title={`SPPU ${yearLabels[activeYear]} Syllabus — ${pattern} Pattern`}
-    >
-      <div className="syllabus-tabs">
-        {["FE", "SE", "TE", "BE"].map((y) => {
-          const active = activeYear === y;
-
-          return (
-            <button
-              className={`syllabus-pill ${active ? "active" : ""}`}
-              key={y}
-              onClick={() => setActiveYear(y)}
-            >
-              {y}
-            </button>
-          );
-        })}
-      </div>
-
-      <p style={{ fontSize: 14, color: "var(--text-3)", marginBottom: 18 }}>
-        Official syllabus PDFs released by Savitribai Phule Pune University.
-      </p>
-
-      <div style={{ display: "grid", gap: 8 }}>
-        {branches.map((b) => (
-          <div
-            key={b.name}
-            className="syllabus-card"
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              padding: "12px 14px",
-              border: "var(--border-w) solid var(--border)",
-              borderRadius: 10,
-              background: "var(--surface2)",
-            }}
-          >
-            <div>
-              <div style={{ fontSize: 13, fontWeight: 500 }}>{b.name}</div>
-              {b.note && (
-                <div style={{ fontSize: 12, color: "var(--text-3)" }}>
-                  {b.note}
-                </div>
-              )}
-            </div>
-
-            <a
-              href={b.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="syllabus-dl-btn"
-            >
-              <DlIcon /> Download
-            </a>
-          </div>
-        ))}
-      </div>
-    </Modal>
-  );
-}

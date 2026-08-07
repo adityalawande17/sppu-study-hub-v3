@@ -126,7 +126,9 @@ function NavLink({ to, children, pathname }) {
         e.currentTarget.style.background = "var(--nav-hover-bg)";
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.color = active ? "var(--nav-text)" : "var(--nav-text-dim)";
+        e.currentTarget.style.color = active
+          ? "var(--nav-text)"
+          : "var(--nav-text-dim)";
         e.currentTarget.style.background = active
           ? "var(--nav-active-bg)"
           : "transparent";
@@ -174,7 +176,9 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   const dropdownLinkStyle = {
@@ -272,9 +276,7 @@ export default function Navbar() {
                   padding: "9px 11px",
                   borderRadius: 8,
                   border: "none",
-                  background: megaOpen
-                    ? "var(--nav-active-bg)"
-                    : "transparent",
+                  background: megaOpen ? "var(--nav-active-bg)" : "transparent",
                   color: megaOpen ? "var(--nav-text)" : "var(--nav-text-dim)",
                   fontSize: 13,
                   fontWeight: 500,
@@ -300,6 +302,9 @@ export default function Navbar() {
               </button>
             </div>
 
+            <NavLink to="/syllabus" pathname={pathname}>
+              Syllabus PDFs
+            </NavLink>
             <NavLink to="/tools" pathname={pathname}>
               Tools
             </NavLink>
@@ -376,7 +381,8 @@ export default function Navbar() {
                   transition: "all .18s",
                 }}
                 onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "var(--nav-icon-bg-hover)")
+                  (e.currentTarget.style.background =
+                    "var(--nav-icon-bg-hover)")
                 }
                 onMouseLeave={(e) =>
                   (e.currentTarget.style.background = "var(--nav-icon-bg)")
@@ -406,7 +412,8 @@ export default function Navbar() {
                     transition: "all .18s",
                   }}
                   onMouseEnter={(e) =>
-                    (e.currentTarget.style.background = "var(--nav-icon-bg-hover)")
+                    (e.currentTarget.style.background =
+                      "var(--nav-icon-bg-hover)")
                   }
                   onMouseLeave={(e) =>
                     (e.currentTarget.style.background = userMenuOpen
@@ -668,7 +675,9 @@ export default function Navbar() {
                 height: 34,
                 borderRadius: 8,
                 border: "1px solid var(--nav-icon-border)",
-                background: mobileOpen ? "var(--nav-active-bg)" : "var(--nav-icon-bg)",
+                background: mobileOpen
+                  ? "var(--nav-active-bg)"
+                  : "var(--nav-icon-bg)",
                 color: "var(--nav-text-dim)",
                 cursor: "pointer",
                 display: "flex",
@@ -679,7 +688,16 @@ export default function Navbar() {
               }}
             >
               {mobileOpen ? (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <line x1="18" y1="6" x2="6" y2="18" />
                   <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
@@ -877,6 +895,57 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
+
+                {/* Syllabus PDF card */}
+                <Link
+                  to="/syllabus"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginTop: 16,
+                    padding: "12px 14px",
+                    borderRadius: 10,
+                    background: "rgba(99,102,241,.08)",
+                    border: "1px solid rgba(99,102,241,.25)",
+                    textDecoration: "none",
+                    transition: "all .18s",
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.background = "rgba(99,102,241,.16)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.background = "rgba(99,102,241,.08)")
+                  }
+                >
+                  <div>
+                    <div
+                      style={{
+                        fontSize: 13,
+                        fontWeight: 600,
+                        color: "var(--heading)",
+                      }}
+                    >
+                      Syllabus PDFs
+                    </div>
+                    <div style={{ fontSize: 11, color: "var(--text-3)" }}>
+                      All branches · 2019 &amp; 2024 pattern
+                    </div>
+                  </div>
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#6366f1"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                  </svg>
+                </Link>
               </div>
 
               {/* Quick Links */}
@@ -1091,7 +1160,6 @@ export default function Navbar() {
             </div>
           </div>
         )}
-
       </header>
 
       {/* ── Mobile sidebar backdrop ── */}
@@ -1212,7 +1280,11 @@ export default function Navbar() {
                   <img
                     src={user.user_metadata.avatar_url}
                     alt=""
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
                   />
                 ) : (
                   (
@@ -1293,7 +1365,10 @@ export default function Navbar() {
             }}
           >
             <button
-              onClick={() => { signInWithGoogle(); setMobileOpen(false); }}
+              onClick={() => {
+                signInWithGoogle();
+                setMobileOpen(false);
+              }}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -1348,7 +1423,8 @@ export default function Navbar() {
                 fontWeight: 500,
                 color: "var(--text)",
                 textDecoration: "none",
-                background: pathname === path ? "var(--surface2)" : "transparent",
+                background:
+                  pathname === path ? "var(--surface2)" : "transparent",
                 marginBottom: 2,
                 transition: "background .12s",
               }}
@@ -1356,6 +1432,73 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
+
+          {/* Syllabus card */}
+          <Link
+            to="/syllabus"
+            onClick={() => setMobileOpen(false)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              padding: "11px 12px",
+              marginTop: 6,
+              borderRadius: 10,
+              background: "rgba(99,102,241,.08)",
+              border: "1px solid rgba(99,102,241,.2)",
+              textDecoration: "none",
+              transition: "background .15s",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.background = "rgba(99,102,241,.16)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = "rgba(99,102,241,.08)")
+            }
+          >
+            <div
+              style={{
+                width: 32,
+                height: 32,
+                borderRadius: 8,
+                background: "rgba(99,102,241,.15)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+              }}
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#6366f1"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+            </div>
+            <div>
+              <div
+                style={{
+                  fontSize: 13,
+                  fontWeight: 600,
+                  color: "var(--heading)",
+                }}
+              >
+                Syllabus PDFs
+              </div>
+              <div style={{ fontSize: 11, color: "var(--text-3)" }}>
+                All branches · 2019 &amp; 2024 pattern
+              </div>
+            </div>
+          </Link>
 
           <p
             style={{
@@ -1390,7 +1533,8 @@ export default function Navbar() {
                 fontWeight: 500,
                 color: "var(--text)",
                 textDecoration: "none",
-                background: pathname === path ? "var(--surface2)" : "transparent",
+                background:
+                  pathname === path ? "var(--surface2)" : "transparent",
                 marginBottom: 2,
                 transition: "background .12s",
               }}
@@ -1482,7 +1626,10 @@ export default function Navbar() {
           </button>
           {user && (
             <button
-              onClick={() => { signOut(); setMobileOpen(false); }}
+              onClick={() => {
+                signOut();
+                setMobileOpen(false);
+              }}
               style={{
                 display: "flex",
                 alignItems: "center",

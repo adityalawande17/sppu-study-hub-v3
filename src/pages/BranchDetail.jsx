@@ -4,7 +4,7 @@ import { useSEO } from "../hooks/useSEO";
 import { useApp } from "../context/AppContext";
 import { branchMeta, branchData } from "../data/branches";
 import SubjectItem from "../components/SubjectItem";
-import SyllabusModal from "../components/SyllabusModal";
+
 
 const DlIcon = () => (
   <svg
@@ -26,7 +26,6 @@ const DlIcon = () => (
 export default function BranchDetail() {
   const { branchKey } = useParams();
   const { pattern } = useApp();
-  const [syllabusOpen, setSyllabusOpen] = useState(false);
   const [activeYear, setActiveYear] = useState("SE");
 
   const meta = branchMeta[branchKey];
@@ -142,13 +141,13 @@ export default function BranchDetail() {
             </div>
           </div>
         </div>
-        <button
-          onClick={() => setSyllabusOpen(true)}
+        <Link
+          to="/syllabus"
           className="syllabus-dl-btn"
           style={{ alignSelf: "flex-start" }}
         >
           <DlIcon /> Syllabus PDF
-        </button>
+        </Link>
       </div>
 
       {/* Mobile-only year tabs */}
@@ -292,12 +291,6 @@ export default function BranchDetail() {
           <p>Google AdSense</p>
         </div>
       </div> */}
-      <SyllabusModal
-        open={syllabusOpen}
-        onClose={() => setSyllabusOpen(false)}
-        year="SE"
-        pattern={pattern}
-      />
     </div>
   );
 }

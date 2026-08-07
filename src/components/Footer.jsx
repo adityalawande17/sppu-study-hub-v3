@@ -50,6 +50,7 @@ export default function Footer() {
               links: [
                 ["First Year", "/first-year"],
                 ["Branches", "/branches"],
+                ["Syllabus PDFs", "/syllabus"],
                 ["Tools", "/tools"],
                 ["News", "/news"],
               ],

@@ -30,6 +30,7 @@ const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminQuestions = lazy(() => import("./pages/AdminQuestions"));
 const AdminAnnouncements = lazy(() => import("./pages/AdminAnnouncements"));
 const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
+const Syllabus = lazy(() => import("./pages/Syllabus"));
 
 // Remounting the boundary on every route change means navigating to a
 // different (working) page recovers automatically after a crash, rather
@@ -120,6 +121,7 @@ export default function App() {
                   <Route path="/onboarding" element={<Onboarding />} />
                   <Route path="/history" element={<History />} />
                   <Route path="/contributions" element={<Contributions />} />
+                  <Route path="/syllabus" element={<Syllabus />} />
                   <Route path="/admin/login" element={<AdminLogin />} />
                   <Route path="/admin/questions" element={<AdminQuestions />} />
                   <Route path="/admin/announcements" element={<AdminAnnouncements />} />

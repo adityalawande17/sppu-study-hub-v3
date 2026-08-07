@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { useApp } from "../context/AppContext";
 import { feSubjects } from "../data/feSubjects";
 import SubjectItem from "../components/SubjectItem";
-import SyllabusModal from "../components/SyllabusModal";
 
 const DlIcon = () => (
   <svg
@@ -25,7 +25,6 @@ const DlIcon = () => (
 export default function FirstYear() {
   const { pattern } = useApp();
   const [activeSem, setActiveSem] = useState("sem1");
-  const [syllabusOpen, setSyllabusOpen] = useState(false);
 
   useSEO({
     title:
@@ -116,12 +115,9 @@ export default function FirstYear() {
             Official PDF covering all FE subjects across both semesters
           </div>
         </div>
-        <button
-          onClick={() => setSyllabusOpen(true)}
-          className="syllabus-dl-btn"
-        >
-          <DlIcon /> Download PDF
-        </button>
+        <Link to="/syllabus" className="syllabus-dl-btn">
+          <DlIcon /> View Syllabus
+        </Link>
       </div>
 
       <div className="info-strip">
@@ -164,12 +160,6 @@ export default function FirstYear() {
           <p>Google AdSense</p>
         </div>
       </div> */}
-      <SyllabusModal
-        open={syllabusOpen}
-        onClose={() => setSyllabusOpen(false)}
-        year="FE"
-        pattern={pattern}
-      />
       <style>{`@media(max-width:640px){.fy-banner{grid-template-columns:1fr!important;padding:24px 20px!important}}`}</style>
     </div>
   );
