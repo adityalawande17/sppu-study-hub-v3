@@ -110,7 +110,7 @@ export default function Home() {
                 marginBottom: 3,
               }}
             >
-              We're still adding content
+              Calling Mechanical &amp; Civil students!
             </div>
             <p
               style={{
@@ -120,9 +120,16 @@ export default function Home() {
                 margin: 0,
               }}
             >
-              We're sorry if the subject you're looking for doesn't have content
-              yet. We're working hard on adding quality notes, question papers
-              and more.
+              We're looking for students from Mechanical and Civil branches to
+              help us add content.{" "}
+              <Link
+                to="/contact"
+                onClick={dismissNotice}
+                style={{ color: "var(--gold-dim)", fontWeight: 600, textDecoration: "none" }}
+              >
+                Contact us
+              </Link>{" "}
+              if you'd like to contribute!
             </p>
           </div>
           <button

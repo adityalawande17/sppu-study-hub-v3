@@ -596,6 +596,29 @@ const it2024 = {
       },
     ],
   },
+  TE: {
+    label: "Third Year (TE)",
+    semesters: [
+      {
+        label: "Semester 5",
+        subjects: [
+          { code: "PCC-301-ITT", name: "Operating System", credits: 3, updated: "2024" },
+          { code: "PCC-302-ITT", name: "Artificial Intelligence & Machine Learning", credits: 3, updated: "2024" },
+          { code: "PCC-303-ITT", name: "Theory of Computation", credits: 3, updated: "2024" },
+          { code: "PEC-321-ITT", name: "Program Elective 1", credits: 3, updated: "2024" },
+        ],
+      },
+      {
+        label: "Semester 6",
+        subjects: [
+          { code: "PCC-351-ITT", name: "Data Science & Big Data Analytics", credits: 3, updated: "2024" },
+          { code: "PCC-352-ITT", name: "Software Engineering & Project Management", credits: 2, updated: "2024" },
+          { code: "PEC-361-ITT", name: "Program Elective 2", credits: 3, updated: "2024" },
+          { code: "PEC-362-ITT", name: "Program Elective 3", credits: 3, updated: "2024" },
+        ],
+      },
+    ],
+  },
 };
 
 const it2019 = {

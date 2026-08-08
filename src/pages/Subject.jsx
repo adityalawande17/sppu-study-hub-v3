@@ -322,7 +322,58 @@ export default function Subject() {
       <div className="material-grid">
         {/* ✅ EMPTY STATE */}
         {!hasAnyContent && !contentLoading && (
-          <div className="empty-msg">Content will be added soon 🚧</div>
+          <div
+            style={{
+              border: "var(--border-w) solid var(--border)",
+              borderRadius: 14,
+              padding: "28px 24px",
+              background: "var(--surface2)",
+              textAlign: "center",
+              maxWidth: 480,
+              margin: "0 auto",
+            }}
+          >
+            <div
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 12,
+                background: "var(--gold-pale)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "0 auto 14px",
+              }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dim)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            </div>
+            <div style={{ fontSize: 15, fontWeight: 700, color: "var(--heading)", marginBottom: 8 }}>
+              No content yet for this subject
+            </div>
+            <p style={{ fontSize: 13, color: "var(--text-3)", lineHeight: 1.65, marginBottom: 20 }}>
+              Do you have notes, a question paper, or practical files for this subject?
+              Even a single question paper helps a fellow student — share what you have and we'll publish it.
+            </p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfU-ODbKRwF-5kpThogiLVHKcOWggi3lVJDDnoP3eBHo33nmw/viewform?usp=sharing&ouid=102365635652061337866"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+              style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "9px 20px", textDecoration: "none", fontSize: 13 }}
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              Contribute content
+            </a>
+          </div>
         )}
 
         {/* PYQ */}
