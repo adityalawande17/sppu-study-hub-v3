@@ -98,7 +98,7 @@ router.get('/:subjectCode', async (req, res) => {
        FROM questions q
        JOIN subjects s ON s.id = q.subject_id
        WHERE s.code = $1
-       ORDER BY q.unit ASC, q.exam_year DESC`,
+       ORDER BY q.id ASC`,
       [subjectCode]
     );
 
