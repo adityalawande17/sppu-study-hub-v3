@@ -29,8 +29,9 @@ export default function BranchDetail() {
   const [activeYear, setActiveYear] = useState("SE");
 
   const meta = branchMeta[branchKey];
-  const data =
-    branchData[pattern]?.[branchKey] || branchData["2019"][branchKey];
+  const has2024Data = !!branchData["2024"]?.[branchKey];
+  const data = branchData[pattern]?.[branchKey] || branchData["2019"][branchKey];
+  const showPatternNotice = pattern === "2024" && !has2024Data;
 
   useSEO({
     title: meta
@@ -83,6 +84,31 @@ export default function BranchDetail() {
         <span className="bc-sep">›</span>
         <span>{meta.short}</span>
       </div>
+
+      {/* 2024 pattern not yet available notice */}
+      {showPatternNotice && (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            padding: "10px 14px",
+            marginBottom: 16,
+            background: "var(--gold-pale)",
+            border: "1px solid var(--gold-dim)",
+            borderRadius: 8,
+            fontSize: 13,
+            color: "var(--text-2)",
+          }}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dim)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="12" />
+            <line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
+          2024 pattern syllabus isn't mapped yet for this branch — showing 2019 pattern subjects.
+        </div>
+      )}
 
       {/* Branch header with accent */}
       <div

@@ -1614,6 +1614,69 @@ const etc2024 = {
       },
     ],
   },
+  TE: {
+    label: "Third Year (TE)",
+    semesters: [
+      {
+        label: "Semester 5",
+        subjects: [
+          {
+            code: "PCC-301-ETC",
+            name: "Microcontrollers & Applications",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC-302-ETC",
+            name: "Cellular Network",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC-303-ETC",
+            name: "VLSI Design",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PEC-321-ETC",
+            name: "Elective I",
+            credits: 3,
+            updated: "2024",
+          },
+        ],
+      },
+      {
+        label: "Semester 6",
+        subjects: [
+          {
+            code: "PCC-351-ETC",
+            name: "Embedded System Design",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC-352-ETC",
+            name: "Broadband Communication",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PEC-361-ETC",
+            name: "Elective II",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PEC-362-ETC",
+            name: "Elective III",
+            credits: 3,
+            updated: "2024",
+          },
+        ],
+      },
+    ],
+  },
 };
 
 //Artificial Intelligence & Data Science Engineering
@@ -1954,11 +2017,10 @@ export const branchData = {
     cs: cs2024,
     it: it2024,
     aids: aids2024,
-    me: me2019,
     ce: ce2024,
     ee: ee2024,
     etc: etc2024,
-    aiml: aiml2019,
+    // me and aiml have no 2024 syllabus data yet — BranchDetail falls back to 2019 with a notice
   },
 };
 

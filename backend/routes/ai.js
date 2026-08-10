@@ -2,8 +2,8 @@ import { Router } from 'express';
 import Anthropic from '@anthropic-ai/sdk';
 import { query } from '../db/index.js';
 import { buildExplainerPrompt } from '../prompts/explainer.js';
-import { aiRateLimiter } from '../middleware/rateLimiter.js';
-import { optionalUser, requireUser } from '../middleware/auth.js';
+import { checkAiRateLimit } from '../middleware/rateLimiter.js';
+import { optionalUser } from '../middleware/auth.js';
 import { getEmbedding, embeddingToSql } from '../utils/embedding.js';
 
 const router = Router();
@@ -91,7 +91,7 @@ function cacheAnswerAndEmbedding(questionId, answer, embedding) {
 }
 
 // ── POST /api/ai/explain (non-streaming) ──────────────────────────────────────
-router.post('/explain', aiRateLimiter, optionalUser, async (req, res) => {
+router.post('/explain', optionalUser, async (req, res) => {
   const { questionText, subjectCode, marks, unit, examYear, examMonth } = req.body;
   if (!questionText?.trim() || !subjectCode?.trim())
     return res.status(400).json({ error: 'questionText and subjectCode are required.' });
@@ -100,22 +100,21 @@ router.post('/explain', aiRateLimiter, optionalUser, async (req, res) => {
     const subject    = await lookupSubject(subjectCode);
     const questionId = await lookupExactQuestion(subject.id, questionText.trim());
 
-    // 1. Exact cache hit
+    // 1. Exact cache hit — limit untouched
     const exactAnswer = await lookupExactCache(questionId);
-    if (exactAnswer) {
-      logUsage(req, '/api/ai/explain', req.userId);
-      return res.json({ answer: exactAnswer, cached: true });
-    }
+    if (exactAnswer) return res.json({ answer: exactAnswer, cached: true });
 
-    // 2. Semantic similarity cache
+    // 2. Semantic similarity cache — limit untouched
     const embedding = await getEmbedding(questionText.trim());
     const similar   = await findSimilarCachedAnswer(subject.id, embedding).catch(() => null);
-    if (similar) {
-      logUsage(req, '/api/ai/explain', req.userId);
-      return res.json({ answer: similar.answer, cached: true });
-    }
+    if (similar) return res.json({ answer: similar.answer, cached: true });
 
-    // 3. Call Claude
+    // 3. Cache miss — check rate limit before calling API
+    const allowed = await checkAiRateLimit(req);
+    if (!allowed)
+      return res.status(429).json({ error: 'AI request limit reached. Try again after 24 hours.' });
+
+    // 4. Call Claude
     const { system, user, maxTokens } = buildPrompt(subject, { unit, marks, examYear, examMonth, questionText: questionText.trim() });
     const message = await anthropic.messages.create({
       model: 'claude-haiku-4-5-20251001', max_tokens: maxTokens,
@@ -134,44 +133,52 @@ router.post('/explain', aiRateLimiter, optionalUser, async (req, res) => {
 });
 
 // ── POST /api/ai/explain/stream ───────────────────────────────────────────────
-router.post('/explain/stream', aiRateLimiter, optionalUser, async (req, res) => {
+router.post('/explain/stream', optionalUser, async (req, res) => {
   const { questionText, subjectCode, marks, unit, examYear, examMonth } = req.body;
   if (!questionText?.trim() || !subjectCode?.trim())
     return res.status(400).json({ error: 'questionText and subjectCode are required.' });
 
-  res.setHeader('Content-Type', 'text/event-stream');
-  res.setHeader('Cache-Control', 'no-cache');
-  res.setHeader('Connection', 'keep-alive');
-  res.flushHeaders();
-
+  // SSE setup deferred until after cache checks so we can still return a clean 429/500.
+  const startSSE = () => {
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+    res.flushHeaders();
+  };
   const send = (payload) => res.write(`data: ${JSON.stringify(payload)}\n\n`);
 
   try {
     const subject    = await lookupSubject(subjectCode);
     const questionId = await lookupExactQuestion(subject.id, questionText.trim());
 
-    // 1. Exact cache hit
+    // 1. Exact cache hit — limit untouched
     const exactAnswer = await lookupExactCache(questionId);
     if (exactAnswer) {
+      startSSE();
       send({ text: exactAnswer, cached: true });
       send({ done: true });
       res.end();
-      logUsage(req, '/api/ai/explain/stream', req.userId);
       return;
     }
 
-    // 2. Semantic similarity cache
+    // 2. Semantic similarity cache — limit untouched
     const embedding = await getEmbedding(questionText.trim());
     const similar   = await findSimilarCachedAnswer(subject.id, embedding).catch(() => null);
     if (similar) {
+      startSSE();
       send({ text: similar.answer, cached: true });
       send({ done: true });
       res.end();
-      logUsage(req, '/api/ai/explain/stream', req.userId);
       return;
     }
 
-    // 3. Stream from Claude
+    // 3. Cache miss — check rate limit before starting SSE or calling API
+    const allowed = await checkAiRateLimit(req);
+    if (!allowed)
+      return res.status(429).json({ error: 'AI request limit reached. Try again after 24 hours.' });
+
+    // 4. Stream from Claude
+    startSSE();
     const { system, user, maxTokens } = buildPrompt(subject, { unit, marks, examYear, examMonth, questionText: questionText.trim() });
     const stream = anthropic.messages.stream({
       model: 'claude-haiku-4-5-20251001', max_tokens: maxTokens,
@@ -196,23 +203,39 @@ router.post('/explain/stream', aiRateLimiter, optionalUser, async (req, res) => 
   } catch (err) {
     console.error('AI stream error:', err.message);
     if (!res.writableEnded) {
-      send({ error: 'AI service unavailable. Try again later.' });
+      if (res.headersSent) {
+        send({ error: 'AI service unavailable. Try again later.' });
+      } else {
+        res.status(500).json({ error: 'AI service unavailable. Try again later.' });
+      }
       res.end();
     }
   }
 });
 
 // ── GET /api/ai/usage ─────────────────────────────────────────────────────────
-router.get('/usage', requireUser, async (req, res) => {
+router.get('/usage', optionalUser, async (req, res) => {
   const LIMIT = 3;
   try {
-    const result = await query(
-      `SELECT COUNT(*) AS count FROM api_usage
-       WHERE user_id = $1
-         AND endpoint IN ('/api/ai/explain', '/api/ai/explain/stream')
-         AND called_at > NOW() - INTERVAL '24 hours'`,
-      [req.userId]
-    );
+    let result;
+    if (req.userId) {
+      result = await query(
+        `SELECT COUNT(*) AS count FROM api_usage
+         WHERE user_id = $1
+           AND endpoint IN ('/api/ai/explain', '/api/ai/explain/stream')
+           AND called_at > NOW() - INTERVAL '24 hours'`,
+        [req.userId]
+      );
+    } else {
+      result = await query(
+        `SELECT COUNT(*) AS count FROM api_usage
+         WHERE ip_address = $1
+           AND user_id IS NULL
+           AND endpoint IN ('/api/ai/explain', '/api/ai/explain/stream')
+           AND called_at > NOW() - INTERVAL '24 hours'`,
+        [req.ip]
+      );
+    }
     const used = parseInt(result.rows[0].count, 10);
     return res.json({ used, limit: LIMIT, remaining: Math.max(0, LIMIT - used) });
   } catch (err) {

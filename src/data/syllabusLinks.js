@@ -52,6 +52,7 @@ export const syllabusLinks = {
         name: "Electronics & Communication Engg (ECE)",
         url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-ece-2024.pdf",
       },
+      { name: "Robotics and Automation", url: "#" },
     ],
 
     TE: [
@@ -88,6 +89,7 @@ export const syllabusLinks = {
         name: "Electronics & Communication Engg (ECE)",
         url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/te/te-ece-2024.pdf",
       },
+      { name: "Robotics and Automation", url: "#" },
     ],
 
     BE: [
@@ -103,6 +105,7 @@ export const syllabusLinks = {
       { name: "Electrical Engineering", url: "#" },
       { name: "ENTC Engineering", url: "#" },
       { name: "Electronics & Communication Engg (ECE)", url: "#" },
+      { name: "Robotics and Automation", url: "#" },
     ],
   },
 
@@ -146,6 +149,7 @@ export const syllabusLinks = {
         url: "https://aissmsioit.org/wp-content/uploads/2020/07/SE-E-Tc-and-Electronics-Engg.-2019-Patt_01.072020.pdf",
       },
       { name: "Electronics & Communication Engg (ECE)", url: "#" },
+      { name: "Robotics and Automation", url: "#" },
     ],
 
     TE: [
@@ -179,6 +183,7 @@ export const syllabusLinks = {
         url: "http://collegecirculars.unipune.ac.in/sites/documents/Syllabus2025/TE_ECE-ACT_R_2019%20pattern_12082025.pdf?Mobile=1&Source=%2Fsites%2Fdocuments%2F%5Flayouts%2Fmobile%2Fview%2Easpx%3FList%3D00d69db3%252Dddae%252D4aee%252Dbeb1%252Dae2ce3acbbb9%26View%3D6cebb808%252D8104%252D422b%252Dbf3d%252D83cf839c6de5%26CurrentPage%3D1",
       },
       { name: "Electronics & Communication Engg (ECE)", url: "#" },
+      { name: "Robotics and Automation", url: "#" },
     ],
 
     BE: [
@@ -218,6 +223,7 @@ export const syllabusLinks = {
         name: "Electronics & Communication Engg (ECE)",
         url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/syllabus-pdf/be-ece-2019.pdf",
       },
+      { name: "Robotics and Automation", url: "#" },
     ],
   },
 };

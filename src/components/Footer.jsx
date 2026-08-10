@@ -51,6 +51,7 @@ export default function Footer() {
                 ["First Year", "/first-year"],
                 ["Branches", "/branches"],
                 ["Syllabus PDFs", "/syllabus"],
+                ["Blog", "/blog"],
                 ["Tools", "/tools"],
                 ["News", "/news"],
               ],

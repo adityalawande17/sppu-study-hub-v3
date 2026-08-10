@@ -131,6 +131,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
     const decoder = new TextDecoder();
     let buffer = "";
     let fullText = "";
+    let wasCached = false;
     outer: while (true) {
       const { done, value } = await reader.read();
       if (done) break;
@@ -143,16 +144,20 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
         try { parsed = JSON.parse(line.slice(6)); } catch { continue; }
         if (parsed.error) throw new Error(parsed.error);
         if (parsed.done) break outer;
-        if (parsed.text) { fullText += parsed.text; onChunk(fullText); }
+        if (parsed.text) {
+          if (parsed.cached) wasCached = true;
+          fullText += parsed.text;
+          onChunk(fullText);
+        }
       }
     }
-    return fullText;
+    return { text: fullText, cached: wasCached };
   }
 
   async function explainQuestion(qId, questionText, marks, unit, paper) {
     setAiStates((prev) => ({ ...prev, [qId]: { ...prev[qId], loading: true, error: null, answer: null } }));
     try {
-      const fullAnswer = await streamAI(
+      const { text: fullAnswer, cached: wasCached } = await streamAI(
         {
           questionText, subjectCode,
           marks: marks ? parseInt(marks) : null,
@@ -164,7 +169,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
       );
       setAiStates((prev) => ({ ...prev, [qId]: { ...prev[qId], loading: false, answer: fullAnswer } }));
       saveToHistory({
-        question: questionText, answer: fullAnswer, cached: false,
+        question: questionText, answer: fullAnswer, cached: wasCached,
         subjectCode, subjectName,
         paperExam: paper?.exam ?? null, paperYear: paper?.year ?? null,
         marks: marks ? parseInt(marks) : null, unit: unit ? parseInt(unit) : null,
@@ -179,7 +184,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
     if (!s.question?.trim()) return;
     setPaperAiStates((prev) => ({ ...prev, [idx]: { ...prev[idx], loading: true, answer: null, error: null } }));
     try {
-      const fullAnswer = await streamAI(
+      const { text: fullAnswer, cached: wasCached } = await streamAI(
         {
           questionText: s.question.trim(), subjectCode,
           marks: s.marks ? parseInt(s.marks) : null,
@@ -191,7 +196,7 @@ export default function PYQAccordion({ pyq, subjectCode, subjectName }) {
       );
       setPaperAiStates((prev) => ({ ...prev, [idx]: { ...prev[idx], loading: false, answer: fullAnswer } }));
       saveToHistory({
-        question: s.question.trim(), answer: fullAnswer, cached: false,
+        question: s.question.trim(), answer: fullAnswer, cached: wasCached,
         subjectCode, subjectName,
         paperExam: paper?.exam ?? null, paperYear: paper?.year ?? null,
         marks: s.marks ? parseInt(s.marks) : null, unit: s.unit ? parseInt(s.unit) : null,

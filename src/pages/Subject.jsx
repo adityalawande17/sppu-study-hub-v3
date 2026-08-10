@@ -5,6 +5,7 @@ import { useApp } from "../context/AppContext";
 import UnitAccordion from "../components/UnitAccordion";
 import PracticalAccordion from "../components/PracticalAccordion";
 import PYQAccordion from "../components/PYQAccordion";
+import ShareBar from "../components/ShareBar";
 import { searchIndex } from "../data/branches";
 import { feSearchIndex } from "../data/feSubjects";
 
@@ -187,15 +188,7 @@ export default function Subject() {
             <span className="meta-dot" /> SPPU
           </span>
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 8,
-            marginTop: 12,
-            flexWrap: "wrap",
-          }}
-        >
+        <div className="subject-action-row">
           <div
             style={{
               fontSize: 12,
@@ -240,6 +233,9 @@ export default function Subject() {
             {saved ? <BookmarkFill /> : <BookmarkEmpty />}
             {saved ? "Saved" : "Save"}
           </button>
+          <div className="subject-action-right">
+            <ShareBar title={`${subject.name} — Notes & Question Papers`} />
+          </div>
         </div>
       </div>
 

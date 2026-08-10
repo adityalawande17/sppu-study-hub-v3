@@ -311,6 +311,9 @@ export default function Navbar() {
             <NavLink to="/news" pathname={pathname}>
               News
             </NavLink>
+            <NavLink to="/blog" pathname={pathname}>
+              Blog
+            </NavLink>
             <NavLink to="/history" pathname={pathname}>
               AI History
             </NavLink>
@@ -1514,6 +1517,7 @@ export default function Navbar() {
             Tools & Pages
           </p>
           {[
+            ["/blog", "Blog"],
             ["/tools", "SPPU Tools"],
             ["/news", "News & Updates"],
             ["/history", "AI Answer History"],

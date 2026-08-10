@@ -31,6 +31,7 @@ export default defineConfig({
         '/branches/etc',
         '/branches/aiml',
         '/syllabus',
+        '/blog',
         '/about',
         '/contact',
         '/contributions',
