@@ -56,11 +56,11 @@ export default function ShareBar({ title, url }) {
         target="_blank"
         rel="noopener noreferrer"
         className="share-btn share-btn-wa"
+        title="Share on WhatsApp"
         onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.82"; }}
         onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
       >
         <WaIcon />
-        <span className="share-label">WhatsApp</span>
       </a>
 
       <a
@@ -68,11 +68,11 @@ export default function ShareBar({ title, url }) {
         target="_blank"
         rel="noopener noreferrer"
         className="share-btn share-btn-tg"
+        title="Share on Telegram"
         onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.82"; }}
         onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
       >
         <TgIcon />
-        <span className="share-label">Telegram</span>
       </a>
 
       <button
