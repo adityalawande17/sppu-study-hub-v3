@@ -1,22 +1,65 @@
 ﻿{
-    "code":  "402041",
-    "name":  "Heating Ventilation Air-Conditioning and Refrigeration",
-    "branch":  "Mechanical Engineering",
-    "branchKey":  "me",
-    "year":  "BE",
-    "sem":  "Sem 7",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "402041",
+  "name": "Heating Ventilation Air-Conditioning and Refrigeration",
+  "branch": "Mechanical Engineering",
+  "branchKey": "me",
+  "year": "BE",
+  "sem": "Sem 7",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Heating%20Ventilation%20Air%20Condi.%20%26%20Refrigeration/Nov_Dec_2025.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Heating%20Ventilation%20Air%20Condi.%20%26%20Refrigeration/May_Jun_2025.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "August 2025 (Insem)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Heating%20Ventilation%20Air%20Condi.%20%26%20Refrigeration/August_2025.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Heating%20Ventilation%20Air%20Condi.%20%26%20Refrigeration/Nov_Dec_2024.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Heating%20Ventilation%20Air%20Condi.%20%26%20Refrigeration/May_Jun_2024.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Sept 2024 (Insem)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Heating%20Ventilation%20Air%20Condi.%20%26%20Refrigeration/Sept-%202024.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Heating%20Ventilation%20Air%20Condi.%20%26%20Refrigeration/Nov_Dec_2023.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Heating%20Ventilation%20Air%20Condi.%20%26%20Refrigeration/May_Jun_2023.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "Sept 2023 (Insem)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Heating%20Ventilation%20Air%20Condi.%20%26%20Refrigeration/Sep%20-%202023.pdf"
+    },
+    {
+      "year": "2022",
+      "exam": "Sept 2022 (Insem)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Heating%20Ventilation%20Air%20Condi.%20%26%20Refrigeration/Oct%20-%202022.pdf"
+    }
+  ],
+  "books": []
 }

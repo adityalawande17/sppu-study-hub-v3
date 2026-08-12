@@ -1,22 +1,101 @@
 ﻿{
-    "code":  "401004",
-    "name":  "Elective IV",
-    "branch":  "Civil Engineering",
-    "branchKey":  "ce",
-    "year":  "BE",
-    "sem":  "Sem 7",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
+  "code": "401004",
+  "name": "Elective IV",
+  "branch": "Civil Engineering",
+  "branchKey": "ce",
+  "year": "BE",
+  "sem": "Sem 7",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025 (Air Pollution and Control)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Air%20Pollution%20and%20Control%20-%20Ele%20IV/Nov_Dec_2025.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025 (Air Pollution and Control)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Air%20Pollution%20and%20Control%20-%20Ele%20IV/May_Jun_2025.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "August 2025 (Insem)(Air Pollution and Control)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Air%20Pollution%20and%20Control%20-%20Ele%20IV/August_2025.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024 (Air Pollution and Control)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Air%20Pollution%20and%20Control%20-%20Ele%20IV/May_Jun_2024.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Sept 2024 (Insem)(Air Pollution and Control)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Air%20Pollution%20and%20Control%20-%20Ele%20IV/Sept-%202024.pdf"
+    },
 
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023 (Air Pollution and Control)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Air%20Pollution%20and%20Control%20-%20Ele%20IV/May_Jun_2023.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "Sept 2023 (Insem)(Air Pollution and Control)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Air%20Pollution%20and%20Control%20-%20Ele%20IV/Sep%20-%202023.pdf"
+    },
+    {
+      "year": "2022",
+      "exam": "Nov / Dec 2022 (Air Pollution and Control)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Air%20Pollution%20and%20Control%20-%20Ele%20IV/Nov_Dec_2022.pdf"
+    },
+    {
+      "year": "2022",
+      "exam": "Sept 2022 (Insem)(Air Pollution and Control)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Air%20Pollution%20and%20Control%20-%20Ele%20IV/Oct%20-%202022.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025 (Airport and Bridge Engineering)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Airport%20and%20Bridge%20Engineering%20-%20Ele%20IV/May_Jun_2025.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024 (Airport and Bridge Engineering)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Airport%20and%20Bridge%20Engineering%20-%20Ele%20IV/Nov_Dec_2024.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024 (Airport and Bridge Engineering)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Airport%20and%20Bridge%20Engineering%20-%20Ele%20IV/May_Jun_2024.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Sept 2024 (Insem)(Airport and Bridge Engineering)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Airport%20and%20Bridge%20Engineering%20-%20Ele%20IV/Sept-%202024.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023 (Airport and Bridge Engineering)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Airport%20and%20Bridge%20Engineering%20-%20Ele%20IV/Nov_Dec_2023.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023 (Airport and Bridge Engineering)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Airport%20and%20Bridge%20Engineering%20-%20Ele%20IV/May_Jun_2023.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "Sept 2023 (Insem)(Airport and Bridge Engineering)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Airport%20and%20Bridge%20Engineering%20-%20Ele%20IV/Sep%20-%202023.pdf"
+    },
+    {
+      "year": "2022",
+      "exam": "Sept 2022 (Insem)(Airport and Bridge Engineering)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/civil/2019%20Pattern/Airport%20and%20Bridge%20Engineering%20-%20Ele%20IV/Oct%20-%202022.pdf"
+    }
+  ],
+  "books": []
 }

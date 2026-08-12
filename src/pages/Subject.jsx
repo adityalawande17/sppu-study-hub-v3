@@ -91,11 +91,17 @@ export default function Subject() {
   useEffect(() => {
     setContent(null);
     setContentLoading(true);
-    const path = Object.keys(modules).find(p =>
-      p.split("/").pop().replace(".json", "") === code
+    const path = Object.keys(modules).find(
+      (p) => p.split("/").pop().replace(".json", "") === code,
     );
-    if (!path) { setContentLoading(false); return; }
-    modules[path]().then(m => { setContent(m.default ?? null); setContentLoading(false); });
+    if (!path) {
+      setContentLoading(false);
+      return;
+    }
+    modules[path]().then((m) => {
+      setContent(m.default ?? null);
+      setContentLoading(false);
+    });
   }, [code]);
   //const practicals = content?.practicals || undefined; // undefined → PracticalAccordion uses its own defaults
   //const pyq = content?.pyq || defaultPYQ;
@@ -246,75 +252,6 @@ export default function Subject() {
         </div>
       </div> */}
 
-      {is2024Pattern && (
-        <div
-          style={{
-            background: "var(--gold-pale)",
-            border: "1px solid var(--gold-dim)",
-            borderRadius: 12,
-            padding: "16px 20px",
-            marginBottom: 20,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 16,
-            flexWrap: "wrap",
-          }}
-        >
-          <div style={{ flex: 1, minWidth: 200 }}>
-            <p
-              style={{
-                fontSize: 14,
-                fontWeight: 700,
-                color: "var(--heading)",
-                margin: "0 0 5px",
-                display: "flex",
-                alignItems: "center",
-                gap: 7,
-              }}
-            >
-              Content missing for this subject?
-            </p>
-            <p
-              style={{
-                fontSize: 12,
-                color: "var(--text-3)",
-                margin: 0,
-                lineHeight: 1.6,
-              }}
-            >
-              The <strong>2019 pattern</strong> covers the same syllabus as 2024
-              — notes and question papers from 2019 are fully applicable here.
-              Switch pattern to browse available resources.
-            </p>
-          </div>
-          <button
-            onClick={() => {
-              switchPattern("2019");
-              navigate("/branches");
-            }}
-            style={{
-              flexShrink: 0,
-              padding: "9px 18px",
-              borderRadius: 8,
-              border: "1px solid var(--gold-dim)",
-              background: "var(--gold)",
-              color: "#111",
-              fontSize: 12,
-              fontWeight: 700,
-              cursor: "pointer",
-              fontFamily: "Inter, sans-serif",
-              whiteSpace: "nowrap",
-              transition: "opacity .15s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
-          >
-            Switch to 2019 Pattern →
-          </button>
-        </div>
-      )}
-
       <div className="material-grid">
         {/* ✅ EMPTY STATE */}
         {!hasAnyContent && !contentLoading && (
@@ -341,7 +278,16 @@ export default function Subject() {
                 margin: "0 auto 14px",
               }}
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dim)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--gold-dim)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
                 <polyline points="14 2 14 8 20 8" />
                 <line x1="16" y1="13" x2="8" y2="13" />
@@ -349,21 +295,52 @@ export default function Subject() {
                 <polyline points="10 9 9 9 8 9" />
               </svg>
             </div>
-            <div style={{ fontSize: 15, fontWeight: 700, color: "var(--heading)", marginBottom: 8 }}>
+            <div
+              style={{
+                fontSize: 15,
+                fontWeight: 700,
+                color: "var(--heading)",
+                marginBottom: 8,
+              }}
+            >
               No content yet for this subject
             </div>
-            <p style={{ fontSize: 13, color: "var(--text-3)", lineHeight: 1.65, marginBottom: 20 }}>
-              Do you have notes, a question paper, or practical files for this subject?
-              Even a single question paper helps a fellow student — share what you have and we'll publish it.
+            <p
+              style={{
+                fontSize: 13,
+                color: "var(--text-3)",
+                lineHeight: 1.65,
+                marginBottom: 20,
+              }}
+            >
+              Do you have notes, a question paper, or practical files for this
+              subject? Even a single question paper helps a fellow student —
+              share what you have and we'll publish it.
             </p>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSfU-ODbKRwF-5kpThogiLVHKcOWggi3lVJDDnoP3eBHo33nmw/viewform?usp=sharing&ouid=102365635652061337866"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
-              style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "9px 20px", textDecoration: "none", fontSize: 13 }}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "9px 20px",
+                textDecoration: "none",
+                fontSize: 13,
+              }}
             >
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="5" y1="12" x2="19" y2="12" />
               </svg>
@@ -432,6 +409,75 @@ export default function Subject() {
             <div className="mat-section-body">
               {hasPracticals && <PracticalAccordion practicals={practicals} />}
             </div>
+          </div>
+        )}
+
+        {is2024Pattern && (
+          <div
+            style={{
+              background: "var(--gold-pale)",
+              border: "1px solid var(--gold-dim)",
+              borderRadius: 12,
+              padding: "16px 20px",
+              marginBottom: 20,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 16,
+              flexWrap: "wrap",
+            }}
+          >
+            <div style={{ flex: 1, minWidth: 200 }}>
+              <p
+                style={{
+                  fontSize: 14,
+                  fontWeight: 700,
+                  color: "var(--heading)",
+                  margin: "0 0 5px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 7,
+                }}
+              >
+                Content missing for this subject?
+              </p>
+              <p
+                style={{
+                  fontSize: 12,
+                  color: "var(--text-3)",
+                  margin: 0,
+                  lineHeight: 1.6,
+                }}
+              >
+                The <strong>2019 pattern</strong> covers the same syllabus as
+                2024 — notes and question papers from 2019 are fully applicable
+                here. Switch pattern to browse available resources.
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                switchPattern("2019");
+                navigate("/branches");
+              }}
+              style={{
+                flexShrink: 0,
+                padding: "9px 18px",
+                borderRadius: 8,
+                border: "1px solid var(--gold-dim)",
+                background: "var(--gold)",
+                color: "#111",
+                fontSize: 12,
+                fontWeight: 700,
+                cursor: "pointer",
+                fontFamily: "Inter, sans-serif",
+                whiteSpace: "nowrap",
+                transition: "opacity .15s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+            >
+              Switch to 2019 Pattern →
+            </button>
           </div>
         )}
 

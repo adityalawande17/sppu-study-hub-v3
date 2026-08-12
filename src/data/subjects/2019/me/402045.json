@@ -1,22 +1,115 @@
 ﻿{
-    "code":  "402045",
-    "name":  "Elective IV",
-    "branch":  "Mechanical Engineering",
-    "branchKey":  "me",
-    "year":  "BE",
-    "sem":  "Sem 7",
-    "credits":  3,
-    "pattern":  "2019",
-    "units":  [
-
-              ],
-    "practicals":  [
-
-                   ],
-    "pyq":  [
-
-            ],
-    "books":  [
-
-              ]
+  "code": "402045",
+  "name": "Elective IV",
+  "branch": "Mechanical Engineering",
+  "branchKey": "me",
+  "year": "BE",
+  "sem": "Sem 7",
+  "credits": 3,
+  "pattern": "2019",
+  "units": [],
+  "practicals": [],
+  "pyq": [
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025 (Operation Research)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Operation%20Research%20-%20Ele%20IV/Nov_Dec_2025.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025 (Operation Research)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Operation%20Research%20-%20Ele%20IV/May_Jun_2025.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "August 2025 (Insem)(Operation Research)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Operation%20Research%20-%20Ele%20IV/August_2025.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024 (Operation Research)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Operation%20Research%20-%20Ele%20IV/Nov_Dec_2024.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024 (Operation Research)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Operation%20Research%20-%20Ele%20IV/May_Jun_2024.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Sept 2024 (Insem)(Operation Research)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Operation%20Research%20-%20Ele%20IV/Sept-%202024.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023 (Operation Research)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Operation%20Research%20-%20Ele%20IV/Nov_Dec_2023.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023 (Operation Research)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Operation%20Research%20-%20Ele%20IV/May_Jun_2023.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "Sept 2023 (Insem)(Operation Research)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Operation%20Research%20-%20Ele%20IV/Sep%20-%202023.pdf"
+    },
+    {
+      "year": "2022",
+      "exam": "Sept 2022 (Insem)(Operation Research)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Operation%20Research%20-%20Ele%20IV/Oct%20-%202022.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "Nov / Dec 2025 (Product Design & Development)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Product%20Design%20%26%20Development%20-%20Ele%20IV/Nov_Dec_2025.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "May / Jun 2025 (Product Design & Development)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Product%20Design%20%26%20Development%20-%20Ele%20IV/May_Jun_2025.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "August 2025 (Insem)(Product Design & Development)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Product%20Design%20%26%20Development%20-%20Ele%20IV/August_2025.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024 (Product Design & Development)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Product%20Design%20%26%20Development%20-%20Ele%20IV/Nov_Dec_2024.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "May / Jun 2024 (Product Design & Development)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Product%20Design%20%26%20Development%20-%20Ele%20IV/May_Jun_2024.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Sept 2024 (Insem)(Product Design & Development)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Product%20Design%20%26%20Development%20-%20Ele%20IV/Sept-%202024.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "Nov / Dec 2023 (Product Design & Development)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Product%20Design%20%26%20Development%20-%20Ele%20IV/Nov_Dec_2023.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "May / Jun 2023 (Product Design & Development)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Product%20Design%20%26%20Development%20-%20Ele%20IV/May_Jun_2023.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "Sept 2023 (Insem)(Product Design & Development)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Product%20Design%20%26%20Development%20-%20Ele%20IV/Sep%20-%202023.pdf"
+    },
+    {
+      "year": "2022",
+      "exam": "Sept 2022 (Insem)(Product Design & Development)",
+      "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2019/be/mech/Product%20Design%20%26%20Development%20-%20Ele%20IV/Oct%20-%202022.pdf"
+    }
+  ],
+  "books": []
 }
