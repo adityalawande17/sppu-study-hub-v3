@@ -703,7 +703,7 @@ h3 {
 }
 .legal-wrap h2 {
   font-size: 19px;
-  color: var(--navy);
+  color: white;
   margin: 26px 0 9px;
 }
 .legal-wrap h2:first-child {

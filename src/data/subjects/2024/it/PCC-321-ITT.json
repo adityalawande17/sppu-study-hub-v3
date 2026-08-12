@@ -1,0 +1,37 @@
+{
+  "code": "PCC-301-ITT",
+  "name": "Program Elective 1",
+  "branch": "Information Technology Engineering",
+  "branchKey": "it",
+  "year": "TE",
+  "sem": "Semester 5",
+  "credits": 3,
+  "pattern": "2024",
+  "units": [
+    {
+      "title": "Unit 1 - ",
+      "files": [
+        {
+          "name": "Unit 1 Question Bank",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "title": "Unit 2 - ",
+      "files": [
+        {
+          "name": "Unit 2 Question Bank",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": ""
+        }
+      ]
+    }
+  ],
+  "practicals": [],
+  "pyq": [],
+  "books": []
+}
