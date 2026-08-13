@@ -4,7 +4,8 @@ import { branchMeta } from "../data/branches";
 
 export default function Branches() {
   useSEO({
-    title: "SPPU Engineering Branches — CS IT ME Civil EE ETC | SPPUStudyHUB",
+    title:
+      "SPPU Engineering Branches — CS IT AIDS AIML ME Civil EE ETC | SPPUStudyHUB",
     description:
       "Browse SPPU engineering study materials by branch. Computer Science, IT, Mechanical, Civil, Electrical, E and TC. SE, TE and BE subjects with notes and question papers.",
   });

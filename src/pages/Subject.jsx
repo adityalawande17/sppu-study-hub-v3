@@ -121,7 +121,7 @@ export default function Subject() {
   const is2024Pattern = pattern === "2024";
 
   useSEO({
-    title: `${subject.name} Notes & Papers — SPPU ${subject.branch} ${subject.sem} | SPPUStudyHUB`,
+    title: `${subject.name} Notes & Papers — SPPU ${pattern} Pattern ${subject.branch} | SPPUStudyHUB`,
     description: `Free notes, question papers and practicals for ${subject.name} (${subject.code}). SPPU ${subject.branch} ${subject.sem}. Download unit-wise PDFs.`,
     schema: {
       "@context": "https://schema.org",

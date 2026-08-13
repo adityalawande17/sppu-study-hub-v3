@@ -38,7 +38,7 @@ const ComingSoonBadge = () => (
 );
 
 export default function Syllabus() {
-  const [pattern, setPattern] = useState("2019");
+  const [pattern, setPattern] = useState("2024");
   const [activeYear, setActiveYear] = useState("FE");
 
   const branches = syllabusLinks[pattern]?.[activeYear] ?? [];
