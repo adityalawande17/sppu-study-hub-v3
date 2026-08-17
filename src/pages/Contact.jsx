@@ -53,7 +53,7 @@ export default function Contact() {
               lineHeight: 1.6,
             }}
           >
-            contact.sppustudyhub@gmail.com
+            support@sppustudyhub.in
           </p>
         </div>
 
