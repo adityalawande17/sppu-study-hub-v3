@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function NoticeStrip({
-  message = "Welcome to SPPU StudyHub, made by a student for students.",
+  message = "B.E 2019 Pattern Insem Time Table Released.",
   link = "/news",
 }) {
   const [visible, setVisible] = useState(true);
