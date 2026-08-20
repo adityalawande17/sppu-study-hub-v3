@@ -36,6 +36,21 @@ const iconProps = {
 
 const slides = [
   {
+    title: "Select your pattern",
+    desc: "Choose the syllabus pattern you follow so subjects, PYQs, and PDFs open with the right course structure.",
+    kind: "pattern",
+    icon: (
+      <svg {...iconProps}>
+        <rect x="3" y="4" width="18" height="16" rx="2" />
+        <path d="M8 2v4" />
+        <path d="M16 2v4" />
+        <path d="M3 10h18" />
+        <path d="M8 14h3" />
+        <path d="M13 14h3" />
+      </svg>
+    ),
+  },
+  {
     title: "Track your progress",
     desc: "Tick off units and PYQ questions as you finish them — your semester completion updates automatically.",
     icon: (
@@ -78,7 +93,7 @@ const slides = [
 ];
 
 export default function LoginPromoModal({ open, onClose }) {
-  const { signInWithGoogle } = useApp();
+  const { pattern, switchPattern, signInWithGoogle } = useApp();
   const [step, setStep] = useState(0);
   const isLast = step === slides.length - 1;
   const slide = slides[step];
@@ -94,7 +109,12 @@ export default function LoginPromoModal({ open, onClose }) {
   }
 
   return (
-    <Modal open={open} onClose={handleClose} title="Why sign in?" maxWidth={420}>
+    <Modal
+      open={open}
+      onClose={handleClose}
+      title="Why sign in?"
+      maxWidth={420}
+    >
       <div style={{ textAlign: "center", padding: "8px 4px 4px" }}>
         <div
           style={{
@@ -136,7 +156,32 @@ export default function LoginPromoModal({ open, onClose }) {
           {slide.desc}
         </p>
 
-        <div style={{ display: "flex", justifyContent: "center", gap: 6, marginBottom: 22 }}>
+        {slide.kind === "pattern" && (
+          <div style={{ marginBottom: 22 }}>
+            <div className="pattern-pill login-promo-pattern-pill">
+              {["2019", "2024"].map((p) => (
+                <button
+                  key={p}
+                  className={`pattern-opt ${pattern === p ? "active" : ""}`}
+                  onClick={() => switchPattern(p)}
+                  type="button"
+                  aria-pressed={pattern === p}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: 6,
+            marginBottom: 22,
+          }}
+        >
           {slides.map((_, i) => (
             <span
               key={i}
@@ -169,6 +214,16 @@ export default function LoginPromoModal({ open, onClose }) {
           </button>
         )}
       </div>
+      <style>{`
+        .login-promo-pattern-pill {
+          display: inline-flex !important;
+        }
+        .login-promo-pattern-pill .pattern-opt {
+          min-width: 78px;
+          padding: 8px 18px;
+          font-size: 13px;
+        }
+      `}</style>
     </Modal>
   );
 }
