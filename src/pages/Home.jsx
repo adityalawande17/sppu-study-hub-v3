@@ -6,6 +6,7 @@ import { branchMeta } from "../data/branches";
 import { newsItems, categoryLabels } from "../data/news";
 import ContributeModal from "../components/ContributeModal";
 
+import CookieConsentBanner from "../components/CookieConsentBanner";
 import LoginPromoModal from "../components/LoginPromoModal";
 
 export default function Home() {
@@ -1284,6 +1285,7 @@ export default function Home() {
         onClose={() => setContributeOpen(false)}
       />
       <LoginPromoModal open={loginPromoOpen} onClose={dismissLoginPromo} />
+      <CookieConsentBanner />
 
       <style>{`
         @media(max-width:900px){
