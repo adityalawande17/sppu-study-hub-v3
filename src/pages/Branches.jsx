@@ -41,7 +41,6 @@ export default function Branches() {
               borderRadius: 14,
               textDecoration: "none",
               transition: "all .2s",
-              borderLeft: `4px solid ${b.color}`,
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.boxShadow = "var(--shadow-md)";

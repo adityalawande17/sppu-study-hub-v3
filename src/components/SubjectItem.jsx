@@ -13,9 +13,6 @@ export default function SubjectItem({
   return (
     <div
       className="subject-item"
-      style={{
-        borderLeft: accentColor ? `3px solid ${accentColor}` : undefined,
-      }}
       onClick={() => navigate(`/subject/${subject.code}`, { state })}
       role="button"
       tabIndex={0}
@@ -34,9 +31,7 @@ export default function SubjectItem({
       >
         <span className="subject-code">{subject.code}</span>
         <div style={{ minWidth: 0 }}>
-          <div className="subject-name">
-            {subject.name}
-          </div>
+          <div className="subject-name">{subject.name}</div>
           <div className="subject-credits">
             {subject.credits} Credits{subject.type ? ` · ${subject.type}` : ""}
           </div>

@@ -64,7 +64,6 @@ export default function Home() {
             width: 320,
             background: "var(--surface)",
             border: "var(--border-w) solid var(--border)",
-            borderLeft: "4px solid var(--gold)",
             borderRadius: 12,
             padding: "14px 16px",
             boxShadow: "var(--shadow-lg)",
@@ -126,7 +125,11 @@ export default function Home() {
               <Link
                 to="/contact"
                 onClick={dismissNotice}
-                style={{ color: "var(--gold-dim)", fontWeight: 600, textDecoration: "none" }}
+                style={{
+                  color: "var(--gold-dim)",
+                  fontWeight: 600,
+                  textDecoration: "none",
+                }}
               >
                 Contact us
               </Link>{" "}
