@@ -24,6 +24,16 @@ export const contributors = [
     college: "JSCOE, Pune",
     linkedin: null,
   },
+  {
+    name: "Kiran Belsare",
+    college: "JSCOE, Pune",
+    linkedin: "https://www.linkedin.com/in/kiranbelsare",
+  },
+  {
+    name: "Tanaj Manyar",
+    college: "",
+    linkedin: null,
+  },
   // add each contributor here when someone submits materials
   // college: "College Name, City"
   // linkedin: "https://linkedin.com/in/username" or null
