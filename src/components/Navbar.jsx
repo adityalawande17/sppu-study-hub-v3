@@ -260,11 +260,11 @@ export default function Navbar() {
             <NavLink to="/" pathname={pathname}>
               Home
             </NavLink>
-            {user && (
+            {/* {user && (
               <NavLink to="/dashboard" pathname={pathname}>
                 Dashboard
               </NavLink>
-            )}
+            )} */}
             {/* Browse mega trigger */}
             <div ref={megaRef} style={{ position: "relative" }}>
               <button
