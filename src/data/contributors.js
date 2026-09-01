@@ -34,6 +34,11 @@ export const contributors = [
     college: "",
     linkedin: null,
   },
+  {
+    name: "Aniket Sable",
+    college: "",
+    linkedin: null,
+  },
   // add each contributor here when someone submits materials
   // college: "College Name, City"
   // linkedin: "https://linkedin.com/in/username" or null
