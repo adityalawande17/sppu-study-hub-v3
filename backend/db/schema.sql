@@ -135,3 +135,26 @@ CREATE INDEX IF NOT EXISTS api_usage_ip_idx      ON api_usage(ip_address, called
 CREATE INDEX IF NOT EXISTS unit_progress_user_idx     ON unit_progress(user_id);
 CREATE INDEX IF NOT EXISTS question_progress_user_idx ON question_progress(user_id);
 CREATE INDEX IF NOT EXISTS academic_records_user_idx  ON academic_records(user_id);
+
+-- Peer Notes
+CREATE TABLE IF NOT EXISTS peer_notes (
+  id               SERIAL PRIMARY KEY,
+  user_id          UUID REFERENCES auth.users(id) ON DELETE SET NULL,
+  subject_code     VARCHAR(30) NOT NULL,
+  title            VARCHAR(120) NOT NULL,
+  is_anonymous     BOOLEAN NOT NULL DEFAULT false,
+  uploader_name    VARCHAR(120),
+  file_key         TEXT NOT NULL,
+  file_url         TEXT NOT NULL,
+  file_type        VARCHAR(10) NOT NULL,
+  mime_type        VARCHAR(120) NOT NULL,
+  file_size_bytes  INT NOT NULL,
+  is_approved      BOOLEAN NOT NULL DEFAULT false,
+  reviewed_at      TIMESTAMPTZ,
+  created_at       TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS peer_notes_subject_idx
+  ON peer_notes(subject_code, is_approved, created_at DESC);
+CREATE INDEX IF NOT EXISTS peer_notes_pending_idx
+  ON peer_notes(is_approved, created_at) WHERE is_approved = false;
