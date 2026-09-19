@@ -176,9 +176,102 @@ router.get("/", async (req, res) => {
       error: "Could not fetch notes.",
     });
   }
-  return res.status(500).json({
-    error: "Could not fetch notes.",
-  });
+});
+
+router.get("/pending", requireAdmin, async (req, res) => {
+  try {
+    const result = await query(
+      `SELECT *
+      FROM peer_notes
+      WHERE is_approved = false
+      ORDER BY created_at ASC`,
+    );
+    return res.status(200).json({
+      notes: result.rows,
+    });
+  } catch (error) {
+    console.error("Failed to fetch pending peer notes:", error);
+
+    return res.status(500).json({
+      error: "Could not fetch pending notes",
+    });
+  }
+});
+
+router.post("/:id/approve", requireAdmin, async (req, res) => {
+  const id = parseInt(req.params.id, 10);
+
+  if (Number.isNaN(id)) {
+    return res.status(400).json({
+      error: "Invalid note ID",
+    });
+  }
+
+  try {
+    const result = await query(
+      `UPDATE peer_notes
+      SET is_approved = true,
+          reviewed_at = NOW()
+      WHERE id = $1
+      RETURNING *`,
+      [id],
+    );
+    if (result.rows.length === 0) {
+      return res.status(404).json({
+        error: "Note not found",
+      });
+    }
+    return res.status(200).json({
+      note: result.rows[0],
+    });
+  } catch (error) {
+    console.error("Failed to approve peer note:", error);
+
+    return res.status(500).json({
+      error: "Could not approve note.",
+    });
+  }
+});
+
+router.delete("/:id", requireAdmin, async (req, res) => {
+  const id = parseInt(req.params.id, 10);
+
+  if (Number.isNaN(id)) {
+    return res.status(400).json({
+      error: "Invalid note ID",
+    });
+  }
+  try {
+    const result = await query(
+      `DELETE from peer_notes
+      WHERE id = $1
+      RETURNING file_key
+      `,
+      [id],
+    );
+    if (result.rows.length === 0) {
+      return res.status(404).json({
+        error: "Note not found",
+      });
+    }
+    const fileKey = result.rows[0].file_key;
+
+    try {
+      await deleteNote(fileKey);
+    } catch (error) {
+      console.error("Failed to delete peer note file from R2:", error);
+    }
+
+    return res.status(200).json({
+      message: "Note deleted successfully",
+    });
+  } catch (error) {
+    console.error("Failed to delete peer note:", error);
+
+    return res.status(500).json({
+      error: "Could not delete note.",
+    });
+  }
 });
 
 export default router;
