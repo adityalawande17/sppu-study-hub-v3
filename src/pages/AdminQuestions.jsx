@@ -43,6 +43,7 @@ const labelStyle = {
 const ADMIN_TABS = [
   { path: "/admin/questions", label: "PYQ Questions" },
   { path: "/admin/announcements", label: "Announcements" },
+  { path: "/admin/notes", label: "Peer Notes" },
 ];
 
 export default function AdminQuestions() {

@@ -29,6 +29,7 @@ const History = lazy(() => import("./pages/History"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminQuestions = lazy(() => import("./pages/AdminQuestions"));
 const AdminAnnouncements = lazy(() => import("./pages/AdminAnnouncements"));
+const AdminNotes = lazy(() => import("./pages/AdminNotes"));
 const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 const Syllabus = lazy(() => import("./pages/Syllabus"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -131,6 +132,7 @@ export default function App() {
                   <Route path="/admin/login" element={<AdminLogin />} />
                   <Route path="/admin/questions" element={<AdminQuestions />} />
                   <Route path="/admin/announcements" element={<AdminAnnouncements />} />
+                  <Route path="/admin/notes" element={<AdminNotes />} />
                   <Route path="/unsubscribe" element={<Unsubscribe />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
