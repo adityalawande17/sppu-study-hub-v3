@@ -1118,6 +1118,71 @@ export default function Home() {
         ))}
       </div>
 
+      {/* ── Community Notes promo ─────────────────────────────── */}
+      <div
+        style={{
+          background: "var(--gold-pale)",
+          border: "1px solid var(--gold-dim)",
+          borderRadius: 16,
+          padding: "32px 36px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 24,
+          marginBottom: 8,
+          flexWrap: "wrap",
+        }}
+        className="fade-up fade-up-4"
+      >
+        <div style={{ flex: 1, minWidth: 240 }}>
+          <span
+            style={{
+              display: "inline-block",
+              fontSize: 10,
+              fontWeight: 700,
+              letterSpacing: 0.5,
+              textTransform: "uppercase",
+              color: "var(--gold-dim)",
+              background: "var(--surface)",
+              padding: "3px 9px",
+              borderRadius: 20,
+              marginBottom: 10,
+            }}
+          >
+            New
+          </span>
+          <h3
+            style={{
+              fontFamily: "'DM Serif Display', serif",
+              fontSize: 22,
+              color: "var(--heading)",
+              marginBottom: 6,
+            }}
+          >
+            Community Notes
+          </h3>
+          <p
+            style={{
+              color: "var(--text-3)",
+              fontSize: 14,
+              lineHeight: 1.6,
+              maxWidth: 460,
+              margin: 0,
+            }}
+          >
+            Upload your notes for any subject — reviewed by admin, then
+            shared with every SPPU student on that subject's page.
+          </p>
+        </div>
+        <Link
+          to="/community-notes"
+          className="btn btn-gold"
+          style={{ flexShrink: 0, fontSize: 15, padding: "12px 24px" }}
+        >
+          How it works →
+        </Link>
+      </div>
+
       {/* ── News strip ─────────────────────────────────────── */}
       <div className="section-header fade-up fade-up-4">
         <h2 className="section-title">Latest Updates</h2>
