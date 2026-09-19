@@ -2,9 +2,9 @@ import express from "express";
 import multer from "multer";
 import path from "path";
 import crypto from "crypto";
-import { requireUser } from "../middleware/auth.js";
+import { requireUser, requireAdmin } from "../middleware/auth.js";
 import { query } from "../db/index.js";
-import { uploadNote } from "../lib/r2Notes.js";
+import { uploadNote, deleteNote } from "../lib/r2Notes.js";
 
 const router = express.Router();
 
