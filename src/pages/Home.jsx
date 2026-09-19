@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { useApp } from "../context/AppContext";
 import { newsItems, categoryLabels } from "../data/news";
-import ContributeModal from "../components/ContributeModal";
-
 import CookieConsentBanner from "../components/CookieConsentBanner";
 import LoginPromoModal from "../components/LoginPromoModal";
 
@@ -47,7 +45,6 @@ const faqs = [
 
 export default function Home() {
   const { user, sessionLoading, signInWithGoogle } = useApp();
-  const [contributeOpen, setContributeOpen] = useState(false);
   const [noticeDismissed, setNoticeDismissed] = useState(
     () => sessionStorage.getItem("notice_dismissed") === "1",
   );
@@ -1181,71 +1178,6 @@ export default function Home() {
 
       <div style={dividerStyle} />
 
-      {/* ── Contribute banner ──────────────────────────────── */}
-      <div
-        style={{
-          background: "var(--navy-card)",
-          border: "var(--border-w) solid var(--border)",
-          borderRadius: 16,
-          padding: "32px 36px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 24,
-          position: "relative",
-          overflow: "hidden",
-        }}
-        className="fade-up fade-up-5 contribute-banner"
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, rgba(0,0,0,.04) 1px, transparent 0)",
-            backgroundSize: "24px 24px",
-            pointerEvents: "none",
-          }}
-        />
-        <div style={{ position: "relative" }}>
-          <h3
-            style={{
-              fontFamily: "'DM Serif Display', serif",
-              fontSize: 22,
-              color: "var(--heading)",
-              marginBottom: 6,
-            }}
-          >
-            Help your fellow students
-          </h3>
-          <p
-            style={{
-              color: "var(--text-3)",
-              fontSize: 14,
-              lineHeight: 1.6,
-              maxWidth: 440,
-            }}
-          >
-            Have notes, solved papers, or practicals? Share them with the SPPU
-            community and help thousands of students study better.
-          </p>
-        </div>
-        <button
-          onClick={() => setContributeOpen(true)}
-          className="btn btn-gold"
-          style={{
-            flexShrink: 0,
-            fontSize: 15,
-            padding: "12px 24px",
-            position: "relative",
-          }}
-        >
-          Contribute Materials
-        </button>
-      </div>
-
-      <div style={dividerStyle} />
-
       {/* ── FAQ ──────────────────────────────────────────────── */}
       <div
         style={{ marginBottom: 20 }}
@@ -1334,10 +1266,6 @@ export default function Home() {
         </div>
       </div> */}
 
-      <ContributeModal
-        open={contributeOpen}
-        onClose={() => setContributeOpen(false)}
-      />
       <LoginPromoModal open={loginPromoOpen} onClose={dismissLoginPromo} />
       <CookieConsentBanner />
 
