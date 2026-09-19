@@ -8,6 +8,16 @@ import ContributeModal from "../components/ContributeModal";
 import CookieConsentBanner from "../components/CookieConsentBanner";
 import LoginPromoModal from "../components/LoginPromoModal";
 
+// One consistent divider between every section on this page — same line,
+// same 40px gap above and below, everywhere. Deliberately not reusing the
+// shared `.section-header` class's built-in border for this: that class is
+// also used on Branches.jsx/Blog.jsx/Tools.jsx, and its spacing there is an
+// asymmetric 40px-top/20px-bottom split, not the equal spacing wanted here.
+const dividerStyle = {
+  borderTop: "var(--border-w) solid var(--border)",
+  margin: "40px 0",
+};
+
 const faqs = [
   {
     q: "Is SPPUStudyHUB free to use?",
@@ -199,7 +209,7 @@ export default function Home() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <div
         style={{
-          padding: "44px 0 44px",
+          padding: "44px 0 0",
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gap: 56,
@@ -607,6 +617,8 @@ export default function Home() {
         </div>
       </div>
 
+      <div style={dividerStyle} />
+
       {/* ── Login benefits card ── */}
       {!sessionLoading && (
         <div
@@ -616,7 +628,6 @@ export default function Home() {
             border: "var(--border-w) solid var(--border)",
             borderRadius: 16,
             padding: "32px 36px",
-            marginBottom: 48,
           }}
         >
           {/* Header row */}
@@ -917,6 +928,8 @@ export default function Home() {
         </div>
       )}
 
+      <div style={dividerStyle} />
+
       {/* ── Community Notes promo ─────────────────────────────── */}
       <div
         style={{
@@ -924,7 +937,6 @@ export default function Home() {
           border: "1px solid var(--gold-dim)",
           borderRadius: 16,
           padding: "36px 40px",
-          marginBottom: 8,
           position: "relative",
           overflow: "hidden",
         }}
@@ -1066,8 +1078,18 @@ export default function Home() {
         </div>
       </div>
 
+      <div style={dividerStyle} />
+
       {/* ── News strip ─────────────────────────────────────── */}
-      <div className="section-header fade-up fade-up-4">
+      <div
+        style={{
+          display: "flex",
+          alignItems: "baseline",
+          justifyContent: "space-between",
+          marginBottom: 20,
+        }}
+        className="fade-up fade-up-4"
+      >
         <h2 className="section-title">Latest Updates</h2>
         <Link
           to="/news"
@@ -1081,10 +1103,7 @@ export default function Home() {
           All updates →
         </Link>
       </div>
-      <div
-        style={{ display: "grid", gap: 8, marginBottom: 8 }}
-        className="fade-up fade-up-5"
-      >
+      <div style={{ display: "grid", gap: 8 }} className="fade-up fade-up-5">
         {recentNews.map((item) => {
           const cat = categoryLabels[item.category];
           return (
@@ -1160,6 +1179,8 @@ export default function Home() {
         })}
       </div>
 
+      <div style={dividerStyle} />
+
       {/* ── Contribute banner ──────────────────────────────── */}
       <div
         style={{
@@ -1171,7 +1192,6 @@ export default function Home() {
           alignItems: "center",
           justifyContent: "space-between",
           gap: 24,
-          margin: "32px 0",
           position: "relative",
           overflow: "hidden",
         }}
@@ -1224,14 +1244,16 @@ export default function Home() {
         </button>
       </div>
 
+      <div style={dividerStyle} />
+
       {/* ── FAQ ──────────────────────────────────────────────── */}
-      <div className="section-header fade-up fade-up-5">
-        <h2 className="section-title">Frequently Asked Questions</h2>
-      </div>
       <div
-        style={{ display: "grid", gap: 8, marginBottom: 32 }}
+        style={{ marginBottom: 20 }}
         className="fade-up fade-up-5"
       >
+        <h2 className="section-title">Frequently Asked Questions</h2>
+      </div>
+      <div style={{ display: "grid", gap: 8 }} className="fade-up fade-up-5">
         {faqs.map((faq, i) => {
           const open = openFaq === i;
           return (
