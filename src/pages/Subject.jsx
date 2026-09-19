@@ -89,6 +89,7 @@ export default function Subject() {
 
   const [content, setContent] = useState(null);
   const [contentLoading, setContentLoading] = useState(true);
+  const [pyqOpen, setPyqOpen] = useState(false);
   useEffect(() => {
     setContent(null);
     setContentLoading(true);
@@ -353,26 +354,56 @@ export default function Subject() {
         {/* PYQ */}
         {hasPYQ && (
           <div className="mat-section">
-            <div className="mat-section-head">
+            <div
+              className="mat-section-head"
+              role="button"
+              tabIndex={0}
+              onClick={() => setPyqOpen((prev) => !prev)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setPyqOpen((prev) => !prev);
+                }
+              }}
+              style={{ cursor: "pointer" }}
+            >
               <div className="mat-section-title">
                 Previous Year Question Papers{" "}
                 <span className="badge badge-pyq">PYQ</span>
               </div>
-              <span style={{ fontSize: 12, color: "var(--text-3)" }}>
-                University exam papers
-              </span>
-            </div>
-            <div className="mat-section-body">
-              <div className="info-strip">
-                Note : Section might also contain question papers from 2019
-                pattern, as the syllabus is same can refer them as well.
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ fontSize: 12, color: "var(--text-3)" }}>
+                  University exam papers
+                </span>
+                <div
+                  style={{
+                    width: 10,
+                    height: 10,
+                    borderRight: "2px solid currentColor",
+                    borderBottom: "2px solid currentColor",
+                    color: "var(--text-3)",
+                    transform: pyqOpen
+                      ? "rotate(-135deg) translateY(2px)"
+                      : "rotate(45deg)",
+                    transition: "transform .2s",
+                    flexShrink: 0,
+                  }}
+                />
               </div>
-              <PYQAccordion
-                pyq={pyq}
-                subjectCode={code}
-                subjectName={subject.name}
-              />
             </div>
+            {pyqOpen && (
+              <div className="mat-section-body">
+                <div className="info-strip">
+                  Note : Section might also contain question papers from 2019
+                  pattern, as the syllabus is same can refer them as well.
+                </div>
+                <PYQAccordion
+                  pyq={pyq}
+                  subjectCode={code}
+                  subjectName={subject.name}
+                />
+              </div>
+            )}
           </div>
         )}
 
