@@ -73,6 +73,7 @@ export default function Footer() {
                 ["Privacy Policy", "/privacy"],
                 ["Terms of Use", "/terms"],
                 ["Contributors", "/contributions"],
+                ["Community Notes", "/community-notes"],
               ],
             },
           ].map((col) => (
