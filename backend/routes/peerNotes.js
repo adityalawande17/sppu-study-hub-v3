@@ -90,7 +90,7 @@ router.post(
       const usage = await query(
         `SELECT COUNT(*) FROM api_usage
          WHERE user_id = $1 AND endpoint = $2 AND called_at > NOW() - INTERVAL '24 hours'`,
-        [req.userId, "/api/peer-notes/upload"]
+        [req.userId, "/api/peer-notes/upload"],
       );
       if (parseInt(usage.rows[0].count, 10) >= 5) {
         return res.status(429).json({
@@ -119,13 +119,13 @@ router.post(
           ext,
           req.file.mimetype,
           req.file.size,
-        ]
+        ],
       );
 
       // Log this upload for the rate limit check above
       await query(
         `INSERT INTO api_usage (user_id, ip_address, endpoint) VALUES ($1, $2, $3)`,
-        [req.userId, req.ip, "/api/peer-notes/upload"]
+        [req.userId, req.ip, "/api/peer-notes/upload"],
       );
 
       return res.status(201).json({ note: result.rows[0] });
@@ -135,5 +135,50 @@ router.post(
     }
   },
 );
+
+router.get("/", async (req, res) => {
+  const { subjectCode } = req.query;
+
+  if (!subjectCode) {
+    return res.status(400).json({
+      error: "subjectCode is required",
+    });
+  }
+
+  try {
+    const result = await query(
+      `SELECT
+         id,
+         user_id,
+         subject_code,
+         title,
+         is_anonymous,
+         CASE WHEN is_anonymous THEN NULL ELSE uploader_name END AS uploader_name,
+         file_key,
+         file_url,
+         file_type,
+         mime_type,
+         file_size_bytes,
+         is_approved,
+         created_at
+       FROM peer_notes
+       WHERE subject_code = $1
+         AND is_approved = true
+       ORDER BY created_at DESC`,
+      [subjectCode],
+    );
+
+    return res.json({ notes: result.rows });
+  } catch (error) {
+    console.error("Failed to fetch peer notes", error);
+
+    return res.status(500).json({
+      error: "Could not fetch notes.",
+    });
+  }
+  return res.status(500).json({
+    error: "Could not fetch notes.",
+  });
+});
 
 export default router;
