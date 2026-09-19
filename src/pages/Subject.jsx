@@ -5,6 +5,7 @@ import { useApp } from "../context/AppContext";
 import UnitAccordion from "../components/UnitAccordion";
 import PracticalAccordion from "../components/PracticalAccordion";
 import PYQAccordion from "../components/PYQAccordion";
+import PeerNotes from "../components/PeerNotes";
 import ShareBar from "../components/ShareBar";
 import { searchIndex } from "../data/branches";
 import { feSearchIndex } from "../data/feSubjects";
@@ -411,6 +412,8 @@ export default function Subject() {
             </div>
           </div>
         )}
+
+        <PeerNotes subjectCode={code} pattern={pattern} />
 
         {is2024Pattern && (
           <div
