@@ -1,22 +1,48 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { useApp } from "../context/AppContext";
-import { branchMeta } from "../data/branches";
 import { newsItems, categoryLabels } from "../data/news";
 import ContributeModal from "../components/ContributeModal";
 
 import CookieConsentBanner from "../components/CookieConsentBanner";
 import LoginPromoModal from "../components/LoginPromoModal";
 
+const faqs = [
+  {
+    q: "Is SPPUStudyHUB free to use?",
+    a: "Yes, completely free forever — no hidden charges, no premium tier.",
+  },
+  {
+    q: "Which branches and patterns are covered?",
+    a: "All major engineering branches — Computer, IT, AI & DS, Mechanical, Civil, ENTC, and Electrical — across both the 2019 and 2024 patterns.",
+  },
+  {
+    q: "Do I need to create an account to use the site?",
+    a: "No — notes, question papers, and practicals are all open to browse without signing in. A free Google sign-in unlocks progress tracking, the CGPA calculator, and AI-powered explanations.",
+  },
+  {
+    q: "How do I upload my own notes?",
+    a: 'Open any subject\'s page and click "Upload Notes" in the Student Notes section. Every upload is reviewed by an admin before it goes live — see the Community Notes guide above for the full process.',
+  },
+  {
+    q: "Are the previous year question papers verified?",
+    a: "Yes, PYQs are added and checked by the team before being published.",
+  },
+  {
+    q: "How does the AI explanation feature work?",
+    a: 'Pick a question from a subject\'s PYQ section and click "Explain with AI" to get an SPPU exam-style answer, powered by Claude. Each account gets a limited number of free explanations per day.',
+  },
+];
+
 export default function Home() {
-  const navigate = useNavigate();
-  const { pattern, user, sessionLoading, signInWithGoogle } = useApp();
+  const { user, sessionLoading, signInWithGoogle } = useApp();
   const [contributeOpen, setContributeOpen] = useState(false);
   const [noticeDismissed, setNoticeDismissed] = useState(
     () => sessionStorage.getItem("notice_dismissed") === "1",
   );
   const [loginPromoOpen, setLoginPromoOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
     if (sessionLoading || user) return;
@@ -891,296 +917,153 @@ export default function Home() {
         </div>
       )}
 
-      {/* ── Year selector ──────────────────────────────────── */}
-      <div className="section-header fade-up fade-up-2">
-        <h2 className="section-title">Select Your Year</h2>
-        <span className="section-sub">Current pattern: {pattern}</span>
-      </div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: 14,
-          marginBottom: 8,
-        }}
-        className="year-grid fade-up fade-up-3"
-      >
-        {[
-          {
-            key: "FE",
-            tag: "All Branches",
-            label: "FE",
-            desc: "FE — Common syllabus",
-            path: "/first-year",
-            accent: "#8da7db",
-          },
-          {
-            key: "SE",
-            tag: "Second Year",
-            label: "SE",
-            desc: "Semester 3 and 4",
-            accent: "#0e4eb4",
-          },
-          {
-            key: "TE",
-            tag: "Third Year",
-            label: "TE",
-            desc: "Semester 5 and 6",
-            accent: "#4b55a8",
-          },
-          {
-            key: "BE",
-            tag: "Final Year",
-            label: "BE",
-            desc: "Semester 7 and 8",
-            accent: "#33a4ea",
-          },
-        ].map((yr) => (
-          <div
-            key={yr.key}
-            className="card card-interactive"
-            style={{
-              padding: "20px 16px",
-              textAlign: "center",
-              borderTop: `3px solid ${yr.accent}`,
-              position: "relative",
-              overflow: "hidden",
-            }}
-            onClick={() =>
-              yr.path ? navigate(yr.path) : navigate("/branches")
-            }
-          >
-            <div
-              style={{
-                position: "absolute",
-                top: -16,
-                right: -10,
-                fontFamily: "'DM Serif Display', serif",
-                fontSize: 72,
-                color: "var(--surface3)",
-                lineHeight: 1,
-                pointerEvents: "none",
-              }}
-            >
-              {yr.label}
-            </div>
-            <span
-              style={{
-                fontSize: 10,
-                fontWeight: 700,
-                letterSpacing: 1,
-                textTransform: "uppercase",
-                color: yr.accent,
-                marginBottom: 8,
-                display: "block",
-              }}
-            >
-              {yr.tag}
-            </span>
-            <div
-              style={{
-                fontFamily: "'DM Serif Display', serif",
-                fontSize: 26,
-                color: "var(--heading)",
-                marginBottom: 4,
-                position: "relative",
-              }}
-            >
-              {yr.label}
-            </div>
-            <p
-              style={{
-                fontSize: 12,
-                color: "var(--text-3)",
-                lineHeight: 1.5,
-                marginBottom: 14,
-                position: "relative",
-              }}
-            >
-              {yr.desc}
-            </p>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                navigate("/syllabus");
-              }}
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                color: yr.accent,
-                background: "transparent",
-                border: `1px solid ${yr.accent}`,
-                borderRadius: 16,
-                padding: "4px 11px",
-                cursor: "pointer",
-                fontFamily: "Inter, sans-serif",
-                transition: "all .15s",
-                position: "relative",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.background = yr.accent;
-                e.target.style.color = "#fff";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.background = "transparent";
-                e.target.style.color = yr.accent;
-              }}
-            >
-              Syllabus PDF
-            </button>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Branches ───────────────────────────────────────── */}
-      <div className="section-header fade-up fade-up-3">
-        <h2 className="section-title">Browse by Branch</h2>
-        <Link
-          to="/branches"
-          style={{
-            fontSize: 13,
-            color: "var(--gold-dim)",
-            textDecoration: "none",
-            fontWeight: 500,
-          }}
-        >
-          View all →
-        </Link>
-      </div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: 12,
-          marginBottom: 8,
-        }}
-        className="branch-grid fade-up fade-up-4"
-      >
-        {Object.values(branchMeta).map((b) => (
-          <Link
-            key={b.key}
-            to={`/branches/${b.key}`}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 14,
-              padding: "16px 18px",
-              background: "var(--surface)",
-              border: "var(--border-w) solid var(--border)",
-              borderRadius: 12,
-              textDecoration: "none",
-              transition: "all .2s",
-              borderLeft: `3px solid ${b.color}`,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = "var(--shadow-md)";
-              e.currentTarget.style.transform = "translateX(3px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = "";
-              e.currentTarget.style.transform = "";
-            }}
-          >
-            <div
-              style={{
-                width: 38,
-                height: 38,
-                borderRadius: 8,
-                background: b.color,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 12,
-                fontWeight: 700,
-                color: "#fff",
-                flexShrink: 0,
-                fontFamily: "'DM Serif Display', serif",
-              }}
-            >
-              {b.abbr}
-            </div>
-            <div>
-              <div
-                style={{
-                  fontSize: 14,
-                  fontWeight: 600,
-                  color: "var(--heading)",
-                  marginBottom: 2,
-                }}
-              >
-                {b.short}
-              </div>
-              <div style={{ fontSize: 12, color: "var(--text-3)" }}>
-                SE · TE · BE
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-
       {/* ── Community Notes promo ─────────────────────────────── */}
       <div
         style={{
           background: "var(--gold-pale)",
           border: "1px solid var(--gold-dim)",
           borderRadius: 16,
-          padding: "32px 36px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 24,
+          padding: "36px 40px",
           marginBottom: 8,
-          flexWrap: "wrap",
+          position: "relative",
+          overflow: "hidden",
         }}
-        className="fade-up fade-up-4"
+        className="fade-up fade-up-2"
       >
-        <div style={{ flex: 1, minWidth: 240 }}>
-          <span
-            style={{
-              display: "inline-block",
-              fontSize: 10,
-              fontWeight: 700,
-              letterSpacing: 0.5,
-              textTransform: "uppercase",
-              color: "var(--gold-dim)",
-              background: "var(--surface)",
-              padding: "3px 9px",
-              borderRadius: 20,
-              marginBottom: 10,
-            }}
-          >
-            New
-          </span>
-          <h3
-            style={{
-              fontFamily: "'DM Serif Display', serif",
-              fontSize: 22,
-              color: "var(--heading)",
-              marginBottom: 6,
-            }}
-          >
-            Community Notes
-          </h3>
-          <p
-            style={{
-              color: "var(--text-3)",
-              fontSize: 14,
-              lineHeight: 1.6,
-              maxWidth: 460,
-              margin: 0,
-            }}
-          >
-            Upload your notes for any subject — reviewed by admin, then
-            shared with every SPPU student on that subject's page.
-          </p>
-        </div>
-        <Link
-          to="/community-notes"
-          className="btn btn-gold"
-          style={{ flexShrink: 0, fontSize: 15, padding: "12px 24px" }}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, rgba(0,0,0,.035) 1px, transparent 0)",
+            backgroundSize: "24px 24px",
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 32,
+            position: "relative",
+            flexWrap: "wrap",
+          }}
         >
-          How it works →
-        </Link>
+          <div style={{ flex: 1, minWidth: 260 }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+                marginBottom: 16,
+              }}
+            >
+              <div
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 10,
+                  background: "var(--gold)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                }}
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#111"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                  <path d="M16 3.13a4 4 0 010 7.75" />
+                </svg>
+              </div>
+              <span
+                style={{
+                  fontSize: 10,
+                  fontWeight: 700,
+                  letterSpacing: 0.5,
+                  textTransform: "uppercase",
+                  color: "var(--gold-dim)",
+                  background: "var(--surface)",
+                  padding: "3px 9px",
+                  borderRadius: 20,
+                }}
+              >
+                New
+              </span>
+            </div>
+            <h3
+              style={{
+                fontFamily: "'DM Serif Display', serif",
+                fontSize: 24,
+                color: "var(--heading)",
+                marginBottom: 8,
+              }}
+            >
+              Community Notes
+            </h3>
+            <p
+              style={{
+                color: "var(--text-3)",
+                fontSize: 14,
+                lineHeight: 1.7,
+                maxWidth: 460,
+                margin: "0 0 16px",
+              }}
+            >
+              Upload your notes for any subject — reviewed by admin, then
+              shared with every SPPU student on that subject's page.
+            </p>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+              {["Free to share", "Admin reviewed", "Credited or anonymous"].map(
+                (text) => (
+                  <div
+                    key={text}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 6,
+                      fontSize: 12,
+                      color: "var(--text-3)",
+                      fontWeight: 500,
+                    }}
+                  >
+                    <svg
+                      width="13"
+                      height="13"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="var(--gold-dim)"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    {text}
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
+          <Link
+            to="/community-notes"
+            className="btn btn-gold"
+            style={{ flexShrink: 0, fontSize: 15, padding: "13px 26px" }}
+          >
+            How it works →
+          </Link>
+        </div>
       </div>
 
       {/* ── News strip ─────────────────────────────────────── */}
@@ -1341,6 +1224,87 @@ export default function Home() {
         </button>
       </div>
 
+      {/* ── FAQ ──────────────────────────────────────────────── */}
+      <div className="section-header fade-up fade-up-5">
+        <h2 className="section-title">Frequently Asked Questions</h2>
+      </div>
+      <div
+        style={{ display: "grid", gap: 8, marginBottom: 32 }}
+        className="fade-up fade-up-5"
+      >
+        {faqs.map((faq, i) => {
+          const open = openFaq === i;
+          return (
+            <div
+              key={faq.q}
+              style={{
+                background: "var(--surface)",
+                border: "var(--border-w) solid var(--border)",
+                borderRadius: 12,
+                overflow: "hidden",
+              }}
+            >
+              <button
+                onClick={() => setOpenFaq(open ? null : i)}
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 12,
+                  padding: "16px 20px",
+                  background: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  textAlign: "left",
+                  fontFamily: "Inter, sans-serif",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: "var(--heading)",
+                  }}
+                >
+                  {faq.q}
+                </span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--text-3)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  style={{
+                    flexShrink: 0,
+                    transform: open ? "rotate(180deg)" : "rotate(0deg)",
+                    transition: "transform .2s",
+                  }}
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              {open && (
+                <p
+                  style={{
+                    margin: 0,
+                    padding: "0 20px 18px",
+                    fontSize: 13,
+                    color: "var(--text-3)",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  {faq.a}
+                </p>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
       {/* <div className="ad-slot" style={{ marginBottom: 40 }}>
         <div>
           <p className="ad-label">Advertisement</p>
@@ -1358,17 +1322,13 @@ export default function Home() {
       <style>{`
         @media(max-width:900px){
           .hero-grid{grid-template-columns:1fr!important;gap:28px!important}
-          .branch-grid{grid-template-columns:repeat(2,1fr)!important}
-          .year-grid{grid-template-columns:repeat(2,1fr)!important}
           .benefits-grid{grid-template-columns:repeat(2,1fr)!important}
         }
         @media(max-width:600px){
           .hero-grid h1{font-size:50px!important}
-          .branch-grid{grid-template-columns:1fr!important}
           .benefits-grid{grid-template-columns:1fr!important}
           .login-benefits-card{padding:20px!important}
         }
-        @media(max-width:400px){.year-grid{grid-template-columns:1fr!important}}
       `}</style>
     </div>
   );
