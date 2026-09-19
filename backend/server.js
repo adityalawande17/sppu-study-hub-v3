@@ -10,6 +10,7 @@ import profileRouter from './routes/profile.js';
 import progressRouter from './routes/progress.js';
 import academicRouter from './routes/academic.js';
 import announcementsRouter from './routes/announcements.js';
+import peerNotesRoutes from './routes/peerNotes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -43,6 +44,7 @@ app.use('/api/profile', profileRouter);
 app.use('/api/progress', progressRouter);
 app.use('/api/academic', academicRouter);
 app.use('/api/announcements', announcementsRouter);
+app.use('/api/peer-notes', peerNotesRoutes);
 
 // Global error handler
 app.use((err, _req, res, _next) => {
