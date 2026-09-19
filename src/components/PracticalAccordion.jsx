@@ -92,6 +92,7 @@ function ResourceRow({ resource }) {
         borderRadius: 8,
         background: "var(--surface2)",
         transition: "all .15s",
+        minWidth: 0,
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.borderColor = isVideo
