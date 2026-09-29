@@ -86,7 +86,7 @@ export default function PeerNotes({ subjectCode, pattern }) {
     <div className="mat-section">
       <div className="mat-section-head">
         <div className="mat-section-title">
-          Student Notes {!loading && `(${notes.length})`}
+          Community Notes {!loading && `(${notes.length})`}
         </div>
         <button onClick={handleUploadClick} className="btn btn-outline">
           Upload Notes

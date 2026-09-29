@@ -158,7 +158,7 @@ export default function CommunityNotesGuide() {
             Ready to share your notes?
           </div>
           <div style={{ fontSize: 13, color: "rgba(255,255,255,.5)" }}>
-            Find your subject page and look for the Student Notes section.
+            Find your subject page and look for the Community Notes section.
           </div>
         </div>
         <Link to="/branches" className="btn btn-gold" style={{ flexShrink: 0 }}>

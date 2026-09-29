@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "How do I upload my own notes?",
-    a: 'Open any subject\'s page and click "Upload Notes" in the Student Notes section. Every upload is reviewed by an admin before it goes live — see the Community Notes guide above for the full process.',
+    a: 'Open any subject\'s page and click "Upload Notes" in the Community Notes section. Every upload is reviewed by an admin before it goes live — see the Community Notes guide above for the full process.',
   },
   {
     q: "Are the previous year question papers verified?",
