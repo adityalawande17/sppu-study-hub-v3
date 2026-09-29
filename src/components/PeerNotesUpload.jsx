@@ -180,6 +180,11 @@ export default function PeerNotesUpload({
   return (
     <Modal open={open} onClose={handleClose} title="Upload Notes">
       <form onSubmit={handleSubmit} style={{ display: "grid", gap: 14 }}>
+        <div className="info-strip">
+          Note : Your upload is reviewed by an admin before it appears here.
+          Approved notes usually go live within a day or two.
+        </div>
+
         <div>
           <label style={labelStyle}>Title</label>
           <input
