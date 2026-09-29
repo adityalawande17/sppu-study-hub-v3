@@ -16,6 +16,13 @@ function setLink(rel, href) {
 }
 
 export function useSEO({ title, description = '', schema, image } = {}) {
+  // Callers pass a fresh `schema` object literal on every render, so a
+  // reference-identity dependency would rerun this effect (and rewrite the
+  // DOM) on every re-render, not just on real navigation. Depend on its
+  // serialized value instead — stable across renders unless the content
+  // actually changes.
+  const schemaKey = schema ? JSON.stringify(schema) : null
+
   useEffect(() => {
     if (!title) return
     const img = image || DEFAULT_IMAGE
@@ -44,5 +51,5 @@ export function useSEO({ title, description = '', schema, image } = {}) {
       if (!s) { s = document.createElement('script'); s.id = 'ld-json'; s.type = 'application/ld+json'; document.head.appendChild(s) }
       s.textContent = JSON.stringify(schema)
     }
-  }, [title, description, schema, image])
+  }, [title, description, schemaKey, image])
 }

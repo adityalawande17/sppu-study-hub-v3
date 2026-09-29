@@ -86,7 +86,12 @@ router.post(
     }
 
     try {
-      // Rate limit: 5 uploads per user per 24 hours (Phase 0)
+      // Rate limit: 5 uploads per user per 24 hours (Phase 0). The usage row
+      // is logged right after this check, before the slow R2 upload below —
+      // not after it — to keep the check-then-log race window as tight as
+      // possible (two back-to-back queries instead of spanning an entire
+      // file upload, where two requests fired close together could otherwise
+      // both pass the count check while the first one is still uploading).
       const usage = await query(
         `SELECT COUNT(*) FROM api_usage
          WHERE user_id = $1 AND endpoint = $2 AND called_at > NOW() - INTERVAL '24 hours'`,
@@ -97,6 +102,10 @@ router.post(
           error: "Upload limit reached. Try again in 24 hours.",
         });
       }
+      await query(
+        `INSERT INTO api_usage (user_id, ip_address, endpoint) VALUES ($1, $2, $3)`,
+        [req.userId, req.ip, "/api/peer-notes/upload"],
+      );
 
       // Upload to R2
       const key = `${req.body.subjectCode}/${Date.now()}-${crypto.randomUUID()}.${ext}`;
@@ -120,12 +129,6 @@ router.post(
           req.file.mimetype,
           req.file.size,
         ],
-      );
-
-      // Log this upload for the rate limit check above
-      await query(
-        `INSERT INTO api_usage (user_id, ip_address, endpoint) VALUES ($1, $2, $3)`,
-        [req.userId, req.ip, "/api/peer-notes/upload"],
       );
 
       return res.status(201).json({ note: result.rows[0] });

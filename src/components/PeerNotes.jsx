@@ -54,7 +54,7 @@ export default function PeerNotes({ subjectCode, pattern }) {
         }
 
         const data = await res.json();
-        setNotes(data.notes);
+        setNotes(data.notes ?? []);
       } catch (error) {
         console.error("Failed to fetch peer notes", error);
         setUnavailable(true);
