@@ -75,3 +75,12 @@ export async function optionalUser(req, res, next) {
   req.userEmail = payload?.email ?? null;
   next();
 }
+
+// Signature-verified user id for rate-limit keying (backend/middleware/rateLimiter.js).
+// Unlike a raw JWT decode, this actually checks the token against Supabase's
+// JWKS, so a forged/unsigned token can't be used to mint a fresh, empty
+// rate-limit bucket on every request.
+export async function getVerifiedUserId(req) {
+  const payload = await verifySupabaseToken(req.headers.authorization);
+  return payload?.sub ?? null;
+}

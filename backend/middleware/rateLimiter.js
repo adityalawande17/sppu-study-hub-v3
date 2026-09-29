@@ -1,26 +1,15 @@
 import rateLimit from 'express-rate-limit';
 import { query } from '../db/index.js';
+import { getVerifiedUserId } from './auth.js';
 
 const AI_LIMIT = 3;
 const AI_ENDPOINTS = ['/api/ai/explain', '/api/ai/explain/stream'];
-
-// Decode JWT payload without verifying signature — safe for rate-limit keying only.
-function extractUserId(req) {
-  const auth = req.headers.authorization;
-  if (!auth?.startsWith('Bearer ')) return null;
-  try {
-    const payload = JSON.parse(Buffer.from(auth.split('.')[1], 'base64url').toString());
-    return payload.sub ?? null;
-  } catch {
-    return null;
-  }
-}
 
 // Returns true if the request is within the daily AI limit, false if exceeded.
 // Fails open so a DB hiccup doesn't block all users.
 export async function checkAiRateLimit(req) {
   try {
-    const userId = extractUserId(req);
+    const userId = await getVerifiedUserId(req);
     let count;
 
     if (userId) {
@@ -63,11 +52,14 @@ export async function aiRateLimiter(req, res, next) {
 // General API throttle — all other routes. Keyed by user ID when logged in
 // (like aiRateLimiter) so students sharing an IP on campus/hostel WiFi don't
 // share a request budget; falls back to IP only for anonymous requests.
+// keyGenerator is async because getVerifiedUserId does a real signature
+// check — express-rate-limit v7 awaits it. A forged/unsigned bearer token
+// can no longer mint a fresh bucket, unlike a raw unverified decode would.
 export const generalRateLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 300,
-  keyGenerator: (req) => {
-    const userId = extractUserId(req);
+  keyGenerator: async (req) => {
+    const userId = await getVerifiedUserId(req);
     return userId ? `user:${userId}` : `ip:${req.ip}`;
   },
   message: { error: 'Too many requests. Try again in 15 minutes.' },
