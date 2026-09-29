@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import { generalRateLimiter } from './middleware/rateLimiter.js';
 import aiRouter from './routes/ai.js';
@@ -26,10 +27,14 @@ app.use(cors({
     cb(new Error(`CORS: origin ${origin} not allowed`));
   },
   methods: ['GET', 'POST', 'DELETE'],
+  // Needed so the browser sends/accepts the httpOnly admin_token cookie
+  // (backend/routes/admin.js) on cross-origin requests from the frontend.
+  credentials: true,
 }));
 
 app.use(compression());
 app.use(express.json({ limit: '50kb' }));
+app.use(cookieParser());
 app.use(generalRateLimiter);
 
 // Health check — used by Render.com and local verification

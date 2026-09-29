@@ -2,11 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { Navigate, useNavigate, Link, useLocation } from "react-router-dom";
 import { searchIndex } from "../data/branches";
 import { feSearchIndex } from "../data/feSubjects";
-import {
-  getAdminToken,
-  clearAdminToken,
-  getAdminAuthHeader,
-} from "../utils/adminAuth";
+import { logoutAdmin } from "../utils/adminAuth";
 
 const BACKEND = import.meta.env.VITE_BACKEND_URL;
 const allSubjects = [...feSearchIndex, ...searchIndex];
@@ -73,17 +69,11 @@ export default function AdminQuestions() {
 
   // ── Auth check ──────────────────────────────────────────────
   useEffect(() => {
-    const token = getAdminToken();
-    if (!token) {
-      setChecking(false);
-      return;
-    }
-    fetch(`${BACKEND}/api/admin/me`, { headers: getAdminAuthHeader() })
-      .then((res) => {
-        if (res.ok) setAuthorized(true);
-        else clearAdminToken();
-      })
-      .catch(() => clearAdminToken())
+    // The admin token is an httpOnly cookie now — there's nothing for JS to
+    // check locally, so this always has to ask the server.
+    fetch(`${BACKEND}/api/admin/me`, { credentials: "include" })
+      .then((res) => setAuthorized(res.ok))
+      .catch(() => setAuthorized(false))
       .finally(() => setChecking(false));
   }, []);
 
@@ -116,14 +106,14 @@ export default function AdminQuestions() {
       .finally(() => setListLoading(false));
   }, [selectedCode]);
 
-  function handleLogout() {
-    clearAdminToken();
+  async function handleLogout() {
+    await logoutAdmin();
     navigate("/admin/login", { replace: true });
   }
 
   async function handleUnauthorized(res) {
     if (res.status === 401) {
-      clearAdminToken();
+      await logoutAdmin();
       navigate("/admin/login", { replace: true });
       return true;
     }
@@ -148,9 +138,9 @@ export default function AdminQuestions() {
     try {
       const res = await fetch(`${BACKEND}/api/questions`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
-          ...getAdminAuthHeader(),
         },
         body: JSON.stringify({
           subjectCode: selectedSubject.code,
@@ -189,7 +179,7 @@ export default function AdminQuestions() {
     try {
       const res = await fetch(`${BACKEND}/api/questions/${id}`, {
         method: "DELETE",
-        headers: getAdminAuthHeader(),
+        credentials: "include",
       });
       if (await handleUnauthorized(res)) return;
       if (!res.ok) throw new Error("Could not delete question.");

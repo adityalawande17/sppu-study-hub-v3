@@ -22,17 +22,17 @@ function getSupabaseJWKS() {
   return supabaseJWKS;
 }
 
-// Verifies the admin session token issued by POST /api/admin/login.
-// Distinct from rateLimiter.js's extractUserId, which decodes without
-// verifying a signature and is only safe for rate-limit bucketing.
+// Verifies the admin session token issued by POST /api/admin/login. Read
+// from the httpOnly admin_token cookie (set by server.js's cookie-parser),
+// never from a header — the token is never exposed to frontend JS at all.
 export function requireAdmin(req, res, next) {
-  const auth = req.headers.authorization;
-  if (!auth?.startsWith('Bearer ')) {
+  const token = req.cookies?.admin_token;
+  if (!token) {
     return res.status(401).json({ error: 'Missing admin token.' });
   }
 
   try {
-    const payload = jwt.verify(auth.slice(7), process.env.ADMIN_JWT_SECRET, { algorithms: ['HS256'] });
+    const payload = jwt.verify(token, process.env.ADMIN_JWT_SECRET, { algorithms: ['HS256'] });
     if (payload.role !== 'admin') {
       return res.status(401).json({ error: 'Invalid admin token.' });
     }

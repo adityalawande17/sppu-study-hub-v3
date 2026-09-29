@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { setAdminToken } from "../utils/adminAuth";
 
 const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
@@ -18,12 +17,12 @@ export default function AdminLogin() {
     try {
       const res = await fetch(`${BACKEND}/api/admin/login`, {
         method: "POST",
+        credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Login failed.");
-      setAdminToken(data.token);
       navigate("/admin/questions", { replace: true });
     } catch (err) {
       setError(err.message);

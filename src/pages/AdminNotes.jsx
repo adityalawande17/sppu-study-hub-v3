@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navigate, useNavigate, Link, useLocation } from "react-router-dom";
-import {
-  getAdminToken,
-  clearAdminToken,
-  getAdminAuthHeader,
-} from "../utils/adminAuth";
+import { logoutAdmin } from "../utils/adminAuth";
 
 const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
@@ -74,22 +70,16 @@ export default function AdminNotes() {
 
   // ── Auth check — identical pattern to AdminQuestions.jsx ──────────
   useEffect(() => {
-    const token = getAdminToken();
-    if (!token) {
-      setChecking(false);
-      return;
-    }
-    fetch(`${BACKEND}/api/admin/me`, { headers: getAdminAuthHeader() })
-      .then((res) => {
-        if (res.ok) setAuthorized(true);
-        else clearAdminToken();
-      })
-      .catch(() => clearAdminToken())
+    // The admin token is an httpOnly cookie now — there's nothing for JS to
+    // check locally, so this always has to ask the server.
+    fetch(`${BACKEND}/api/admin/me`, { credentials: "include" })
+      .then((res) => setAuthorized(res.ok))
+      .catch(() => setAuthorized(false))
       .finally(() => setChecking(false));
   }, []);
 
-  function handleLogout() {
-    clearAdminToken();
+  async function handleLogout() {
+    await logoutAdmin();
     navigate("/admin/login", { replace: true });
   }
 
@@ -97,7 +87,7 @@ export default function AdminNotes() {
   // the time an action actually hits the backend — same helper AdminQuestions.jsx uses.
   async function handleUnauthorized(res) {
     if (res.status === 401) {
-      clearAdminToken();
+      await logoutAdmin();
       navigate("/admin/login", { replace: true });
       return true;
     }
@@ -109,7 +99,7 @@ export default function AdminNotes() {
   //   1. Only actually fetch when `authorized` is true — skip while still
   //      checking, or if never authorized (return early otherwise).
   //   2. setListLoading(true), setListError(null).
-  //   3. GET `${BACKEND}/api/peer-notes/pending`, headers: getAdminAuthHeader().
+  //   3. GET `${BACKEND}/api/peer-notes/pending`, credentials: "include".
   //   4. if (await handleUnauthorized(res)) return.
   //   5. If !res.ok, throw or setListError and return.
   //   6. Parse JSON, setNotes(data.notes ?? []).
@@ -124,7 +114,7 @@ export default function AdminNotes() {
 
       try {
         const res = await fetch(`${BACKEND}/api/peer-notes/pending`, {
-          headers: getAdminAuthHeader(),
+          credentials: "include",
         });
 
         if (await handleUnauthorized(res)) return;
@@ -148,7 +138,7 @@ export default function AdminNotes() {
 
   // ── YOUR FUNCTION ──────────────────────────────────────────────
   // Approve a note (the "Add" button). Steps:
-  //   1. POST `${BACKEND}/api/peer-notes/${id}/approve`, headers: getAdminAuthHeader().
+  //   1. POST `${BACKEND}/api/peer-notes/${id}/approve`, credentials: "include".
   //   2. if (await handleUnauthorized(res)) return.
   //   3. If !res.ok: parse the error and setListError(...), then return —
   //      leave the note in the list since it wasn't actually approved.
@@ -159,7 +149,7 @@ export default function AdminNotes() {
     try {
       const res = await fetch(`${BACKEND}/api/peer-notes/${id}/approve`, {
         method: "POST",
-        headers: getAdminAuthHeader(),
+        credentials: "include",
       });
 
       if (await handleUnauthorized(res)) return;
@@ -180,7 +170,7 @@ export default function AdminNotes() {
   // ── YOUR FUNCTION ──────────────────────────────────────────────
   // Reject (delete) a note. Same shape as handleApprove, but:
   //   1. window.confirm("Reject this note?") first — return early if cancelled.
-  //   2. DELETE `${BACKEND}/api/peer-notes/${id}`, headers: getAdminAuthHeader().
+  //   2. DELETE `${BACKEND}/api/peer-notes/${id}`, credentials: "include".
   //   3. Same handleUnauthorized / error-handling / remove-from-list pattern
   //      as handleApprove above.
   async function handleReject(id) {
@@ -191,7 +181,7 @@ export default function AdminNotes() {
     try {
       const res = await fetch(`${BACKEND}/api/peer-notes/${id}`, {
         method: "DELETE",
-        headers: getAdminAuthHeader(),
+        credentials: "include",
       });
 
       if (await handleUnauthorized(res)) return;

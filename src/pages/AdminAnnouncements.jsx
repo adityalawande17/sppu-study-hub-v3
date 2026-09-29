@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navigate, useNavigate, Link, useLocation } from "react-router-dom";
-import {
-  getAdminToken,
-  clearAdminToken,
-  getAdminAuthHeader,
-} from "../utils/adminAuth";
+import { logoutAdmin } from "../utils/adminAuth";
 
 const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
@@ -52,17 +48,11 @@ export default function AdminAnnouncements() {
   const [historyError, setHistoryError] = useState(null);
 
   useEffect(() => {
-    const token = getAdminToken();
-    if (!token) {
-      setChecking(false);
-      return;
-    }
-    fetch(`${BACKEND}/api/admin/me`, { headers: getAdminAuthHeader() })
-      .then((res) => {
-        if (res.ok) setAuthorized(true);
-        else clearAdminToken();
-      })
-      .catch(() => clearAdminToken())
+    // The admin token is an httpOnly cookie now — there's nothing for JS to
+    // check locally, so this always has to ask the server.
+    fetch(`${BACKEND}/api/admin/me`, { credentials: "include" })
+      .then((res) => setAuthorized(res.ok))
+      .catch(() => setAuthorized(false))
       .finally(() => setChecking(false));
   }, []);
 
@@ -74,21 +64,21 @@ export default function AdminAnnouncements() {
   function loadHistory() {
     setHistoryLoading(true);
     setHistoryError(null);
-    fetch(`${BACKEND}/api/announcements`, { headers: getAdminAuthHeader() })
+    fetch(`${BACKEND}/api/announcements`, { credentials: "include" })
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error("Failed to load history."))))
       .then((data) => setHistory(data.announcements ?? []))
       .catch((err) => setHistoryError(err.message))
       .finally(() => setHistoryLoading(false));
   }
 
-  function handleLogout() {
-    clearAdminToken();
+  async function handleLogout() {
+    await logoutAdmin();
     navigate("/admin/login", { replace: true });
   }
 
   async function handleUnauthorized(res) {
     if (res.status === 401) {
-      clearAdminToken();
+      await logoutAdmin();
       navigate("/admin/login", { replace: true });
       return true;
     }
@@ -115,7 +105,8 @@ export default function AdminAnnouncements() {
     try {
       const res = await fetch(`${BACKEND}/api/announcements/send`, {
         method: "POST",
-        headers: { "Content-Type": "application/json", ...getAdminAuthHeader() },
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ subject: subject.trim(), body: body.trim() }),
       });
       if (await handleUnauthorized(res)) return;
