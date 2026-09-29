@@ -77,16 +77,23 @@ export default function CgpaTracker() {
     setError(null);
     try {
       const authHeader = await getAuthHeader();
-      const entries = Object.entries(values).filter(([, v]) => v !== "" && v != null);
-      for (const [sem, val] of entries) {
-        const sgpa = parseFloat(val);
-        if (!Number.isFinite(sgpa) || sgpa < 0 || sgpa > 10) continue;
-        await fetch(`${BACKEND}/api/academic`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", ...authHeader },
-          body: JSON.stringify({ semester: parseInt(sem, 10), sgpa }),
-        });
+      const records = Object.entries(values)
+        .filter(([, v]) => v !== "" && v != null)
+        .map(([sem, val]) => ({ semester: parseInt(sem, 10), sgpa: parseFloat(val) }))
+        .filter(({ sgpa }) => Number.isFinite(sgpa) && sgpa >= 0 && sgpa <= 10);
+
+      if (records.length === 0) {
+        setSaving(false);
+        return;
       }
+
+      const res = await fetch(`${BACKEND}/api/academic/bulk`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...authHeader },
+        body: JSON.stringify({ records }),
+      });
+      if (!res.ok) throw new Error("Could not save.");
+
       setSavedFlash(true);
       setTimeout(() => setSavedFlash(false), 2000);
     } catch {
