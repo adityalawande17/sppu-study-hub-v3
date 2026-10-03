@@ -1728,18 +1728,15 @@ h3 {
 }
 .home-hero h1 {
   margin: 18px 0 16px;
-  font-family: "Inter", sans-serif;
-  font-size: 46px;
-  font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -1px;
+  font-family: "Black Ops One", serif;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.6px;
   color: var(--heading);
 }
 .home-hero h1 em {
-  font-family: "Instrument Serif", serif;
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: -0.5px;
+  font-style: normal;
 }
 .home-lede {
   font-size: 15px;
@@ -1969,6 +1966,6 @@ h3 {
     gap: 28px;
   }
   .home-hero h1 {
-    font-size: 36px;
+    font-size: 50px;
   }
 }
