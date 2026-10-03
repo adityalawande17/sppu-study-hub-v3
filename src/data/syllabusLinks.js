@@ -34,7 +34,7 @@ export const syllabusLinks = {
       },
       {
         name: "Mechanical Engineering",
-        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/syllabus-pdf/se/se-mech-2024.pdf",
+        url: "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/se-mech-2024.pdf",
       },
       {
         name: "Civil Engineering",
