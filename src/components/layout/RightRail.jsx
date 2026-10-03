@@ -30,18 +30,6 @@ export default function RightRail() {
   return (
     <aside className="shell-rail" aria-label="Updates and promotions">
       <div className="shell-card">
-        <span className="shell-eyebrow">New</span>
-        <h3>Community Notes</h3>
-        <p>
-          Upload notes for any subject. An admin reviews each one, then it appears
-          on that subject's page.
-        </p>
-        <Link to="/community-notes" className="shell-button">
-          How it works →
-        </Link>
-      </div>
-
-      <div className="shell-card">
         <h4 className="shell-card-title">Latest updates</h4>
         {latest.map((item) => (
           <NewsRow key={item.id} item={item} />

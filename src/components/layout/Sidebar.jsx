@@ -60,7 +60,6 @@ export default function Sidebar({ open, onClose }) {
 
   const displayName = user?.user_metadata?.full_name ?? user?.email?.split("@")[0] ?? "";
   const initial = displayName.charAt(0).toUpperCase() || "?";
-  const showBranches = pathname.startsWith("/branches");
 
   return (
     <>
@@ -82,25 +81,24 @@ export default function Sidebar({ open, onClose }) {
           </button>
         </div>
 
-        <div className="pattern-pill">
-          {["2019", "2024"].map((p) => (
-            <button
-              key={p}
-              className={`pattern-opt ${pattern === p ? "active" : ""}`}
-              onClick={() => switchPattern(p)}
-            >
-              {p}
-            </button>
-          ))}
-        </div>
-
         <nav className="shell-nav">
           <Section title="Study">
             {STUDY.map((item) => (
               <div key={item.to}>
                 <NavItem {...item} pathname={pathname} onNavigate={onClose} />
-                {item.branches && showBranches && (
+                {item.branches && (
                   <div className="shell-sublist">
+                    <div className="pattern-pill shell-pattern">
+                      {["2019", "2024"].map((p) => (
+                        <button
+                          key={p}
+                          className={`pattern-opt ${pattern === p ? "active" : ""}`}
+                          onClick={() => switchPattern(p)}
+                        >
+                          {p}
+                        </button>
+                      ))}
+                    </div>
                     {Object.values(branchMeta).map((b) => (
                       <NavItem
                         key={b.key}
