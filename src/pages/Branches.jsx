@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { branchMeta } from "../data/branches";
+import BranchLogo from "../components/BranchLogo";
 
 export default function Branches() {
   useSEO({
@@ -10,10 +11,10 @@ export default function Branches() {
       "Browse SPPU engineering study materials by branch. Computer Science, IT, Mechanical, Civil, Electrical, E and TC. SE, TE and BE subjects with notes and question papers.",
   });
   return (
-    <div className="page-wrap">
+    <div className="page-wrap branches-page">
       <div
         className="section-header"
-        style={{ borderTop: "none", paddingTop: 28 }}
+        style={{ borderTop: "none", paddingTop: 28, marginBottom: 28 }}
       >
         <h1 className="section-title">Engineering Branches</h1>
         <span className="section-sub">Select a branch to browse subjects</span>
@@ -21,11 +22,11 @@ export default function Branches() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
           gap: 14,
           marginBottom: 40,
         }}
-        className="branch-grid"
+        className="branch-grid branches-grid"
       >
         {Object.values(branchMeta).map((b) => (
           <Link
@@ -51,24 +52,7 @@ export default function Branches() {
               e.currentTarget.style.transform = "";
             }}
           >
-            <div
-              style={{
-                width: 46,
-                height: 46,
-                borderRadius: 10,
-                background: b.color,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 14,
-                fontWeight: 700,
-                color: "#fff",
-                flexShrink: 0,
-                fontFamily: "'DM Serif Display', serif",
-              }}
-            >
-              {b.abbr}
-            </div>
+            <BranchLogo branch={b} size={46} />
             <div>
               <div
                 style={{
@@ -87,7 +71,6 @@ export default function Branches() {
           </Link>
         ))}
       </div>
-      <style>{`@media(max-width:900px){.branch-grid{grid-template-columns:repeat(2,1fr)!important}}@media(max-width:480px){.branch-grid{grid-template-columns:1fr!important}}`}</style>
     </div>
   );
 }

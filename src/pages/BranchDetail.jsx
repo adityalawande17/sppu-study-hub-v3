@@ -4,6 +4,7 @@ import { useSEO } from "../hooks/useSEO";
 import { useApp } from "../context/AppContext";
 import { branchMeta, branchData } from "../data/branches";
 import SubjectItem from "../components/SubjectItem";
+import BranchLogo from "../components/BranchLogo";
 
 
 const DlIcon = () => (
@@ -32,6 +33,7 @@ export default function BranchDetail() {
   const has2024Data = !!branchData["2024"]?.[branchKey];
   const data = branchData[pattern]?.[branchKey] || branchData["2019"][branchKey];
   const showPatternNotice = pattern === "2024" && !has2024Data;
+  const availableYears = ["SE", "TE", "BE"].filter((yr) => data[yr]);
 
   useSEO({
     title: meta
@@ -73,18 +75,6 @@ export default function BranchDetail() {
 
   return (
     <div className="page-wrap">
-      <div className="breadcrumb">
-        <Link to="/" className="bc-link">
-          Home
-        </Link>
-        <span className="bc-sep">›</span>
-        <Link to="/branches" className="bc-link">
-          Branches
-        </Link>
-        <span className="bc-sep">›</span>
-        <span>{meta.short}</span>
-      </div>
-
       {/* 2024 pattern not yet available notice */}
       {showPatternNotice && (
         <div
@@ -110,50 +100,12 @@ export default function BranchDetail() {
         </div>
       )}
 
-      {/* Branch header with accent */}
-      <div
-        style={{
-          padding: "20px 0 22px",
-          borderBottom: "var(--border-w) solid var(--border)",
-          marginBottom: 22,
-          display: "flex",
-          alignItems: "flex-start",
-          gap: 16,
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          <div
-            style={{
-              width: 52,
-              height: 52,
-              borderRadius: 12,
-              background: meta.color,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 16,
-              fontWeight: 700,
-              color: "#fff",
-              fontFamily: "'DM Serif Display', serif",
-              flexShrink: 0,
-            }}
-          >
-            {meta.abbr}
-          </div>
+      {/* Branch header */}
+      <div className="branch-header">
+        <div className="branch-header-main">
+          <BranchLogo branch={meta} size={52} />
           <div>
-            <h1
-              className="branch-page-title"
-              style={{
-                fontFamily: "'DM Serif Display', serif",
-                fontSize: 26,
-                color: "var(--heading)",
-                marginBottom: 6,
-              }}
-            >
-              {meta.name}
-            </h1>
+            <h1 className="branch-page-title">{meta.name}</h1>
             <div className="subject-meta">
               <span>
                 <span className="meta-dot" /> {pattern} Pattern
@@ -161,17 +113,10 @@ export default function BranchDetail() {
               <span>
                 <span className="meta-dot" /> SPPU
               </span>
-              <span>
-                <span className="meta-dot" /> Pune
-              </span>
             </div>
           </div>
         </div>
-        <Link
-          to="/syllabus"
-          className="syllabus-dl-btn"
-          style={{ alignSelf: "flex-start" }}
-        >
+        <Link to="/syllabus" className="syllabus-dl-btn">
           <DlIcon /> Syllabus PDF
         </Link>
       </div>
@@ -240,12 +185,12 @@ export default function BranchDetail() {
         className="branch-desktop-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+          gridTemplateColumns: `repeat(${availableYears.length}, minmax(0, 1fr))`,
           gap: 16,
           alignItems: "start",
         }}
       >
-        {["SE", "TE", "BE"].map((yr) => {
+        {availableYears.map((yr) => {
           const yearData = data[yr];
           if (!yearData) return <div key={yr} />;
           return (

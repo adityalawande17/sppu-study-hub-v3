@@ -141,40 +141,9 @@ export default function Subject() {
 
   return (
     <div className="page-wrap">
-      <div className="breadcrumb">
-        <Link to="/" className="bc-link">
-          Home
-        </Link>
-        <span className="bc-sep">›</span>
-        <Link
-          to={isFirstYear ? "/first-year" : "/branches"}
-          className="bc-link"
-        >
-          {isFirstYear ? "First Year" : "Branches"}
-        </Link>
-        {!isFirstYear && subject.branchKey && (
-          <>
-            <span className="bc-sep">›</span>
-            <Link to={`/branches/${subject.branchKey}`} className="bc-link">
-              {subject.branch}
-            </Link>
-          </>
-        )}
-        <span className="bc-sep">›</span>
-        <span
-          style={{
-            color: "var(--text-3)",
-            maxWidth: 200,
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {subject.name}
-        </span>
-      </div>
 
       <div className="subject-header">
+        <div className="subject-title-block">
         <h1>{subject.name}</h1>
         <div className="subject-meta">
           {subject.branch && (
@@ -196,31 +165,8 @@ export default function Subject() {
             <span className="meta-dot" /> SPPU
           </span>
         </div>
+        </div>
         <div className="subject-action-row">
-          <div
-            style={{
-              fontSize: 12,
-              color: "var(--text-4)",
-              display: "flex",
-              alignItems: "center",
-              gap: 5,
-              padding: "4px 10px",
-              background: "var(--surface2)",
-              border: "var(--border-w) solid var(--border)",
-              borderRadius: 16,
-            }}
-          >
-            <span
-              style={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                background: "#16a34a",
-                display: "inline-block",
-              }}
-            />
-            Updated: {subject.updated || "Jan 2025"}
-          </div>
           <button
             onClick={() => toggleSaved(subject)}
             style={{
@@ -351,6 +297,23 @@ export default function Subject() {
           </div>
         )}
 
+        {/* Notes */}
+        {hasUnits && (
+          <div className="mat-section">
+            <div className="mat-section-head">
+              <div className="mat-section-title">
+                Unit Notes <span className="badge badge-notes">Notes</span>
+              </div>
+              <span style={{ fontSize: 12, color: "var(--text-3)" }}>
+                Unit 1 to 6
+              </span>
+            </div>
+            <div className="mat-section-body">
+              <UnitAccordion units={units} subjectCode={code} />
+            </div>
+          </div>
+        )}
+
         {/* PYQ */}
         {hasPYQ && (
           <div className="mat-section">
@@ -404,23 +367,6 @@ export default function Subject() {
                 />
               </div>
             )}
-          </div>
-        )}
-
-        {/* Notes */}
-        {hasUnits && (
-          <div className="mat-section">
-            <div className="mat-section-head">
-              <div className="mat-section-title">
-                Unit Notes <span className="badge badge-notes">Notes</span>
-              </div>
-              <span style={{ fontSize: 12, color: "var(--text-3)" }}>
-                Unit 1 to 6
-              </span>
-            </div>
-            <div className="mat-section-body">
-              <UnitAccordion units={units} subjectCode={code} />
-            </div>
           </div>
         )}
 
@@ -499,7 +445,7 @@ export default function Subject() {
                 borderRadius: 8,
                 border: "1px solid var(--border-2)",
                 background: "var(--gold)",
-                color: "#111",
+                color: "#ffffff",
                 fontSize: 12,
                 fontWeight: 700,
                 cursor: "pointer",

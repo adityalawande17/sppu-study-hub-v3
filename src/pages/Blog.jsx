@@ -30,7 +30,7 @@ export default function Blog() {
           No posts yet — check back soon.
         </p>
       ) : (
-        <div style={{ display: "grid", gap: 16, maxWidth: 760 }}>
+        <div style={{ display: "grid", gap: 16 }}>
           {allPosts.map((post) => (
             <Link
               key={post.slug}

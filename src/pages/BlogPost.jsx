@@ -65,23 +65,6 @@ export default function BlogPost() {
   return (
     <div className="page-wrap">
       {/* Breadcrumb */}
-      <div className="breadcrumb">
-        <Link to="/" className="bc-link">Home</Link>
-        <span className="bc-sep">›</span>
-        <Link to="/blog" className="bc-link">Blog</Link>
-        <span className="bc-sep">›</span>
-        <span
-          style={{
-            color: "var(--text-3)",
-            maxWidth: 240,
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {post.title}
-        </span>
-      </div>
 
       {/* Post header */}
       <div style={{ paddingTop: 12, paddingBottom: 28, borderBottom: "var(--border-w) solid var(--border)", marginBottom: 32 }}>
