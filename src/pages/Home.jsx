@@ -146,11 +146,11 @@ export default function Home() {
               : "Free for every SPPU engineering student"}
           </div>
           <h1>
-            <em>One stop</em>
+            Everything
             <br />
-            learning platform
+            you need.
             <br />
-            for SPPU engineers
+            <span className="home-hero-accent">One place.</span>
           </h1>
           <p className="home-lede">
             Notes, previous-year question papers, practicals and AI explanations for every

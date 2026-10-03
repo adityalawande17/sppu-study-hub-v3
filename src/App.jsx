@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AppProvider } from "./context/AppContext";
 import AppLayout from "./components/layout/AppLayout";
 import Footer from "./components/Footer";
-import NoticeStrip from "./components/NoticeStrip";
 import ScrollToTop from "./components/ScrollToTop";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -99,7 +98,6 @@ export default function App() {
             minHeight: "100vh",
           }}
         >
-          <NoticeStrip />
           <AppLayout>
           <main style={{ flex: 1 }}>
             <RouteErrorBoundary>

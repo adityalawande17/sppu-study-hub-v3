@@ -1739,6 +1739,9 @@ h3 {
 .home-hero h1 em {
   font-style: normal;
 }
+.home-hero-accent {
+  color: #5b7c99;
+}
 .home-lede {
   font-size: 15px;
   line-height: 1.7;
