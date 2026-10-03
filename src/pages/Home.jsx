@@ -75,7 +75,7 @@ const faqs = [
 ];
 
 export default function Home() {
-  const { user, sessionLoading } = useApp();
+  const { user, sessionLoading, pattern, switchPattern } = useApp();
   const loginCount = useLoginCount();
   const [noticeDismissed, setNoticeDismissed] = useState(
     () => sessionStorage.getItem("notice_dismissed") === "1",
@@ -114,7 +114,7 @@ export default function Home() {
   });
 
   const branchCount = Object.keys(branchMeta).length;
-  const previewSubjects = Object.values(branchMeta).slice(0, 4);
+  const previewSubjects = Object.values(branchMeta);
 
   return (
     <div className="home">
@@ -166,10 +166,20 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="home-preview" aria-hidden="true">
+        <div className="home-preview">
           <div className="home-preview-head">
             <span>Your subjects</span>
-            <span className="home-preview-pill">2024 pattern</span>
+            <div className="pattern-pill">
+              {["2019", "2024"].map((p) => (
+                <button
+                  key={p}
+                  className={`pattern-opt ${pattern === p ? "active" : ""}`}
+                  onClick={() => switchPattern(p)}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
           </div>
           {previewSubjects.map((b) => (
             <div key={b.key} className="home-preview-row">
@@ -180,10 +190,6 @@ export default function Home() {
               <Icon name="home" size={14} />
             </div>
           ))}
-          <div className="home-preview-note">
-            <span className="home-preview-pill">New</span>
-            <span>Community Notes are live on every subject page</span>
-          </div>
         </div>
       </section>
 
