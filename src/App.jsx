@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AppProvider } from "./context/AppContext";
-import Navbar from "./components/Navbar";
+import AppLayout from "./components/layout/AppLayout";
 import Footer from "./components/Footer";
 import NoticeStrip from "./components/NoticeStrip";
 import ScrollToTop from "./components/ScrollToTop";
@@ -100,7 +100,7 @@ export default function App() {
           }}
         >
           <NoticeStrip />
-          <Navbar />
+          <AppLayout>
           <main style={{ flex: 1 }}>
             <RouteErrorBoundary>
               <Suspense fallback={
@@ -140,6 +140,7 @@ export default function App() {
             </RouteErrorBoundary>
           </main>
           <Footer />
+          </AppLayout>
         </div>
       </BrowserRouter>
     </AppProvider>

@@ -129,9 +129,9 @@
   --navy: #0a1628;
   --navy-mid: #0f1e38;
   --navy-light: #1d3461;
-  --gold: #3b82f6;
-  --gold-dim: #2563eb;
-  --gold-pale: rgba(59, 130, 246, 0.12);
+  --gold: #1d3461;
+  --gold-dim: #16294f;
+  --gold-pale: rgba(29, 52, 97, 0.35);
   --gold-glow: rgba(251, 191, 36, 0.15);
   --heat-green: #39d353;
 
@@ -1342,5 +1342,316 @@ h3 {
   }
   .subject-action-right {
     margin-left: 0;
+  }
+}
+
+/* ---- App shell: sidebar · content · rail ---- */
+.shell {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr) 300px;
+  min-height: 100vh;
+}
+.shell-center {
+  min-width: 0;
+}
+.shell-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px 14px;
+  background: var(--surface);
+  border-right: var(--border-w) solid var(--border);
+}
+.shell-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+}
+.shell-brand a,
+.shell-mobile-brand {
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  text-decoration: none;
+}
+.shell-brand a span,
+.shell-mobile-brand span {
+  color: var(--heading);
+}
+.shell-close,
+.shell-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-3);
+  cursor: pointer;
+  padding: 6px;
+}
+.shell-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.shell-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  padding: 0 10px 6px;
+}
+.shell-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.shell-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-3);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.shell-link svg {
+  flex-shrink: 0;
+  color: var(--text-4);
+}
+.shell-link:hover {
+  background: var(--surface2);
+  color: var(--text);
+}
+.shell-link.is-active {
+  background: var(--gold-pale);
+  color: var(--text);
+}
+.shell-link.is-active svg {
+  color: var(--text);
+}
+.shell-sublist {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 2px 0 4px 22px;
+  padding-left: 10px;
+  border-left: var(--border-w) solid var(--border);
+}
+.shell-sublist .shell-link {
+  font-size: 12px;
+  padding: 6px 8px;
+}
+.shell-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: var(--border-w) solid var(--border);
+}
+.shell-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  font-size: 13px;
+  color: var(--text);
+}
+.shell-user > span:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.shell-user button {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  cursor: pointer;
+  padding: 4px;
+}
+.shell-avatar {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+.shell-signin {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--gold);
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.shell-backdrop {
+  display: none;
+}
+.shell-mobilebar {
+  display: none;
+}
+.shell-rail {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  padding: 24px 20px;
+  border-left: var(--border-w) solid var(--border);
+}
+.shell-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  background: var(--surface);
+  border: var(--border-w) solid var(--border);
+  border-radius: 14px;
+}
+.shell-card h3,
+.shell-card-title {
+  margin: 0;
+  font-size: 17px;
+  color: var(--heading);
+}
+.shell-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-3);
+}
+.shell-eyebrow {
+  align-self: flex-start;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: var(--gold-pale);
+  color: var(--heading);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.shell-button {
+  align-self: flex-start;
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: var(--gold);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.shell-news {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 0;
+  border-top: var(--border-w) solid var(--border);
+  color: inherit;
+  text-decoration: none;
+}
+.shell-news-title {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text);
+}
+.shell-more {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--heading);
+  text-decoration: none;
+}
+.shell-ad {
+  min-height: 250px;
+}
+
+/* Tablet: sidebar stays, rail moves below the content */
+@media (max-width: 1099px) {
+  .shell {
+    grid-template-columns: 230px minmax(0, 1fr);
+  }
+  .shell-rail {
+    grid-column: 2;
+    position: static;
+    height: auto;
+    border-left: none;
+    border-top: var(--border-w) solid var(--border);
+  }
+}
+
+/* Mobile: sidebar becomes a slide-in drawer */
+@media (max-width: 767px) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .shell-rail {
+    grid-column: auto;
+  }
+  .shell-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 400;
+    width: 264px;
+    height: auto;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+  .shell-sidebar.is-open {
+    transform: none;
+  }
+  .shell-close,
+  .shell-menu-btn {
+    display: inline-flex;
+  }
+  .shell-backdrop.is-open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 350;
+    background: rgba(0, 0, 0, 0.55);
+  }
+  .shell-mobilebar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-bottom: var(--border-w) solid var(--border);
   }
 }
