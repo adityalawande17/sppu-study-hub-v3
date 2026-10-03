@@ -5,6 +5,7 @@ import { useApp } from "../context/AppContext";
 import { useLoginCount } from "../hooks/useLoginCount";
 import { branchMeta } from "../data/branches";
 import Icon from "../components/layout/icons";
+import HomeNav from "../components/HomeNav";
 import CookieConsentBanner from "../components/CookieConsentBanner";
 import LoginPromoModal from "../components/LoginPromoModal";
 
@@ -117,6 +118,8 @@ export default function Home() {
   const previewSubjects = Object.values(branchMeta);
 
   return (
+    <>
+    <HomeNav />
     <div className="home">
       {/* Content notice popup */}
       {!noticeDismissed && (
@@ -168,7 +171,7 @@ export default function Home() {
 
         <div className="home-preview">
           <div className="home-preview-head">
-            <span>Your subjects</span>
+            <span>Select the pattern</span>
             <div className="pattern-pill">
               {["2019", "2024"].map((p) => (
                 <button
@@ -181,15 +184,18 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <div className="home-preview-label">Branches</div>
+          <div className="home-preview-grid">
           {previewSubjects.map((b) => (
-            <div key={b.key} className="home-preview-row">
+            <Link key={b.key} to={`/branches/${b.key}`} className="home-preview-row">
               <span className="home-preview-abbr" style={{ background: b.color }}>
                 {b.abbr}
               </span>
               <span>{b.short}</span>
               <Icon name="home" size={14} />
-            </div>
+            </Link>
           ))}
+          </div>
         </div>
       </section>
 
@@ -281,5 +287,6 @@ export default function Home() {
       <LoginPromoModal open={loginPromoOpen} onClose={dismissLoginPromo} />
       <CookieConsentBanner />
     </div>
+    </>
   );
 }
