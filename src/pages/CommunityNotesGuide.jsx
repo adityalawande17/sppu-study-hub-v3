@@ -61,13 +61,13 @@ export default function CommunityNotesGuide() {
                 height: 32,
                 borderRadius: "50%",
                 background: "var(--gold-pale)",
-                border: "1px solid var(--gold-dim)",
+                border: "1px solid var(--border-2)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 fontFamily: "'DM Serif Display', serif",
                 fontSize: 15,
-                color: "var(--gold-dim)",
+                color: "var(--heading)",
               }}
             >
               {step.n}
@@ -99,7 +99,7 @@ export default function CommunityNotesGuide() {
       <div
         style={{
           background: "var(--gold-pale)",
-          border: "1px solid var(--gold-dim)",
+          border: "1px solid var(--border-2)",
           borderRadius: 12,
           padding: "18px 22px",
           marginBottom: 32,

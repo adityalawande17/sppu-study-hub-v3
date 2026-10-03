@@ -80,7 +80,7 @@ export default function EmailPreferenceToggle() {
           borderRadius: 8,
           border: "var(--border-w) solid var(--border)",
           background: optedOut ? "transparent" : "var(--gold-pale)",
-          color: optedOut ? "var(--text-3)" : "var(--gold-dim)",
+          color: optedOut ? "var(--text-3)" : "var(--heading)",
           fontSize: 12,
           fontWeight: 600,
           cursor: "pointer",

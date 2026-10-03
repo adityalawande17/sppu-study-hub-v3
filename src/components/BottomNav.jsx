@@ -136,7 +136,7 @@ export default function BottomNav() {
                   justifyContent: "center",
                   padding: "8px 2px 6px",
                   textDecoration: "none",
-                  color: active ? "var(--gold)" : "var(--nav-text-dim)",
+                  color: active ? "var(--heading)" : "var(--nav-text-dim)",
                   fontSize: 9,
                   fontWeight: 600,
                   gap: 3,

@@ -58,7 +58,7 @@ function HistoryCard({ entry, onDelete }) {
               style={{
                 fontSize: 10,
                 fontWeight: 700,
-                color: "var(--gold-dim)",
+                color: "var(--heading)",
                 background: "var(--gold-pale)",
                 padding: "3px 8px",
                 borderRadius: 10,

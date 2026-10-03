@@ -133,7 +133,7 @@ export default function PeerNotes({ subjectCode, pattern }) {
                   rel="noopener noreferrer"
                   style={{
                     fontSize: 13,
-                    color: "var(--gold-dim)",
+                    color: "var(--heading)",
                     textDecoration: "none",
                     fontWeight: 500,
                   }}

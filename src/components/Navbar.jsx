@@ -225,7 +225,7 @@ export default function Navbar() {
               letterSpacing: "-0.3px",
             }}
           >
-            SPPU<span style={{ color: "var(--gold)" }}>StudyHUB</span>
+            SPPU<span style={{ color: "var(--heading)" }}>StudyHUB</span>
           </Link>
 
           {/* Pattern switcher */}
@@ -586,7 +586,7 @@ export default function Navbar() {
                             fontSize: 10,
                             fontWeight: 700,
                             background: "var(--gold-pale)",
-                            color: "var(--gold-dim)",
+                            color: "var(--heading)",
                             padding: "1px 7px",
                             borderRadius: 10,
                           }}
@@ -1132,7 +1132,7 @@ export default function Navbar() {
                     padding: "12px 14px",
                     borderRadius: 10,
                     background: "var(--gold-pale)",
-                    border: "1px solid var(--gold-dim)",
+                    border: "1px solid var(--border-2)",
                     textDecoration: "none",
                     transition: "all .18s",
                   }}
@@ -1220,7 +1220,7 @@ export default function Navbar() {
               textDecoration: "none",
             }}
           >
-            SPPU<span style={{ color: "var(--gold)" }}>StudyHUB</span>
+            SPPU<span style={{ color: "var(--heading)" }}>StudyHUB</span>
           </Link>
           <button
             onClick={() => setMobileOpen(false)}
@@ -1559,7 +1559,7 @@ export default function Navbar() {
               borderRadius: 8,
               fontSize: 14,
               fontWeight: 600,
-              color: "var(--gold-dim)",
+              color: "var(--heading)",
               textDecoration: "none",
               marginTop: 4,
             }}

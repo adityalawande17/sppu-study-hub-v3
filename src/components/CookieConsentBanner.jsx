@@ -57,7 +57,7 @@ export default function CookieConsentBanner() {
           borderRadius: 10,
           flexShrink: 0,
           background: "var(--gold-pale)",
-          color: "var(--gold-dim)",
+          color: "var(--heading)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -105,7 +105,7 @@ export default function CookieConsentBanner() {
           <Link
             to="/privacy"
             style={{
-              color: "var(--gold-dim)",
+              color: "var(--heading)",
               fontWeight: 700,
               textDecoration: "none",
             }}

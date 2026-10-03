@@ -154,7 +154,7 @@ function ResourceRow({ resource }) {
         rel="noopener noreferrer"
         style={{
           padding: "5px 12px",
-          border: `1px solid ${isVideo ? "#dc2626" : "#0a1628"}`,
+          border: `1px solid ${isVideo ? "#dc2626" : "var(--border-2)"}`,
           borderRadius: 6,
           background: "transparent",
           color: isVideo ? "#dc2626" : "var(--heading)",
@@ -170,7 +170,7 @@ function ResourceRow({ resource }) {
           fontFamily: "Inter, sans-serif",
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.background = isVideo ? "#dc2626" : "#0a1628";
+          e.currentTarget.style.background = isVideo ? "#dc2626" : "var(--surface3)";
           e.currentTarget.style.color = "#fff";
         }}
         onMouseLeave={(e) => {
@@ -246,7 +246,7 @@ export default function PracticalAccordion({ practicals }) {
                 alignItems: "center",
                 justifyContent: "space-between",
                 padding: "12px 14px",
-                background: isOpen ? "#0a1628" : "var(--surface2)",
+                background: isOpen ? "var(--surface3)" : "var(--surface2)",
                 border: "none",
                 cursor: "pointer",
                 fontFamily: "Inter, sans-serif",

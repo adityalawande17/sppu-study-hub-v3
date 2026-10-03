@@ -342,7 +342,7 @@ h3 {
 }
 .badge-notes {
   background: var(--gold-pale);
-  color: var(--gold-dim);
+  color: var(--heading);
 }
 .badge-pyq {
   background: #fef3c7;
@@ -446,7 +446,7 @@ h3 {
   gap: 12px;
 }
 .subject-item:hover {
-  border-color: var(--gold);
+  border-color: var(--border-2);
   box-shadow: var(--shadow-sm);
   padding-left: 22px;
   background: var(--gold-pale);
@@ -456,7 +456,7 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--gold-dim);
+  color: var(--heading);
   background: var(--gold-pale);
   padding: 4px 10px;
   border-radius: 20px;
@@ -464,7 +464,7 @@ h3 {
   flex-shrink: 0;
 }
 [data-theme="dark"] .subject-code {
-  color: var(--gold);
+  color: var(--heading);
   background: var(--gold-pale);
 }
 .subject-name {
@@ -540,7 +540,7 @@ h3 {
   padding: 20px 0 0;
 }
 .bc-link {
-  color: var(--gold-dim);
+  color: var(--heading);
   cursor: pointer;
   text-decoration: none;
   background: none;
@@ -551,7 +551,7 @@ h3 {
   transition: color var(--t-fast);
 }
 .bc-link:hover {
-  color: var(--gold);
+  color: var(--heading);
 }
 .bc-sep {
   color: var(--border-2);
@@ -619,11 +619,11 @@ h3 {
 /* ---- Info strip ---- */
 .info-strip {
   background: var(--gold-pale);
-  border: 1px solid var(--gold-dim);
+  border: 1px solid var(--border-2);
   border-radius: var(--r-md);
   padding: 11px 15px;
   font-size: 13px;
-  color: var(--gold-dim);
+  color: var(--heading);
   margin-bottom: 16px;
   line-height: 1.5;
 }
@@ -663,7 +663,7 @@ h3 {
   justify-content: space-between;
   background: var(--surface);
   border: var(--border-w) solid var(--border);
-  border-left: 4px solid var(--gold);
+  border-left: 4px solid var(--border-2);
   border-radius: var(--r-md);
   padding: 13px 16px;
   margin-bottom: 18px;
@@ -676,9 +676,9 @@ h3 {
   gap: 6px;
   padding: 8px 16px;
   background: var(--gold-pale);
-  border: 1px solid var(--gold-dim);
+  border: 1px solid var(--border-2);
   border-radius: var(--r-md);
-  color: var(--gold-dim);
+  color: var(--heading);
   font-size: 13px;
   font-weight: 600;
   font-family: "Inter", sans-serif;
@@ -689,7 +689,7 @@ h3 {
 .syllabus-dl-btn:hover {
   background: var(--gold);
   color: #fff;
-  border-color: var(--gold);
+  border-color: var(--border-2);
 }
 
 /* ---- Legal ---- */
@@ -726,7 +726,7 @@ h3 {
   margin-bottom: 5px;
 }
 .legal-wrap a {
-  color: var(--gold-dim);
+  color: var(--heading);
 }
 
 /* ---- Modal ---- */
@@ -896,7 +896,7 @@ h3 {
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
-  border-color: var(--gold);
+  border-color: var(--border-2);
 }
 .form-textarea {
   resize: vertical;
@@ -952,7 +952,7 @@ h3 {
 .tool-result-value {
   font-family: "DM Serif Display", serif;
   font-size: 32px;
-  color: var(--gold-dim);
+  color: var(--heading);
   line-height: 1;
 }
 
@@ -1000,7 +1000,7 @@ h3 {
   cursor: pointer;
 }
 .news-card:hover {
-  border-color: var(--gold-dim);
+  border-color: var(--border-2);
   box-shadow: var(--shadow-md);
 }
 .news-dot {
@@ -1014,7 +1014,7 @@ h3 {
 
 /* ---- Result CTA ---- */
 .result-cta {
-  background: linear-gradient(135deg, #0a1628 0%, #1d3461 100%);
+  background: var(--surface2);
   border-radius: var(--r-lg);
   padding: 18px 22px;
   display: flex;
@@ -1077,7 +1077,7 @@ h3 {
   height: 32px;
   border-radius: 50%;
   border: 3px solid var(--border);
-  border-top-color: var(--gold);
+  border-top-color: var(--border-2);
   animation: spin 0.7s linear infinite;
 }
 .fade-up-5 {
@@ -1161,7 +1161,7 @@ h3 {
     width: auto !important;
     border-radius: 10px !important;
     border-left: none !important;
-    border-top: 3px solid var(--gold) !important;
+    border-top: 3px solid var(--border-2) !important;
     border-right: none !important;
     border-bottom: none !important;
   }
@@ -1208,12 +1208,12 @@ h3 {
   margin-bottom: 6px;
 }
 .blog-prose a {
-  color: var(--gold-dim);
+  color: var(--heading);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .blog-prose a:hover {
-  color: var(--gold);
+  color: var(--heading);
 }
 .blog-prose strong {
   font-weight: 700;
@@ -1231,7 +1231,7 @@ h3 {
   border: var(--border-w) solid var(--border);
 }
 .blog-prose blockquote {
-  border-left: 3px solid var(--gold-dim);
+  border-left: 3px solid var(--border-2);
   padding: 10px 16px;
   margin: 20px 0;
   background: var(--gold-pale);
@@ -1311,8 +1311,8 @@ h3 {
   background: var(--surface2);
 }
 .share-btn-copied {
-  border-color: var(--gold-dim);
-  color: var(--gold-dim);
+  border-color: var(--border-2);
+  color: var(--heading);
   background: var(--gold-pale);
 }
 

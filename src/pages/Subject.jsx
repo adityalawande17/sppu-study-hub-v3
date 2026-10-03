@@ -228,10 +228,10 @@ export default function Subject() {
               alignItems: "center",
               gap: 6,
               padding: "6px 13px",
-              border: `1px solid ${saved ? "var(--gold-dim)" : "var(--border-2)"}`,
+              border: `1px solid ${saved ? "var(--heading)" : "var(--border-2)"}`,
               borderRadius: 8,
               background: saved ? "var(--gold-pale)" : "var(--surface)",
-              color: saved ? "var(--gold-dim)" : "var(--text-3)",
+              color: saved ? "var(--heading)" : "var(--text-3)",
               fontSize: 13,
               fontFamily: "Inter, sans-serif",
               cursor: "pointer",
@@ -450,7 +450,7 @@ export default function Subject() {
           <div
             style={{
               background: "var(--gold-pale)",
-              border: "1px solid var(--gold-dim)",
+              border: "1px solid var(--border-2)",
               borderRadius: 12,
               padding: "16px 20px",
               marginBottom: 20,
@@ -497,7 +497,7 @@ export default function Subject() {
                 flexShrink: 0,
                 padding: "9px 18px",
                 borderRadius: 8,
-                border: "1px solid var(--gold-dim)",
+                border: "1px solid var(--border-2)",
                 background: "var(--gold)",
                 color: "#111",
                 fontSize: 12,
@@ -595,7 +595,7 @@ export default function Subject() {
                           justifyContent: "center",
                           fontSize: 8,
                           fontWeight: 700,
-                          color: "var(--gold)",
+                          color: "var(--heading)",
                           letterSpacing: 0.3,
                           textAlign: "center",
                           flexShrink: 0,
@@ -630,7 +630,7 @@ export default function Subject() {
                           style={{
                             fontSize: 13,
                             fontWeight: 600,
-                            color: "var(--gold-dim)",
+                            color: "var(--heading)",
                             marginTop: 4,
                           }}
                         >

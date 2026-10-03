@@ -104,9 +104,9 @@ export default function ProfileForm({ initial, onSubmit, submitLabel, submitting
             style={{
               padding: "8px 18px",
               borderRadius: 8,
-              border: `1px solid ${year === y ? "var(--gold-dim)" : "var(--border)"}`,
+              border: `1px solid ${year === y ? "var(--heading)" : "var(--border)"}`,
               background: year === y ? "var(--gold-pale)" : "var(--surface2)",
-              color: year === y ? "var(--gold-dim)" : "var(--text)",
+              color: year === y ? "var(--heading)" : "var(--text)",
               fontWeight: 600,
               fontSize: 13,
               cursor: "pointer",
@@ -131,9 +131,9 @@ export default function ProfileForm({ initial, onSubmit, submitLabel, submitting
                 style={{
                   padding: "8px 18px",
                   borderRadius: 8,
-                  border: `1px solid ${half === h ? "var(--gold-dim)" : "var(--border)"}`,
+                  border: `1px solid ${half === h ? "var(--heading)" : "var(--border)"}`,
                   background: half === h ? "var(--gold-pale)" : "var(--surface2)",
-                  color: half === h ? "var(--gold-dim)" : "var(--text)",
+                  color: half === h ? "var(--heading)" : "var(--text)",
                   fontWeight: 600,
                   fontSize: 13,
                   cursor: "pointer",

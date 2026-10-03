@@ -221,10 +221,10 @@ export default function AdminNotes() {
               padding: "8px 16px",
               fontSize: 13,
               fontWeight: 600,
-              color: pathname === path ? "var(--gold)" : "var(--text-3)",
+              color: pathname === path ? "var(--heading)" : "var(--text-3)",
               borderBottom:
                 pathname === path
-                  ? "2px solid var(--gold)"
+                  ? "2px solid var(--heading)"
                   : "2px solid transparent",
               textDecoration: "none",
               marginBottom: -1,

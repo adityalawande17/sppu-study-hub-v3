@@ -30,7 +30,7 @@ export default function Footer() {
                 letterSpacing: "-0.3px",
               }}
             >
-              SPPU<span style={{ color: "var(--gold)" }}>Study</span>Hub
+              SPPU<span style={{ color: "var(--heading)" }}>Study</span>Hub
             </div>
             <p
               style={{
@@ -101,7 +101,7 @@ export default function Footer() {
                       textDecoration: "none",
                       transition: "color .15s",
                     }}
-                    onMouseEnter={(e) => (e.target.style.color = "var(--gold)")}
+                    onMouseEnter={(e) => (e.target.style.color = "var(--heading)")}
                     onMouseLeave={(e) =>
                       (e.target.style.color = "rgba(255,255,255,.45)")
                     }

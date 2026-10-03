@@ -127,7 +127,7 @@ function FileRow({ file }) {
         rel="noopener noreferrer"
         style={{
           padding: "5px 12px",
-          border: "1px solid #0a1628",
+          border: "1px solid var(--border-2)",
           borderRadius: 6,
           background: "transparent",
           color: "var(--heading)",
@@ -143,7 +143,7 @@ function FileRow({ file }) {
           fontFamily: "Inter, sans-serif",
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.background = "#0a1628";
+          e.currentTarget.style.background = "var(--surface3)";
           e.currentTarget.style.color = "#fff";
         }}
         onMouseLeave={(e) => {
@@ -242,7 +242,7 @@ export default function UnitAccordion({ units = defaultUnits, subjectCode }) {
                 alignItems: "center",
                 justifyContent: "space-between",
                 padding: "12px 14px",
-                background: isOpen ? "#0a1628" : "var(--surface2)",
+                background: isOpen ? "var(--surface3)" : "var(--surface2)",
                 border: "none",
                 cursor: "pointer",
                 fontFamily: "Inter, sans-serif",

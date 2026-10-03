@@ -112,9 +112,9 @@ export default function BlogPost() {
                 style={{
                   fontSize: 11,
                   fontWeight: 600,
-                  color: "var(--gold-dim)",
+                  color: "var(--heading)",
                   background: "var(--gold-pale)",
-                  border: "1px solid var(--gold-dim)",
+                  border: "1px solid var(--border-2)",
                   padding: "2px 8px",
                   borderRadius: 20,
                 }}
@@ -162,7 +162,7 @@ export default function BlogPost() {
             gap: 6,
             fontSize: 13,
             fontWeight: 600,
-            color: "var(--gold-dim)",
+            color: "var(--heading)",
             textDecoration: "none",
           }}
         >

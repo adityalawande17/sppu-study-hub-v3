@@ -95,7 +95,7 @@ export default function BranchDetail() {
             padding: "10px 14px",
             marginBottom: 16,
             background: "var(--gold-pale)",
-            border: "1px solid var(--gold-dim)",
+            border: "1px solid var(--border-2)",
             borderRadius: 8,
             fontSize: 13,
             color: "var(--text-2)",

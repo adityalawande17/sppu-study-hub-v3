@@ -314,7 +314,7 @@ export default function Dashboard() {
                 onMouseEnter={(e) => (e.currentTarget.style.background = "var(--surface2)")}
                 onMouseLeave={(e) => (e.currentTarget.style.background = "var(--surface)")}
               >
-                <span style={{ fontSize: 10, fontWeight: 700, color: "var(--gold-dim)", background: "var(--gold-pale)", padding: "3px 8px", borderRadius: 10, whiteSpace: "nowrap", flexShrink: 0 }}>
+                <span style={{ fontSize: 10, fontWeight: 700, color: "var(--heading)", background: "var(--gold-pale)", padding: "3px 8px", borderRadius: 10, whiteSpace: "nowrap", flexShrink: 0 }}>
                   {s.code}
                 </span>
                 <span style={{ fontSize: 14, fontWeight: 500, color: "var(--text)" }}>

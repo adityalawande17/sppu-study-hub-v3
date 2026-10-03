@@ -122,7 +122,7 @@ export default function LoginPromoModal({ open, onClose }) {
             height: 60,
             borderRadius: 16,
             background: "var(--gold-pale)",
-            color: "var(--gold-dim)",
+            color: "var(--heading)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -189,7 +189,7 @@ export default function LoginPromoModal({ open, onClose }) {
                 width: i === step ? 16 : 6,
                 height: 6,
                 borderRadius: 3,
-                background: i === step ? "var(--gold-dim)" : "var(--border)",
+                background: i === step ? "var(--heading)" : "var(--border)",
                 transition: "all .2s",
               }}
             />

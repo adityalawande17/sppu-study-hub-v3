@@ -111,9 +111,9 @@ export default function Blog() {
                         style={{
                           fontSize: 11,
                           fontWeight: 600,
-                          color: "var(--gold-dim)",
+                          color: "var(--heading)",
                           background: "var(--gold-pale)",
-                          border: "1px solid var(--gold-dim)",
+                          border: "1px solid var(--border-2)",
                           padding: "2px 8px",
                           borderRadius: 20,
                         }}
@@ -126,7 +126,7 @@ export default function Blog() {
                     style={{
                       fontSize: 13,
                       fontWeight: 600,
-                      color: "var(--gold-dim)",
+                      color: "var(--heading)",
                     }}
                   >
                     Read →

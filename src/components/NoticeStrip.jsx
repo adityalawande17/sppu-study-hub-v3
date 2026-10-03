@@ -45,7 +45,7 @@ export default function NoticeStrip({
           <Link
             to={link}
             style={{
-              color: "var(--gold)",
+              color: "var(--heading)",
               textDecoration: "none",
               fontWeight: 600,
               whiteSpace: "nowrap",
