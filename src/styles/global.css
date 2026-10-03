@@ -284,7 +284,7 @@ h3 {
   color: #fff;
 }
 [data-theme="dark"] .btn-gold {
-  color: #0a1628;
+  color: #ffffff;
 }
 .btn-gold:hover {
   background: var(--gold-dim);
@@ -395,7 +395,7 @@ h3 {
 }
 [data-theme="dark"] .badge-new {
   background: var(--gold);
-  color: #111;
+  color: #ffffff;
 }
 [data-theme="dark"] .badge-result {
   background: #3f0a0a;
@@ -984,7 +984,7 @@ h3 {
 }
 [data-theme="dark"] .pattern-opt.active {
   background: var(--gold);
-  color: #111;
+  color: #ffffff;
 }
 
 /* ---- News card ---- */
@@ -1621,12 +1621,14 @@ h3 {
   .shell-sidebar {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     bottom: 0;
     z-index: 400;
     width: 264px;
     height: auto;
-    transform: translateX(-100%);
+    border-right: none;
+    border-left: var(--border-w) solid var(--border);
+    transform: translateX(100%);
     transition: transform 0.25s ease;
   }
   .shell-sidebar.is-open {
@@ -1649,6 +1651,7 @@ h3 {
     z-index: 100;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
     padding: 12px 16px;
     background: var(--surface);
@@ -1971,5 +1974,656 @@ h3 {
   }
   .home-hero h1 {
     font-size: 50px;
+  }
+}
+
+.home-preview-pattern {
+  width: fit-content;
+  margin: 0 0 16px 4px;
+}
+.home-preview-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  padding: 0 4px 8px;
+}
+
+.home-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.home-preview-grid .home-preview-row span:not(.home-preview-abbr) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.home-preview .pattern-opt,
+.home-preview .pattern-opt.active {
+  color: #ffffff;
+}
+
+.home-preview-row {
+  text-decoration: none;
+  transition: background var(--t-fast);
+}
+.home-preview-row:hover {
+  background: var(--surface3);
+}
+
+/* Wide screens: sidebar and rail stay put, only the centre scrolls */
+@media (min-width: 1100px) {
+  .shell {
+    height: 100vh;
+    overflow: hidden;
+  }
+  .shell-center {
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .shell-sidebar,
+  .shell-rail {
+    height: 100vh;
+  }
+}
+
+.shell-caret {
+  width: 6px;
+  height: 6px;
+  margin-left: auto;
+  flex-shrink: 0;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.shell-caret.is-open {
+  transform: rotate(-135deg) translateY(2px);
+}
+
+.shell-signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Sidebar brand uses the original logo font */
+.shell-brand a,
+.shell-mobile-brand {
+  font-family: "Black Ops One", serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+}
+/* Homepage pattern pill matches the card and keeps readable text */
+.home-preview .pattern-pill {
+  border-radius: 10px;
+  background: var(--surface3);
+}
+.home-preview .pattern-opt {
+  border-radius: 7px;
+  color: #ffffff;
+}
+.home-preview .pattern-opt.active {
+  background: var(--gold);
+  color: #ffffff;
+}
+
+/* Sidebar pattern pill matches the homepage pill */
+.shell-sidebar .pattern-pill {
+  border-radius: 10px;
+  background: var(--surface3);
+}
+.shell-sidebar .pattern-opt {
+  border-radius: 7px;
+  color: #ffffff;
+}
+.shell-sidebar .pattern-opt.active {
+  background: var(--gold);
+  color: #ffffff;
+}
+
+/* Sidebar pattern pill spans the sidebar width like the nav rows */
+.shell-sidebar .pattern-pill {
+  display: flex;
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+}
+.shell-sidebar .pattern-opt {
+  flex: 1;
+  padding: 8px 0;
+  text-align: center;
+}
+
+/* Branch page header */
+.branch-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 32px 0 24px;
+  margin-bottom: 24px;
+  border-bottom: var(--border-w) solid var(--border);
+}
+.branch-header-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+.branch-page-title {
+  font-family: "DM Serif Display", serif;
+  font-size: 28px;
+  color: var(--heading);
+  margin: 0 0 6px;
+}
+/* Subject cards: same size, long names cut with an ellipsis */
+.subject-item {
+  min-height: 76px;
+}
+.subject-item .subject-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Branch page: each year column and its cards stay inside their own column */
+.branch-desktop-grid {
+  width: 100%;
+}
+.branch-desktop-grid > div {
+  min-width: 0;
+  overflow: hidden;
+}
+.branch-desktop-grid .subject-item {
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Middle section scrolls without showing a scrollbar */
+.shell-center {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.shell-center::-webkit-scrollbar {
+  display: none;
+}
+
+/* Subject header: Save sits above the share bar, both left-aligned */
+.subject-action-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 14px;
+}
+.subject-action-right {
+  margin-left: 0;
+}
+
+/* Subject page sections share one card style */
+.material-grid .mat-section {
+  border-radius: 14px;
+  background: var(--surface);
+}
+.material-grid .mat-section-head {
+  padding: 18px 22px 12px;
+  border-bottom: none;
+  background: transparent;
+}
+.material-grid .mat-section-title {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+.material-grid .mat-section-head > span {
+  font-size: 12px;
+  color: var(--text-3);
+}
+.material-grid .mat-section-body {
+  padding: 4px 22px 22px;
+}
+.material-grid .info-strip {
+  margin-bottom: 14px;
+}
+
+/* Subject header: title on the left, actions on the right, one row */
+.subject-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+}
+.subject-title-block {
+  min-width: 0;
+}
+.subject-action-row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0;
+}
+.subject-action-right {
+  margin-left: 0;
+}
+
+/* Subject title: larger, with more space above */
+.subject-header {
+  padding-top: 36px;
+}
+.subject-header h1 {
+  font-size: 38px;
+  line-height: 1.15;
+}
+
+/* Left sidebar scrolls without showing a scrollbar */
+.shell-sidebar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.shell-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sidebar: only the nav list scrolls, sign-in and user stay pinned at the bottom */
+.shell-sidebar {
+  overflow: hidden;
+}
+.shell-nav {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.shell-nav::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 767px) {
+  .shell-sidebar {
+    height: 100vh;
+  }
+}
+
+/* Sidebar nav: thin scrollbar styled for the dark theme */
+.shell-nav {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2c31 transparent;
+}
+.shell-nav::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+}
+.shell-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+.shell-nav::-webkit-scrollbar-thumb {
+  background: #2a2c31;
+  border-radius: 6px;
+}
+.shell-nav::-webkit-scrollbar-thumb:hover {
+  background: #3f4147;
+}
+
+/* Signed-in user button and its menu */
+.shell-user-wrap {
+  position: relative;
+}
+.shell-user {
+  width: 100%;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 10px;
+  background: none;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background var(--t-fast);
+}
+.shell-user:hover {
+  background: var(--surface2);
+}
+.shell-user > span:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.shell-user-caret {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  color: var(--text-4);
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.shell-user-caret.is-open {
+  transform: rotate(-135deg) translateY(2px);
+}
+.shell-user-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(100% + 8px);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  background: var(--surface2);
+  border: var(--border-w) solid var(--border-2);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+}
+.shell-user-menu .shell-link {
+  width: 100%;
+}
+
+/* Activity heatmap: thin dark scrollbar, same as the sidebar */
+.heatmap-scroll {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #2a2c31 transparent;
+}
+.heatmap-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.heatmap-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.heatmap-scroll::-webkit-scrollbar-thumb {
+  background: #2a2c31;
+  border-radius: 6px;
+}
+.heatmap-scroll::-webkit-scrollbar-thumb:hover {
+  background: #3f4147;
+}
+
+/* Homepage navbar: floating bar */
+.home-nav {
+  position: sticky;
+  top: 14px;
+  z-index: 120;
+  max-width: 1140px;
+  margin: 16px auto 0;
+  padding: 0 18px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--surface);
+  border: var(--border-w) solid var(--border);
+  border-radius: 16px;
+}
+.home-nav-brand {
+  font-family: "Black Ops One", serif;
+  font-size: 20px;
+  color: var(--heading);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.home-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.home-nav-links a {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-3);
+  text-decoration: none;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.home-nav-links a:hover {
+  background: var(--surface2);
+  color: var(--heading);
+}
+.home-nav-signin {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--gold);
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.home-nav-user {
+  position: relative;
+}
+.home-nav-avatar {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.home-nav-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  background: var(--surface2);
+  border: var(--border-w) solid var(--border-2);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+}
+.home-nav-menu-name {
+  padding: 8px 10px 10px;
+  font-size: 12px;
+  color: var(--text-4);
+  border-bottom: var(--border-w) solid var(--border);
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.home-nav-menu a,
+.home-nav-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+}
+.home-nav-menu a:hover,
+.home-nav-menu button:hover {
+  background: var(--surface3);
+}
+.home-nav-menu svg {
+  color: var(--text-4);
+}
+@media (max-width: 900px) {
+  .home-nav-links {
+    display: none;
+  }
+}
+
+/* Homepage stat cards: compact so they fit on screen */
+.home-stats {
+  margin-top: 24px;
+}
+.home-stat {
+  padding: 14px 18px;
+}
+.home-stat-value {
+  font-size: 24px;
+}
+.home-stat-label {
+  margin-top: 2px;
+}
+
+/* Site footer: dark, matches the rest of the site */
+.site-footer {
+  margin-top: 40px;
+  padding: 48px 0 28px;
+  background: var(--bg);
+  border-top: var(--border-w) solid var(--border);
+}
+.site-footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.site-footer-top {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.site-footer-logo {
+  font-family: "Black Ops One", serif;
+  font-size: 20px;
+  color: var(--heading);
+  margin-bottom: 12px;
+}
+.site-footer-brand p {
+  margin: 0;
+  max-width: 280px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-3);
+}
+.site-footer-col h4 {
+  margin: 0 0 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-4);
+}
+.site-footer-col nav {
+  display: grid;
+  gap: 10px;
+}
+.site-footer-col a {
+  font-size: 13px;
+  color: var(--text-3);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+.site-footer-col a:hover {
+  color: var(--heading);
+}
+.site-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 20px;
+  border-top: var(--border-w) solid var(--border);
+}
+.site-footer-bottom p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-4);
+}
+@media (max-width: 900px) {
+  .site-footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .site-footer-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Branches page: cards fill the screen height on wide screens */
+@media (min-width: 1100px) {
+  .branches-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 24px;
+    box-sizing: border-box;
+  }
+  .branches-grid {
+    flex: 1;
+    min-height: 0;
+    margin-bottom: 0 !important;
+    grid-auto-rows: calc((100vh - 149px) / 4);
+  }
+}
+
+/* Homepage navbar on phones: the drawer button replaces the sign-in button (sign-in is in the drawer) */
+.home-nav-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-3);
+  cursor: pointer;
+  padding: 6px;
+}
+@media (max-width: 767px) {
+  .home-nav-menu-btn {
+    display: inline-flex;
+    margin-left: auto;
+  }
+  .home-nav-signin,
+  .home-nav-user {
+    display: none;
+  }
+}
+
+/* Phone: the copy fills the first screen so the branch preview card starts below the fold */
+@media (max-width: 767px) {
+  .home-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .home-hero-copy {
+    min-height: calc(100svh - 96px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 24px;
   }
 }
