@@ -21,6 +21,10 @@ export default function AppLayout({ children }) {
     };
   }, [drawerOpen]);
 
+  if (pathname === "/") {
+    return children;
+  }
+
   if (isAdmin) {
     return (
       <>

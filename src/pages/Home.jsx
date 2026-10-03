@@ -75,7 +75,7 @@ const faqs = [
 ];
 
 export default function Home() {
-  const { user, sessionLoading, signInWithGoogle } = useApp();
+  const { user, sessionLoading } = useApp();
   const loginCount = useLoginCount();
   const [noticeDismissed, setNoticeDismissed] = useState(
     () => sessionStorage.getItem("notice_dismissed") === "1",
@@ -157,18 +157,9 @@ export default function Home() {
             SPPU engineering subject, in both patterns.
           </p>
           <div className="home-ctas">
-            {user ? (
-              <Link to="/dashboard" className="btn btn-primary">
-                Open dashboard →
-              </Link>
-            ) : (
-              <button
-                className="btn btn-primary"
-                onClick={() => signInWithGoogle(window.location.pathname)}
-              >
-                Start for free →
-              </button>
-            )}
+            <Link to={user ? "/dashboard" : "/branches"} className="btn btn-primary">
+              Start for free →
+            </Link>
             <Link to="/branches" className="btn btn-outline">
               Browse subjects
             </Link>
