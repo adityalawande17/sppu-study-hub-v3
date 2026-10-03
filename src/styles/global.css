@@ -1658,8 +1658,9 @@ h3 {
 
 /* ---- Homepage ---- */
 .home {
-  padding: 36px 40px 56px;
-  max-width: 1040px;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 36px 24px 56px;
 }
 .home-notice {
   position: fixed;
