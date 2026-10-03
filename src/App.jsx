@@ -84,6 +84,11 @@ function NotFound() {
   );
 }
 
+function HomeFooter() {
+  const location = useLocation();
+  return location.pathname === "/" ? <Footer /> : null;
+}
+
 export default function App() {
   return (
     <AppProvider>
@@ -137,7 +142,7 @@ export default function App() {
               </Suspense>
             </RouteErrorBoundary>
           </main>
-          <Footer />
+          <HomeFooter />
           </AppLayout>
         </div>
       </BrowserRouter>

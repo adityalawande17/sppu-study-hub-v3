@@ -81,7 +81,7 @@ export default function ActivityHeatmap({ activity }) {
         {maxStreak === 1 ? "" : "s"}
       </p>
 
-      <div style={{ overflowX: "auto", paddingBottom: 4 }}>
+      <div className="heatmap-scroll" style={{ paddingBottom: 4 }}>
         <div style={{ display: "flex", gap: GAP, marginBottom: 4 }}>
           {columns.map((_, i) => {
             const label = monthLabels.find((m) => m.index === i);
