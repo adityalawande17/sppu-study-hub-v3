@@ -7,6 +7,46 @@ import SubjectItem from "../components/SubjectItem";
 import BranchLogo from "../components/BranchLogo";
 
 
+const YEAR_NAMES = {
+  SE: "Second Year (SE)",
+  TE: "Third Year (TE)",
+  BE: "Fourth Year (BE)",
+};
+const YEARS = ["SE", "TE", "BE"];
+
+// Year column with no syllabus yet: same heading as the others, then a notice box
+function ComingSoonYear({ yr }) {
+  return (
+    <div style={{ minWidth: 0 }}>
+      <div style={{ padding: "10px 16px", borderRadius: 10, marginBottom: 14, textAlign: "left" }}>
+        <h2
+          style={{
+            fontFamily: "'DM Serif Display', serif",
+            fontSize: 15,
+            color: "#fff",
+            margin: 0,
+          }}
+        >
+          {YEAR_NAMES[yr]}
+        </h2>
+      </div>
+      <div
+        style={{
+          padding: "18px 16px",
+          border: "var(--border-w) solid var(--border)",
+          borderRadius: 12,
+          background: "var(--surface2)",
+          fontSize: 13,
+          lineHeight: 1.6,
+          color: "var(--text-3)",
+        }}
+      >
+        Not released by SPPU University yet. Will be added as soon as it is released.
+      </div>
+    </div>
+  );
+}
+
 const DlIcon = () => (
   <svg
     width="13"
@@ -33,7 +73,6 @@ export default function BranchDetail() {
   const has2024Data = !!branchData["2024"]?.[branchKey];
   const data = branchData[pattern]?.[branchKey] || branchData["2019"][branchKey];
   const showPatternNotice = pattern === "2024" && !has2024Data;
-  const availableYears = ["SE", "TE", "BE"].filter((yr) => data[yr]);
 
   useSEO({
     title: meta
@@ -123,8 +162,8 @@ export default function BranchDetail() {
 
       {/* Mobile-only year tabs */}
       <div className="branch-year-tabs">
-        {["SE", "TE", "BE"].map((yr) => (
-          data[yr] && (
+        {YEARS.map((yr) => (
+          (
             <button
               key={yr}
               onClick={() => setActiveYear(yr)}
@@ -142,7 +181,7 @@ export default function BranchDetail() {
                 transition: "all .15s",
               }}
             >
-              {data[yr].label?.split(" ")[0] || yr}
+              {data[yr]?.label?.split(" ")[0] || YEAR_NAMES[yr].split(" ")[0]}
             </button>
           )
         ))}
@@ -152,7 +191,7 @@ export default function BranchDetail() {
       <div className="branch-mobile-year">
         {(() => {
           const yearData = data[activeYear];
-          if (!yearData) return null;
+          if (!yearData) return <ComingSoonYear yr={activeYear} />;
           return (
             <>
               {yearData.semesters.map((sem, i) => (
@@ -185,14 +224,14 @@ export default function BranchDetail() {
         className="branch-desktop-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: `repeat(${availableYears.length}, minmax(0, 1fr))`,
+          gridTemplateColumns: `repeat(${YEARS.length}, minmax(0, 1fr))`,
           gap: 16,
           alignItems: "start",
         }}
       >
-        {availableYears.map((yr) => {
+        {YEARS.map((yr) => {
           const yearData = data[yr];
-          if (!yearData) return <div key={yr} />;
+          if (!yearData) return <ComingSoonYear key={yr} yr={yr} />;
           return (
             <div key={yr} style={{ minWidth: 0 }}>
               {/* Year header */}
