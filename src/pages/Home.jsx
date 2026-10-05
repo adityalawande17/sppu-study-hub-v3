@@ -78,9 +78,6 @@ const faqs = [
 export default function Home() {
   const { user, sessionLoading, pattern, switchPattern } = useApp();
   const loginCount = useLoginCount();
-  const [noticeDismissed, setNoticeDismissed] = useState(
-    () => sessionStorage.getItem("notice_dismissed") === "1",
-  );
   const [loginPromoOpen, setLoginPromoOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
 
@@ -95,11 +92,6 @@ export default function Home() {
       localStorage.setItem("sppu_login_promo_seen", "1");
     } catch {}
     setLoginPromoOpen(false);
-  }
-
-  function dismissNotice() {
-    sessionStorage.setItem("notice_dismissed", "1");
-    setNoticeDismissed(true);
   }
 
   useSEO({
@@ -121,24 +113,6 @@ export default function Home() {
     <>
     <HomeNav />
     <div className="home">
-      {/* Content notice popup */}
-      {!noticeDismissed && (
-        <div className="home-notice">
-          <div className="home-notice-title">Calling Mechanical &amp; Civil students!</div>
-          <p>
-            We're looking for students from Mechanical and Civil branches to help us add
-            content.{" "}
-            <Link to="/contact" onClick={dismissNotice}>
-              Contact us
-            </Link>{" "}
-            if you'd like to contribute!
-          </p>
-          <button onClick={dismissNotice} title="Dismiss" aria-label="Dismiss">
-            ×
-          </button>
-        </div>
-      )}
-
       {/* Hero */}
       <section className="home-hero">
         <div className="home-hero-copy">
@@ -160,11 +134,11 @@ export default function Home() {
             SPPU engineering subject, in both patterns.
           </p>
           <div className="home-ctas">
-            <Link to={user ? "/dashboard" : "/branches"} className="btn btn-primary">
-              Start for free →
+            <Link to="/branches" className="btn btn-primary">
+              Browse →
             </Link>
-            <Link to="/branches" className="btn btn-outline">
-              Browse subjects
+            <Link to="/first-year" className="btn btn-outline">
+              First Year
             </Link>
           </div>
         </div>

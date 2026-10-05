@@ -4,6 +4,8 @@ import { useApp } from "../context/AppContext";
 import { useShellDrawer } from "./layout/AppLayout";
 import Icon from "./layout/icons";
 
+const PATTERNS = ["2019", "2024"];
+
 const LINKS = [
   { to: "/branches", label: "Browse subjects" },
   { to: "/tools", label: "Tools" },
@@ -24,7 +26,7 @@ function GoogleIcon() {
 }
 
 export default function HomeNav() {
-  const { user, signInWithGoogle, signOut } = useApp();
+  const { user, signInWithGoogle, signOut, pattern, switchPattern } = useApp();
   const { pathname } = useLocation();
   const drawer = useShellDrawer();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -58,6 +60,18 @@ export default function HomeNav() {
       <Link to="/" className="home-nav-brand">
         SPPU<span>StudyHUB</span>
       </Link>
+
+      <div className="pattern-pill home-nav-pill">
+        {PATTERNS.map((p) => (
+          <button
+            key={p}
+            className={`pattern-opt ${pattern === p ? "active" : ""}`}
+            onClick={() => switchPattern(p)}
+          >
+            {p}
+          </button>
+        ))}
+      </div>
 
       <nav className="home-nav-links" aria-label="Main">
         {LINKS.map((l) => (
