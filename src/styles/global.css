@@ -2681,10 +2681,16 @@ h3 {
   }
 }
 
-/* Pattern switcher sitting right of the brand in the homepage navbar */
+/* Pattern switcher sitting right of the brand in the homepage navbar (hidden on desktop) */
 .home-nav-pill {
+  display: none;
   margin-left: 4px;
   flex-shrink: 0;
+}
+@media (max-width: 900px) {
+  .home-nav-pill {
+    display: inline-flex;
+  }
 }
 .home-nav-pill .pattern-opt {
   padding: 4px 10px;
