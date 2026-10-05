@@ -1121,8 +1121,8 @@ h3 {
     font-size: 9px;
     padding: 3px 7px;
     letter-spacing: 0;
-    flex-shrink: 1;
-    min-width: 0;
+    flex-shrink: 0;
+    min-width: auto;
   }
   .subject-name {
     font-size: 13px;
@@ -2624,6 +2624,72 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 24px;
+    gap: 22px;
+    padding-top: 12px;
   }
+  .home-hero h1 {
+    font-size: min(58px, 16.5vw);
+    line-height: 1.02;
+    margin: 0;
+  }
+  .home-lede {
+    font-size: 17px;
+    line-height: 1.75;
+    margin: 0;
+  }
+  .home-ctas {
+    gap: 12px;
+  }
+  .home-ctas > * {
+    flex: 1;
+    justify-content: center;
+    padding: 16px 12px;
+    font-size: 15px;
+  }
+}
+
+/* Syllabus page: wider pattern pill, and two PDFs per row for SE, TE and BE */
+.syllabus-pattern-pill {
+  display: flex;
+  width: 100%;
+  max-width: 360px;
+}
+.syllabus-pattern-pill .pattern-opt {
+  flex: 1;
+  text-align: center;
+}
+.syllabus-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .syllabus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .syllabus-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Branches page on phones: one branch per row */
+@media (max-width: 640px) {
+  .branches-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* Pattern switcher sitting right of the brand in the homepage navbar */
+.home-nav-pill {
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+.home-nav-pill .pattern-opt {
+  padding: 4px 10px;
+  font-size: 11px;
+}
+.home-nav-pill .pattern-opt.active {
+  color: #ffffff;
 }
