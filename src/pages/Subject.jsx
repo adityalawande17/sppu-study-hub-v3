@@ -7,6 +7,7 @@ import PracticalAccordion from "../components/PracticalAccordion";
 import PYQAccordion from "../components/PYQAccordion";
 import PeerNotes from "../components/PeerNotes";
 import ShareBar from "../components/ShareBar";
+import Icon from "../components/layout/icons";
 import { searchIndex } from "../data/branches";
 import { feSearchIndex } from "../data/feSubjects";
 
@@ -141,6 +142,16 @@ export default function Subject() {
 
   return (
     <div className="page-wrap">
+
+      <button
+        type="button"
+        className="subject-back-btn"
+        onClick={() => navigate(-1)}
+        aria-label="Go back"
+      >
+        <Icon name="arrowLeft" size={18} />
+        Back
+      </button>
 
       <div className="subject-header">
         <div className="subject-title-block">

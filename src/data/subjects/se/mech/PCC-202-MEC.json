@@ -1,0 +1,66 @@
+{
+  "code": "PCC-202-MEC",
+  "name": "Engineering Thermodynamics",
+  "pattern": "2024",
+  "units": [
+    {
+      "title": "Unit 1 - Fundamentals and First Law of Thermodynamics",
+      "files": [
+        {
+          "name": "Unit 1 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/mech/MECH-ET-Unit-1-Fundamentals-First-Law.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 2 - Ideal Gas Equations and Second Law of Thermodynamics",
+      "files": [
+        {
+          "name": "Unit 2 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/mech/MECH-ET-Unit-2-Ideal-Gas-Second-Law.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 3 - Entropy and Availability",
+      "files": [
+        {
+          "name": "Unit 3 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/mech/MECH-ET-Unit-3-Entropy-Availability.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 4 - Properties of Pure Substances & Vapour Power Cycle",
+      "files": [
+        {
+          "name": "Unit 4 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/mech/MECH-ET-Unit-4-Steam-Vapour-Cycles.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - Steam Generators & Boiler Draught",
+      "files": [
+        {
+          "name": "Unit 5 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/mech/MECH-ET-Unit-5-Boilers-Draught.pdf"
+        }
+      ]
+    },
+    { "title": "Extra Material", "files": [] }
+  ],
+  "practicals": [],
+  "pyq": [],
+  "books": []
+}

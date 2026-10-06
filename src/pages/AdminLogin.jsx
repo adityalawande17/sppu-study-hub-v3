@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useSEO } from "../hooks/useSEO";
 import { useNavigate } from "react-router-dom";
 
 const BACKEND = import.meta.env.VITE_BACKEND_URL;
 
 export default function AdminLogin() {
+  useSEO({ title: "Admin Login | SPPUStudyHUB", noindex: true });
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

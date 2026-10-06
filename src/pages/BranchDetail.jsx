@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { useApp } from "../context/AppContext";
 import { branchMeta, branchData } from "../data/branches";
 import SubjectItem from "../components/SubjectItem";
 import BranchLogo from "../components/BranchLogo";
+import Icon from "../components/layout/icons";
 
 
 const YEAR_NAMES = {
@@ -66,6 +67,7 @@ const DlIcon = () => (
 
 export default function BranchDetail() {
   const { branchKey } = useParams();
+  const navigate = useNavigate();
   const { pattern } = useApp();
   const [activeYear, setActiveYear] = useState("SE");
 
@@ -138,6 +140,16 @@ export default function BranchDetail() {
           2024 pattern syllabus isn't mapped yet for this branch — showing 2019 pattern subjects.
         </div>
       )}
+
+      <button
+        type="button"
+        className="subject-back-btn"
+        onClick={() => navigate(-1)}
+        aria-label="Go back"
+      >
+        <Icon name="arrowLeft" size={18} />
+        Back
+      </button>
 
       {/* Branch header */}
       <div className="branch-header">

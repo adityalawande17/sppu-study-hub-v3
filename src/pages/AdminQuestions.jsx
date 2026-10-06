@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { Navigate, useNavigate, Link, useLocation } from "react-router-dom";
 import { searchIndex } from "../data/branches";
 import { feSearchIndex } from "../data/feSubjects";
+import { useSEO } from "../hooks/useSEO";
 import { logoutAdmin } from "../utils/adminAuth";
 
 const BACKEND = import.meta.env.VITE_BACKEND_URL;
@@ -43,6 +44,7 @@ const ADMIN_TABS = [
 ];
 
 export default function AdminQuestions() {
+  useSEO({ title: "PYQ Questions — Admin | SPPUStudyHUB", noindex: true });
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [checking, setChecking] = useState(true);

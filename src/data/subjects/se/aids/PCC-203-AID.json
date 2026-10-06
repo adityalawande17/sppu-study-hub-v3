@@ -5,21 +5,61 @@
   "units": [
     {
       "title": "Unit 1 - Introduction to Operating System and Process",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 1 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/aids/se/AIDS-OS-Unit-1-Introduction-Process.pdf"
+        }
+      ]
     },
-    { "title": "Unit 2 - Scheduling", "files": [] },
-    { "title": "Unit 3 - Address Spaces", "files": [] },
-    { "title": "Unit 4 - Concurrency", "files": [] },
-    { "title": "Unit 5 - I/O Management", "files": [] },
-    { "title": "Extra Material", "files": [] }
-  ],
-  "practicals": [],
-  "pyq": [
     {
-      "year": "2025",
-      "exam": "Nov / Dec 2025",
-      "url": "https://drive.google.com/file/d/1_d8BoP8i5KGToeGgOKN4vMllZhNcFUWn/view?usp=sharing"
+      "title": "Unit 2 - Scheduling",
+      "files": [
+        {
+          "name": "Unit 2 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/aids/se/AIDS-OS-Unit-2-Scheduling.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 3 - Address Spaces",
+      "files": [
+        {
+          "name": "Unit 3 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/aids/se/AIDS-OS-Unit-3-Address-Spaces.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 4 - Concurrency",
+      "files": [
+        {
+          "name": "Unit 4 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/aids/se/AIDS-OS-Unit-4-Concurrency.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - I/O Management",
+      "files": [
+        {
+          "name": "Unit 5 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/aids/se/AIDS-OS-Unit-5-IO-Management.pdf"
+        }
+      ]
     }
   ],
+  "practicals": [],
+  "pyq": [],
   "books": []
 }

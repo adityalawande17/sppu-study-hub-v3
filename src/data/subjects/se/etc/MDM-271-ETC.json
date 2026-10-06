@@ -1,24 +1,28 @@
 {
   "code": "MDM-271-ETC",
-  "name": "Subject Name Here",
+  "name": "Object-Oriented Programming",
   "pattern": "2024",
   "units": [
     {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
+      "title": "Unit 1 - Introduction to OOP Concepts",
+      "files": []
     },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
+    {
+      "title": "Unit 2 - Introduction to Core Java",
+      "files": []
+    },
+    {
+      "title": "Unit 3 - Inheritance and Polymorphism",
+      "files": []
+    },
+    {
+      "title": "Unit 4 - Interfaces and Packages",
+      "files": []
+    },
+    {
+      "title": "Unit 5 - Multithreading and Exception Handling",
+      "files": []
+    }
   ],
   "practicals": [
     {
@@ -50,13 +54,26 @@
           "meta": "X MB",
           "url": "#"
         },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+        {
+          "type": "ZIP",
+          "name": "Starter Files",
+          "meta": "X MB",
+          "url": "#"
+        }
       ]
     }
   ],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "#"
+    },
+    {
+      "year": "2024",
+      "exam": "April / May 2024",
+      "url": "#"
+    }
   ],
   "books": [
     {

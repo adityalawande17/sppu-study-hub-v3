@@ -18,6 +18,7 @@ const PATHS = {
   logout: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9",
   close: "M18 6L6 18M6 6l12 12",
   menu: "M3 12h18M3 6h18M3 18h18",
+  arrowLeft: "M19 12H5M12 19l-7-7 7-7",
 };
 
 export default function Icon({ name, size = 16 }) {

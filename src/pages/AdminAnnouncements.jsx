@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navigate, useNavigate, Link, useLocation } from "react-router-dom";
+import { useSEO } from "../hooks/useSEO";
 import { logoutAdmin } from "../utils/adminAuth";
 
 const BACKEND = import.meta.env.VITE_BACKEND_URL;
@@ -32,6 +33,7 @@ const ADMIN_TABS = [
 ];
 
 export default function AdminAnnouncements() {
+  useSEO({ title: "Announcements — Admin | SPPUStudyHUB", noindex: true });
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [checking, setChecking] = useState(true);

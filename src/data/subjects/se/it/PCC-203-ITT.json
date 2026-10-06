@@ -7,6 +7,12 @@
       "title": "Unit 1 - Introduction to Computer Networking Fundamentals",
       "files": [
         {
+          "name": "Unit 1 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/IT-CN-Unit-1-Introduction-to-Networking.pdf"
+        },
+        {
           "name": "Unit 1 - Last Minute Notes",
           "size": "300 KB",
           "type": "PDF",
@@ -18,6 +24,12 @@
       "title": "Unit 2 - Data Communications",
       "files": [
         {
+          "name": "Unit 2 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/IT-CN-Unit-2-Data-Communications.pdf"
+        },
+        {
           "name": "Unit 2 - Last Minute Notes",
           "size": "300 KB",
           "type": "PDF",
@@ -27,10 +39,37 @@
     },
     {
       "title": "Unit 3 - Data Link Layer and Multiple Access Protocols",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 3 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/IT-CN-Unit-3-Data-Link-Layer.pdf"
+        }
+      ]
     },
-    { "title": "Unit 4 - Network Layer", "files": [] },
-    { "title": "Unit 5 - Overview of Networking Technologies", "files": [] },
+    {
+      "title": "Unit 4 - Network Layer",
+      "files": [
+        {
+          "name": "Unit 4 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/IT-CN-Unit-4-Network-Layer.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - Overview of Networking Technologies",
+      "files": [
+        {
+          "name": "Unit 5 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/IT-CN-Unit-5-Networking-Technologies.pdf"
+        }
+      ]
+    },
     {
       "title": "Solved Question",
       "files": [

@@ -1,71 +1,65 @@
 {
   "code": "PCC-201-ELE",
-  "name": "Subject Name Here",
+  "name": "Electrical Measurements & Instrumentation",
   "pattern": "2024",
   "units": [
     {
-      "title": "Unit 1 - Title",
+      "title": "Unit 1 - Measuring Instruments and Instrument Transformer",
       "files": [
         {
           "name": "Unit 1 Notes",
-          "size": "X MB",
+          "size": "300 KB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/ele/ELE-EMI-Unit-1-Instruments-CT-PT.pdf"
         }
       ]
     },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
-  "practicals": [
     {
-      "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
+      "title": "Unit 2 - Measurement of Resistance, Inductance and Capacitance",
+      "files": [
         {
+          "name": "Unit 2 Notes",
+          "size": "300 KB",
           "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/ele/ELE-EMI-Unit-2-Measurement-of-R-L-C.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 3 - Measurement of Power and Energy",
+      "files": [
         {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
+          "name": "Unit 3 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/ele/ELE-EMI-Unit-3-Power-and-Energy.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 4 - Transducers & Measurement of Non-Electrical Quantities",
+      "files": [
         {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
+          "name": "Unit 4 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/ele/ELE-EMI-Unit-4-Transducers-Non-Electrical.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - Sensors & Introduction to Digital Instruments",
+      "files": [
         {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+          "name": "Unit 5 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/ele/ELE-EMI-Unit-5-Sensors-Digital-Instruments.pdf"
+        }
       ]
     }
   ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
-    {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
-    }
-  ]
+  "practicals": [],
+  "pyq": [],
+  "books": []
 }

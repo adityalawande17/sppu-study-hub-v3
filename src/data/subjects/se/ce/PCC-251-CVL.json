@@ -1,24 +1,28 @@
 {
   "code": "PCC-251-CVL",
-  "name": "Subject Name Here",
+  "name": "Fluid Mechanics",
   "pattern": "2024",
   "units": [
     {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
+      "title": "Unit 1 - Properties of Fluids and Fluid Statics",
+      "files": []
     },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
+    {
+      "title": "Unit 2 - Fluid Kinematics",
+      "files": []
+    },
+    {
+      "title": "Unit 3 - Fluid Dynamics",
+      "files": []
+    },
+    {
+      "title": "Unit 4 - Flow Through Pipes",
+      "files": []
+    },
+    {
+      "title": "Unit 5 - Open Channel Flow",
+      "files": []
+    }
   ],
   "practicals": [
     {
@@ -50,13 +54,26 @@
           "meta": "X MB",
           "url": "#"
         },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+        {
+          "type": "ZIP",
+          "name": "Starter Files",
+          "meta": "X MB",
+          "url": "#"
+        }
       ]
     }
   ],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "#"
+    },
+    {
+      "year": "2024",
+      "exam": "April / May 2024",
+      "url": "#"
+    }
   ],
   "books": [
     {

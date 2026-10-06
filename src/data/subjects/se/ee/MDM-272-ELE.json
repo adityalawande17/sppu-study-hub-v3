@@ -1,24 +1,28 @@
 {
   "code": "MDM-272-ELE",
-  "name": "Subject Name Here",
+  "name": "Fundamentals of Data Science & Machine Learning",
   "pattern": "2024",
   "units": [
     {
-      "title": "Unit 1 - Title",
-      "files": [
-        {
-          "name": "Unit 1 Notes",
-          "size": "X MB",
-          "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-        }
-      ]
+      "title": "Unit 1 - Python Programming Basics for Data Science",
+      "files": []
     },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
+    {
+      "title": "Unit 2 - Fundamentals of Data Science and Applications in Electrical Engg",
+      "files": []
+    },
+    {
+      "title": "Unit 3 - Data Acquisition, Visualization, and Hypothesis Testing",
+      "files": []
+    },
+    {
+      "title": "Unit 4 - Introduction to Machine Learning (ML)",
+      "files": []
+    },
+    {
+      "title": "Unit 5 - Basic ML Algorithms and Model Evaluation",
+      "files": []
+    }
   ],
   "practicals": [
     {
@@ -50,13 +54,26 @@
           "meta": "X MB",
           "url": "#"
         },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+        {
+          "type": "ZIP",
+          "name": "Starter Files",
+          "meta": "X MB",
+          "url": "#"
+        }
       ]
     }
   ],
   "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
+    {
+      "year": "2024",
+      "exam": "Nov / Dec 2024",
+      "url": "#"
+    },
+    {
+      "year": "2024",
+      "exam": "April / May 2024",
+      "url": "#"
+    }
   ],
   "books": [
     {

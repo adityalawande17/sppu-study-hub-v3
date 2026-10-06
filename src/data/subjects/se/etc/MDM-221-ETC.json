@@ -1,71 +1,65 @@
 {
   "code": "MDM-221-ETC",
-  "name": "Subject Name Here",
+  "name": "Data Structures and Algorithms",
   "pattern": "2024",
   "units": [
     {
-      "title": "Unit 1 - Title",
+      "title": "Unit 1 - Introduction to Data Structures and Complexity Analysis",
       "files": [
         {
           "name": "Unit 1 Notes",
-          "size": "X MB",
+          "size": "300 KB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/entc/ENTC-DSA-Unit-1-Introduction-Complexity.pdf"
         }
       ]
     },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
-  "practicals": [
     {
-      "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
+      "title": "Unit 2 - Stack and Queue",
+      "files": [
         {
+          "name": "Unit 2 Notes",
+          "size": "300 KB",
           "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/entc/ENTC-DSA-Unit-2-Stack-and-Queue.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 3 - Linked List",
+      "files": [
         {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
+          "name": "Unit 3 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/entc/ENTC-DSA-Unit-3-Linked-List.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 4 - Non-linear Data Structure: Tree",
+      "files": [
         {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
+          "name": "Unit 4 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/entc/ENTC-DSA-Unit-4-Trees.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - Non-linear Data Structure: Graphs",
+      "files": [
         {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+          "name": "Unit 5 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/entc/ENTC-DSA-Unit-5-Graphs.pdf"
+        }
       ]
     }
   ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
-    {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
-    }
-  ]
+  "practicals": [],
+  "pyq": [],
+  "books": []
 }

@@ -1,71 +1,65 @@
 {
   "code": "PCC-202-CVL",
-  "name": "Subject Name Here",
+  "name": "Surveying",
   "pattern": "2024",
   "units": [
     {
-      "title": "Unit 1 - Title",
+      "title": "Unit 1 - Distance Measurements and Angle Measurement",
       "files": [
         {
           "name": "Unit 1 Notes",
-          "size": "X MB",
+          "size": "300 KB",
           "type": "PDF",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/civil/CIVIL-SURV-Unit-1-Distance-Angle-Measurement.pdf"
         }
       ]
     },
-    { "title": "Unit 2 - Title", "files": [] },
-    { "title": "Unit 3 - Title", "files": [] },
-    { "title": "Unit 4 - Title", "files": [] },
-    { "title": "Unit 5 - Title", "files": [] },
-    { "title": "Unit 6 - Title", "files": [] }
-  ],
-  "practicals": [
     {
-      "num": 1,
-      "title": "Practical 1: Title of Practical",
-      "desc": "Brief description of what students will do in this practical",
-      "resources": [
+      "title": "Unit 2 - Levelling",
+      "files": [
         {
+          "name": "Unit 2 Notes",
+          "size": "300 KB",
           "type": "PDF",
-          "name": "Practical 1 Manual",
-          "meta": "X MB",
-          "url": "https://drive.google.com/uc?export=download&id=YOUR_ID"
-        },
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/civil/CIVIL-SURV-Unit-2-Levelling.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 3 - Theodolite Traversing",
+      "files": [
         {
-          "type": "YOUTUBE",
-          "name": "Tutorial Video Title",
-          "meta": "YouTube · X min",
-          "url": "https://www.youtube.com/watch?v=VIDEO_ID"
-        },
+          "name": "Unit 3 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/civil/CIVIL-SURV-Unit-3-Theodolite-Traversing.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 4 - Tacheometry Survey and Total Station Survey",
+      "files": [
         {
-          "type": "LINK",
-          "name": "Reference Website",
-          "meta": "domain.com",
-          "url": "https://example.com"
-        },
+          "name": "Unit 4 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/civil/CIVIL-SURV-Unit-4-Tacheometry-Total-Station.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - Curves",
+      "files": [
         {
-          "type": "DOC",
-          "name": "Sample Code or Worksheet",
-          "meta": "X MB",
-          "url": "#"
-        },
-        { "type": "ZIP", "name": "Starter Files", "meta": "X MB", "url": "#" }
+          "name": "Unit 5 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/civil/CIVIL-SURV-Unit-5-Curves.pdf"
+        }
       ]
     }
   ],
-  "pyq": [
-    { "year": "2024", "exam": "Nov / Dec 2024", "url": "#" },
-    { "year": "2024", "exam": "April / May 2024", "url": "#" }
-  ],
-  "books": [
-    {
-      "title": "Book Title",
-      "author": "Author Name",
-      "edition": "Edition",
-      "price": "Rs. 000",
-      "amazonUrl": "#",
-      "flipkartUrl": "#"
-    }
-  ]
+  "practicals": [],
+  "pyq": [],
+  "books": []
 }

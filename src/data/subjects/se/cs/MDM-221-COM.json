@@ -7,6 +7,12 @@
       "title": "Unit 1 - Boolean Algebra and Simplification Techniques",
       "files": [
         {
+          "name": "Unit 1 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/IoT-Unit-1-Introduction-to-IoT.pdf"
+        },
+        {
           "name": "Unit 1 - Last Minute Notes",
           "size": "300 KB",
           "type": "PDF",
@@ -24,6 +30,12 @@
       "title": "Unit 2 - Combinational Logic Design",
       "files": [
         {
+          "name": "Unit 2 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/IoT-Unit-2-Sensors-Actuators-and-Boards.pdf"
+        },
+        {
           "name": "Unit 2 - Last Minute Notes",
           "size": "300 KB",
           "type": "PDF",
@@ -37,13 +49,39 @@
         }
       ]
     },
-    { "title": "Unit 3 - Sequential Circuits", "files": [] },
+    {
+      "title": "Unit 3 - Sequential Circuits",
+      "files": [
+        {
+          "name": "Unit 3 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/IoT-Unit-3-Protocols-for-IoT.pdf"
+        }
+      ]
+    },
     {
       "title": "Unit 4 - Algorithmic State Machines and Logic Families",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 4 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/IoT-Unit-4-Cloud-for-IoT.pdf"
+        }
+      ]
     },
-    { "title": "Unit 5 - Programmable Logic Devices", "files": [] },
-    { "title": "Extra Material", "files": [] }
+    {
+      "title": "Unit 5 - Programmable Logic Devices",
+      "files": [
+        {
+          "name": "Unit 5 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/IoT-Unit-5-IoT-Applications.pdf"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [

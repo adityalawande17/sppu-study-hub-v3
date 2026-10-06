@@ -7,6 +7,12 @@
       "title": "Unit 1 - Introduction to Operating System",
       "files": [
         {
+          "name": "Unit 1 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/OS-Unit-1-Introduction-to-Operating-System.pdf"
+        },
+        {
           "name": "Unit 1 - Last Minute Notes",
           "size": "300 KB",
           "type": "PDF",
@@ -24,6 +30,12 @@
       "title": "Unit 2 - Process and Thread Management",
       "files": [
         {
+          "name": "Unit 2 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/OS-Unit-2-Process-and-Thread-Management.pdf"
+        },
+        {
           "name": "Unit 2 - Last Minute Notes",
           "size": "300 KB",
           "type": "PDF",
@@ -39,11 +51,37 @@
     },
     {
       "title": "Unit 3 - Interprocess Communication and Deadlock",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 3 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/OS-Unit-3-IPC-and-Deadlock.pdf"
+        }
+      ]
     },
-    { "title": "Unit 4 - Memory Management", "files": [] },
-    { "title": "Unit 5 - File and Disk Management", "files": [] },
-    { "title": "Extra Material", "files": [] }
+    {
+      "title": "Unit 4 - Memory Management",
+      "files": [
+        {
+          "name": "Unit 4 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/OS-Unit-4-Memory-Management.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - File and Disk Management",
+      "files": [
+        {
+          "name": "Unit 5 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/OS-Unit-5-File-and-Disk-Management.pdf"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [],

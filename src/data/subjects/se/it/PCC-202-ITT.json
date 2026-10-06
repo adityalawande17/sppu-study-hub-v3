@@ -7,6 +7,12 @@
       "title": "Unit 1 - Foundations of Object Oriented Programming",
       "files": [
         {
+          "name": "Unit 1 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/IT-OOP-Unit-1-Foundations-of-OOP.pdf"
+        },
+        {
           "name": "Unit 1 - Last Minute Notes",
           "size": "300 KB",
           "type": "PDF",
@@ -54,6 +60,12 @@
       "title": "Unit 2 - Methods and Constructors",
       "files": [
         {
+          "name": "Unit 2 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/IT-OOP-Unit-2-Methods-and-Constructors.pdf"
+        },
+        {
           "name": "Unit 2 - Last Minute Notes",
           "size": "300 KB",
           "type": "PDF",
@@ -61,12 +73,39 @@
         }
       ]
     },
-    { "title": "Unit 3 - Inheritance & Polymorphism", "files": [] },
+    {
+      "title": "Unit 3 - Inheritance & Polymorphism",
+      "files": [
+        {
+          "name": "Unit 3 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/IT-OOP-Unit-3-Inheritance-and-Polymorphism.pdf"
+        }
+      ]
+    },
     {
       "title": "Unit 4 - Exception Handling and Generic Programming",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 4 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/IT-OOP-Unit-4-Exception-Handling-and-Generics.pdf"
+        }
+      ]
     },
-    { "title": "Unit 5 - File Handling and Design Paterns", "files": [] },
+    {
+      "title": "Unit 5 - File Handling and Design Paterns",
+      "files": [
+        {
+          "name": "Unit 5 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/it/IT-OOP-Unit-5-File-Handling-and-Design-Patterns.pdf"
+        }
+      ]
+    },
     {
       "title": "Solved Question Papers",
       "files": [

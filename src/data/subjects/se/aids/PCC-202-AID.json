@@ -5,24 +5,61 @@
   "units": [
     {
       "title": "Unit 1 - Introduction to AI",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 1 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/aids/se/AIDS-AI-Unit-1-Introduction.pdf"
+        }
+      ]
     },
-    { "title": "Unit 2 - Problem Solving", "files": [] },
+    {
+      "title": "Unit 2 - Problem Solving",
+      "files": [
+        {
+          "name": "Unit 2 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/aids/se/AIDS-AI-Unit-2-Problem-Solving.pdf"
+        }
+      ]
+    },
     {
       "title": "Unit 3 - Adversarial Search and Constraint Satisfaction",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 3 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/aids/se/AIDS-AI-Unit-3-Adversarial-Search-CSP.pdf"
+        }
+      ]
     },
-    { "title": "Unit 4 - Knowledge and Reasoning", "files": [] },
-    { "title": "Unit 5 - Planning and Emerging AI Topics", "files": [] },
-    { "title": "Extra Material", "files": [] }
-  ],
-  "practicals": [],
-  "pyq": [
     {
-      "year": "2025",
-      "exam": "Nov / Dec 2025",
-      "url": "https://drive.google.com/file/d/1N1Sd2QVM5p7LscpVp8YUJiS7huk6vEY6/view?usp=sharing"
+      "title": "Unit 4 - Knowledge and Reasoning",
+      "files": [
+        {
+          "name": "Unit 4 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/aids/se/AIDS-AI-Unit-4-Knowledge-Reasoning.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Unit 5 - Planning and Emerging AI Topics",
+      "files": [
+        {
+          "name": "Unit 5 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/aids/se/AIDS-AI-Unit-5-Planning-Emerging-AI.pdf"
+        }
+      ]
     }
   ],
+  "practicals": [],
+  "pyq": [],
   "books": []
 }

@@ -2699,3 +2699,23 @@ h3 {
 .home-nav-pill .pattern-opt.active {
   color: #ffffff;
 }
+
+/* Subject page: back button above the title */
+.subject-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 6px 2px;
+  border: none;
+  background: none;
+  color: var(--text-3);
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--t-fast);
+}
+.subject-back-btn:hover {
+  color: var(--heading);
+}

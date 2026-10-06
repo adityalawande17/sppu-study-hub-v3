@@ -7,6 +7,12 @@
       "title": "Unit 1 - Introduction to OOP Concepts and Control Structure",
       "files": [
         {
+          "name": "Unit 1 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/OOPCG-Unit-1-Introduction-to-OOP-and-Control-Structure.pdf"
+        },
+        {
           "name": "Unit 1 - Last Minute Notes",
           "size": "300 KB",
           "type": "PDF",
@@ -24,6 +30,12 @@
       "title": "Unit 2 - Introduction to Classes and Objects and Arrays",
       "files": [
         {
+          "name": "Unit 2 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/OOPCG-Unit-2-Classes-Objects-and-Arrays.pdf"
+        },
+        {
           "name": "Unit 2 - Last Minute Notes",
           "size": "300 KB",
           "type": "PDF",
@@ -39,14 +51,37 @@
     },
     {
       "title": "Unit 3 - Inheritance and Polymorphism Exception Handling and Multithreading",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 3 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/OOPCG-Unit-3-Inheritance-Polymorphism-Exceptions-Threads.pdf"
+        }
+      ]
     },
     {
       "title": "Unit 4 - Graphics Primitives, Scan Conversion, Windowing and Clipping",
-      "files": []
+      "files": [
+        {
+          "name": "Unit 4 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/OOPCG-Unit-4-Graphics-Primitives-Scan-Conversion-Clipping.pdf"
+        }
+      ]
     },
-    { "title": "Unit 5 - 2D, 3D Transformations and Projections", "files": [] },
-    { "title": "Extra Material", "files": [] }
+    {
+      "title": "Unit 5 - 2D, 3D Transformations and Projections",
+      "files": [
+        {
+          "name": "Unit 5 Notes",
+          "size": "300 KB",
+          "type": "PDF",
+          "url": "https://pub-b9de98a8d2b547bf8e0d30a11e336404.r2.dev/sppustudyhub_bucket/2024/comp/se/OOPCG-Unit-5-2D-3D-Transformations-and-Projections.pdf"
+        }
+      ]
+    }
   ],
   "practicals": [],
   "pyq": [],

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 const SITE = 'https://sppustudyhub.in'
-const DEFAULT_IMAGE = `${SITE}/android-chrome-512x512.png`
+const DEFAULT_IMAGE = `${SITE}/og-image.png`
 
 function setMeta(attr, key, value) {
   let m = document.querySelector(`meta[${attr}="${key}"]`)
@@ -15,7 +15,7 @@ function setLink(rel, href) {
   l.setAttribute('href', href)
 }
 
-export function useSEO({ title, description = '', schema, image } = {}) {
+export function useSEO({ title, description = '', schema, image, noindex = false } = {}) {
   // Callers pass a fresh `schema` object literal on every render, so a
   // reference-identity dependency would rerun this effect (and rewrite the
   // DOM) on every re-render, not just on real navigation. Depend on its
@@ -29,6 +29,10 @@ export function useSEO({ title, description = '', schema, image } = {}) {
     const url = SITE + window.location.pathname
 
     document.title = title
+
+    // Reset on every page so a visit to a noindex page (e.g. admin) doesn't
+    // leave the tag behind for whatever page is opened next in the same tab.
+    setMeta('name', 'robots', noindex ? 'noindex, nofollow' : 'index, follow')
 
     setMeta('name', 'description', description)
 
@@ -51,5 +55,5 @@ export function useSEO({ title, description = '', schema, image } = {}) {
       if (!s) { s = document.createElement('script'); s.id = 'ld-json'; s.type = 'application/ld+json'; document.head.appendChild(s) }
       s.textContent = JSON.stringify(schema)
     }
-  }, [title, description, schemaKey, image])
+  }, [title, description, schemaKey, image, noindex])
 }

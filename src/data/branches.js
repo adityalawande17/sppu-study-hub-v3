@@ -602,19 +602,59 @@ const it2024 = {
       {
         label: "Semester 5",
         subjects: [
-          { code: "PCC-301-ITT", name: "Operating System", credits: 3, updated: "2024" },
-          { code: "PCC-302-ITT", name: "Artificial Intelligence & Machine Learning", credits: 3, updated: "2024" },
-          { code: "PCC-303-ITT", name: "Theory of Computation", credits: 3, updated: "2024" },
-          { code: "PEC-321-ITT", name: "Program Elective 1", credits: 3, updated: "2024" },
+          {
+            code: "PCC-301-ITT",
+            name: "Operating System",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC-302-ITT",
+            name: "Artificial Intelligence & Machine Learning",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC-303-ITT",
+            name: "Theory of Computation",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PEC-321-ITT",
+            name: "Program Elective 1",
+            credits: 3,
+            updated: "2024",
+          },
         ],
       },
       {
         label: "Semester 6",
         subjects: [
-          { code: "PCC-351-ITT", name: "Data Science & Big Data Analytics", credits: 3, updated: "2024" },
-          { code: "PCC-352-ITT", name: "Software Engineering & Project Management", credits: 2, updated: "2024" },
-          { code: "PEC-361-ITT", name: "Program Elective 2", credits: 3, updated: "2024" },
-          { code: "PEC-362-ITT", name: "Program Elective 3", credits: 3, updated: "2024" },
+          {
+            code: "PCC-351-ITT",
+            name: "Data Science & Big Data Analytics",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC-352-ITT",
+            name: "Software Engineering & Project Management",
+            credits: 2,
+            updated: "2024",
+          },
+          {
+            code: "PEC-361-ITT",
+            name: "Program Elective 2",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PEC-362-ITT",
+            name: "Program Elective 3",
+            credits: 3,
+            updated: "2024",
+          },
         ],
       },
     ],
@@ -879,6 +919,43 @@ const me2019 = {
   },
 };
 
+const me2024 = {
+  SE: {
+    label: "Second Year (SE)",
+    semesters: [
+      {
+        label: "Semester 3",
+        subjects: [
+          {
+            code: "PCC-201-MEC",
+            name: "Solid Mechanics",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC-202-MEC",
+            name: "Engineering Thermodynamics",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "PCC-203-MEC",
+            name: "Engineering Materials & Metallurgy",
+            credits: 3,
+            updated: "2024",
+          },
+          {
+            code: "MDM-221-MEC",
+            name: "Engineering Mathematics-III",
+            credits: 3,
+            updated: "2024",
+          },
+        ],
+      },
+    ],
+  },
+};
+
 //Civil Engineering
 
 const ce2019 = {
@@ -994,25 +1071,25 @@ const ce2024 = {
             updated: "2024",
           },
 
-          {
-            code: "PCC-204-CVL",
-            name: "Building Construction and Materials Lab",
-            credits: 1,
-            updated: "2024",
-          },
-          {
-            code: "PCC-205-CVL",
-            name: "Mechanics of Structures Lab",
-            credits: 1,
-            updated: "2024",
-          },
+          // {
+            // code: "PCC-204-CVL",
+            // name: "Building Construction and Materials Lab",
+            // credits: 1,
+            // updated: "2024",
+          // },
+          // {
+            // code: "PCC-205-CVL",
+            // name: "Mechanics of Structures Lab",
+            // credits: 1,
+            // updated: "2024",
+          // },
 
-          {
-            code: "OE-1-CVL",
-            name: "Open Elective I",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+            // code: "OE-1-CVL",
+            // name: "Open Elective I",
+            // credits: 2,
+            // updated: "2024",
+          // },
 
           {
             code: "MDM-221-CVL",
@@ -1020,24 +1097,24 @@ const ce2024 = {
             credits: 3,
             updated: "2024",
           },
-          {
-            code: "EEM-231-CVL",
-            name: "Economics for Civil Engineers",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "VEC-232-CVL",
-            name: "Universal Human Values and Professional Ethics",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "FP-241-CVL",
-            name: "Field Survey Project",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+            // code: "EEM-231-CVL",
+            // name: "Economics for Civil Engineers",
+            // credits: 2,
+            // updated: "2024",
+          // },
+          // {
+            // code: "VEC-232-CVL",
+            // name: "Universal Human Values and Professional Ethics",
+            // credits: 2,
+            // updated: "2024",
+          // },
+          // {
+            // code: "FP-241-CVL",
+            // name: "Field Survey Project",
+            // credits: 2,
+            // updated: "2024",
+          // },
         ],
       },
       {
@@ -1062,25 +1139,25 @@ const ce2024 = {
             updated: "2024",
           },
 
-          {
-            code: "PCC-254-CVL",
-            name: "Concrete Technology Lab",
-            credits: 1,
-            updated: "2024",
-          },
-          {
-            code: "PCC-255-CVL",
-            name: "Fluid Mechanics Lab",
-            credits: 1,
-            updated: "2024",
-          },
+          // {
+            // code: "PCC-254-CVL",
+            // name: "Concrete Technology Lab",
+            // credits: 1,
+            // updated: "2024",
+          // },
+          // {
+            // code: "PCC-255-CVL",
+            // name: "Fluid Mechanics Lab",
+            // credits: 1,
+            // updated: "2024",
+          // },
 
-          {
-            code: "OE-2-CVL",
-            name: "Open Elective II",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+            // code: "OE-2-CVL",
+            // name: "Open Elective II",
+            // credits: 2,
+            // updated: "2024",
+          // },
 
           {
             code: "MDM-271-CVL",
@@ -1088,30 +1165,30 @@ const ce2024 = {
             credits: 2,
             updated: "2024",
           },
-          {
-            code: "VSEC-281-CVL",
-            name: "Application of Python",
-            credits: 1,
-            updated: "2024",
-          },
-          {
-            code: "AEC-282-CVL",
-            name: "Modern Indian Language (Marathi)",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "EEM-283-CVL",
-            name: "Project Management",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "VEC-284-CVL",
-            name: "Environmental Awareness",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+            // code: "VSEC-281-CVL",
+            // name: "Application of Python",
+            // credits: 1,
+            // updated: "2024",
+          // },
+          // {
+            // code: "AEC-282-CVL",
+            // name: "Modern Indian Language (Marathi)",
+            // credits: 2,
+            // updated: "2024",
+          // },
+          // {
+            // code: "EEM-283-CVL",
+            // name: "Project Management",
+            // credits: 2,
+            // updated: "2024",
+          // },
+          // {
+            // code: "VEC-284-CVL",
+            // name: "Environmental Awareness",
+            // credits: 2,
+            // updated: "2024",
+          // },
         ],
       },
     ],
@@ -1252,25 +1329,25 @@ const ee2024 = {
             updated: "2024",
           },
 
-          {
-            code: "PCC-204-ELE",
-            name: "Electrical Measurements Lab",
-            credits: 1,
-            updated: "2024",
-          },
-          {
-            code: "PCC-205-ELE",
-            name: "Analog and Digital Electronics Lab",
-            credits: 1,
-            updated: "2024",
-          },
+          // {
+            // code: "PCC-204-ELE",
+            // name: "Electrical Measurements Lab",
+            // credits: 1,
+            // updated: "2024",
+          // },
+          // {
+            // code: "PCC-205-ELE",
+            // name: "Analog and Digital Electronics Lab",
+            // credits: 1,
+            // updated: "2024",
+          // },
 
-          {
-            code: "OE-1-ELE",
-            name: "Open Elective I",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+            // code: "OE-1-ELE",
+            // name: "Open Elective I",
+            // credits: 2,
+            // updated: "2024",
+          // },
 
           {
             code: "MDM-222-ELE",
@@ -1278,24 +1355,24 @@ const ee2024 = {
             credits: 3,
             updated: "2024",
           },
-          {
-            code: "EEM-231-ELE",
-            name: "Engineering Economics",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "VEC-232-ELE",
-            name: "Universal Human Values & Professional Ethics",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "CEP-241-ELE",
-            name: "Energy Literacy & Electrical Safety Project",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+            // code: "EEM-231-ELE",
+            // name: "Engineering Economics",
+            // credits: 2,
+            // updated: "2024",
+          // },
+          // {
+            // code: "VEC-232-ELE",
+            // name: "Universal Human Values & Professional Ethics",
+            // credits: 2,
+            // updated: "2024",
+          // },
+          // {
+            // code: "CEP-241-ELE",
+            // name: "Energy Literacy & Electrical Safety Project",
+            // credits: 2,
+            // updated: "2024",
+          // },
         ],
       },
       {
@@ -1320,31 +1397,31 @@ const ee2024 = {
             updated: "2024",
           },
 
-          {
-            code: "PCC-254-ELE",
-            name: "Electrical Machines Lab",
-            credits: 1,
-            updated: "2024",
-          },
-          {
-            code: "PCC-255-ELE",
-            name: "Numerical Methods Lab",
-            credits: 1,
-            updated: "2024",
-          },
-          {
-            code: "PCC-256-ELE",
-            name: "Network Analysis Lab",
-            credits: 1,
-            updated: "2024",
-          },
+          // {
+            // code: "PCC-254-ELE",
+            // name: "Electrical Machines Lab",
+            // credits: 1,
+            // updated: "2024",
+          // },
+          // {
+            // code: "PCC-255-ELE",
+            // name: "Numerical Methods Lab",
+            // credits: 1,
+            // updated: "2024",
+          // },
+          // {
+            // code: "PCC-256-ELE",
+            // name: "Network Analysis Lab",
+            // credits: 1,
+            // updated: "2024",
+          // },
 
-          {
-            code: "OE-2-ELE",
-            name: "Open Elective II",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+            // code: "OE-2-ELE",
+            // name: "Open Elective II",
+            // credits: 2,
+            // updated: "2024",
+          // },
 
           {
             code: "MDM-272-ELE",
@@ -1352,30 +1429,30 @@ const ee2024 = {
             credits: 2,
             updated: "2024",
           },
-          {
-            code: "VSE-281-ELE",
-            name: "Electrical Workshop",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "AEC-282-ELE",
-            name: "Modern Indian Language (Marathi/Hindi)",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "EEM-283-ELE",
-            name: "Industrial Organization and Management",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "VEC-284-ELE",
-            name: "Environmental Awareness for Electrical Engineers",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+            // code: "VSE-281-ELE",
+            // name: "Electrical Workshop",
+            // credits: 2,
+            // updated: "2024",
+          // },
+          // {
+            // code: "AEC-282-ELE",
+            // name: "Modern Indian Language (Marathi/Hindi)",
+            // credits: 2,
+            // updated: "2024",
+          // },
+          // {
+            // code: "EEM-283-ELE",
+            // name: "Industrial Organization and Management",
+            // credits: 2,
+            // updated: "2024",
+          // },
+          // {
+            // code: "VEC-284-ELE",
+            // name: "Environmental Awareness for Electrical Engineers",
+            // credits: 2,
+            // updated: "2024",
+          // },
         ],
       },
     ],
@@ -1497,19 +1574,19 @@ const etc2024 = {
             updated: "2024",
           },
 
-          {
-            code: "PCC-204-ETC",
-            name: "Electronics Circuits & Digital Electronics Lab",
-            credits: 1,
-            updated: "2024",
-          },
+          // {
+            // code: "PCC-204-ETC",
+            // name: "Electronics Circuits & Digital Electronics Lab",
+            // credits: 1,
+            // updated: "2024",
+          // },
 
-          {
-            code: "OE-1-ETC",
-            name: "Open Elective I",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+            // code: "OE-1-ETC",
+            // name: "Open Elective I",
+            // credits: 2,
+            // updated: "2024",
+          // },
 
           {
             code: "MDM-221-ETC",
@@ -1517,25 +1594,25 @@ const etc2024 = {
             credits: 3,
             updated: "2024",
           },
-          { code: "MDM-222-ETC", name: "DSA Lab", credits: 1, updated: "2024" },
-          {
-            code: "EEM-231-ETC",
-            name: "Engineering Economics & Applications",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "VEC-232-ETC",
-            name: "Universal Human Values & Professional Ethics",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "CEP-241-ETC",
-            name: "Community Engagement Project",
-            credits: 2,
-            updated: "2024",
-          },
+          // { code: "MDM-222-ETC", name: "DSA Lab", credits: 1, updated: "2024" },
+          // {
+            // code: "EEM-231-ETC",
+            // name: "Engineering Economics & Applications",
+            // credits: 2,
+            // updated: "2024",
+          // },
+          // {
+            // code: "VEC-232-ETC",
+            // name: "Universal Human Values & Professional Ethics",
+            // credits: 2,
+            // updated: "2024",
+          // },
+          // {
+            // code: "CEP-241-ETC",
+            // name: "Community Engagement Project",
+            // credits: 2,
+            // updated: "2024",
+          // },
         ],
       },
       {
@@ -1560,25 +1637,25 @@ const etc2024 = {
             updated: "2024",
           },
 
-          {
-            code: "PCC-254-ETC",
-            name: "Communication Engineering Lab",
-            credits: 1,
-            updated: "2024",
-          },
-          {
-            code: "PCC-255-ETC",
-            name: "Signals & Systems and OOP Lab",
-            credits: 1,
-            updated: "2024",
-          },
+          // {
+            // code: "PCC-254-ETC",
+            // name: "Communication Engineering Lab",
+            // credits: 1,
+            // updated: "2024",
+          // },
+          // {
+            // code: "PCC-255-ETC",
+            // name: "Signals & Systems and OOP Lab",
+            // credits: 1,
+            // updated: "2024",
+          // },
 
-          {
-            code: "OE-2-ETC",
-            name: "Open Elective II",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+          //   code: "OE-2-ETC",
+          //   name: "Open Elective II",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
 
           {
             code: "MDM-271-ETC",
@@ -1586,30 +1663,30 @@ const etc2024 = {
             credits: 2,
             updated: "2024",
           },
-          {
-            code: "VSE-281-ETC",
-            name: "Electronics Skill Development Lab",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "AEC-282-ETC",
-            name: "Modern Indian Language (Marathi/Hindi)",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "EEM-283-ETC",
-            name: "Entrepreneurship Skill Development",
-            credits: 2,
-            updated: "2024",
-          },
-          {
-            code: "VEC-284-ETC",
-            name: "Environment Awareness",
-            credits: 2,
-            updated: "2024",
-          },
+          // {
+          //   code: "VSE-281-ETC",
+          //   name: "Electronics Skill Development Lab",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "AEC-282-ETC",
+          //   name: "Modern Indian Language (Marathi/Hindi)",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "EEM-283-ETC",
+          //   name: "Entrepreneurship Skill Development",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
+          // {
+          //   code: "VEC-284-ETC",
+          //   name: "Environment Awareness",
+          //   credits: 2,
+          //   updated: "2024",
+          // },
         ],
       },
     ],
@@ -1638,12 +1715,12 @@ const etc2024 = {
             credits: 3,
             updated: "2024",
           },
-          {
-            code: "PEC-321-ETC",
-            name: "Elective I",
-            credits: 3,
-            updated: "2024",
-          },
+          // {
+            // code: "PEC-321-ETC",
+            // name: "Elective I",
+            // credits: 3,
+            // updated: "2024",
+          // },
         ],
       },
       {
@@ -1661,18 +1738,18 @@ const etc2024 = {
             credits: 3,
             updated: "2024",
           },
-          {
-            code: "PEC-361-ETC",
-            name: "Elective II",
-            credits: 3,
-            updated: "2024",
-          },
-          {
-            code: "PEC-362-ETC",
-            name: "Elective III",
-            credits: 3,
-            updated: "2024",
-          },
+          // {
+            // code: "PEC-361-ETC",
+            // name: "Elective II",
+            // credits: 3,
+            // updated: "2024",
+          // },
+          // {
+            // code: "PEC-362-ETC",
+            // name: "Elective III",
+            // credits: 3,
+            // updated: "2024",
+          // },
         ],
       },
     ],
@@ -1986,7 +2063,12 @@ const aiml2019 = {
           { code: "418541", name: "Information Retrieval in AI", credits: 3 },
           { code: "418542", name: "Cloud Computing", credits: 3 },
           { code: "418543", name: "Deep Learning for AI", credits: 3 },
-          { code: "418544", name: "Elective III", credits: 3, type: "Elective" },
+          {
+            code: "418544",
+            name: "Elective III",
+            credits: 3,
+            type: "Elective",
+          },
           { code: "418545", name: "Elective IV", credits: 3, type: "Elective" },
         ],
       },
@@ -2017,10 +2099,11 @@ export const branchData = {
     cs: cs2024,
     it: it2024,
     aids: aids2024,
+    me: me2024,
     ce: ce2024,
     ee: ee2024,
     etc: etc2024,
-    // me and aiml have no 2024 syllabus data yet — BranchDetail falls back to 2019 with a notice
+    // aiml has no 2024 syllabus data yet — BranchDetail falls back to 2019 with a notice
   },
 };
 
