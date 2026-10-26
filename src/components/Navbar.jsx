@@ -229,7 +229,7 @@ export default function Navbar() {
           </Link>
 
           {/* Pattern switcher */}
-          <div className="pattern-pill" style={{ marginLeft: 6 }}>
+          <div className="pattern-pill navbar-pattern-pill" style={{ marginLeft: 6 }}>
             {["2019", "2024"].map((p) => (
               <button
                 key={p}
@@ -723,6 +723,23 @@ export default function Navbar() {
         </div>
 
         {/* ── Mega menu ── */}
+        <div className="navbar-pattern-mobile">
+          <span>Pattern</span>
+          <div className="pattern-pill">
+            {["2019", "2024"].map((p) => (
+              <button
+                key={p}
+                className={`pattern-opt ${pattern === p ? "active" : ""}`}
+                onClick={() => switchPattern(p)}
+                type="button"
+                aria-pressed={pattern === p}
+              >
+                {p}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {megaOpen && (
           <div
             style={{
@@ -1674,6 +1691,25 @@ export default function Navbar() {
       <style>{`
         @media (max-width: 768px) { .hide-sm { display: none !important; } }
         @media (min-width: 769px) { .show-sm { display: none !important; } }
+        .navbar-pattern-mobile { display: none; }
+        @media (max-width: 768px) {
+          .navbar-pattern-pill { display: none !important; }
+          .navbar-pattern-mobile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            min-height: 42px;
+            padding: 0 16px 10px;
+            color: var(--nav-text-dim);
+            font-size: 12px;
+            font-weight: 600;
+          }
+          .navbar-pattern-mobile .pattern-opt {
+            min-width: 64px;
+            padding: 6px 12px;
+          }
+        }
       `}</style>
     </>
   );

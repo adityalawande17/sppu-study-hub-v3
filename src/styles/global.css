@@ -1086,10 +1086,8 @@ h3 {
 
 /* ---- Responsive ---- */
 @media (max-width: 360px) {
-  /* On very narrow phones (320px iPhone SE etc) the navbar logo + pattern pill
-     + action buttons exceed the viewport. The pattern pill is available inside
-     the mobile sidebar so it is safe to hide it from the top bar. */
-  .pattern-pill {
+  /* The compact selector moves below the main navbar row on mobile. */
+  .navbar-pattern-pill {
     display: none !important;
   }
   .page-wrap {
